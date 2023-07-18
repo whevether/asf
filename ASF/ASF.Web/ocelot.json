@@ -1,0 +1,39 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "UpstreamPathTemplate": "/api/{url}",
+      "UpstreamHttpMethod": [ 
+        "Get",
+        "Post",
+        "Put",
+        "Delete"
+      ],
+      "ServiceName": "PayService",
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http",
+//       "AuthenticationOptions": {
+//         "AuthenticationProviderKey": "Bearer"
+//       },
+      "LoadBalancerOptions": {
+//        "Type": "RoundRobin" //轮询法
+        "Type": "LeastConnection"
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "128.0.0.1",// 本地连接地址
+          "Port": 5004 //本地连接端口
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    //"BaseUrl": "https://api.mybusiness.com"
+    "ServiceDiscoveryProvider": {
+      "Scheme": "http",
+      "Host": "127.0.0.1",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  }
+}
