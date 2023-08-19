@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ASF.Application.DtoMapper;
+using ASF.Domain.Services;
+using Coravel;
 using Minio;
 using Minio.AspNetCore;
 using Ocelot.Middleware;
@@ -113,14 +115,14 @@ namespace ASF.Web
             app.UseStaticFiles();
             app.UseCors("CorsPolicy");
             
-            // var provider = app.ApplicationServices;
-            // provider.UseScheduler(scheduler =>
-            // {
-            //     scheduler.Schedule<RunSendPhoneTasks>()
-            //         .EverySeconds(30);
-            //     // scheduler.Schedule<RunSendPhoneTasks>()
-            //     //     .Daily();
-            // });
+            var provider = app.ApplicationServices;
+            provider.UseScheduler(scheduler =>
+            {
+                scheduler.Schedule<RunSendPhoneTasks>()
+                    .EverySeconds(30);
+                scheduler.Schedule<RunSendPhoneTasksOne>()
+                    .EveryFiveMinutes();
+            });
             app.UseASF();
             
             app.UseOcelot().Wait();

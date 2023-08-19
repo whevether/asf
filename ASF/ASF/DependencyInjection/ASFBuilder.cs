@@ -38,7 +38,7 @@ namespace ASF.DependencyInjection
             // httpclient 
             Services.AddHttpClient();
             Services.AddSingleton<IHttpHelper, HttpHelper>();
-            // Services.AddScheduler();
+            Services.AddScheduler();
             this.AddDomainServices();
             this.AddAuthorization();
         }
@@ -94,6 +94,8 @@ namespace ASF.DependencyInjection
             Services.AddTransient<DictionaryService>();
             Services.AddTransient<RunSendPhoneTasks>();
             Services.AddTransient<UploadService>();
+            Services.AddTransient<RunSendPhoneTasks>();
+            Services.AddTransient<RunSendPhoneTasksOne>();
         }
         // /// <summary>
         // /// 添加账户仓储缓存

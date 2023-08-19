@@ -4556,6 +4556,22 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:ASF.Domain.Services.RunSendPhoneTasksOne">
+            <summary>
+            定时发送短信任务
+            </summary>
+        </member>
+        <member name="M:ASF.Domain.Services.RunSendPhoneTasksOne.#ctor(Microsoft.Extensions.Logging.ILogger{ASF.Domain.Services.RunSendPhoneTasksOne})">
+            <summary>
+            定时发送短信任务
+            </summary>
+        </member>
+        <member name="M:ASF.Domain.Services.RunSendPhoneTasksOne.Invoke">
+            <summary>
+            激活定时任务
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ASF.Domain.Services.TenancyService">
             <summary>
             租户服务
