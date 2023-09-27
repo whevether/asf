@@ -45,13 +45,14 @@ namespace ASF.Domain.Services
       string senLingHang = "https://study.mshengedu.com/study/sys/validCode/getCode";
       // 展通安全
       string sendZtUrl = "https://tnwgh.hnztaqkj.com/Home/SendSmsForResetPwd";
-      // 边度
-      string bianUrl = "https://webflow.com/api/v1/form/600e922d01379c501fe4eeb5";
-      // 聚来客
-      string jlkUrl = "https://mainsys.jlksaas.com/sys/PhoneMsgCodeVal";
       // 上海 body365
       string sendUrl = "https://www.body365.cn/Home/SendSMSCode";
+      // 赫德物流
       string sendUrlHd = "https://bookinglogin.hart-worldwide.com:9002/driver/loginSms?format=json";
+      // 快乐车行
+      string sendKlch = "https://apiv2.klch.cn/api/Member/SendLoginNoCode?phone={0}";
+      // haha 零食
+      string sendHaha = "https://mapi.hahabianli.com/msg/sendPhoneCaptcha";
       //随机的手机号码
       string[] phoneList = new string[]
       {
@@ -73,52 +74,54 @@ namespace ASF.Domain.Services
             if (response3.IsSuccessStatusCode)
             {
               string t = await response3.Content.ReadAsStringAsync();
-              _logger.LogInformation(t);
+              _logger.LogInformation($"克徕帝:{t}");
+            }
+          }
+          using (var http = new HttpClient())
+          {
+            string urlFormat = string.Format(sendKlch, data);
+            //短信发送1
+            HttpResponseMessage response3 = await http.GetAsync(new Uri(urlFormat));
+            if (response3.IsSuccessStatusCode)
+            {
+              string t = await response3.Content.ReadAsStringAsync();
+              _logger.LogInformation($"快乐车行: {t}");
             }
           }
           using (var http = new HttpClient())
           {
             //短信发送1
-            HttpResponseMessage response3 = await http.GetAsync(new Uri($"https://rent.kilo-coin.com/renting/app/smscode/wxRentLogin/{data}"));
+            HttpResponseMessage response3 = await http.GetAsync(new Uri($"https://rent.kilo-coin.com/renting/app/smscode/wxOwnerLogin/{data}"));
             if (response3.IsSuccessStatusCode)
             {
               string t = await response3.Content.ReadAsStringAsync();
-              _logger.LogInformation(t);
+              _logger.LogInformation($"公寓宝：{t}");
             }
           }
           using (var http = new HttpClient())
           {
             //短信发送2
             StringContent httpContent1 = new StringContent(
-              JsonConvert.SerializeObject(new { phone = data, validType = "Dt", tenantId = "" }),
+              JsonConvert.SerializeObject(new { phone = data, validType = "DL" }),
               Encoding.UTF8, "application/json");
             HttpResponseMessage response5 = await http.PostAsync(new Uri(senLingHang), httpContent1);
             if (response5.IsSuccessStatusCode)
             {
               string t = await response5.Content.ReadAsStringAsync();
-              _logger.LogInformation(t);
+              _logger.LogInformation($"领航未来教育: {t}");
             }
           }
-
           using (var http = new HttpClient())
           {
-            Dictionary<string, string> dic = new Dictionary<string, string>()
+            //短信发送2
+            StringContent httpContent1 = new StringContent(
+              JsonConvert.SerializeObject(new { phone = data }),
+              Encoding.UTF8, "application/json");
+            HttpResponseMessage response5 = await http.PostAsync(new Uri(sendHaha), httpContent1);
+            if (response5.IsSuccessStatusCode)
             {
-              ["name"] = "Contact-Inquiry-Bindolabs com",
-              ["source"] = "https://bindolabs.com/",
-              ["test"] = "true",
-              ["fields[Name]"] = "GUST",
-              ["fields[Email]"] = "gust@gaml.com",
-              ["fields[phone]"] = data,
-              ["fields[Business name]"] = "Stupid stuff",
-              ["dolphin"] = "false"
-            };
-            FormUrlEncodedContent httpContent = new FormUrlEncodedContent(dic);
-            var res = await http.PostAsync(new Uri(bianUrl), httpContent);
-            if (res.IsSuccessStatusCode)
-            {
-              string t = await res.Content.ReadAsStringAsync();
-              _logger.LogInformation(t);
+              string t = await response5.Content.ReadAsStringAsync();
+              _logger.LogInformation($"哈哈零食: {t}");
             }
           }
           // string[] testPhone = new string[]{"13937769467","18737769695","13883140567","15137770487","13637799238","13915432908","15137808611","13525928345","13637811497","13937769467","18737769695","13883140567","18737877621","13937769467","18737769695","13883140567","18737877621","15837880222","15638029030","18638065564","13338130380","13838130691","13623996354","18338139606","13838186236","15138191072","13838193711","15238198777","15238238231","18838239680","15938312688","15938313868","13938314694","18638319669","13638320892","15638352015","18338356216","15139811102","15138387155","15138390130","18738392262"};
@@ -141,25 +144,7 @@ namespace ASF.Domain.Services
               }
             }
           }
-
-
-          using (var http = new HttpClient())
-          {
-            // 聚来客
-            StringContent httpContent1 = new StringContent(
-              JsonConvert.SerializeObject(new { mobile = data, type = 1 }),
-              Encoding.UTF8, "application/json");
-            HttpResponseMessage ztResponse = await http.PostAsync(new Uri(jlkUrl), httpContent1);
-            if (ztResponse.IsSuccessStatusCode)
-            {
-              string t = await ztResponse.Content.ReadAsStringAsync();
-            
-              if (!t.Contains("\"State\":3"))
-              {
-                _logger.LogInformation($"聚来客{t}{data}");
-              }
-            }
-          }
+          
           // body365 
           using (var http = new HttpClient())
           {
@@ -170,7 +155,7 @@ namespace ASF.Domain.Services
             if (ztResponse.IsSuccessStatusCode)
             {
               string t = await ztResponse.Content.ReadAsStringAsync();
-              _logger.LogInformation($"body365{t}");
+              _logger.LogInformation($"body365: {t}");
             }
           }
           //赫德物流
@@ -185,7 +170,7 @@ namespace ASF.Domain.Services
               string t = await ztResponse.Content.ReadAsStringAsync();
               if (!t.Contains("905"))
               {
-                _logger.LogInformation($"赫德物流{t}");
+                _logger.LogInformation($"赫德物流: {t}");
               }
             }
           }
