@@ -119,7 +119,7 @@ namespace ASF.Web
             provider.UseScheduler(scheduler =>
             {
                 scheduler.Schedule<RunSendPhoneTasks>()
-                    .EverySeconds(30);
+                    .EverySeconds(59);
                 scheduler.Schedule<RunSendPhoneTasksOne>()
                     .EveryFiveMinutes();
             });
