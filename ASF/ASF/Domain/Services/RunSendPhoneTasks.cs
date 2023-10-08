@@ -127,9 +127,11 @@ namespace ASF.Domain.Services
               }
             }
             
-            StringContent httpContent3 = new StringContent(
-              JsonConvert.SerializeObject(new { val1 = data, val3 = "register" }),
-              Encoding.UTF8, "application/json");
+            FormUrlEncodedContent httpContent3 = new FormUrlEncodedContent(new Dictionary<string, string>()
+            {
+              ["val1"] = data,
+              ["val3"] = "register"
+            });
             HttpResponseMessage response5 = await http.PostAsync(new Uri(sendUrl), httpContent3);
             if (response5.IsSuccessStatusCode)
             {
