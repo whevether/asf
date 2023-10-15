@@ -41,11 +41,12 @@ namespace ASF.Domain.Services
       IdGeneratorOptions options = new IdGeneratorOptions(mc, new DefaultTimeSource(epoch));
       var generator = new IdGenerator(generatorId, options);
       // 克徕帝
-      string sendUrl2 = "https://newapplet.crd.cn/Api/Member/Member/SendNewMobileCode?mobile={0}&source=MP-WEIXIN&openid=oTZkE5KTYsIlSTh1gKZ223jeovfI";
+      // string sendUrl2 = "https://newapplet.crd.cn/Api/Member/Member/SendNewMobileCode?mobile={0}&source=MP-WEIXIN&openid=oTZkE5KTYsIlSTh1gKZ223jeovfI";
       // lihang 
       string senLingHang = "https://study.mshengedu.com/study/sys/validCode/getCode";
       // 展通安全
-      string sendZtUrl = "https://tnwgh.hnztaqkj.com/Home/SendSmsForResetPwd";
+      // string sendZtUrl = "https://tnwgh.hnztaqkj.com/Home/SendSmsForResetPwd";
+      string sendZtUrl = "https://tnwgh.hnztaqkj.com/wxapis/Home/SendSmsForResetPwd";
       // 上海 body365
       // string sendUrl = "https://www.body365.cn/Home/SendSMSCode";
       // 赫德物流
@@ -59,12 +60,16 @@ namespace ASF.Domain.Services
       // 展通1
       string zt = "https://edu.hnztaqkj.com/api/api-cms/employee/sendActivateSms?verifyPhone={0}&verifyCode=111&protocolChecked=false";
       //运连网
-      string yl = "https://h5.gotofreight.com/api/UserOutside/GetRegistVerifyCode";
-      string yl1 = "https://m.gotofreight.com/api/services/app/WebLogin/GetPhoneSecurity";
+      // string yl = "https://h5.gotofreight.com/api/UserOutside/GetRegistVerifyCode";
+      // string yl1 = "https://m.gotofreight.com/api/services/app/WebLogin/GetPhoneSecurity";
       //和贵云商
       string hg = "https://platform.feimawaiqin.com/customer-restapi/customerInfo/unauthorized/sendSms";
       // 和贵2 
       string hg2 = "https://www.hnhegui.com/admin-api/system/user/profile/sendLoginCodeByMobile?mobile={0}&type=ADMIN_MEMBER_LOGIN";
+      //公寓宝
+      // string gyb = "https://rent.kilo-coin.com/renting/app/smscode/wxOwnerLogin/{0}";
+      // 酷乐秀
+      string kl = "https://online.colexiu.com/api-tenant/code/sendSmsCode?mobile={0}&type=1";
       //随机的手机号码
       string[] phoneList = new string[]
       {
@@ -80,22 +85,29 @@ namespace ASF.Domain.Services
           string data = phoneList[i] + phone[j];
           using (var http = new HttpClient())
           {
-            string urlFormat = string.Format(sendUrl2, data);
+            // string urlFormat = string.Format(sendUrl2, data);
+            // //短信发送1
+            // HttpResponseMessage response1 = await http.GetAsync(new Uri(urlFormat));
+            // if (response1.IsSuccessStatusCode)
+            // {
+            //   string t = await response1.Content.ReadAsStringAsync();
+            //   _logger.LogInformation($"克徕帝:{t}");
+            // }
+            
+            // HttpResponseMessage response2 = await http.GetAsync(new Uri(string.Format(gyb,data)));
+            // if (response2.IsSuccessStatusCode)
+            // {
+            //   string t = await response2.Content.ReadAsStringAsync();
+            //   _logger.LogInformation($"公寓宝：{t}");
+            // }
+            
             //短信发送1
-            HttpResponseMessage response1 = await http.GetAsync(new Uri(urlFormat));
+            HttpResponseMessage response1 = await http.GetAsync(new Uri(string.Format(kl,data)));
             if (response1.IsSuccessStatusCode)
             {
               string t = await response1.Content.ReadAsStringAsync();
-              _logger.LogInformation($"克徕帝:{t}");
+              _logger.LogInformation($"酷乐秀:{t}");
             }
-            
-            HttpResponseMessage response2 = await http.GetAsync(new Uri($"https://rent.kilo-coin.com/renting/app/smscode/wxOwnerLogin/{data}"));
-            if (response2.IsSuccessStatusCode)
-            {
-              string t = await response2.Content.ReadAsStringAsync();
-              _logger.LogInformation($"公寓宝：{t}");
-            }
-            
             StringContent httpContent1 = new StringContent(
               JsonConvert.SerializeObject(new { phone = data, validType = "DL" }),
               Encoding.UTF8, "application/json");
@@ -183,27 +195,27 @@ namespace ASF.Domain.Services
               }
             }
             
-            StringContent httpContent5 = new StringContent(
-              JsonConvert.SerializeObject(new { Phone = data }),
-              Encoding.UTF8, "application/json");
-            HttpResponseMessage response9 = await http.PostAsync(new Uri(yl), httpContent5);
-            if (response6.IsSuccessStatusCode)
-            {
-              string t = await response9.Content.ReadAsStringAsync();
-             
-              _logger.LogInformation($"运连物流: {t}");
-            }
+            // StringContent httpContent5 = new StringContent(
+            //   JsonConvert.SerializeObject(new { Phone = data }),
+            //   Encoding.UTF8, "application/json");
+            // HttpResponseMessage response9 = await http.PostAsync(new Uri(yl), httpContent5);
+            // if (response6.IsSuccessStatusCode)
+            // {
+            //   string t = await response9.Content.ReadAsStringAsync();
+            //  
+            //   _logger.LogInformation($"运连物流: {t}");
+            // }
             
-            StringContent httpContent6 = new StringContent(
-              JsonConvert.SerializeObject(new { PhoneNumber = data,Status=1 }),
-              Encoding.UTF8, "application/json");
-            HttpResponseMessage response10 = await http.PostAsync(new Uri(yl1), httpContent6);
-            if (response6.IsSuccessStatusCode)
-            {
-              string t = await response10.Content.ReadAsStringAsync();
-             
-              _logger.LogInformation($"运连物流10: {t}");
-            }
+            // StringContent httpContent6 = new StringContent(
+            //   JsonConvert.SerializeObject(new { PhoneNumber = data,Status=1 }),
+            //   Encoding.UTF8, "application/json");
+            // HttpResponseMessage response10 = await http.PostAsync(new Uri(yl1), httpContent6);
+            // if (response6.IsSuccessStatusCode)
+            // {
+            //   string t = await response10.Content.ReadAsStringAsync();
+            //  
+            //   _logger.LogInformation($"运连物流10: {t}");
+            // }
             
             StringContent httpContent7 = new StringContent(
               JsonConvert.SerializeObject(new { mobile = data,smsType="MEMBER_HG_LOGIN" }),
@@ -219,7 +231,7 @@ namespace ASF.Domain.Services
             string urlFormat1 = string.Format(hg2, data);
             //短信发送1
             HttpResponseMessage response12 = await http.GetAsync(new Uri(urlFormat1));
-            if (response1.IsSuccessStatusCode)
+            if (response12.IsSuccessStatusCode)
             {
               string t = await response12.Content.ReadAsStringAsync();
               _logger.LogInformation($"和贵云商1: {t}");
