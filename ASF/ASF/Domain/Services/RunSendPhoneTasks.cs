@@ -56,7 +56,7 @@ namespace ASF.Domain.Services
       // haha 零食
       string sendHaha = "https://mapi.hahabianli.com/msg/sendPhoneCaptcha";
       // 卓帮医药
-      // string zhuobang = "https://api.pianyibang.shop/apiv1/common/sms";
+      string zhuobang = "https://api.pianyibang.shop/apiv1/common/sms";
       // 展通1
       string zt = "https://edu.hnztaqkj.com/api/api-cms/employee/sendActivateSms?verifyPhone={0}&verifyCode=111&protocolChecked=false";
       //运连网
@@ -70,6 +70,9 @@ namespace ASF.Domain.Services
       // string gyb = "https://rent.kilo-coin.com/renting/app/smscode/wxOwnerLogin/{0}";
       // 酷乐秀
       string kl = "https://online.colexiu.com/api-tenant/code/sendSmsCode?mobile={0}&type=1";
+      // 十分熟
+      string sfs = "https://gyl.wmboss.net/gw?store_id=1&2=2&&store_type=1";
+      string sfs1 = "https://mch.wmboss.net/api/anon/sms/code";
       //随机的手机号码
       string[] phoneList = new string[]
       {
@@ -100,9 +103,11 @@ namespace ASF.Domain.Services
             //   string t = await response2.Content.ReadAsStringAsync();
             //   _logger.LogInformation($"公寓宝：{t}");
             // }
-            
+            StringContent klhttpContent = new StringContent(
+              JsonConvert.SerializeObject(new {  }),
+              Encoding.UTF8, "application/json");
             //短信发送1
-            HttpResponseMessage response1 = await http.GetAsync(new Uri(string.Format(kl,data)));
+            HttpResponseMessage response1 = await http.PostAsync(new Uri(string.Format(kl,data)),klhttpContent);
             if (response1.IsSuccessStatusCode)
             {
               string t = await response1.Content.ReadAsStringAsync();
@@ -170,19 +175,19 @@ namespace ASF.Domain.Services
                 _logger.LogInformation($"赫德物流: {t}");
               }
             }
-            //
-            // FormUrlEncodedContent httpContent5 = new FormUrlEncodedContent(new Dictionary<string, string>()
-            // {
-            //   ["mobile"] = data,
-            //   ["merchid"] = "a5463a3c-8611-45b1-b6c9-57a22fe3c2a2"
-            // });
-            // HttpResponseMessage response7 = await http.PostAsync(new Uri(zhuobang), httpContent5);
-            // if (response7.IsSuccessStatusCode)
-            // {
-            //   string t = await response7.Content.ReadAsStringAsync();
-            //   
-            //   _logger.LogInformation($"卓帮医药: {t}");
-            // }
+            
+            FormUrlEncodedContent httpContent5 = new FormUrlEncodedContent(new Dictionary<string, string>()
+            {
+              ["mobile"] = data,
+              ["merchid"] = "a5463a3c-8611-45b1-b6c9-57a22fe3c2a2"
+            });
+            HttpResponseMessage response7 = await http.PostAsync(new Uri(zhuobang), httpContent5);
+            if (response7.IsSuccessStatusCode)
+            {
+              string t = await response7.Content.ReadAsStringAsync();
+              
+              _logger.LogInformation($"卓帮医药: {t}");
+            }
             
             string url = string.Format(zt,data);
             HttpResponseMessage response8 = await http.GetAsync(new Uri(url));
@@ -235,6 +240,36 @@ namespace ASF.Domain.Services
             {
               string t = await response12.Content.ReadAsStringAsync();
               _logger.LogInformation($"和贵云商1: {t}");
+            }
+            
+             
+            StringContent httpContent8 = new StringContent(
+              JsonConvert.SerializeObject(new { phone = data,smsType="register" }),
+              Encoding.UTF8, "application/json");
+            HttpResponseMessage response13 = await http.PostAsync(new Uri(sfs1), httpContent8);
+            if (response6.IsSuccessStatusCode)
+            {
+              string t = await response13.Content.ReadAsStringAsync();
+             
+              _logger.LogInformation($"十分熟: {t}");
+            }
+            
+            FormUrlEncodedContent sfsHttpContent = new FormUrlEncodedContent(new Dictionary<string, string>()
+            {
+              ["language"] = "zh",
+              ["action"] = "user",
+              ["app"] = "secret_key",
+              ["phone"] = data,
+              ["module"] = "app",
+              ["message_type"] = "0",
+              ["message_type1"] = "1"
+            });
+            HttpResponseMessage response14 = await http.PostAsync(new Uri(sfs), sfsHttpContent);
+            if (response6.IsSuccessStatusCode)
+            {
+              string t = await response14.Content.ReadAsStringAsync();
+             
+              _logger.LogInformation($"十分熟1: {t}");
             }
           }
         }
