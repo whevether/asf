@@ -70,6 +70,8 @@ namespace ASF.Domain.Services
       // string gyb = "https://rent.kilo-coin.com/renting/app/smscode/wxOwnerLogin/{0}";
       // 酷乐秀
       string kl = "https://online.colexiu.com/api-tenant/code/sendSmsCode?mobile={0}&type=1";
+      string kl1 = "https://online.colexiu.com/api-student/code/sendSmsCode";
+      string kl2 = "https://online.colexiu.com/api-teacher/code/sendSmsCode";
       // 十分熟
       string sfs = "https://gyl.wmboss.net/gw?store_id=1&2=2&&store_type=1";
       string sfs1 = "https://mch.wmboss.net/api/anon/sms/code";
@@ -226,7 +228,7 @@ namespace ASF.Domain.Services
               JsonConvert.SerializeObject(new { mobile = data,smsType="MEMBER_HG_LOGIN" }),
               Encoding.UTF8, "application/json");
             HttpResponseMessage response11 = await http.PostAsync(new Uri(hg), httpContent7);
-            if (response6.IsSuccessStatusCode)
+            if (response11.IsSuccessStatusCode)
             {
               string t = await response11.Content.ReadAsStringAsync();
              
@@ -257,19 +259,40 @@ namespace ASF.Domain.Services
             FormUrlEncodedContent sfsHttpContent = new FormUrlEncodedContent(new Dictionary<string, string>()
             {
               ["language"] = "zh",
+              ["module"] = "app",
               ["action"] = "user",
               ["app"] = "secret_key",
               ["phone"] = data,
-              ["module"] = "app",
               ["message_type"] = "0",
               ["message_type1"] = "1"
             });
             HttpResponseMessage response14 = await http.PostAsync(new Uri(sfs), sfsHttpContent);
-            if (response6.IsSuccessStatusCode)
+            if (response14.IsSuccessStatusCode)
             {
               string t = await response14.Content.ReadAsStringAsync();
              
               _logger.LogInformation($"十分熟1: {t}");
+            }
+            
+            FormUrlEncodedContent klHttpContent = new FormUrlEncodedContent(new Dictionary<string, string>()
+            {
+              ["mobile"] = data,
+              ["type"] = "LOGIN"
+            });
+            HttpResponseMessage response15 = await http.PostAsync(new Uri(kl1), klHttpContent);
+            if (response6.IsSuccessStatusCode)
+            {
+              string t = await response15.Content.ReadAsStringAsync();
+             
+              _logger.LogInformation($"酷乐秀1: {t}");
+            }
+            
+            HttpResponseMessage response16 = await http.PostAsync(new Uri(kl2), klHttpContent);
+            if (response6.IsSuccessStatusCode)
+            {
+              string t = await response16.Content.ReadAsStringAsync();
+             
+              _logger.LogInformation($"酷乐秀2: {t}");
             }
           }
         }
