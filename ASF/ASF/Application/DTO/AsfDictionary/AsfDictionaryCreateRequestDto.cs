@@ -27,6 +27,17 @@ namespace ASF.Application.DTO.AsfDictionary
         /// </summary>
         [Required(ErrorMessage = "字典值不能为空"),MaxLength(255,ErrorMessage = "最多输入255个值字符")]
         public string Value { get; set; }
+        
+        /// <summary>
+        /// 国家
+        /// </summary>
+        [Required(ErrorMessage = "国家名称不能为空")]
+        public string Country { get; set; }
+        /// <summary>
+        ///   国家id
+        /// </summary>
+        [Required(ErrorMessage = "国家Id不能为空")]
+        public string CountryId { get; set; }
         /// <summary>
         /// 字典扩充字段
         /// </summary>

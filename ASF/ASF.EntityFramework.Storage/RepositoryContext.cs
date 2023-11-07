@@ -857,21 +857,41 @@ namespace ASF.EntityFramework.Repository
                 e.Property(x => x.TenancyId).HasColumnName("tenancy_id").HasComment("租户id");
                 e.Property(x => x.Name)
                     .HasColumnName("name")
-                    .HasColumnType("varchar(250)")
+                    .HasColumnType("varchar(255)")
                     .HasComment("多语言名称");
-                e.Property(x => x.Languages)
-                    .HasColumnName("languages")
-                    .HasColumnType("varchar(250)")
-                    .HasComment("多语言名称");
+                e.Property(x => x.Country)
+                    .HasColumnName("country")
+                    .HasColumnType("varchar(255)")
+                    .HasComment("国家名称");
+                
+                e.Property(x => x.CountryCode)
+                    .HasColumnName("country_code")
+                    .HasColumnType("varchar(255)")
+                    .HasComment("国家语言code 利用国家code 分组 例如zh en 等等");
+                
+                e.Property(x => x.CountryId)
+                    .HasColumnName("country_id")
+                    .HasComment("国家id");
+                
                 e.Property(x => x.Key)
                     .HasColumnName("key")
                     .HasColumnType("varchar(500)")
-                    .HasComment("多语言key");
+                    .HasComment("多语言 key 例如 sex.max");
                 
                 e.Property(x => x.Value)
                     .HasColumnName("value")
-                    .HasColumnType("varchar(500)")
-                    .HasComment("多语言值");
+                    .HasColumnType("text")
+                    .HasComment("多语言值内容 例如 男");
+                
+                e.Property(x => x.AddUser)
+                    .HasColumnName("add_user")
+                    .HasColumnType("varchar(255)")
+                    .HasComment("添加者");
+                
+                e.Property(x => x.CreateTime)
+                    .HasColumnName("create_time")
+                    .HasColumnType("timestamp")
+                    .HasDefaultValueSql("CURRENT_TIMESTAMP");
             });
             modelBuilder.Entity<AsfDictionary>(e =>
             {
@@ -887,6 +907,20 @@ namespace ASF.EntityFramework.Repository
                 e.Property(x => x.Key).HasColumnName("key").HasColumnType("varchar(255)").HasComment("字典键");
                 e.Property(x => x.Value).HasColumnName("value").HasColumnType("varchar(255)").HasComment("字典值");
                 e.Property(x => x.Options).HasColumnName("options").HasColumnType("varchar(255)").HasComment("字典额外配置");
+                e.Property(x => x.Country)
+                    .HasColumnName("country")
+                    .HasColumnType("varchar(255)")
+                    .HasComment("国家名称");
+                
+                e.Property(x => x.CountryId)
+                    .HasColumnName("country_id")
+                    .HasComment("国家id");
+                
+                e.Property(x => x.AddUser)
+                    .HasColumnName("add_user")
+                    .HasColumnType("varchar(255)")
+                    .HasComment("添加者");
+                
                 e.Property(x => x.CreateTime)
                     .HasColumnName("create_time")
                     .HasColumnType("timestamp")

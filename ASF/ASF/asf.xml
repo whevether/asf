@@ -811,6 +811,16 @@
             字典值
             </summary>
         </member>
+        <member name="P:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto.Country">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto.CountryId">
+            <summary>
+              国家id
+            </summary>
+        </member>
         <member name="P:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto.Options">
             <summary>
             字典扩充字段
@@ -2118,9 +2128,19 @@
             多语言名称
             </summary>
         </member>
-        <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.Languages">
+        <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.Country">
             <summary>
-            语种
+            国家
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.CountryCode">
+            <summary>
+            国家语言code 利用国家code 分组 例如zh en 等等
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.CountryId">
+            <summary>
+              国家id
             </summary>
         </member>
         <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.Key">
@@ -3150,7 +3170,7 @@
         </member>
         <member name="P:ASF.Domain.Entities.AsfDictionary.Key">
             <summary>
-            字典Key
+            字典键 关联多语言表的key
             </summary>
         </member>
         <member name="P:ASF.Domain.Entities.AsfDictionary.Value">
@@ -3161,6 +3181,21 @@
         <member name="P:ASF.Domain.Entities.AsfDictionary.Options">
             <summary>
             字典扩充字段
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfDictionary.AddUser">
+            <summary>
+            添加者
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfDictionary.Country">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfDictionary.CountryId">
+            <summary>
+              国家id
             </summary>
         </member>
         <member name="P:ASF.Domain.Entities.AsfDictionary.CreateTime">
@@ -3825,19 +3860,39 @@
             租户id
             </summary>
         </member>
-        <member name="P:ASF.Domain.Entities.Translate.Languages">
+        <member name="P:ASF.Domain.Entities.Translate.Country">
             <summary>
-            语种
+            国家
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Translate.CountryCode">
+            <summary>
+            国家语言code 利用国家code 分组 例如zh en 等等
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Translate.CountryId">
+            <summary>
+              国家id
             </summary>
         </member>
         <member name="P:ASF.Domain.Entities.Translate.Key">
             <summary>
-             key
+             多语言 key 例如 sex.max
             </summary>
         </member>
         <member name="P:ASF.Domain.Entities.Translate.Value">
             <summary>
-            多语言值
+            多语言值内容 例如 男
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Translate.AddUser">
+            <summary>
+            添加者
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Translate.CreateTime">
+            <summary>
+            创建时间
             </summary>
         </member>
         <member name="T:ASF.Domain.Entities.IEntity">

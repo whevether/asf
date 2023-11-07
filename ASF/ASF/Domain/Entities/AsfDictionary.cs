@@ -21,7 +21,7 @@ namespace ASF.Domain.Entities
         /// </summary>
         public long? TenancyId { get; set; }
         /// <summary>
-        /// 字典Key
+        /// 字典键 关联多语言表的key
         /// </summary>
         public string Key { get; set; }
         /// <summary>
@@ -32,6 +32,18 @@ namespace ASF.Domain.Entities
         /// 字典扩充字段
         /// </summary>
         public string Options { get; set; }
+        /// <summary>
+        /// 添加者
+        /// </summary>
+        public string AddUser { get; set; }
+        /// <summary>
+        /// 国家
+        /// </summary>
+        public string Country { get; set; }
+        /// <summary>
+        ///   国家id
+        /// </summary>
+        public long CountryId { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>
