@@ -3203,6 +3203,51 @@
             创建时间
             </summary>
         </member>
+        <member name="T:ASF.Domain.Entities.Country">
+            <summary>
+             国家实体对象
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Country.Name">
+            <summary>
+            国家名称
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Country.LanguageCode">
+            <summary>
+            国家代码 code
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Country.CurrentType">
+            <summary>
+            国家币种
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Country.Ratio">
+            <summary>
+            国家与RMB之间汇率
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Country.WithdrawalRatio">
+            <summary>
+            提现手续费利率
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Country.Status">
+            <summary>
+            状态 0 禁用， 1 启用
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Country.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.Country.UpdateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
         <member name="T:ASF.Domain.Entities.Department">
             <summary>
             部门

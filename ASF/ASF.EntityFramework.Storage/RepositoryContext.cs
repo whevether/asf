@@ -859,6 +859,7 @@ namespace ASF.EntityFramework.Repository
                     .HasColumnName("name")
                     .HasColumnType("varchar(255)")
                     .HasComment("多语言名称");
+                
                 e.Property(x => x.Country)
                     .HasColumnName("country")
                     .HasColumnType("varchar(255)")

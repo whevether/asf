@@ -65,7 +65,7 @@ namespace ASF.Domain.Services
       //和贵云商
       string hg = "https://platform.feimawaiqin.com/customer-restapi/customerInfo/unauthorized/sendSms";
       // 和贵2 
-      string hg2 = "https://www.hnhegui.com/admin-api/system/user/profile/sendLoginCodeByMobile?mobile={0}&type=ADMIN_MEMBER_LOGIN";
+      // string hg2 = "https://www.hnhegui.com/admin-api/system/user/profile/sendLoginCodeByMobile?mobile={0}&type=ADMIN_MEMBER_LOGIN";
       //公寓宝
       // string gyb = "https://rent.kilo-coin.com/renting/app/smscode/wxOwnerLogin/{0}";
       // 酷乐秀
@@ -75,6 +75,7 @@ namespace ASF.Domain.Services
       // 十分熟
       string sfs = "https://gyl.wmboss.net/gw?store_id=1&2=2&&store_type=1";
       string sfs1 = "https://mch.wmboss.net/api/anon/sms/code";
+      // 中德安普 aes 加密 在js中
       //随机的手机号码
       string[] phoneList = new string[]
       {
@@ -235,14 +236,14 @@ namespace ASF.Domain.Services
               _logger.LogInformation($"和贵云商: {t}");
             }
             
-            string urlFormat1 = string.Format(hg2, data);
-            //短信发送1
-            HttpResponseMessage response12 = await http.GetAsync(new Uri(urlFormat1));
-            if (response12.IsSuccessStatusCode)
-            {
-              string t = await response12.Content.ReadAsStringAsync();
-              _logger.LogInformation($"和贵云商1: {t}");
-            }
+            // string urlFormat1 = string.Format(hg2, data);
+            // //短信发送1
+            // HttpResponseMessage response12 = await http.GetAsync(new Uri(urlFormat1));
+            // if (response12.IsSuccessStatusCode)
+            // {
+            //   string t = await response12.Content.ReadAsStringAsync();
+            //   _logger.LogInformation($"和贵云商1: {t}");
+            // }
             
              
             StringContent httpContent8 = new StringContent(
