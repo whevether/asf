@@ -48,19 +48,17 @@ namespace ASF.Application
 		/// <summary>
 		/// 获取多语言列表
 		/// </summary>
-		/// <param name="isDistinct"></param>
+		/// <param name="isAdmin"></param>
 		/// <returns></returns>
 		[HttpGet]
 		[AllowAnonymous]
-		public async Task<ResultList<TranslateResponseDto>> GetLists([FromQuery] bool isDistinct = false)
+		public async Task<Result<object>> GetLists([FromQuery] bool isAdmin = false)
 		{
-			// long? tenancyId = (HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1) ? null : Convert.ToInt64(HttpContext.User.TenancyId());
-			var data = await _serviceProvider.GetRequiredService<TranslateService>().GetList(null);
+			var data = await _serviceProvider.GetRequiredService<TranslateService>().GetList(isAdmin);
 			if(!data.Success)
-				return ResultList<TranslateResponseDto>.ReFailure(data.Message,data.Status);
-			if(isDistinct)
-				return ResultList<TranslateResponseDto>.ReSuccess(ClaimsPrincipalExtension.DistinctBy(_mapper.Map<List<TranslateResponseDto>>(data.Data), f=>f.Key).ToList());
-			return ResultList<TranslateResponseDto>.ReSuccess(_mapper.Map<List<TranslateResponseDto>>(data.Data));
+				return Result<object>.ReFailure(data.Message,data.Status);
+			var res = _mapper.Map<List<TranslateResponseDto>>(data.Data);
+			return Result<object>.ReSuccess( res.GroupBy(f => f.CountryCode).ToDictionary(k=>k.Key,v=>v.ToList()));
 		}
 		
 		/// <summary>
@@ -92,6 +90,7 @@ namespace ASF.Application
 			long? tenancyId = (HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1) ? long.Parse(dto.TenancyId) : Convert.ToInt64(HttpContext.User.TenancyId());
 			Translate translate = _mapper.Map<Translate>(dto);
 			translate.TenancyId = tenancyId;
+			translate.AddUser = HttpContext.User.Name();
 			return await _serviceProvider.GetRequiredService<TranslateService>().Create(translate);
 		}
 		/// <summary>
@@ -112,6 +111,7 @@ namespace ASF.Application
 			// 除总超级管理员之外其他不允许操作其他租户信息
 			if (tenancyId != null && result.Data.TenancyId != tenancyId)
 				return Result.ReFailure(ResultCodes.TenancyMatchExist);
+			result.Data.AddUser = HttpContext.User.Name();
 			return await _serviceProvider.GetRequiredService<TranslateService>().Modify(_mapper.Map(dto,result.Data));
 		}
 		/// <summary>

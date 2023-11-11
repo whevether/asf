@@ -34,6 +34,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<ISecurityTokenRepository, SecurityTokenRepository>();
             services.AddScoped<IAsfDictionaryRepository, AsfDictionaryRepository>();
+            services.AddScoped<ICountryRepositories, CountryRepositories>();
         }
     }
 }

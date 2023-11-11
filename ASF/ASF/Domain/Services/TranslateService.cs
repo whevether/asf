@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -78,19 +79,12 @@ namespace ASF.Domain.Services
 		/// <summary>
 		/// 获取多语言列表
 		/// </summary>
-		/// <param name="tenancyId"></param>
+		/// <param name="isAdmin">是否为管理后台</param>
 		/// <returns></returns>
-		public async Task<ResultList<Translate>> GetList(long? tenancyId = null)
+		public async Task<ResultList<Translate>> GetList(bool isAdmin = false)
 		{
-			if (tenancyId != null)
-			{
-				IEnumerable<Translate> l = await _translateRepositories.GetEntities(f => f.Id != 0 && f.TenancyId == tenancyId);
-				if(l == null)
-					return ResultList<Translate>.ReFailure(ResultCodes.TranslateNotExist);
-				return ResultList<Translate>.ReSuccess(l.ToList());
-			}
-
-			IEnumerable<Translate> list = await _translateRepositories.GetEntities(f => f.Id != 0);
+			var b = Convert.ToUInt32(isAdmin);
+			IEnumerable<Translate> list = await _translateRepositories.GetEntities(f => f.IsAdmin == b);
 			if(list == null)
 				return ResultList<Translate>.ReFailure(ResultCodes.TranslateNotExist);
 			return ResultList<Translate>.ReSuccess(list.ToList());

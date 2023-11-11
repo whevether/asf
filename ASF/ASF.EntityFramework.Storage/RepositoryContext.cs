@@ -884,6 +884,10 @@ namespace ASF.EntityFramework.Repository
                     .HasColumnType("text")
                     .HasComment("多语言值内容 例如 男");
                 
+                e.Property(x => x.IsAdmin)
+                    .HasColumnName("is_admin")
+                    .HasComment("是否为管理后台 0 否 1 是");
+                
                 e.Property(x => x.AddUser)
                     .HasColumnName("add_user")
                     .HasColumnType("varchar(255)")
@@ -891,6 +895,56 @@ namespace ASF.EntityFramework.Repository
                 
                 e.Property(x => x.CreateTime)
                     .HasColumnName("create_time")
+                    .HasColumnType("timestamp")
+                    .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            });
+            
+            modelBuilder.Entity<Country>(e =>
+            {
+                e.ToTable("asf_country",f=>f.HasComment("国家表"));
+                e.HasKey(x => x.Id);
+                
+                e.Property(x=> x.Id).HasColumnName("id").ValueGeneratedOnAdd();
+                
+                //名称索引
+                e.HasIndex(x => x.Name);
+                e.HasIndex(x => x.LanguageCode);
+                
+                e.Property(x => x.Name)
+                    .HasColumnName("name")
+                    .HasColumnType("varchar(255)")
+                    .HasComment("国家名称");
+                
+                e.Property(x => x.LanguageCode)
+                    .HasColumnName("language_code")
+                    .HasColumnType("varchar(255)")
+                    .HasComment("国家代码 code");
+                
+                e.Property(x => x.CurrencyType)
+                    .HasColumnName("currency_type")
+                    .HasColumnType("varchar(255)")
+                    .HasComment("国家币种");
+                
+                e.Property(x => x.Ratio)
+                    .HasColumnName("ratio")
+                    .HasComment("国家与RMB之间汇率");
+                
+                e.Property(x => x.WithdrawalRatio)
+                    .HasColumnName("withdrawal_ratio")
+                    .HasComment("提现手续费利率");
+                
+                e.Property(x => x.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("1")
+                    .HasComment("状态 0 禁用， 1 启用");
+                
+                e.Property(x => x.CreateTime)
+                    .HasColumnName("create_time")
+                    .HasColumnType("timestamp")
+                    .HasDefaultValueSql("CURRENT_TIMESTAMP");
+                
+                e.Property(x => x.UpdateTime)
+                    .HasColumnName("update_time")
                     .HasColumnType("timestamp")
                     .HasDefaultValueSql("CURRENT_TIMESTAMP");
             });

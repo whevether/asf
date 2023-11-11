@@ -581,8 +581,8 @@ CREATE TABLE "public"."asf_country" (
     "id" bigint NOT NULL,
     "name" character varying(255) NOT NULL,
     "language_code" character varying(255) NOT NULL,
-    "current_type" character varying(255) NOT NULL,
-    "ratio " numeric DEFAULT 0,
+    "currency_type" character varying(255) NOT NULL,
+    "ratio" numeric DEFAULT 0,
     "withdrawal_ratio" numeric DEFAULT 0,
     "status" integer DEFAULT 1,
     "create_time" timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -619,17 +619,17 @@ COMMENT ON COLUMN "public"."asf_country"."language_code" IS '国家code';
 
 
 --
--- Name: COLUMN "asf_country"."current_type"; Type: COMMENT; Schema: public; Owner: -
+-- Name: COLUMN "asf_country"."currency_type"; Type: COMMENT; Schema: public; Owner: -
 --
 
-COMMENT ON COLUMN "public"."asf_country"."current_type" IS '国家币种';
+COMMENT ON COLUMN "public"."asf_country"."currency_type" IS '国家币种';
 
 
 --
--- Name: COLUMN "asf_country"."ratio "; Type: COMMENT; Schema: public; Owner: -
+-- Name: COLUMN "asf_country"."ratio"; Type: COMMENT; Schema: public; Owner: -
 --
 
-COMMENT ON COLUMN "public"."asf_country"."ratio " IS '国家与RMB之间汇率';
+COMMENT ON COLUMN "public"."asf_country"."ratio" IS '国家与RMB之间汇率';
 
 
 --
@@ -1902,7 +1902,8 @@ CREATE TABLE "public"."asf_translate" (
     "country_code" character varying(255) NOT NULL,
     "country_id" bigint NOT NULL,
     "add_user" character varying(255) NOT NULL,
-    "create_time" timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+    "create_time" timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    "is_admin" smallint DEFAULT 0
 );
 
 
@@ -1977,6 +1978,13 @@ COMMENT ON COLUMN "public"."asf_translate"."create_time" IS '创建时间';
 
 
 --
+-- Name: COLUMN "asf_translate"."is_admin"; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON COLUMN "public"."asf_translate"."is_admin" IS '是否为管理后台 0 否 1 是';
+
+
+--
 -- Name: asf_translate_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2012,7 +2020,7 @@ INSERT INTO "public"."asf_account_role" VALUES (1, 1, 3, '2022-11-19 12:47:27.01
 --
 
 INSERT INTO "public"."asf_accounts" VALUES (348851403578789888, 1, 2, 'test', 'test111', 'cu7mQ8t0LplfAp5GiAbi/6dwkZhZcM/anBnxn9Pn/6E=', 'bfdf4f78-27fd-43d4-b24f-c11824d27b8b', '86+', NULL, NULL, 1, 0, 2, 1, '2022-11-19 15:30:56.104313', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."asf_accounts" VALUES (1, 1, 2, 'keep_wan', 'admin', '20V6MgmX8XVtiRz10AI4Ib5H16a9JyrNmSwmgJ2k0iI=', '8283e4c3-f87e-4d85-85fb-f5c0de063992', '86+13800000000', 'admin@qq.com', 'https://minioapi.zytravel.shop/avatar/333128767074963456avatarGroup1052.png', 1, 0, 1, 0, '2021-11-15 07:21:24.550098', '127.0.0.1', '2023-11-10 15:31:43.387193+00', '本地', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NjMwMzAyLCJleHAiOjE2OTk3MTY3MDIsImlhdCI6MTY5OTYzMDMwMiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.Y48UGWm04cI3QuJjd6ABNsA4bHEsHZF4lKAYs_5VnmIzgRwS0x5YBnD9nv9XnOCXrjOb4fSajFNHWYBJHCeKlUyCRdKi4fVol6M81l5Pbtbi6pK-lbPa285k9MAU9YPv1DaptakEIhQC4q5Z1zubh_2VEZPBx_iqbS5PyfkNEj3yTrYu7CB34fARQN578PMAMS78NAS5tTM3jKHy9xNqKxgPiowA2Ficp6gB-jVs4fdVgiY451yGD1wa7gwPPG2aQ_I73tbd-5N5APrsbE_QubE9vo3BObOhGBZG6pbhamMDZmHzrOpzd4YU_uKWkzkGPgpdpbYxOKHWkEqc9JwE-w', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NjMwMzAyLCJleHAiOjE2OTk3NTk5MDIsImlhdCI6MTY5OTYzMDMwMiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.Kf255aUcD-PKbIa1yjGerVYWwzDid8n3B6CeTDj5IwFnc_tHNrpLdL3V_kTrZB5jlrOlFgWKnsL8ml3RIX4Q8tR5wH6bqigZy1hgUNFdXCDpmt1stU8SU1HnKrZhURmztFuzRA6FnqI0xkwAnAB_ksuHBiU6GGgiHy5lyH1v-iAx_TdIR8HjGtBZvT99IbbsmD4EyxBLtwSgqR5OsQbm4uIAFrrC2KzVqCCtLeead8D09JVsy3bf_YHAy5uMjqZ09K9ladr6LdDd2pJbK0CVpbiXNYOX02x93-vyD3sVzLtL6vSqtJUt6D6M_gyhv_u5Zre_l3cAK547dWfJqcqlrA', '2023-11-11 15:31:42.714573+00');
+INSERT INTO "public"."asf_accounts" VALUES (1, 1, 2, 'keep_wan', 'admin', '20V6MgmX8XVtiRz10AI4Ib5H16a9JyrNmSwmgJ2k0iI=', '8283e4c3-f87e-4d85-85fb-f5c0de063992', '86+13800000000', 'admin@qq.com', 'https://minioapi.zytravel.shop/avatar/333128767074963456avatarGroup1052.png', 1, 0, 1, 0, '2021-11-15 07:21:24.550098', '127.0.0.1', '2023-11-11 15:56:26.548878+00', '本地', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzE4MTg1LCJleHAiOjE2OTk4MDQ1ODUsImlhdCI6MTY5OTcxODE4NSwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.AFHg_zcWof51IKaDN8jfk-A9q-YEZgwdgOPJAZpPuM1FbXJxI_CX_4AtJBwn1O7B4oyXcAQpawceBPHSiCqZ_c7vrsYzggKnDB5DbefOOILONcav4VDYJWQizOQhdPuNDIkRcGihwSbnMyfO2X2rptf0sr_b2CzTetd4wBs1S-zbNlFSWFE58yadBP3ejtzl6y-oxrnt1OPGX3jjScuAIHF6dYrFq4eBkw5vD8JPSNq3XN2_24P5Id82J1CRrUWFnGcuremm60Fsnb94IfFKcPj6A9I9yFOoML6Q3rX8yRDCETPEFjPlG9epqYU_bBrZ9HtuhFJjUSSP_Hr4RN4SSQ', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzE4MTg2LCJleHAiOjE2OTk4NDc3ODYsImlhdCI6MTY5OTcxODE4NiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.WFQsAz3otFAHhfFX-9Qk8Xk7LKFyz57vdJeyLkkJlgVhWOSxjZ_FkfJ6NAzM36xFR0tt9GLPlcUZjKNc0xRHqPaNzf0eZ6x95iZlmiF3xrpWoVGjjKutEjpnT-a7Ldek08AVJ8O6gPPS55FoLnaLDFlG5pUAgFiBaZnToZHVQzNo5FvbbcVk44H4DriD2FtsB2v-pMzYlkBQ-iGnD4PVtloz2pT0iafcoQpMrmTj0FNQomzN876f4M847NjZIW0BiNapUXeeENHzz_zOjUIPrpdwO4c51yGhukH3itwd5unFI1iadeC-jhD40lJq9DQ0CZX_nyq-5lOYVljkXJALhA', '2023-11-12 15:56:26.046012+00');
 
 
 --
@@ -2059,7 +2067,6 @@ INSERT INTO "public"."asf_apis" VALUES (40, 7, '删除角色', 1, 2, '/api/asf/r
 INSERT INTO "public"."asf_apis" VALUES (41, 7, '是否禁用角色', 1, 2, '/api/asf/role/modifystatus', 'post,put', 1, '是否禁用角色', 1, 1, '2022-11-19 12:47:26.619325');
 INSERT INTO "public"."asf_apis" VALUES (42, 7, '角色分配权限', 1, 2, '/api/asf/role/assignpermission', 'post,put', 1, '角色分配权限', 1, 1, '2022-11-19 12:47:26.62199');
 INSERT INTO "public"."asf_apis" VALUES (43, 9, '获取日志列表', 1, 2, '/api/asf/audio/getloglist', 'get', 0, '获取日志信息列表权限', 1, 1, '2022-11-19 12:47:26.624515');
-INSERT INTO "public"."asf_apis" VALUES (44, 9, '删除日志', 1, 2, '/api/asf/audio/deletelog', 'post,delete', 1, '删除日志信息权限', 1, 1, '2022-11-19 12:47:26.627332');
 INSERT INTO "public"."asf_apis" VALUES (45, 10, '获取调度任务列表', 1, 2, '/api/asf/task/getlist', 'get', 0, '获取调度任务信息列表权限', 1, 1, '2022-11-19 12:47:26.629922');
 INSERT INTO "public"."asf_apis" VALUES (39, 389447011546656768, '获取角色详情', 1, 2, '/api/asf/role/details', 'get', 0, '获取角色详情权限', 1, 1, '2022-11-19 12:47:26.614018');
 INSERT INTO "public"."asf_apis" VALUES (46, 10, '添加调度任务', 1, 2, '/api/asf/task/create', 'post', 1, '添加调度任务信息权限', 1, 1, '2022-11-19 12:47:26.632616');
@@ -2104,12 +2111,26 @@ INSERT INTO "public"."asf_apis" VALUES (85, 16, '上传文件', 1, 1, '/api/asf/
 INSERT INTO "public"."asf_apis" VALUES (61, 389447780190613504, '获取部门详情', 1, 2, '/api/asf/department/details', 'get', 0, '获取部门详情权限', 1, 1, '2022-11-19 12:47:26.682653');
 INSERT INTO "public"."asf_apis" VALUES (5, 389431849661984768, '获取账户详情', 1, 2, '/api/asf/account/details', 'get', 0, '获取账户信息详情权限', 1, 1, '2022-11-19 12:47:26.541004');
 INSERT INTO "public"."asf_apis" VALUES (20, 394410371264667648, '获取权限详情', 1, 2, '/api/asf/permission/details', 'get', 0, '获取权限详情权限', 1, 1, '2022-11-19 12:47:26.577645');
+INSERT INTO "public"."asf_apis" VALUES (478195627765690368, 478194271101284352, '获取国家分页列表', 1, 2, '/api/asf/country/getlist', 'get', 0, '获取国家分页列表', 1, 1, '2023-11-11 13:38:42.179308');
+INSERT INTO "public"."asf_apis" VALUES (478195852186120192, 478194271101284352, '获取所有国家列表', 1, 1, '/api/asf/country/getlists', 'get', 0, '获取所有国家列表', 1, 1, '2023-11-11 13:39:35.668905');
+INSERT INTO "public"."asf_apis" VALUES (478196634209906688, 478194271101284352, '修改国家', 1, 2, '/api/asf/country/modify', 'post,put', 1, '修改国家', 0, 1, '2023-11-11 13:42:42.122734');
+INSERT INTO "public"."asf_apis" VALUES (478196317766447104, 478194271101284352, '添加国家', 1, 2, '/api/asf/country/create', 'post', 1, '添加国家', 1, 1, '2023-11-11 13:41:26.675366');
+INSERT INTO "public"."asf_apis" VALUES (478196932382978048, 478194271101284352, '获取国家详情', 1, 2, '/api/asf/country/getdetails', 'get', 0, '获取国家详情', 1, 1, '2023-11-11 13:43:53.215507');
+INSERT INTO "public"."asf_apis" VALUES (44, 9, '删除日志', 1, 2, '/api/asf/audio/deletelog', 'post,delete', 0, '删除日志信息权限', 1, 1, '2022-11-19 12:47:26.627332');
+INSERT INTO "public"."asf_apis" VALUES (478197264722849792, 478194271101284352, '删除国家', 1, 2, '/api/asf/country/delete/[0-9]{1,100}', 'post', 1, '删除国家', 1, 1, '2023-11-11 13:45:12.454684');
 
 
 --
 -- Data for Name: asf_country; Type: TABLE DATA; Schema: public; Owner: -
 --
 
+INSERT INTO "public"."asf_country" VALUES (478208138663997440, '印尼', 'IDN', 'IDR', 2153.14, 1.2, 1, '2023-11-11 14:28:24.920281', '2023-11-11 14:28:24.920281');
+INSERT INTO "public"."asf_country" VALUES (478206895237410816, '中国', 'ZH', 'CNY', 1, 0.08, 1, '2023-11-11 14:23:28.568622', '2023-11-11 14:23:28.568622');
+INSERT INTO "public"."asf_country" VALUES (478209018306015232, '马来西亚', 'MYS', 'MYR', 0.6459, 1.3, 1, '2023-11-11 14:31:54.676922', '2023-11-11 14:31:54.676922');
+INSERT INTO "public"."asf_country" VALUES (478209762849501184, '越南', 'VN', 'VND', 3337.06, 0.8, 1, '2023-11-11 14:34:52.194722', '2023-11-11 14:34:52.194722');
+INSERT INTO "public"."asf_country" VALUES (478209996732280832, '菲律宾', 'PHL', 'PHP', 7.6609, 1.2, 1, '2023-11-11 14:35:47.959581', '2023-11-11 14:35:47.959581');
+INSERT INTO "public"."asf_country" VALUES (478211147452166144, '泰国', 'TB', 'THB', 4.9319, 1.3, 1, '2023-11-11 14:40:22.259135', '2023-11-11 14:40:22.259135');
+INSERT INTO "public"."asf_country" VALUES (478211559135686656, '印度', 'IND', 'INR', 11.4296, 1.22, 1, '2023-11-11 14:42:00.41133', '2023-11-11 14:42:00.41133');
 
 
 --
@@ -2183,8 +2204,67 @@ INSERT INTO "public"."asf_department_role" VALUES (17, 3, 17, '2022-11-19 12:47:
 -- Data for Name: asf_loginfos; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO "public"."asf_loginfos" VALUES (477861682728894464, 1, 'admin', 1, 'UsernameAndPassword', '127.0.0.1', '本地', NULL, '2023-11-10 15:31:43.518845', NULL, NULL, NULL, '登录成功');
 INSERT INTO "public"."asf_loginfos" VALUES (477861788005924864, 1, 'admin', 2, '角色分配权限', '127.0.0.1', '本地', 7, '2023-11-10 15:32:08.6048', '/api/asf/role/assignPermission', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478193957497368576, 1, 'admin', 2, '删除日志', '127.0.0.1', '本地', 9, '2023-11-11 13:32:03.887433', '/api/asf/audio/deletelog', '{"ids":["477861682728894464","478176029454954496","478193842451804160"]}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478194271432634368, 1, 'admin', 2, '添加权限', '127.0.0.1', '本地', 4, '2023-11-11 13:33:18.738687', '/api/asf/permission/create', '{"tenancyId":"1","parentId":"2","code":"/control/country","name":"国家权限","description":"国家权限","type":1,"isSystem":1}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478195316393144320, 1, 'admin', 2, '添加菜单', '127.0.0.1', '本地', 5, '2023-11-11 13:37:27.921447', '/api/asf/menu/create', '{"tenancyId":"1","permissionId":"478194271101284352","title":"国家管理","menuUrl":"/control/country","icon":"icon-dash_board","subtitle":"国家管理","description":"国家管理","isSystem":1}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478195628583579648, 1, 'admin', 2, '添加api', '127.0.0.1', '本地', 6, '2023-11-11 13:38:42.357511', '/api/asf/api/create', '{"tenancyId":"1","permissionId":"478194271101284352","name":"获取国家列表","path":"/api/asf/country/getlist","isSystem":1,"type":2,"httpMethods":"get","description":"获取国家列表"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478195852630716416, 1, 'admin', 2, '添加api', '127.0.0.1', '本地', 6, '2023-11-11 13:39:35.774187', '/api/asf/api/create', '{"tenancyId":"1","permissionId":"478194271101284352","name":"获取所有国家列表","path":"/api/asf/country/getlists","type":1,"httpMethods":"get","description":"获取所有国家列表"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478196057950285824, 1, 'admin', 2, '修改api', '127.0.0.1', '本地', 6, '2023-11-11 13:40:24.728355', '/api/asf/api/modify', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478196318332678144, 1, 'admin', 2, '添加api', '127.0.0.1', '本地', 6, '2023-11-11 13:41:26.81082', '/api/asf/api/create', '{"tenancyId":"1","permissionId":"478194271101284352","name":"添加国家","path":"/api/asf/country/create","isSystem":1,"type":2,"httpMethods":"post","description":"添加国家"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478196406182375424, 1, 'admin', 2, '修改api', '127.0.0.1', '本地', 6, '2023-11-11 13:41:47.756684', '/api/asf/api/modify', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478196635224928256, 1, 'admin', 2, '添加api', '127.0.0.1', '本地', 6, '2023-11-11 13:42:42.366582', '/api/asf/api/create', '{"tenancyId":"1","permissionId":"478194271101284352","name":"修改国家","path":"/api/asf/country/modify","isLogger":1,"type":2,"httpMethods":"post,put","description":"修改国家"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478196683417481216, 1, 'admin', 2, '修改api', '127.0.0.1', '本地', 6, '2023-11-11 13:42:53.856228', '/api/asf/api/modify', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478196932714328064, 1, 'admin', 2, '添加api', '127.0.0.1', '本地', 6, '2023-11-11 13:43:53.296905', '/api/asf/api/create', '{"tenancyId":"1","permissionId":"478194271101284352","name":"获取国家详情","path":"/api/asf/country/getdetails","isSystem":1,"type":2,"httpMethods":"get","description":"获取国家详情"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478197026582851584, 1, 'admin', 2, '修改api', '127.0.0.1', '本地', 6, '2023-11-11 13:44:15.676284', '/api/asf/api/modify', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478197265008062464, 1, 'admin', 2, '添加api', '127.0.0.1', '本地', 6, '2023-11-11 13:45:12.523646', '/api/asf/api/create', '{"tenancyId":"1","permissionId":"478194271101284352","name":"删除国家","path":"/api/asf/country/delete","isLogger":1,"isSystem":1,"type":2,"httpMethods":"post","description":"删除国家"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478197342694961152, 1, 'admin', 2, '角色分配权限', '127.0.0.1', '本地', 7, '2023-11-11 13:45:31.044729', '/api/asf/role/assignPermission', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478204119020892160, 1, 'admin', 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 14:12:26.662063', '/api/asf/country/getlist', '', '42703: column a.language_Code does not exist
+
+POSITION: 46', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478204188520509440, 1, 'admin', 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 14:12:43.230989', '/api/asf/country/getlist', '', '42703: column a.language_Code does not exist
+
+POSITION: 46', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478204251397320704, 1, 'admin', 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 14:12:58.220838', '/api/asf/country/getlist', '', '42703: column a.language_Code does not exist
+
+POSITION: 46', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478204289053782016, 1, 'admin', 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 14:13:07.199808', '/api/asf/country/getlist', '', '42703: column a.language_Code does not exist
+
+POSITION: 46', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478204347455270912, 1, 'admin', 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 14:13:21.123656', '/api/asf/country/getlist', '', '42703: column a.language_Code does not exist
+
+POSITION: 46', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478205052668768256, 1, 'admin', 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 14:16:09.264679', '/api/asf/country/getlist', '', '42703: column a.language_Code does not exist
+
+POSITION: 46', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478205149452333056, 1, 'admin', 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 14:16:32.33965', '/api/asf/country/getlist', '', '42703: column a.language_Code does not exist
+
+POSITION: 46', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478205536370425856, 1, 'admin', 1, 'UsernameAndPassword', '127.0.0.1', '本地', NULL, '2023-11-11 14:18:04.583554', NULL, NULL, NULL, '登录成功');
+INSERT INTO "public"."asf_loginfos" VALUES (478205752473550848, 1, 'admin', 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 14:18:56.029584', '/api/asf/country/getlist', '', '42703: column a.ratio does not exist
+
+POSITION: 71', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478206350837153792, 1, 'admin', 2, '添加国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:21:18.694197', '/api/asf/country/create', '{"name":"中国","language_code":"zh","currencyType":"RMB","ratio":"1","withdrawalRatio":"0"}', '{"status":400,"message":"国家代码不能为空"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478206767495688192, 1, 'admin', 1, 'UsernameAndPassword', '127.0.0.1', '本地', NULL, '2023-11-11 14:22:58.093492', NULL, NULL, NULL, '登录成功');
+INSERT INTO "public"."asf_loginfos" VALUES (478206895753310208, 1, 'admin', 2, '添加国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:23:28.608137', '/api/asf/country/create', '{"name":"中国","languageCode":"zh","currencyType":"RMB","ratio":"1","withdrawalRatio":"0.08"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478208139343474688, 1, 'admin', 2, '添加国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:28:25.091674', '/api/asf/country/create', '{"name":"印尼","languageCode":"IDN","currencyType":"IDR","ratio":"2153.14","withdrawalRatio":"1.2"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478208412812095488, 1, 'admin', 2, '修改国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:29:30.314482', '/api/asf/country/modify', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478208456613212160, 1, 'admin', 2, '修改国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:29:40.757702', '/api/asf/country/modify', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478209018654142464, 1, 'admin', 2, '添加国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:31:54.761827', '/api/asf/country/create', '{"name":"马来西亚","languageCode":"MYS","currencyType":"MYR","ratio":"0.6459","withdrawalRatio":"1.3"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478209764430753792, 1, 'admin', 2, '添加国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:34:52.574279', '/api/asf/country/create', '{"name":"越南","languageCode":"VN","currencyType":"VND","ratio":"3337.06","withdrawalRatio":"0.8"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478209997285928960, 1, 'admin', 2, '添加国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:35:48.093182', '/api/asf/country/create', '{"name":"菲律宾","languageCode":"PHL","currencyType":"PHP","ratio":"7.6609","withdrawalRatio":"1.2"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478211147934511104, 1, 'admin', 2, '添加国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:40:22.375269', '/api/asf/country/create', '{"name":"泰国","languageCode":"TB","currencyType":"THB","ratio":"4.9319","withdrawalRatio":"1.3"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478211559425093632, 1, 'admin', 2, '添加国家', '127.0.0.1', '本地', 478194271101284352, '2023-11-11 14:42:00.482828', '/api/asf/country/create', '{"name":"印度","languageCode":"IND","currencyType":"INR","ratio":"11.4296","withdrawalRatio":"1.22"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478212102293860352, 1, 'admin', 2, '修改api', '127.0.0.1', '本地', 6, '2023-11-11 14:44:09.914685', '/api/asf/api/modify', '', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478218496146771968, 1, 'admin', 1, 'UsernameAndPassword', '127.0.0.1', '本地', NULL, '2023-11-11 15:09:34.450687', NULL, NULL, NULL, '登录成功');
+INSERT INTO "public"."asf_loginfos" VALUES (478227784452997120, 1, 'admin', 1, 'UsernameAndPassword', '127.0.0.1', '本地', NULL, '2023-11-11 15:46:28.915497', NULL, NULL, NULL, '登录成功');
+INSERT INTO "public"."asf_loginfos" VALUES (478227885812547584, 1, 'admin', 2, '添加多语言', '127.0.0.1', '本地', 14, '2023-11-11 15:46:53.027492', '/api/asf/translate/create', '{"countryId":"478206895237410816","tenancyId":"1","name":"登录","key":"common.login","value":"登录","isAdmin":1,"country":"中国","countryCode":"ZH"}', '{"status":200,"message":"Success"}', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478229028812070912, 0, NULL, 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 15:51:25.974525', '/api/asf/translate/getLists', '?isAdmin=true', 'The LINQ expression ''DbSet<Translate>()
+    .Where(t => Convert.ToBoolean(t.IsAdmin) == True)'' could not be translated. Additional information: Translation of method ''System.Convert.ToBoolean'' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to ''AsEnumerable'', ''AsAsyncEnumerable'', ''ToList'', or ''ToListAsync''. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478229061561196544, 0, NULL, 3, '异常消息', '127.0.0.1', '本地', NULL, '2023-11-11 15:51:33.421863', '/api/asf/translate/getLists', '?isAdmin=true', 'The LINQ expression ''DbSet<Translate>()
+    .Where(t => Convert.ToBoolean(t.IsAdmin) == True)'' could not be translated. Additional information: Translation of method ''System.Convert.ToBoolean'' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to ''AsEnumerable'', ''AsAsyncEnumerable'', ''ToList'', or ''ToListAsync''. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (478230291378884608, 1, 'admin', 1, 'UsernameAndPassword', '127.0.0.1', '本地', NULL, '2023-11-11 15:56:26.641768', NULL, NULL, NULL, '登录成功');
+INSERT INTO "public"."asf_loginfos" VALUES (478230415043743744, 1, 'admin', 2, '添加多语言', '127.0.0.1', '本地', 14, '2023-11-11 15:56:56.047571', '/api/asf/translate/create', '{"countryId":"478208138663997440","tenancyId":"1","name":"登录","key":"common.login","value":"Login","isAdmin":1,"country":"印尼","countryCode":"IDN"}', '{"status":200,"message":"Success"}', '操作记录');
 
 
 --
@@ -2213,6 +2293,7 @@ INSERT INTO "public"."asf_permission" VALUES (389431849661984768, '/control/acco
 INSERT INTO "public"."asf_permission" VALUES (389447011546656768, '/control/role/details', 7, '角色详情权限', 3, 1, '角色详情权限', 0, 1, 1, '2023-03-11 16:03:23.147601');
 INSERT INTO "public"."asf_permission" VALUES (389447780190613504, '/control/department/details', 12, '部门详情权限', 3, 1, '部门详情权限', 0, 1, 1, '2023-03-11 16:06:26.409813');
 INSERT INTO "public"."asf_permission" VALUES (394410371264667648, '/control/permission/details', 4, '权限详情', 3, 0, '权限详情', 0, 1, 1, '2023-03-25 08:46:00.326874');
+INSERT INTO "public"."asf_permission" VALUES (478194271101284352, '/control/country', 2, '国家权限', 1, 1, '国家权限', 0, 1, 1, '2023-11-11 13:33:18.703352');
 
 
 --
@@ -2235,6 +2316,7 @@ INSERT INTO "public"."asf_permission_menu" VALUES (13, 13, '岗位管理', '岗�
 INSERT INTO "public"."asf_permission_menu" VALUES (14, 14, '多语言管理', '多语言管理', 'icon-EA', 0, '/control/translate', NULL, NULL, '多语言管理菜单', NULL, 1, 1, '2022-11-19 12:47:26.785668');
 INSERT INTO "public"."asf_permission_menu" VALUES (15, 15, '字典管理', '字典管理', 'icon-EA', 0, '/control/dictionary', NULL, NULL, '多语言管理菜单', NULL, 1, 1, '2022-11-19 12:47:26.789662');
 INSERT INTO "public"."asf_permission_menu" VALUES (16, 17, '组件示例', '组件示例', 'icon-EA', 0, '/components', NULL, NULL, '组件示例', NULL, 1, 1, '2022-11-19 12:47:26.79285');
+INSERT INTO "public"."asf_permission_menu" VALUES (478195315633975296, 478194271101284352, '国家管理', '国家管理', 'icon-dash_board', 0, '/control/country', NULL, NULL, '国家管理', NULL, 1, 1, '2023-11-11 13:37:27.761121');
 
 
 --
@@ -2286,28 +2368,29 @@ INSERT INTO "public"."asf_role_permission" VALUES (34, 16, 3, '2022-11-19 12:47:
 INSERT INTO "public"."asf_role_permission" VALUES (35, 17, 3, '2022-11-19 12:47:27.001088');
 INSERT INTO "public"."asf_role_permission" VALUES (36, 331075142022815744, 3, '2022-11-19 12:47:27.00308');
 INSERT INTO "public"."asf_role_permission" VALUES (37, 1, 3, '2022-11-19 12:47:26.997474');
-INSERT INTO "public"."asf_role_permission" VALUES (38, 2, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (39, 3, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (40, 4, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (41, 5, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (42, 6, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (43, 7, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (44, 8, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (45, 9, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (46, 10, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (47, 11, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (48, 12, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (49, 13, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (50, 15, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (51, 16, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (52, 1, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (53, 17, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (54, 331075142022815744, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (55, 389431849661984768, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (56, 389447011546656768, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (57, 389447780190613504, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (58, 394410371264667648, 1, '2023-11-10 15:32:08.424314');
-INSERT INTO "public"."asf_role_permission" VALUES (59, 14, 1, '2023-11-10 15:32:08.424314');
+INSERT INTO "public"."asf_role_permission" VALUES (60, 2, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (61, 3, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (62, 4, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (63, 5, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (64, 6, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (65, 7, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (66, 8, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (67, 9, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (68, 10, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (69, 11, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (70, 12, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (71, 13, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (72, 15, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (73, 16, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (74, 1, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (75, 17, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (76, 331075142022815744, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (77, 389431849661984768, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (78, 389447011546656768, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (79, 389447780190613504, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (80, 394410371264667648, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (81, 14, 1, '2023-11-11 13:45:30.999295');
+INSERT INTO "public"."asf_role_permission" VALUES (82, 478194271101284352, 1, '2023-11-11 13:45:30.999295');
 
 
 --
@@ -2322,6 +2405,20 @@ INSERT INTO "public"."asf_role_permission" VALUES (59, 14, 1, '2023-11-10 15:32:
 
 INSERT INTO "public"."asf_security_token" VALUES (2, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjc5NzM1MTM0LCJleHAiOjE2Nzk4MjE1MzQsImlhdCI6MTY3OTczNTEzNCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.TpANCDNkFw2XfpnL9tAwy3TMMuWvShEFbttnWebGJnU2FMs6ek6hdsJHLDW0nDPb2kLZiOhUntaO__QrR-mnF7qwj7LAienq_2K3jtW9MBQDNdlkd054eYFYY1h_I15K8wYNt6ub0edcUPBLGJUwjnNUV-_VUiwabRyBgYU734VzDSusUyXbQN6yztVnjmSOnk7mh2nColcnJnk_g_hyg6sm_TdeAUY5z5hpc98yAlgOhAGzDY48CwWyjNfUgFnohxe-EyoeHy-VKSG0m_NDbXcFuwkaUJQXst08v6fezE6-3o6qL0hJXItngxs7rJLqUoL0kwYIgKWnIRaY3cV5eQ', '2023-03-26 09:05:34.731252+00', '2023-11-10 15:31:43.227816');
 INSERT INTO "public"."asf_security_token" VALUES (3, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjc5NzM1MTM0LCJleHAiOjE2Nzk4NjQ3MzQsImlhdCI6MTY3OTczNTEzNCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.TGHHji8FQfb61R124f4d8cfwLxLreMbj-96lABi1PYlZRFdJME3w2DT5NggTDXPuT22Nfx_diFhbVTjIXJycMjiT21rPUGM2CqvDcJmi7277eJpoHBKVKMx2bPPLDratEEhMvIf2S-_sKyPrcOVhZu21FZONdtmylBDaIy7ztU7xSEBlAawgljUptpft22cGr7-Wn3SqatmcwuSk8NaCbe1QXgyH-TcvopReZyBhw0Sa-kcYx0T4TrvkFPVZor86CJQDNCHo2htaMkRC9iI-Tb4JUp7A7DHRp0zQAA4N5sy2aZGHknrTucH0PZjcFwdTG4miEs8QKCmZZ7GiLYiicg', '2023-03-26 09:05:34.731252+00', '2023-11-10 15:31:43.380091');
+INSERT INTO "public"."asf_security_token" VALUES (4, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NjMwMzAyLCJleHAiOjE2OTk3MTY3MDIsImlhdCI6MTY5OTYzMDMwMiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.Y48UGWm04cI3QuJjd6ABNsA4bHEsHZF4lKAYs_5VnmIzgRwS0x5YBnD9nv9XnOCXrjOb4fSajFNHWYBJHCeKlUyCRdKi4fVol6M81l5Pbtbi6pK-lbPa285k9MAU9YPv1DaptakEIhQC4q5Z1zubh_2VEZPBx_iqbS5PyfkNEj3yTrYu7CB34fARQN578PMAMS78NAS5tTM3jKHy9xNqKxgPiowA2Ficp6gB-jVs4fdVgiY451yGD1wa7gwPPG2aQ_I73tbd-5N5APrsbE_QubE9vo3BObOhGBZG6pbhamMDZmHzrOpzd4YU_uKWkzkGPgpdpbYxOKHWkEqc9JwE-w', '2023-11-11 15:31:42.714573+00', '2023-11-11 12:20:49.360688');
+INSERT INTO "public"."asf_security_token" VALUES (5, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NjMwMzAyLCJleHAiOjE2OTk3NTk5MDIsImlhdCI6MTY5OTYzMDMwMiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.Kf255aUcD-PKbIa1yjGerVYWwzDid8n3B6CeTDj5IwFnc_tHNrpLdL3V_kTrZB5jlrOlFgWKnsL8ml3RIX4Q8tR5wH6bqigZy1hgUNFdXCDpmt1stU8SU1HnKrZhURmztFuzRA6FnqI0xkwAnAB_ksuHBiU6GGgiHy5lyH1v-iAx_TdIR8HjGtBZvT99IbbsmD4EyxBLtwSgqR5OsQbm4uIAFrrC2KzVqCCtLeead8D09JVsy3bf_YHAy5uMjqZ09K9ladr6LdDd2pJbK0CVpbiXNYOX02x93-vyD3sVzLtL6vSqtJUt6D6M_gyhv_u5Zre_l3cAK547dWfJqcqlrA', '2023-11-11 15:31:42.714573+00', '2023-11-11 12:20:49.486057');
+INSERT INTO "public"."asf_security_token" VALUES (6, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzA1MjQ4LCJleHAiOjE2OTk3OTE2NDgsImlhdCI6MTY5OTcwNTI0OCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.Qj7UQovTd935CAWHpr9iq7XdhHl9shQsRD4JelgKxWkgUpISKePogYIw5ZOJGSfVmTSeC1ELNvpyBV7q6IHwN-GXX4rKiuxDBGi05IVyaCSal-9gZ5KaBi4UiIrMTSiMsfZbrJikUL6CJ2KNVBFQyGNnl6MRIQ74RGXuh6150TPxqXmi4hdw6C6VdhqqhX5Ttm5HlHl5_aITCtuKfe4G8M4W6dyFulEtTNHbLuy11sD0FLlw2w3crnpKd8KtBm1TTzYBkU264GnWKXVL30FiK5F4_0PACro3DejGOtRp71pH7EgvInagK62Csx1-0vKB8d18mviftG-FoI7Xh7fhaQ', '2023-11-12 12:20:48.961316+00', '2023-11-11 13:31:36.3294');
+INSERT INTO "public"."asf_security_token" VALUES (7, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzA1MjQ4LCJleHAiOjE2OTk4MzQ4NDgsImlhdCI6MTY5OTcwNTI0OCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.dJlakuVXMAtzSE-CEnyWwcr2n32dHSn8g_yM6ly6r3NfVgT3FyBBJpHOiHrylzkBoBH1gW-9xecG7YAKtTXf2iT2KX_UWtewWLM1JU0vNCOkIvA4G58xqSo_RQSaL0BFmoFrzjsfXpcRwcRdtTw9WHSOUSABgZhM7Hd5gDQqGq7Nae8BUDUo2j-yo1OXognwTHELC10CvB7w_wi-0-yq_64Hwd_X_LZunqOZEX-d9-zouRZT6OTHN9BipbesGdKNHXVF6fT9MHAFQZVYDyp5jl1q3Jj8jbUsqdMTMn_Cmbnq1xNp66rJHR8B4NuIUi3BRBGYPORFwLSrXtpsk0bd-Q', '2023-11-12 12:20:48.961316+00', '2023-11-11 13:31:36.434046');
+INSERT INTO "public"."asf_security_token" VALUES (8, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzA5NDk1LCJleHAiOjE2OTk3OTU4OTUsImlhdCI6MTY5OTcwOTQ5NSwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.gP2PO2Hj49SIMNVEkHpscy3OjA_9WRmjPDofTUjaLKaTv7o7CMJHWMX7lPS2WUbptli9r6eUVVy_n0Do6yNC9MYMByCBf0-JHfJr_4py--Zo-GfbOAcnIROoFI2L9A951eVdIsiRPYHrK5znF6gWjfiD8rincyJzpsj_DdhYV-je3-2MkvBeV4IFy7BnaKdt64R041RR4XE6MpjC-bO5nbh8ee2s6tvyTzz-zFk4tPqDTV88NWf1JHt7Ma-sdIc0J20GcF-KX0d7XF5pYAKJBhO3Bt2Nb_Bbm5xZhyccuMVtOqQjCTxbLHHjAHnx90Po5eppLv5lhpsIq_vucenSNw', '2023-11-12 13:31:36.043506+00', '2023-11-11 14:18:04.282859');
+INSERT INTO "public"."asf_security_token" VALUES (9, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzA5NDk2LCJleHAiOjE2OTk4MzkwOTYsImlhdCI6MTY5OTcwOTQ5NiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.N2lzaMh2q6-rXBwooGG_5pRuBukT3wD8Nt0R6nWBCkAf33fp8RAum1inR6XmRPCamSL48Dm4xXeWsq1D5XMehggkz139mLPZTd4mOOl7rLuFMLcvsp1sRGCJZC8FVCo-bfsPHDcjKCDIsB_Bf4vbXnl2kr2Fq5vCPfb5FYLfu8M8aW_glUt3f55Jy5uKcaIGACjLFUwfpva8OrU_5I2Req8RM-1farJd8q1KRXp2gbJMUxhUg2oDroRjiFejzlqJJuiVbacM4YYRVtxAw8ZHWmdybAmhx9F4iObPHfPb3zUs1mhvwhfdLKdkkC5osihH4I6047L6iBAj4bx81y1vTA', '2023-11-12 13:31:36.043506+00', '2023-11-11 14:18:04.436903');
+INSERT INTO "public"."asf_security_token" VALUES (10, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzEyMjgzLCJleHAiOjE2OTk3OTg2ODMsImlhdCI6MTY5OTcxMjI4MywiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.v6NSCeYnuo6KOm10x55TGXgjFzPxWBU_4Fi8wBaW-CmPMCz8uHwGp7SejZbD0-GQn9btaWDgZtQg9qSURyEiOUuKqD-6rG_p6MwREB33d6L-vTP-UPG2HnKnrLo2yPhXzSnv9tNEJq8zLEpyBMZWPrSclsGFOL2_AMNfIRTSeFJWPfJTVvCX5i23NXL8HY6d7VC6Moogn9c-xSRFmlabcVErCy_JV48h81oOXsAPHyqoJSa13emlBYpP9z0umE7jHQQOku02fqBToH4zFFjX8a8j7L20WV09L8Fc-XqbxflFCDDANPEB07LAzNW9r3ZUZhtUSBFwZ3cFt_4YAUmB7A', '2023-11-12 14:18:03.964766+00', '2023-11-11 14:22:57.919427');
+INSERT INTO "public"."asf_security_token" VALUES (11, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzEyMjgzLCJleHAiOjE2OTk4NDE4ODMsImlhdCI6MTY5OTcxMjI4MywiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.v8UNPbk9A8s4wkCDKDqM7HjIxLikdV4NUX252lIt9MEldZorYYDF0__35YvC8fBRlKIRVpXu8YjKTh48-Z0xMTjd4O_RyFCtNgbAnyLoTJiszktbnZOGP4KcSX3MSWoxDTkKNR36JrPvv8aHhECI4Hlom2KHpDBlJsaqjr7WubPsnwqIQcNYPiuY_VddNw2HKX81T6xjLfB_zeB-aXBu6ChuMFYltlvunF0EOQX-7Gfcw2jHF6dxToc6mmjRLhj45hhUqnaeSVo3pUfYcwBrf81ewxnJbyNXVUP8Wk87hKZfdHUcydyqqc7xp9pomrlj0Ku2QQunDC411X1CHqXWgA', '2023-11-12 14:18:03.964766+00', '2023-11-11 14:22:58.005797');
+INSERT INTO "public"."asf_security_token" VALUES (12, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzEyNTc3LCJleHAiOjE2OTk3OTg5NzcsImlhdCI6MTY5OTcxMjU3NywiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.uM8gNZzgMCpZ8IWX-qDCFQIOpCHlp6JOtupiuSx2C7CJE-VbHY3p4KJkz0Sb-T5JKVaItpX0l6MYoGxZs5ToJd4qxZeNUyf5BPao2q1FagR_gLqX3n32L166e9-oruuaPV5iM5YufBdMwR2HBoGXjbBJN6X7nIJ3KyuIV-UKBP0xkhNF0Dgd36DOngJtE2nUejLSrY5rW-bh9C1H0qkkMMxkvkP6qZ6W-XT0jihwI2GDUvb91xIPnwcBy_nYL8LbCnRlKU0Kpi_N-A_hd8nE99yUTQNFSaLXEl2aZyC57ytxMMKpkHh1eiVYLbR1kEIbdIB4Hd24kLS_NB9P0htwfA', '2023-11-12 14:22:57.679022+00', '2023-11-11 15:09:34.10256');
+INSERT INTO "public"."asf_security_token" VALUES (13, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzEyNTc3LCJleHAiOjE2OTk4NDIxNzcsImlhdCI6MTY5OTcxMjU3NywiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.eA4Ka7D6LxCl6wTLDKAh1opYNAVf0W2QIhZ5bpkCMBZzkZk0LFnSOxYmRYEcOJbQ0gJXPdB7KVu9F4fcWa5MzR6y9JUXELfSEJ2D2T52vRd-j52eEwErfNGiOZyxK3AYXnnF5V90y0rYeZeffNfVPoDY-3sZlV-QOwwwdUareb_UZL_azF8D5vi2siC6NbZ3XO7znH9da2uA6oegAuGi0BVznRepuVfTBmFvvhvVXquzHiK1kN-bErR3gX9QFyP8ncdYxqNUpboj_tbUfJ2KiiV5eUaU8oes6ZUHRITIUS1KuMSlxdWQWRlMRczM1seEwcSBaKHRwmkUAtaC5qIGcw', '2023-11-12 14:22:57.679022+00', '2023-11-11 15:09:34.249542');
+INSERT INTO "public"."asf_security_token" VALUES (14, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzE1MzczLCJleHAiOjE2OTk4MDE3NzMsImlhdCI6MTY5OTcxNTM3MywiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.grrNzKBX-xbK4iHzpVtQLRBBGJz2alTEafWIKl1QxaloLBZUGab1vNbgcIrUKJ092auDMmWEPHwmDksfGDD_kM3R7_b2EjWIx7yd-Mc5XjTGOBlSLN4_fqXJjeKjhSBCRXKuxtT6TCX-tIlNcdzwjSFu3U7RS0qj45pw3zRevs1_nsSMoU50NFAKMsozaRvfWMFUOWPt4BYR6nBag4XZdQDk9j_r5Xosffnb73sLO_VzRjxAnfdHHwY08jxfgXIuNfQnyFZiflEqBQNvWlYD-m3I67QIiOOXgNVBJs-MtVOHmUK7gk_ftso_pWsQqgXDxO3dUU83h2K0fz1nnu0_lw', '2023-11-12 15:09:33.611893+00', '2023-11-11 15:46:28.756224');
+INSERT INTO "public"."asf_security_token" VALUES (15, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzE1MzczLCJleHAiOjE2OTk4NDQ5NzMsImlhdCI6MTY5OTcxNTM3MywiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.IJGX3KqhGbPn9rRPbkATVMvP-6ZzClDGgJo2IwxS-4_44dLuwYL2KEEFI3tBq_a_D5quHSvdazAU_VuXbrPzIt_7_AuynhhY5aSTlH3pJ8wjIMHy0F0TS9SUcVfvQP8Bsa_fruwGyvmPTxpD2cmCEaYSgHtqUAljhbYUBmMe-nvJIk39SRCDPGyYBNOStpNbLfEVmKqqWcffTA06C0DBNTDVmBeVERGo4Z78QU4Oqv2OQCtkB6NHAdNZLIT_RrdBrBplSUvtTT1mefE1eBSKrde6L8D0q9wZIYpMI10oKjqMgB5SnI1j04OT_PBERamidenvwrqGokxM9zRmCixV_w', '2023-11-12 15:09:33.611893+00', '2023-11-11 15:46:28.823097');
+INSERT INTO "public"."asf_security_token" VALUES (16, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzE3NTg4LCJleHAiOjE2OTk4MDM5ODgsImlhdCI6MTY5OTcxNzU4OCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.ecKKKcPlDV3gvSWR28DjmJYL_JJRFIjDF0S5xBxAOYDnxL62j6y9r4ggaOJbNxN4DWqp7MFycsOuLnzn67lCbUPgvhOxIpg6IFk64vONhSu1Xa0ycOhCCtMjT36rrSjAPLXdakVXyKlz6zIeawW53MUdvBRtKoCa5Zm0any1VnJywmKUGG93c-E0-Mlp1Jd6RX2budFZR2iIXcullUWLsBSP6FaLdyL_2H0bZ42DSaxfsZBEL8zTwyR56ubqpDX4cCpNMrpM2vJkqmUDJ2SJQez0Ug1f0E70xAMzNTK3pJG1pIbpzPOBy-XZOvmR2GAv8fVV5V84oDgmdKNQwlbepw', '2023-11-12 15:46:28.498176+00', '2023-11-11 15:56:26.373406');
+INSERT INTO "public"."asf_security_token" VALUES (17, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNjk5NzE3NTg4LCJleHAiOjE2OTk4NDcxODgsImlhdCI6MTY5OTcxNzU4OCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.ImOT8KqIZMb2TKl8lVueAOX55xVoa8lxO9cJr5ijbzzH1QD6_34DnVbYDV3SWBsMbnEX2NyZLscuiXRkwK0nVfZn1WSme3oCoJ6GT9G9XkBdvJy2sHI-YzguPWfLBZqN6evzDva_tu904E8JIxsUs8yJbB8AooFpi73URgFmiNNUcFasQUBet8sIekokY0kiXDptrYrOgCxSxXwHoJiiYjRuhwOQVX_y87-KeNAtizYNmcsPv58eaTAZmLr0Y48lcwkHA9tBDFk-fGMcUUn0x8L3CI9VdLr0iRK-zE5oY-GkqnOLXfAxmd-g6tH_lwFMVd5Jq_OOZFQSrHcwKkfs3A', '2023-11-12 15:46:28.498176+00', '2023-11-11 15:56:26.497169');
 
 
 --
@@ -2336,6 +2433,8 @@ INSERT INTO "public"."asf_tenancy" VALUES (2, '公司A', 0, 0, 1, 1, 0, '2022-11
 -- Data for Name: asf_translate; Type: TABLE DATA; Schema: public; Owner: -
 --
 
+INSERT INTO "public"."asf_translate" VALUES (478227885082738688, '登录', 1, '中国', 'common.login', '登录', 'ZH', 478206895237410816, 'admin', '2023-11-11 15:46:52.89787', 1);
+INSERT INTO "public"."asf_translate" VALUES (478230414452346880, '登录', 1, '印尼', 'common.login', 'Login', 'IDN', 478208138663997440, 'admin', '2023-11-11 15:56:55.920214', 1);
 
 
 --
@@ -2510,7 +2609,7 @@ SELECT pg_catalog.setval('"public"."asf_role_permission_id_seq"', 37, true);
 -- Name: asf_role_permission_id_seq1; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('"public"."asf_role_permission_id_seq1"', 59, true);
+SELECT pg_catalog.setval('"public"."asf_role_permission_id_seq1"', 82, true);
 
 
 --
@@ -2538,7 +2637,7 @@ SELECT pg_catalog.setval('"public"."asf_security_token_id_seq"', 1, true);
 -- Name: asf_security_token_id_seq1; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('"public"."asf_security_token_id_seq1"', 3, true);
+SELECT pg_catalog.setval('"public"."asf_security_token_id_seq1"', 17, true);
 
 
 --

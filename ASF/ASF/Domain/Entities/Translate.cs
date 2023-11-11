@@ -38,7 +38,12 @@ namespace ASF.Domain.Entities
     /// <summary>
     /// 添加者
     /// </summary>
-    public string AddUser { get; set; }
+    public string AddUser { get; set; } 
+    /// <summary>
+    /// 是否为管理后台
+    /// </summary>
+    public uint IsAdmin { get; set; }
+
     /// <summary>
     /// 创建时间
     /// </summary>

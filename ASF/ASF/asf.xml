@@ -237,6 +237,57 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:ASF.Application.CountryController">
+            <summary>
+            国家控制器
+            </summary>
+        </member>
+        <member name="M:ASF.Application.CountryController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+            <summary>
+            国家控制器
+            </summary>
+        </member>
+        <member name="M:ASF.Application.CountryController.GetList(ASF.Application.DTO.Country.CountryListRequestDto)">
+            <summary>
+            获取国家分页
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Application.CountryController.GetLists">
+            <summary>
+            获取国家列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Application.CountryController.Details(System.Int64)">
+            <summary>
+            获取国家详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Application.CountryController.Create(ASF.Application.DTO.Country.CountryCreateRequestDto)">
+            <summary>
+            创建国家
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Application.CountryController.Modify(ASF.Application.DTO.Country.CountryModifyRequestDto)">
+            <summary>
+            修改国家
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Application.CountryController.Delete(System.Int64)">
+            <summary>
+            删除国家
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:ASF.Application.DepartmentController">
             <summary>
             部门控制器
@@ -959,6 +1010,76 @@
         <member name="P:ASF.Application.DTO.AudioResponseDto.Remark">
             <summary>
             备注
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DTO.Country.CountryCreateRequestDto">
+            <summary>
+            创建 国家请求dot
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryCreateRequestDto.Name">
+            <summary>
+            国家名称
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryCreateRequestDto.LanguageCode">
+            <summary>
+            国家代码 code
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryCreateRequestDto.CurrencyType">
+            <summary>
+            国家币种代码
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryCreateRequestDto.Ratio">
+            <summary>
+            国家与RMB之间汇率
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryCreateRequestDto.WithdrawalRatio">
+            <summary>
+            提现手续费利率
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryCreateRequestDto.Status">
+            <summary>
+            状态 0 禁用， 1 启用
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DTO.Country.CountryListRequestDto">
+            <summary>
+            国家列表请求
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryListRequestDto.Name">
+            <summary>
+            国家名称或国家code
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DTO.Country.CountryModifyRequestDto">
+            <summary>
+            修改国家
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryModifyRequestDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DTO.Country.CountryResponseDto">
+            <summary>
+            国家相应
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryResponseDto.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryResponseDto.UpdateTime">
+            <summary>
+            创建时间
             </summary>
         </member>
         <member name="T:ASF.Application.DTO.Department.DepartmentCreateRequestDto">
@@ -2153,6 +2274,11 @@
             多语言值
             </summary>
         </member>
+        <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.IsAdmin">
+            <summary>
+            是否为管理后台
+            </summary>
+        </member>
         <member name="T:ASF.Application.DTO.Translate.TranslateListRequestDto">
             <summary>
             多语言分页请求
@@ -2244,6 +2370,16 @@
         <member name="M:ASF.Application.DtoMapper.AudioMapper.#ctor">
             <summary>
             审计日志映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.CountryMapper">
+            <summary>
+            国家映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.CountryMapper.#ctor">
+            <summary>
+            国家映射
             </summary>
         </member>
         <member name="T:ASF.Application.DtoMapper.DepartmentMapper">
@@ -2618,7 +2754,7 @@
             <summary>
             获取多语言列表
             </summary>
-            <param name="isDistinct"></param>
+            <param name="isAdmin"></param>
             <returns></returns>
         </member>
         <member name="M:ASF.Application.TranslateController.Details(System.Int64)">
@@ -3218,7 +3354,7 @@
             国家代码 code
             </summary>
         </member>
-        <member name="P:ASF.Domain.Entities.Country.CurrentType">
+        <member name="P:ASF.Domain.Entities.Country.CurrencyType">
             <summary>
             国家币种
             </summary>
@@ -3935,6 +4071,11 @@
             添加者
             </summary>
         </member>
+        <member name="P:ASF.Domain.Entities.Translate.IsAdmin">
+            <summary>
+            是否为管理后台
+            </summary>
+        </member>
         <member name="P:ASF.Domain.Entities.Translate.CreateTime">
             <summary>
             创建时间
@@ -4191,6 +4332,61 @@
             批量删除授权api
             </summary>
             <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ASF.Domain.Services.CountryService">
+            <summary>
+            国家服务
+            </summary>
+        </member>
+        <member name="M:ASF.Domain.Services.CountryService.#ctor(ASF.Infrastructure.Repositories.ICountryRepositories,ASF.Internal.IIdGenerator)">
+            <summary>
+            国家服务
+            </summary>
+            <param name="countryRepositories"></param>
+            <param name="idGenerator"></param>
+        </member>
+        <member name="M:ASF.Domain.Services.CountryService.Get(System.Int64)">
+            <summary>
+            获取国家
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Domain.Services.CountryService.GetList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取国家分页
+            </summary>
+            <param name="pageNo"></param>
+            <param name="pageSize"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Domain.Services.CountryService.GetList">
+            <summary>
+            获取国家列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Domain.Services.CountryService.Create(ASF.Domain.Entities.Country)">
+            <summary>
+            添加国家
+            </summary>
+            <param name="country"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Domain.Services.CountryService.Modify(ASF.Domain.Entities.Country)">
+            <summary>
+            修改国家
+            </summary>
+            <param name="country"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Domain.Services.CountryService.Delete(ASF.Domain.Entities.Country)">
+            <summary>
+            硬 删除国家
+            </summary>
+            <param name="country"></param>
             <returns></returns>
         </member>
         <member name="T:ASF.Domain.Services.DepartmentService">
@@ -4752,11 +4948,11 @@
             <param name="tenancyId">租户id</param>
             <returns></returns>
         </member>
-        <member name="M:ASF.Domain.Services.TranslateService.GetList(System.Nullable{System.Int64})">
+        <member name="M:ASF.Domain.Services.TranslateService.GetList(System.Boolean)">
             <summary>
             获取多语言列表
             </summary>
-            <param name="tenancyId"></param>
+            <param name="isAdmin">是否为管理后台</param>
             <returns></returns>
         </member>
         <member name="M:ASF.Domain.Services.TranslateService.Create(ASF.Domain.Entities.Translate)">
@@ -5499,6 +5695,11 @@
         <member name="T:ASF.Infrastructure.Repositories.IAsfDictionaryRepository">
             <summary>
             字典仓储
+            </summary>
+        </member>
+        <member name="T:ASF.Infrastructure.Repositories.ICountryRepositories">
+            <summary>
+            国家仓储
             </summary>
         </member>
         <member name="T:ASF.Infrastructure.Repositories.IDepartmentRepositories">

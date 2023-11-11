@@ -77,6 +77,12 @@ namespace ASF.Domain
         public static ValueTuple<int, string> TranslateCreateError = (15002, "多语言添加失败");
         public static ValueTuple<int, string> TranslateUpdateError = (15003, "多语言修改失败");
         public static ValueTuple<int, string> TranslateDeleteError = (15004, "多语言删除失败");
+        // 国家
+        public static ValueTuple<int, string> CountryNotExist = (15005, "国家不存在");
+        public static ValueTuple<int, string> CountryCreateError = (15006, "国家添加失败");
+        public static ValueTuple<int, string> CountryUpdateError = (15007, "国家修改失败");
+        public static ValueTuple<int, string> CountryDeleteError = (15008, "国家删除失败");
+        public static ValueTuple<int, string> CountryNameExistError = (15010, "存在相同国家名称或code");
         
         // 部门
         public static ValueTuple<int, string> DepartmentNotExist = (16000, "部门不存在");

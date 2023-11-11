@@ -41,5 +41,9 @@ namespace ASF.Application.DTO.Translate
 		/// </summary>
 		[Required(ErrorMessage = "多语言值不能为空"),MinLength(2,ErrorMessage = "多语言值最少输入2个字符"),MaxLength(5000,ErrorMessage = "多语言值最多输入5000个字符")]
 		public string Value { get; set; }
+		/// <summary>
+		/// 是否为管理后台
+		/// </summary>
+		public uint? IsAdmin { get; set; }
 	}
 }
