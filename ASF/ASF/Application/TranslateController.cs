@@ -58,7 +58,14 @@ namespace ASF.Application
 			if(!data.Success)
 				return Result<object>.ReFailure(data.Message,data.Status);
 			var res = _mapper.Map<List<TranslateResponseDto>>(data.Data);
-			return Result<object>.ReSuccess( res.GroupBy(f => f.CountryCode).ToDictionary(k=>k.Key,v=>v.ToList()));
+			Dictionary<string, object> dic = new Dictionary<string, object>();
+			foreach (var item in res.GroupBy(f => f.CountryCode))
+			{
+				Dictionary<string, object> dic1 = new Dictionary<string, object>();
+				dic1.Add("translation",item.ToDictionary(vk=>vk.Key,vv=>vv.Value));
+				dic.Add(item.Key,dic1);
+			}
+			return Result<object>.ReSuccess(dic);
 		}
 		
 		/// <summary>
