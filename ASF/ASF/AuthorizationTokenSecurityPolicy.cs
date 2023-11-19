@@ -1,5 +1,4 @@
 using System;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using ASF.Domain.Entities;
 using ASF.Infrastructure.Repositories;
@@ -62,7 +61,7 @@ namespace ASF
           {
             AbsoluteExpiration = securityToken.TokenExpired
           });
-          context.Response.Headers.Add("blacklist", "error");
+          context.Response.Headers.Append("blacklist", "error");
           context.Response.StatusCode = 403;
           var result = JsonConvert.SerializeObject(new { status = 403, result = string.Empty, message = "无效的token" });
           context.Response.ContentType = "application/json;charset=utf-8";

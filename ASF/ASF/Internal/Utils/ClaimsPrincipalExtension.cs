@@ -59,10 +59,7 @@ namespace ASF.Internal.Utils
     /// <returns></returns>
     public static bool IsSuperRole(this ClaimsPrincipal principal)
     {
-      string role = principal.FindFirst("role")?.Value;
-      if (string.IsNullOrEmpty(role))
-        return false;
-      return role.Contains("superadmin");
+      return principal.Claims.Any(w=>w.Type == ClaimTypes.Role && w.Value.Equals("superadmin"));
     }
     /// <summary>
     /// 去重

@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0
+FROM mcr.microsoft.com/dotnet/sdk:8.0
 # 复制项目到镜像的根目录中
 COPY . /dockernode/dotnet
 # 启动容器时，进入的目录
