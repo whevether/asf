@@ -6,6 +6,7 @@ using ASF.Domain.Values;
 using ASF.Internal;
 using Microsoft.Extensions.Options;
 using Minio;
+using Minio.DataModel.Args;
 
 namespace ASF.Domain.Services;
 /// <summary>
@@ -13,13 +14,13 @@ namespace ASF.Domain.Services;
 /// </summary>
 public class UploadService
 {
-    private readonly MinioClient _client;
+    private readonly IMinioClient _client;
     private readonly MinioOp _minio;
     private readonly IIdGenerator _idGenerator;
     /// <summary>
     /// 
     /// </summary>
-    public UploadService(MinioClient client,IIdGenerator idGenerator,IOptions<MinioOp> minio)
+    public UploadService(IMinioClient client,IIdGenerator idGenerator,IOptions<MinioOp> minio)
     {
         _client = client;
         _minio = minio?.Value;
