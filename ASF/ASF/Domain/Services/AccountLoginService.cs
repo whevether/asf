@@ -4,7 +4,6 @@ using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
@@ -13,8 +12,6 @@ using ASF.Domain.Entities;
 using ASF.Internal.Results;
 using ASF.Internal.Security;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using RSA = ASF.Internal.Security.RSA;
 using SecurityToken = ASF.Domain.Entities.SecurityToken;
 
 namespace ASF.Domain.Services
@@ -154,8 +151,8 @@ namespace ASF.Domain.Services
 
             AccessToken accessToken =  new AccessToken()
             {
-                Token = await GenerateTokenAsync(identity,86400),
-                RefreshToken = await GenerateTokenAsync(identity,129600),
+                Token = await Helper.GenerateTokenAsync(identity,86400),
+                RefreshToken = await Helper.GenerateTokenAsync(identity,129600),
                 Expired = DateTime.UtcNow.AddSeconds(86400)
             };
             // 判断是否存在已经拉黑的授权token
@@ -180,15 +177,7 @@ namespace ASF.Domain.Services
             }
             // 设置登录信息
             account.SetLoginInfo(accessToken,ip);
-            // 登录日志
-            LogInfo logInfo = new LogInfo()
-            {
-                Remark = "登录成功"
-            };
-            logInfo.SetLogin(account.Id,account.Username,_loginType,LoggingType.Login,account.LoginIp,account.LoginLocation);
-            await _serviceProvider.GetRequiredService<LoggerService>().Create(logInfo);
             
-
             bool isUpdate = await _accountsRepository.Update(account);
             if (!isUpdate)
             {
@@ -199,34 +188,7 @@ namespace ASF.Domain.Services
             return Result<AccessToken>.ReSuccess(accessToken);
         }
 
-        /// <summary>
-        /// 生成一个新的 Token
-        /// </summary>
-        /// <param name="identity">认证信息</param>
-        /// <param name="time">过期时间</param>
-        /// <returns>表示生成新的Token的任务</returns>        
-        private async Task<string> GenerateTokenAsync(ClaimsIdentity identity,long time)
-        {
-            return await Task.Run(() =>
-            {
-                var handler = new JwtSecurityTokenHandler();
-
-                // 签发时间
-                DateTime issuedAt = DateTime.UtcNow;
-
-                var securityToken = handler.CreateToken(new SecurityTokenDescriptor
-                {
-                    IssuedAt = issuedAt,
-                    Issuer = "asf",
-                    Audience = "asf",
-                    SigningCredentials = new SigningCredentials(RSA.RSAPrivateKey, SecurityAlgorithms.RsaSha256Signature),
-                    Subject = identity,
-                    // 到期时间
-                    Expires = issuedAt.AddSeconds(time)
-                });
-                return handler.WriteToken(securityToken);
-            });
-        }
+       
 
         /// <summary>
         /// 获取登录失败信息

@@ -1,11 +1,11 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
-using System.Web;
 using ASF.DependencyInjection;
 using ASF.Domain.Values;
 using ASF.Internal;
 using Microsoft.Extensions.Options;
 using Minio;
+using Minio.DataModel;
 using Minio.DataModel.Args;
 
 namespace ASF.Domain.Services;
@@ -35,7 +35,7 @@ public class UploadService
     /// <param name="fileType"></param>
     /// <param name="fileLength"></param>
     /// <returns></returns>
-    public async Task<object> UploadFile(string preFix, string fileName, Stream st, string fileType,long fileLength)
+    public async Task<string> UploadFile(string preFix, string fileName, Stream st, string fileType,long fileLength)
     {
         await CreateBucket(preFix);
         string newFileName = $"{_idGenerator.GenId()}{preFix}{fileName.Trim()}";
@@ -46,11 +46,7 @@ public class UploadService
             .WithObjectSize(fileLength)
             .WithContentType(fileType);
         await _client.PutObjectAsync(args);
-        FileValue fileValue = new FileValue()
-        {
-            Url = HttpUtility.UrlEncode($"https://{_minio.Endpoint}/{preFix}/{newFileName}")
-        };
-        return await Task.FromResult<object>(fileValue);
+        return await Task.FromResult<string>($"{_minio.Endpoint}{_minio.MinioUrl}/{preFix}/{newFileName}");
     }
 
     /// <summary>
@@ -69,10 +65,10 @@ public class UploadService
                 .WithLocation("us-east-1");
             
             await _client.MakeBucketAsync(bucket);
-            var policyReadWrite = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"*\"]},\"Action\":[\"s3:GetBucketLocation\",\"s3:ListBucketMultipartUploads\"],\"Resource\":[\"arn:aws:s3:::BUCKETNAME\"]},{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"*\"]},\"Action\":[\"s3:ListBucket\"],\"Resource\":[\"arn:aws:s3:::BUCKETNAME\"],\"Condition\":{\"StringEquals\":{\"s3:prefix\":[\"BUCKETPREFIX\"]}}},{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"*\"]},\"Action\":[\"s3:PutObject\",\"s3:AbortMultipartUpload\",\"s3:DeleteObject\",\"s3:GetObject\",\"s3:ListMultipartUploadParts\"],\"Resource\":[\"arn:aws:s3:::BUCKETNAME/BUCKETPREFIX*\"]}]}";
+            string policyJson =  "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"*\"]},\"Action\":[\"s3:GetBucketLocation\",\"s3:ListBucket\",\"s3:ListBucketMultipartUploads\"],\"Resource\":[\"arn:aws:s3:::image\"]},{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":[\"*\"]},\"Action\":[\"s3:AbortMultipartUpload\",\"s3:DeleteObject\",\"s3:GetObject\",\"s3:ListMultipartUploadParts\",\"s3:PutObject\"],\"Resource\":[\"arn:aws:s3:::*/*\"]}]}";
             var policy = new SetPolicyArgs()
                 .WithBucket(bucketName)
-                .WithPolicy(policyReadWrite);
+                .WithPolicy(policyJson);
             await _client.SetPolicyAsync(policy);
         }
     }

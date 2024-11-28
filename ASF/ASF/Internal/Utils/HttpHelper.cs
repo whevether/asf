@@ -24,52 +24,71 @@ namespace ASF.Internal.Utils
     /// <summary>
     /// put泛型请求
     /// </summary>
-    public async Task<T> PutResponse<T>(string url, string putData) where T : class, new()
+    public async Task<T> PutResponse<T>(string url, string putData,Dictionary<string,string> header = null) where T : class, new()
     {
       T result = default(T);
       HttpContent httpContent = new StringContent(putData);
       httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
       httpContent.Headers.ContentType.CharSet = "utf-8";
+      if (header != null)
+      {
+        foreach (var item in header)
+        {
+          httpContent.Headers.Add(item.Key,item.Value);
+        }
+      }
       HttpResponseMessage response = await _client.PutAsync(url, httpContent);
-
+      
       if (response.IsSuccessStatusCode)
       {
         Task<string> t = response.Content.ReadAsStringAsync();
         string s = t.Result;
-        string json = JsonConvert.DeserializeObject(s).ToString();
-        result = JsonConvert.DeserializeObject<T>(json);
+        result = JsonConvert.DeserializeObject<T>(s);
       }
       return await Task.FromResult(result);
     }
     /// <summary>
     /// get 泛型请求
     /// </summary>
-    public async Task<T> GetResponse<T>(string url) where T : class, new()
+    public async Task<T> GetResponse<T>(string url,Dictionary<string,string> header = null) where T : class, new()
     {
 
       T result = default(T);
 
 
       _client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+      if (header != null)
+      {
+        foreach (var item in header)
+        {
+          _client.DefaultRequestHeaders.Add(item.Key,item.Value);
+        }
+      }
       HttpResponseMessage response = await _client.GetAsync(new Uri(url));
 
       if (response.IsSuccessStatusCode)
       {
         Task<string> t = response.Content.ReadAsStringAsync();
         string s = t.Result;
-        string json = JsonConvert.DeserializeObject(s).ToString();
-        result = JsonConvert.DeserializeObject<T>(json);
+        result = JsonConvert.DeserializeObject<T>(s);
       }
       return await Task.FromResult(result);
     }
     /// <summary>
     /// post泛型请求
     /// </summary>
-    public async Task<T> PostResponse<T>(string url, Dictionary<string, string> dic) where T : class, new()
+    public async Task<T> PostResponse<T>(string url, Dictionary<string, string> dic,Dictionary<string,string> header = null) where T : class, new()
     {
       T result = default(T);
 
       FormUrlEncodedContent httpContent = new FormUrlEncodedContent(dic);
+      if (header != null)
+      {
+        foreach (var item in header)
+        {
+          httpContent.Headers.Add(item.Key,item.Value);
+        }
+      }
       // httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
       // httpContent.Headers.ContentType.CharSet = "utf-8";
 
@@ -79,9 +98,7 @@ namespace ASF.Internal.Utils
       {
         Task<string> t = response.Content.ReadAsStringAsync();
         string s = t.Result;
-        //Newtonsoft.Json
-        string json = JsonConvert.DeserializeObject(s).ToString();
-        result = JsonConvert.DeserializeObject<T>(json);
+        result = JsonConvert.DeserializeObject<T>(s);
       }
 
       return await Task.FromResult(result);
@@ -89,22 +106,28 @@ namespace ASF.Internal.Utils
     /// <summary>
     /// post泛型请求 传入json对象
     /// </summary>
-    public async Task<T> PostResponse<T>(string url, object content) where T : class, new()
+    public async Task<T> PostResponse<T>(string url, object content,Dictionary<string,string> header = null) where T : class, new()
     {
       T result = default(T);
 
       var httpContent = new JsonContent(content);
       // httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
       // httpContent.Headers.ContentType.CharSet = "utf-8";
+      if (header != null)
+      {
+        foreach (var item in header)
+        {
+          httpContent.Headers.Add(item.Key,item.Value);
+        }
+      }
+
       HttpResponseMessage response = await _client.PostAsync(new Uri(url), httpContent);
 
       if (response.IsSuccessStatusCode)
       {
         Task<string> t = response.Content.ReadAsStringAsync();
         string s = t.Result;
-        //Newtonsoft.Json
-        string json = JsonConvert.DeserializeObject(s).ToString();
-        result = JsonConvert.DeserializeObject<T>(json);
+        result = JsonConvert.DeserializeObject<T>(s);
       }
 
       return await Task.FromResult(result);
@@ -112,12 +135,19 @@ namespace ASF.Internal.Utils
     /// <summary>
     /// post请求 传入json对象
     /// </summary>
-    public async Task<string> PostResponse(string url, object content)
+    public async Task<string> PostResponse(string url, object content,Dictionary<string,string> header = null)
     {
       string result = string.Empty;
       var httpContent = new JsonContent(content);
       // httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
       // httpContent.Headers.ContentType.CharSet = "utf-8";
+      if (header != null)
+      {
+        foreach (var item in header)
+        {
+          httpContent.Headers.Add(item.Key,item.Value);
+        }
+      }
       HttpResponseMessage response = await _client.PostAsync(new Uri(url), httpContent);
 
       if (response.IsSuccessStatusCode)
