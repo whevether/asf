@@ -1,32 +1,33 @@
 using System;
 
-namespace ASF.Application.DTO
+namespace ASF.Application.DTO;
+
+/// <summary>
+///   权限api响应
+/// </summary>
+public class PermissionApiResponseDto : PermissionApiModifyRequestDto
 {
   /// <summary>
-  /// 权限api响应
+  ///   key
   /// </summary>
-  public class PermissionApiResponseDto: PermissionApiModifyRequestDto
-  {
-    /// <summary>
-    /// key
-    /// </summary>
-    public string Key { get; set; }
+  public string Key { get; set; }
 
-    /// <summary>
-    /// 创建时间
-    /// </summary>
-    public DateTime CreateTime { get; set; }
-    /// <summary>
-    /// api功能状态名称
-    /// </summary>
-    public string StatusName { get; set; }
-    /// <summary>
-    /// api功能类型名
-    /// </summary>
-    public string TypeName { get; set; }
-    /// <summary>
-    /// 
-    /// </summary>
-    public object Permission { get; set; }
-  }
+  /// <summary>
+  ///   创建时间
+  /// </summary>
+  public DateTime CreateTime { get; set; }
+
+  /// <summary>
+  ///   api功能状态名称
+  /// </summary>
+  public string StatusName { get; set; }
+
+  /// <summary>
+  ///   api功能类型名
+  /// </summary>
+  public string TypeName { get; set; }
+
+  /// <summary>
+  /// </summary>
+  public object Permission { get; set; }
 }

@@ -3,7 +3,7 @@
     {
       "UseServiceDiscovery": true,
       "UpstreamPathTemplate": "/api/{url}",
-      "UpstreamHttpMethod": [ 
+      "UpstreamHttpMethod": [
         "Get",
         "Post",
         "Put",
@@ -12,17 +12,19 @@
       "ServiceName": "PayService",
       "DownstreamPathTemplate": "/api/{url}",
       "DownstreamScheme": "http",
-//       "AuthenticationOptions": {
-//         "AuthenticationProviderKey": "Bearer"
-//       },
+      //       "AuthenticationOptions": {
+      //         "AuthenticationProviderKey": "Bearer"
+      //       },
       "LoadBalancerOptions": {
-//        "Type": "RoundRobin" //轮询法
+        //        "Type": "RoundRobin" //轮询法
         "Type": "LeastConnection"
       },
       "DownstreamHostAndPorts": [
         {
-          "Host": "128.0.0.1",// 本地连接地址
-          "Port": 5004 //本地连接端口
+          "Host": "128.0.0.1",
+          // 本地连接地址
+          "Port": 5004
+          //本地连接端口
         }
       ]
     }

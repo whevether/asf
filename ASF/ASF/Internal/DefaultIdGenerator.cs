@@ -2,25 +2,23 @@ using System;
 using IdGen;
 
 namespace ASF.Internal;
+
 /// <summary>
-/// 生成雪花算法id
+///   生成雪花算法id
 /// </summary>
-public class DefaultIdGenerator: IIdGenerator
+public class DefaultIdGenerator : IIdGenerator
 {
   /// <summary>
-  /// 生成id
+  ///   雪花算法id
   /// </summary>
-  public static int GeneratorId { get; private set; } = -1;
+  private readonly IdGenerator generator;
+
   /// <summary>
-  /// 雪花算法id
-  /// </summary>
-  private IdGenerator generator;
-  /// <summary>
-  /// 生成雪花算法id
+  ///   生成雪花算法id
   /// </summary>
   public DefaultIdGenerator()
   {
-    GeneratorId = new Random().Next(0,1023);
+    GeneratorId = new Random().Next(0, 1023);
     // Let's say we take april 1st 2015 as our epoch
     var epoch = new DateTime(2020, 4, 1, 0, 0, 0, DateTimeKind.Utc);
     // Create a mask configuration of 45 bits for timestamp, 2 for generator-id 
@@ -28,11 +26,17 @@ public class DefaultIdGenerator: IIdGenerator
     var mc = new IdStructure(41, 10, 12);
     // Create an IdGenerator with it's generator-id set to 0, our custom epoch 
     // and mask configuration
-    IdGeneratorOptions options = new IdGeneratorOptions(mc,new DefaultTimeSource(epoch));
+    var options = new IdGeneratorOptions(mc, new DefaultTimeSource(epoch));
     generator = new IdGenerator(GeneratorId, options);
   }
+
   /// <summary>
-  /// 生成id
+  ///   生成id
+  /// </summary>
+  public static int GeneratorId { get; private set; } = -1;
+
+  /// <summary>
+  ///   生成id
   /// </summary>
   /// <returns></returns>
   public long GenId()

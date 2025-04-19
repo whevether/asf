@@ -1,13 +1,12 @@
-namespace ASF.Application.DTO.Translate
+namespace ASF.Application.DTO.Translate;
+
+/// <summary>
+///   修改多语言
+/// </summary>
+public class TranslateModifyRequestDto : TranslateCreateRequestDto
 {
 	/// <summary>
-	/// 修改多语言
+	///   多语言id
 	/// </summary>
-	public class TranslateModifyRequestDto: TranslateCreateRequestDto
-	{
-		/// <summary>
-		/// 多语言id
-		/// </summary>
-		public string Id { get; set; }
-	}
+	public string Id { get; set; }
 }

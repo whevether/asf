@@ -1,13 +1,12 @@
-namespace ASF.Application.DTO.Post
+namespace ASF.Application.DTO.Post;
+
+/// <summary>
+///   修改岗位
+/// </summary>
+public class PostModifyRequestDto : PostCreateRequestDto
 {
 	/// <summary>
-	/// 修改岗位
+	///   岗位id
 	/// </summary>
-	public class PostModifyRequestDto: PostCreateRequestDto
-	{
-		/// <summary>
-		/// 岗位id
-		/// </summary>
-		public string Id { get; set; }
-	}
+	public string Id { get; set; }
 }
