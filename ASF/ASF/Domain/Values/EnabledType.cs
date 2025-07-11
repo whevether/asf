@@ -7,13 +7,13 @@ namespace ASF.Domain.Values;
 /// </summary>
 public enum EnabledType
 {
-	/// <summary>
-	///   禁用
-	/// </summary>
-	[Description("禁用")] Disabled = 0,
+  /// <summary>
+  ///   禁用
+  /// </summary>
+  [Description("禁用")] Disabled = 0,
 
-	/// <summary>
-	///   启用
-	/// </summary>
-	[Description("启用")] Enable = 1
+  /// <summary>
+  ///   启用
+  /// </summary>
+  [Description("启用")] Enable = 1
 }

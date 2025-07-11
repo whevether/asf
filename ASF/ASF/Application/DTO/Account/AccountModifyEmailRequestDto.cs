@@ -7,21 +7,21 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class AccountModifyEmailRequestDto
 {
-	/// <summary>
-	///   账户id
-	/// </summary>
-	[Required(ErrorMessage = "账户id不能为空")]
+  /// <summary>
+  ///   账户id
+  /// </summary>
+  [Required(ErrorMessage = "账户id不能为空")]
   public string Id { get; set; }
 
-	/// <summary>
-	///   旧邮箱地址
-	/// </summary>
-	[RegularExpression(@"^[-\w\+]+(?:\.[-\w]+)*@[-a-z0-9]+(?:\.[a-z0-9]+)*(?:\.[a-z]{2,})$", ErrorMessage = "邮箱格式不正确")]
+  /// <summary>
+  ///   旧邮箱地址
+  /// </summary>
+  [RegularExpression(@"^[-\w\+]+(?:\.[-\w]+)*@[-a-z0-9]+(?:\.[a-z0-9]+)*(?:\.[a-z]{2,})$", ErrorMessage = "邮箱格式不正确")]
   public string OldEmail { get; set; }
 
-	/// <summary>
-	///   新邮箱地址
-	/// </summary>
-	[RegularExpression(@"^[-\w\+]+(?:\.[-\w]+)*@[-a-z0-9]+(?:\.[a-z0-9]+)*(?:\.[a-z]{2,})$", ErrorMessage = "邮箱格式不正确")]
+  /// <summary>
+  ///   新邮箱地址
+  /// </summary>
+  [RegularExpression(@"^[-\w\+]+(?:\.[-\w]+)*@[-a-z0-9]+(?:\.[a-z0-9]+)*(?:\.[a-z]{2,})$", ErrorMessage = "邮箱格式不正确")]
   public string NewEmail { get; set; }
 }

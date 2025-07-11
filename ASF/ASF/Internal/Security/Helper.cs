@@ -21,12 +21,12 @@ namespace ASF.Internal.Security;
 /// </summary>
 public static class Helper
 {
-	/// <summary>
-	///   淘宝api 通过ip 获取地址
-	/// </summary>
-	/// <param name="strIP"></param>
-	/// <returns></returns>
-	public static IpConvertValue GetIpCitys(string strIP)
+  /// <summary>
+  ///   淘宝api 通过ip 获取地址
+  /// </summary>
+  /// <param name="strIP"></param>
+  /// <returns></returns>
+  public static IpConvertValue GetIpCitys(string strIP)
   {
     try
     {
@@ -61,13 +61,13 @@ public static class Helper
     }
   }
 
-	/// <summary>
-	///   生成一个新的 Token
-	/// </summary>
-	/// <param name="identity">认证信息</param>
-	/// <param name="time">过期时间</param>
-	/// <returns>表示生成新的Token的任务</returns>
-	public static async Task<string> GenerateTokenAsync(ClaimsIdentity identity, long time)
+  /// <summary>
+  ///   生成一个新的 Token
+  /// </summary>
+  /// <param name="identity">认证信息</param>
+  /// <param name="time">过期时间</param>
+  /// <returns>表示生成新的Token的任务</returns>
+  public static async Task<string> GenerateTokenAsync(ClaimsIdentity identity, long time)
   {
     return await Task.Run(() =>
     {
@@ -90,12 +90,12 @@ public static class Helper
     });
   }
 
-	/// <summary>
-	///   序列化
-	/// </summary>
-	/// <param name="obj"></param>
-	/// <returns></returns>
-	public static string WriteFromObject(this object obj)
+  /// <summary>
+  ///   序列化
+  /// </summary>
+  /// <param name="obj"></param>
+  /// <returns></returns>
+  public static string WriteFromObject(this object obj)
   {
     var settings = new JsonSerializerSettings
     {
@@ -105,50 +105,50 @@ public static class Helper
     return dcjs;
   }
 
-	/// <summary>
-	///   反序列化
-	/// </summary>
-	/// <param name="json"></param>
-	/// <returns></returns>
-	public static JObject ReadToObject(this string json)
+  /// <summary>
+  ///   反序列化
+  /// </summary>
+  /// <param name="json"></param>
+  /// <returns></returns>
+  public static JObject ReadToObject(this string json)
   {
     var dcjs = (JObject)JsonConvert.DeserializeObject(json);
     return dcjs;
   }
 
-	/// <summary>
-	///   泛型反序列化
-	/// </summary>
-	/// <param name="json"></param>
-	/// <typeparam name="T"></typeparam>
-	/// <returns></returns>
-	public static T ReadToObject<T>(this string json) where T : class
+  /// <summary>
+  ///   泛型反序列化
+  /// </summary>
+  /// <param name="json"></param>
+  /// <typeparam name="T"></typeparam>
+  /// <returns></returns>
+  public static T ReadToObject<T>(this string json) where T : class
   {
     var dcjs = JsonConvert.DeserializeObject<T>(json);
     return dcjs;
   }
 
-	/// <summary>
-	///   字符串转数组
-	/// </summary>
-	/// <param name="data"></param>
-	/// <returns></returns>
-	public static List<string> SpitArray(this string data)
+  /// <summary>
+  ///   字符串转数组
+  /// </summary>
+  /// <param name="data"></param>
+  /// <returns></returns>
+  public static List<string> SpitArray(this string data)
   {
     if (string.IsNullOrEmpty(data))
       return new List<string>();
     return data.Split(new[] { ',' }, StringSplitOptions.None).ToList();
   }
 
-	/// <summary>
-	///   隐藏敏感信息
-	/// </summary>
-	/// <param name="info">信息实体</param>
-	/// <param name="left">左边保留的字符数</param>
-	/// <param name="right">右边保留的字符数</param>
-	/// <param name="basedOnLeft">当长度异常时，是否显示左边 </param>
-	/// <returns></returns>
-	public static string HideSensitiveInfo(this string info, int left, int right, bool basedOnLeft = true)
+  /// <summary>
+  ///   隐藏敏感信息
+  /// </summary>
+  /// <param name="info">信息实体</param>
+  /// <param name="left">左边保留的字符数</param>
+  /// <param name="right">右边保留的字符数</param>
+  /// <param name="basedOnLeft">当长度异常时，是否显示左边 </param>
+  /// <returns></returns>
+  public static string HideSensitiveInfo(this string info, int left, int right, bool basedOnLeft = true)
   {
     if (string.IsNullOrEmpty(info)) return "";
     var sbText = new StringBuilder();
@@ -181,18 +181,18 @@ public static class Helper
     return sbText.ToString();
   }
 
-	/// <summary>
-	///   隐藏敏感信息
-	/// </summary>
-	/// <param name="info">信息</param>
-	/// <param name="sublen">信息总长与左子串（或右子串）的比例</param>
-	/// <param name="basedOnLeft">当长度异常时，是否显示左边，默认true，默认显示左边</param>
-	/// <code>true</code>
-	/// 显示左边，
-	/// <code>false</code>
-	/// 显示右边
-	/// <returns></returns>
-	public static string HideSensitiveInfo(this string info, int sublen = 3, bool basedOnLeft = true)
+  /// <summary>
+  ///   隐藏敏感信息
+  /// </summary>
+  /// <param name="info">信息</param>
+  /// <param name="sublen">信息总长与左子串（或右子串）的比例</param>
+  /// <param name="basedOnLeft">当长度异常时，是否显示左边，默认true，默认显示左边</param>
+  /// <code>true</code>
+  /// 显示左边，
+  /// <code>false</code>
+  /// 显示右边
+  /// <returns></returns>
+  public static string HideSensitiveInfo(this string info, int sublen = 3, bool basedOnLeft = true)
   {
     if (string.IsNullOrEmpty(info)) return "";
     if (sublen <= 1) sublen = 3;
@@ -215,13 +215,13 @@ public static class Helper
     }
   }
 
-	/// <summary>
-	///   隐藏邮件详情
-	/// </summary>
-	/// <param name="email">邮件地址</param>
-	/// <param name="left">邮件头保留字符个数，默认值设置为3</param>
-	/// <returns></returns>
-	public static string HideEmailDetails(this string email, int left = 3)
+  /// <summary>
+  ///   隐藏邮件详情
+  /// </summary>
+  /// <param name="email">邮件地址</param>
+  /// <param name="left">邮件头保留字符个数，默认值设置为3</param>
+  /// <returns></returns>
+  public static string HideEmailDetails(this string email, int left = 3)
   {
     if (string.IsNullOrEmpty(email)) return "";
     if (Regex.IsMatch(email, @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")) //如果是邮件地址

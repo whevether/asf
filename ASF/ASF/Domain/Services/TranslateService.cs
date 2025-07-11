@@ -77,7 +77,8 @@ public class TranslateService
 
     if (!string.IsNullOrEmpty(name))
     {
-      var (list, total) = await _translateRepositories.GetEntitiesForPaging(pageNo, pageSize, f => f.Name.Equals(name));
+      var (list, total) =
+        await _translateRepositories.GetEntitiesForPaging(pageNo, pageSize, f => f.Name.Equals(name));
       return (list, total);
     }
 

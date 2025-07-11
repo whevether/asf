@@ -16,24 +16,24 @@ namespace ASF.DependencyInjection;
 /// </summary>
 public class ASFBuilder
 {
-    /// <summary>
-    ///   asf 服务
-    /// </summary>
-    /// <param name="services"></param>
-    public ASFBuilder(IServiceCollection services)
+  /// <summary>
+  ///   asf 服务
+  /// </summary>
+  /// <param name="services"></param>
+  public ASFBuilder(IServiceCollection services)
   {
     Services = services;
   }
 
-    /// <summary>
-    ///   服务集合
-    /// </summary>
-    public IServiceCollection Services { get; }
+  /// <summary>
+  ///   服务集合
+  /// </summary>
+  public IServiceCollection Services { get; }
 
-    /// <summary>
-    ///   编译服务
-    /// </summary>
-    public void Build()
+  /// <summary>
+  ///   编译服务
+  /// </summary>
+  public void Build()
   {
     Services.AddMemoryCache();
     Services.AddSingleton<IIdGenerator, DefaultIdGenerator>();
@@ -45,10 +45,10 @@ public class ASFBuilder
     AddAuthorization();
   }
 
-    /// <summary>
-    ///   添加授权
-    /// </summary>
-    private void AddAuthorization()
+  /// <summary>
+  ///   添加授权
+  /// </summary>
+  private void AddAuthorization()
   {
     Services.AddAuthorization(opt =>
       {
@@ -78,10 +78,10 @@ public class ASFBuilder
     ;
   }
 
-    /// <summary>
-    ///   添加领域服务
-    /// </summary>
-    private void AddDomainServices()
+  /// <summary>
+  ///   添加领域服务
+  /// </summary>
+  private void AddDomainServices()
   {
     Services.AddTransient<AccountAuthorizationService>();
     Services.AddTransient<LoggerService>();

@@ -7,9 +7,9 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class PermissionMenuModifyRequestDto : PermissionMenuCreateRequestDto
 {
-	/// <summary>
-	///   唯一标示
-	/// </summary>
-	[Required(ErrorMessage = "菜单id不能为空")]
+  /// <summary>
+  ///   唯一标示
+  /// </summary>
+  [Required(ErrorMessage = "菜单id不能为空")]
   public string Id { get; set; }
 }

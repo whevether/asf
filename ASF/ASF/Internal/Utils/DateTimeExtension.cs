@@ -5,34 +5,34 @@
 /// </summary>
 public static class DateTimeExtension
 {
-    /// <summary>
-    ///   转换为毫秒时间戳
-    /// </summary>
-    /// <param name="date"></param>
-    /// <returns></returns>
-    public static long ToUnixTime64(this DateTime date)
+  /// <summary>
+  ///   转换为毫秒时间戳
+  /// </summary>
+  /// <param name="date"></param>
+  /// <returns></returns>
+  public static long ToUnixTime64(this DateTime date)
   {
     var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
     return Convert.ToInt64((date.ToUniversalTime() - epoch).TotalMilliseconds);
   }
 
-    /// <summary>
-    ///   转换为秒级时间戳
-    /// </summary>
-    /// <param name="date"></param>
-    /// <returns></returns>
-    public static int ToUnixTime32(this DateTime date)
+  /// <summary>
+  ///   转换为秒级时间戳
+  /// </summary>
+  /// <param name="date"></param>
+  /// <returns></returns>
+  public static int ToUnixTime32(this DateTime date)
   {
     var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
     return Convert.ToInt32((date.ToUniversalTime() - epoch).TotalSeconds);
   }
 
-    /// <summary>
-    ///   生成随机字符串
-    /// </summary>
-    /// <param name="codeCount"></param>
-    /// <returns></returns>
-    public static string GenerateCheckCode(int codeCount)
+  /// <summary>
+  ///   生成随机字符串
+  /// </summary>
+  /// <param name="codeCount"></param>
+  /// <returns></returns>
+  public static string GenerateCheckCode(int codeCount)
   {
     var rep = 0;
     var str = string.Empty;
@@ -53,12 +53,12 @@ public static class DateTimeExtension
     return str;
   }
 
-    /// <summary>
-    ///   时间戳Timestamp转换成日期
-    /// </summary>
-    /// <param name="timeStamp"></param>
-    /// <returns></returns>
-    public static DateTime ConvertDateTime(this long timeStamp)
+  /// <summary>
+  ///   时间戳Timestamp转换成日期
+  /// </summary>
+  /// <param name="timeStamp"></param>
+  /// <returns></returns>
+  public static DateTime ConvertDateTime(this long timeStamp)
   {
     var dtStart = TimeZoneInfo.ConvertTime(new DateTime(1970, 1, 1, 8, 0, 0), TimeZoneInfo.Utc);
     var lTime = timeStamp * 10000000;

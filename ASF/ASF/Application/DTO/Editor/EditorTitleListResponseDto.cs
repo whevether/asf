@@ -5,13 +5,13 @@ namespace ASF.Application.DTO.Editor;
 /// </summary>
 public class EditorTitleListResponseDto
 {
-	/// <summary>
-	///   id
-	/// </summary>
-	public string Id { get; set; }
+  /// <summary>
+  ///   id
+  /// </summary>
+  public string Id { get; set; }
 
-	/// <summary>
-	///   富文本名称
-	/// </summary>
-	public string Name { get; set; }
+  /// <summary>
+  ///   富文本名称
+  /// </summary>
+  public string Name { get; set; }
 }

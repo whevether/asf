@@ -49,7 +49,8 @@ public class PermissionController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (data, total) = await _serviceProvider.GetRequiredService<PermissionService>().GetList(dto.PageNo, dto.PageSize,
+    var (data, total) = await _serviceProvider.GetRequiredService<PermissionService>().GetList(dto.PageNo,
+      dto.PageSize,
       dto.Code,
       dto.Name, dto.Type, dto.IsSystem, dto.Status, tenancyId);
     var list = _mapper.Map<IEnumerable<PermissionResponseDto>>(data);
@@ -128,7 +129,8 @@ public class PermissionController : ControllerBase
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
     //不是超级管理员不能操作系统级别
-    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes && !HttpContext.User.IsSuperRole())
+    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes &&
+        !HttpContext.User.IsSuperRole())
       return Result.ReFailure(ResultCodes.PermissionSystemNotModify);
     // 除总超级管理员之外其他不允许操作其他租户信息
     if (tenancyId != null && result.Data.TenancyId != tenancyId)
@@ -154,7 +156,8 @@ public class PermissionController : ControllerBase
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
     //不是超级管理员不能操作系统级别
-    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes && !HttpContext.User.IsSuperRole())
+    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes &&
+        !HttpContext.User.IsSuperRole())
       return Result.ReFailure(ResultCodes.PermissionSystemNotModify);
     // 除总超级管理员之外其他不允许操作其他租户信息
     if (tenancyId != null && result.Data.TenancyId != tenancyId)

@@ -9,10 +9,10 @@ namespace ASF.Application.DtoMapper;
 /// </summary>
 public class PostMapper : Profile
 {
-	/// <summary>
-	///   岗位映射
-	/// </summary>
-	public PostMapper()
+  /// <summary>
+  ///   岗位映射
+  /// </summary>
+  public PostMapper()
   {
     //创建
     CreateMap<PostCreateRequestDto, Post>();

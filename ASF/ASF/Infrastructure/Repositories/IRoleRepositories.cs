@@ -8,11 +8,11 @@ namespace ASF.Infrastructure.Repositories;
 /// </summary>
 public interface IRoleRepositories : IRepositories<Role>
 {
-	/// <summary>
-	///   获取角色关联详情
-	/// </summary>
-	/// <param name="id"></param>
-	/// <param name="tenancyId"></param>
-	/// <returns></returns>
-	Task<Role> GetRoleAsync(long id, long? tenancyId = null);
+  /// <summary>
+  ///   获取角色关联详情
+  /// </summary>
+  /// <param name="id"></param>
+  /// <param name="tenancyId"></param>
+  /// <returns></returns>
+  Task<Role> GetRoleAsync(long id, long? tenancyId = null);
 }

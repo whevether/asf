@@ -141,7 +141,8 @@ public class AccountController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<AccountService>().GetList(dto.PageNo, dto.PageSize,
+    var (list, total) = await _serviceProvider.GetRequiredService<AccountService>().GetList(dto.PageNo,
+      dto.PageSize,
       dto.Username, dto.TelPhone, dto.Email, dto.Sex, dto.Status, tenancyId);
     return ResultPagedList<AccountResponseDto>.ReSuccess(_mapper.Map<List<AccountResponseDto>>(list),
       total);

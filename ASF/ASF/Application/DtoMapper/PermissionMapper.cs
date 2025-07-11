@@ -9,10 +9,10 @@ namespace ASF.Application.DtoMapper;
 /// </summary>
 public class PermissionMapper : Profile
 {
-	/// <summary>
-	///   权限映射
-	/// </summary>
-	public PermissionMapper()
+  /// <summary>
+  ///   权限映射
+  /// </summary>
+  public PermissionMapper()
   {
     #region api permission
 
@@ -20,7 +20,8 @@ public class PermissionMapper : Profile
     CreateMap<Api, PermissionApiResponseDto>()
       .ForMember(f => f.Key, s => s.MapFrom(o => o.Id))
       .ForMember(f => f.StatusName, s => s.MapFrom(o => o.Status == 0 ? "禁用" : "启用"))
-      .ForMember(f => f.TypeName, s => s.MapFrom(o => o.Type == 1 ? "公开api" : "授权api")).ForMember(f => f.Permission,
+      .ForMember(f => f.TypeName, s => s.MapFrom(o => o.Type == 1 ? "公开api" : "授权api")).ForMember(
+        f => f.Permission,
         s => s.MapFrom(o => o.Permission != null
           ? new
           {

@@ -122,7 +122,8 @@ public class RoleService
       }
       else
       {
-        var list = await _roleRepositories.GetEntities(f => f.TenancyId == tenancyId && !f.Name.Equals("superadmin"));
+        var list = await _roleRepositories.GetEntities(f =>
+          f.TenancyId == tenancyId && !f.Name.Equals("superadmin"));
         return ResultList<Role>.ReSuccess(list.ToList());
       }
     }

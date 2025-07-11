@@ -37,8 +37,10 @@ public class AccountsRepository : Repositories<Account>, IAccountsRepository
         query = await GetDbContext().Account.Include("Department").Include("AccountRole.Role")
           .Include("AccountPost.Post").AsSplitQuery().Where(f =>
             f.TenancyId == tenancyId && f.IsDeleted != 1 && (f.Username.Equals(username) ||
-                                                             f.TelPhone.Equals(telPhone) || f.Email.Equals(email) ||
-                                                             f.Sex == sex || f.Status == status)).ToListAsync();
+                                                             f.TelPhone.Equals(telPhone) ||
+                                                             f.Email.Equals(email) ||
+                                                             f.Sex == sex || f.Status == status))
+          .ToListAsync();
       else
         query = await GetDbContext().Account.Include("Department").Include("AccountRole.Role")
           .Include("AccountPost.Post").AsSplitQuery().Where(f => f.TenancyId == tenancyId && f.IsDeleted != 1)
@@ -50,7 +52,8 @@ public class AccountsRepository : Repositories<Account>, IAccountsRepository
           sex != null || status != null)
         query = await GetDbContext().Account.Include("Department").Include("AccountRole.Role")
           .Include("AccountPost.Post").AsSplitQuery().Where(f =>
-            f.IsDeleted != 1 && (f.Username.Equals(username) || f.TelPhone.Equals(telPhone) || f.Email.Equals(email) ||
+            f.IsDeleted != 1 && (f.Username.Equals(username) || f.TelPhone.Equals(telPhone) ||
+                                 f.Email.Equals(email) ||
                                  f.Sex == sex || f.Status == status)).ToListAsync();
       else
         query = await GetDbContext().Account.Include("Department").Include("AccountRole.Role")
@@ -187,7 +190,8 @@ public class AccountsRepository : Repositories<Account>, IAccountsRepository
   public async Task<Account> GetByPhoneAsync(string phone, long tenancyId)
   {
     var account = await GetDbContext().Account.Include("Department.DepartmentRole.Role").Include("AccountRole.Role")
-      .OrderBy(f => f.Id).AsSplitQuery().FirstOrDefaultAsync(f => f.TelPhone.Equals(phone) && f.TenancyId == tenancyId);
+      .OrderBy(f => f.Id).AsSplitQuery()
+      .FirstOrDefaultAsync(f => f.TelPhone.Equals(phone) && f.TenancyId == tenancyId);
     return await Task.FromResult(account);
   }
 
@@ -200,7 +204,8 @@ public class AccountsRepository : Repositories<Account>, IAccountsRepository
   public async Task<Account> GetByEamilAsync(string email, long tenancyId)
   {
     var account = await GetDbContext().Account.Include("Department.DepartmentRole.Role").Include("AccountRole.Role")
-      .OrderBy(f => f.Id).AsSplitQuery().FirstOrDefaultAsync(f => f.Email.Equals(email) && f.TenancyId == tenancyId);
+      .OrderBy(f => f.Id).AsSplitQuery()
+      .FirstOrDefaultAsync(f => f.Email.Equals(email) && f.TenancyId == tenancyId);
     return await Task.FromResult(account);
   }
 }

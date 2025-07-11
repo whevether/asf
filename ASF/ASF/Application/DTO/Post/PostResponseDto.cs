@@ -7,18 +7,18 @@ namespace ASF.Application.DTO.Post;
 /// </summary>
 public class PostResponseDto : PostModifyRequestDto
 {
-	/// <summary>
-	///   key
-	/// </summary>
-	public string Key { get; set; }
+  /// <summary>
+  ///   key
+  /// </summary>
+  public string Key { get; set; }
 
-	/// <summary>
-	///   创建者id
-	/// </summary>
-	public string CreateId { get; set; }
+  /// <summary>
+  ///   创建者id
+  /// </summary>
+  public string CreateId { get; set; }
 
-	/// <summary>
-	///   创建时间
-	/// </summary>
-	public DateTime CreateTime { get; set; }
+  /// <summary>
+  ///   创建时间
+  /// </summary>
+  public DateTime CreateTime { get; set; }
 }

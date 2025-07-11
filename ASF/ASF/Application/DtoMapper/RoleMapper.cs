@@ -10,10 +10,10 @@ namespace ASF.Application.DtoMapper;
 /// </summary>
 public class RoleMapper : Profile
 {
-	/// <summary>
-	///   角色映射
-	/// </summary>
-	public RoleMapper()
+  /// <summary>
+  ///   角色映射
+  /// </summary>
+  public RoleMapper()
   {
     // 创建
     CreateMap<RoleCreateRequestDto, Role>();

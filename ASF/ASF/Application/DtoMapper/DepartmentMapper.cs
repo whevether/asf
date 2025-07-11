@@ -10,10 +10,10 @@ namespace ASF.Application.DtoMapper;
 /// </summary>
 public class DepartmentMapper : Profile
 {
-	/// <summary>
-	///   部门映射
-	/// </summary>
-	public DepartmentMapper()
+  /// <summary>
+  ///   部门映射
+  /// </summary>
+  public DepartmentMapper()
   {
     //创建
     CreateMap<DepartmentCreateRequestDto, Department>();

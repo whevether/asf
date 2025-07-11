@@ -9,15 +9,15 @@ namespace ASF.Application.DTO.Role;
 /// </summary>
 public class RoleModifyRequestDto : RoleCreateRequestDto
 {
-	/// <summary>
-	///   角色id
-	/// </summary>
-	[Required(ErrorMessage = "角色id不能为空")]
+  /// <summary>
+  ///   角色id
+  /// </summary>
+  [Required(ErrorMessage = "角色id不能为空")]
   public string Id { get; set; }
 
-	/// <summary>
-	///   要分配的权限id集合
-	/// </summary>
-	[NotMapped]
+  /// <summary>
+  ///   要分配的权限id集合
+  /// </summary>
+  [NotMapped]
   public List<string> PermissionId { get; set; }
 }

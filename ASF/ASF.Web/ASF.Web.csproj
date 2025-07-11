@@ -9,10 +9,10 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="NLog.Web.AspNetCore" Version="6.0.1" />
-        <PackageReference Include="Ocelot" Version="24.0.0" />
-        <PackageReference Include="Ocelot.Provider.Consul" Version="24.0.0" />
-        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.7" />
+        <PackageReference Include="NLog.Web.AspNetCore" Version="6.0.1"/>
+        <PackageReference Include="Ocelot" Version="24.0.0"/>
+        <PackageReference Include="Ocelot.Provider.Consul" Version="24.0.0"/>
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.7"/>
         <!-- <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2" /> -->
     </ItemGroup>
 

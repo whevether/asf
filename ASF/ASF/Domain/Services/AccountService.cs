@@ -146,8 +146,9 @@ public class AccountService
   public async Task<Result> Create(Account account)
   {
     if (await _accountsRepository.GetEntity(f =>
-          f.TenancyId == account.TenancyId && (f.Username.Equals(account.Username) || f.Email.Equals(account.Email) ||
-                                               f.TelPhone.Equals(account.TelPhone))) != null)
+          f.TenancyId == account.TenancyId &&
+          (f.Username.Equals(account.Username) || f.Email.Equals(account.Email) ||
+           f.TelPhone.Equals(account.TelPhone))) != null)
       return Result.ReFailure(ResultCodes.AccountExist);
     account.SetId(_idGenerator.GenId());
     var isAdd = await _accountsRepository.Add(account);
@@ -167,7 +168,8 @@ public class AccountService
     if (dic.Equals("default") && await _accountsRepository.GetEntity(f =>
           f.Id != account.Id && f.TenancyId == account.TenancyId && (f.Username.Equals(account.Username) ||
                                                                      f.Email.Equals(account.Email) ||
-                                                                     f.TelPhone.Equals(account.TelPhone))) != null)
+                                                                     f.TelPhone.Equals(account.TelPhone))) !=
+        null)
       return Result.ReFailure(ResultCodes.AccountExist);
     if (dic.Equals("telphone") && await _accountsRepository.GetEntity(f =>
           f.Id != account.Id && f.TenancyId == account.TenancyId && f.TelPhone.Equals(account.TelPhone)) != null)

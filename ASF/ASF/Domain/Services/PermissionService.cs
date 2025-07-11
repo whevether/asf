@@ -13,10 +13,10 @@ namespace ASF.Domain.Services;
 /// </summary>
 public class PermissionService
 {
-	/// <summary>
-	///   雪花算法id
-	/// </summary>
-	private readonly IIdGenerator _idGenerator;
+  /// <summary>
+  ///   雪花算法id
+  /// </summary>
+  private readonly IIdGenerator _idGenerator;
 
   // 权限仓储
   private readonly IPermissionsRepository _permissionsRepository;
@@ -74,7 +74,8 @@ public class PermissionService
       }
       else
       {
-        var list = await _permissionsRepository.GetEntities(f => f.Id != 0 && f.IsSystem != null && f.IsSystem != 1);
+        var list = await _permissionsRepository.GetEntities(f =>
+          f.Id != 0 && f.IsSystem != null && f.IsSystem != 1);
         return ResultList<Permission>.ReSuccess(list.ToList());
       }
     }
@@ -86,7 +87,8 @@ public class PermissionService
     }
     else
     {
-      var list = await _permissionsRepository.GetEntities(f => f.Id != 0 && f.IsSystem != null && f.IsSystem != 1);
+      var list = await _permissionsRepository.GetEntities(f =>
+        f.Id != 0 && f.IsSystem != null && f.IsSystem != 1);
       return ResultList<Permission>.ReSuccess(list.ToList());
     }
   }
@@ -265,7 +267,8 @@ public class PermissionService
   public async Task<Result> Create(Permission permission)
   {
     if (await _permissionsRepository.GetEntity(f =>
-          f.TenancyId == permission.TenancyId && (f.Code.Equals(permission.Code) || f.Name.Equals(permission.Name))) !=
+          f.TenancyId == permission.TenancyId &&
+          (f.Code.Equals(permission.Code) || f.Name.Equals(permission.Name))) !=
         null)
       return Result.ReFailure(ResultCodes.PermissionNameOrCodeExist);
     permission.SetId(_idGenerator.GenId());

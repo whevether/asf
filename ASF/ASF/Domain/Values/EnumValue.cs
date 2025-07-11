@@ -10,87 +10,87 @@ namespace ASF.Domain.Values;
 [Flags]
 public enum ShopType
 {
-	/// <summary>
-	///   空
-	/// </summary>
-	[Description("空")] None = 0,
+  /// <summary>
+  ///   空
+  /// </summary>
+  [Description("空")] None = 0,
 
-	/// <summary>
-	///   JPOS门店
-	/// </summary>
-	[Description("JPOS")] JPOS = 1,
+  /// <summary>
+  ///   JPOS门店
+  /// </summary>
+  [Description("JPOS")] JPOS = 1,
 
-	/// <summary>
-	///   仓库
-	/// </summary>
-	[Description("JPOS")] JWMS = 2,
+  /// <summary>
+  ///   仓库
+  /// </summary>
+  [Description("JPOS")] JWMS = 2,
 
-	/// <summary>
-	///   JMart
-	///   订小易注册的商户
-	///   允许JPOS门店登陆
-	/// </summary>
-	[Description("JMart")] JMart = 4,
+  /// <summary>
+  ///   JMart
+  ///   订小易注册的商户
+  ///   允许JPOS门店登陆
+  /// </summary>
+  [Description("JMart")] JMart = 4,
 
-	/// <summary>
-	///   JCRM
-	/// </summary>
-	[Description("JCRM")] JCRM = 8,
+  /// <summary>
+  ///   JCRM
+  /// </summary>
+  [Description("JCRM")] JCRM = 8,
 
-	/// <summary>
-	///   JOA（内部管理）
-	/// </summary>
-	[Description("JOA")] JOA = 16,
+  /// <summary>
+  ///   JOA（内部管理）
+  /// </summary>
+  [Description("JOA")] JOA = 16,
 
-	/// <summary>
-	///   小易商城
-	/// </summary>
-	[Description("JMall")] JMall = 32,
+  /// <summary>
+  ///   小易商城
+  /// </summary>
+  [Description("JMall")] JMall = 32,
 
-	/// <summary>
-	///   小易商圈
-	/// </summary>
-	[Description("JMarket")] JMarket = 64,
+  /// <summary>
+  ///   小易商圈
+  /// </summary>
+  [Description("JMarket")] JMarket = 64,
 
-	/// <summary>
-	///   服务商（暂指JWMS服务商，未来可考虑JPOS服务商）
-	/// </summary>
-	[Description("JISV")] JISV = 128,
+  /// <summary>
+  ///   服务商（暂指JWMS服务商，未来可考虑JPOS服务商）
+  /// </summary>
+  [Description("JISV")] JISV = 128,
 
-	/// <summary>
-	///   集团型/总部管理（可以创建门店或仓库账号，统一查看其订单客户等信息）
-	/// </summary>
-	[Description("JGroup")] JGroup = 256,
+  /// <summary>
+  ///   集团型/总部管理（可以创建门店或仓库账号，统一查看其订单客户等信息）
+  /// </summary>
+  [Description("JGroup")] JGroup = 256,
 
-	/// <summary>
-	///   JPMS
-	/// </summary>
-	[Description("JPMS")] JPMS = 512,
+  /// <summary>
+  ///   JPMS
+  /// </summary>
+  [Description("JPMS")] JPMS = 512,
 
-	/// <summary>
-	///   新版门店收银系统
-	/// </summary>
-	[Description("GPOS")] GPOS = 1024,
+  /// <summary>
+  ///   新版门店收银系统
+  /// </summary>
+  [Description("GPOS")] GPOS = 1024,
 
-	/// <summary>
-	///   券小易平台账户
-	/// </summary>
-	[Description("GAMS")] GAMS = 2048,
+  /// <summary>
+  ///   券小易平台账户
+  /// </summary>
+  [Description("GAMS")] GAMS = 2048,
 
-	/// <summary>
-	///   团购平台
-	/// </summary>
-	[Description("GEmporium")] GEmporium = 4096,
+  /// <summary>
+  ///   团购平台
+  /// </summary>
+  [Description("GEmporium")] GEmporium = 4096,
 
-	/// <summary>
-	///   团购团长
-	/// </summary>
-	[Description("EmporiumAgent")] EmporiumAgent = 8192,
+  /// <summary>
+  ///   团购团长
+  /// </summary>
+  [Description("EmporiumAgent")] EmporiumAgent = 8192,
 
-	/// <summary>
-	///   物流运输系统
-	/// </summary>
-	[Description("GTMS")] GTMS = 16384
+  /// <summary>
+  ///   物流运输系统
+  /// </summary>
+  [Description("GTMS")] GTMS = 16384
 }
 
 /// <summary>
@@ -102,50 +102,50 @@ public enum ShopType
 [Flags]
 public enum EditionType
 {
-	/// <summary>
-	///   空
-	/// </summary>
-	None = 0,
+  /// <summary>
+  ///   空
+  /// </summary>
+  None = 0,
 
-	/// <summary>
-	///   专业版（批发）
-	/// </summary>
-	Major = 1,
+  /// <summary>
+  ///   专业版（批发）
+  /// </summary>
+  Major = 1,
 
-	/// <summary>
-	///   基础版（批发）
-	/// </summary>
-	Basics = 2,
+  /// <summary>
+  ///   基础版（批发）
+  /// </summary>
+  Basics = 2,
 
-	/// <summary>
-	///   商城版（批发）
-	/// </summary>
-	Mall = 4,
+  /// <summary>
+  ///   商城版（批发）
+  /// </summary>
+  Mall = 4,
 
-	/// <summary>
-	///   大客户版（批发）
-	/// </summary>
-	Clique = 128,
+  /// <summary>
+  ///   大客户版（批发）
+  /// </summary>
+  Clique = 128,
 
-	/// <summary>
-	///   门店版（零售）
-	/// </summary>
-	POS = 8,
+  /// <summary>
+  ///   门店版（零售）
+  /// </summary>
+  POS = 8,
 
-	/// <summary>
-	///   零售版（零售）
-	/// </summary>
-	Emporium = 16,
+  /// <summary>
+  ///   零售版（零售）
+  /// </summary>
+  Emporium = 16,
 
-	/// <summary>
-	///   团购版（零售）
-	/// </summary>
-	Groupon = 32,
+  /// <summary>
+  ///   团购版（零售）
+  /// </summary>
+  Groupon = 32,
 
-	/// <summary>
-	///   团长版（零售）
-	/// </summary>
-	Agent = 64
+  /// <summary>
+  ///   团长版（零售）
+  /// </summary>
+  Agent = 64
 }
 
 /// <summary>
@@ -154,40 +154,40 @@ public enum EditionType
 [Flags]
 public enum ProgramType
 {
-	/// <summary>
-	///   空
-	/// </summary>
-	None = 0,
+  /// <summary>
+  ///   空
+  /// </summary>
+  None = 0,
 
-	/// <summary>
-	///   批发订货系统
-	/// </summary>
-	JMart = 1,
+  /// <summary>
+  ///   批发订货系统
+  /// </summary>
+  JMart = 1,
 
-	/// <summary>
-	///   批发订货系统
-	/// </summary>
-	JWMS = 2,
+  /// <summary>
+  ///   批发订货系统
+  /// </summary>
+  JWMS = 2,
 
-	/// <summary>
-	///   零售订货系统
-	/// </summary>
-	JSeller = 4,
+  /// <summary>
+  ///   零售订货系统
+  /// </summary>
+  JSeller = 4,
 
-	/// <summary>
-	///   零售管理
-	/// </summary>
-	GPOS = 8,
+  /// <summary>
+  ///   零售管理
+  /// </summary>
+  GPOS = 8,
 
-	/// <summary>
-	///   商圈
-	/// </summary>
-	JMarket = 16,
+  /// <summary>
+  ///   商圈
+  /// </summary>
+  JMarket = 16,
 
-	/// <summary>
-	///   商城管理
-	/// </summary>
-	JMall = 32,
+  /// <summary>
+  ///   商城管理
+  /// </summary>
+  JMall = 32,
 
   //
   //Pifalao=32,
@@ -224,28 +224,28 @@ public enum ProgramType
 [Flags]
 public enum ProgramModeType
 {
-	/// <summary>
-	///   空
-	/// </summary>
-	None = 0,
+  /// <summary>
+  ///   空
+  /// </summary>
+  None = 0,
 
-	/// <summary>
-	///   平台版
-	///   众多商户共存的聚合平台
-	/// </summary>
-	Platform = 1,
+  /// <summary>
+  ///   平台版
+  ///   众多商户共存的聚合平台
+  /// </summary>
+  Platform = 1,
 
-	/// <summary>
-	///   专业版
-	///   只限于单一商户的专业形式
-	/// </summary>
-	Single = 2,
+  /// <summary>
+  ///   专业版
+  ///   只限于单一商户的专业形式
+  /// </summary>
+  Single = 2,
 
-	/// <summary>
-	///   连锁版
-	///   当前连锁客户的多商户版
-	/// </summary>
-	Chain = 3
+  /// <summary>
+  ///   连锁版
+  ///   当前连锁客户的多商户版
+  /// </summary>
+  Chain = 3
 }
 
 /// <summary>
@@ -254,44 +254,44 @@ public enum ProgramModeType
 [Flags]
 public enum ProgramWayType
 {
-	/// <summary>
-	///   空
-	/// </summary>
-	[Description("空")] None = 0,
+  /// <summary>
+  ///   空
+  /// </summary>
+  [Description("空")] None = 0,
 
-	/// <summary>
-	///   客户端
-	/// </summary>
-	Client = 1,
+  /// <summary>
+  ///   客户端
+  /// </summary>
+  Client = 1,
 
-	/// <summary>
-	///   Web
-	/// </summary>
-	Web = 2,
+  /// <summary>
+  ///   Web
+  /// </summary>
+  Web = 2,
 
-	/// <summary>
-	/// </summary>
-	Android = 4,
+  /// <summary>
+  /// </summary>
+  Android = 4,
 
-	/// <summary>
-	///   IOS APP
-	/// </summary>
-	IOS = 8,
+  /// <summary>
+  ///   IOS APP
+  /// </summary>
+  IOS = 8,
 
-	/// <summary>
-	///   小程序
-	/// </summary>
-	MiniApp = 16,
+  /// <summary>
+  ///   小程序
+  /// </summary>
+  MiniApp = 16,
 
-	/// <summary>
-	///   微信公众号
-	/// </summary>
-	WechatMedia = 32,
+  /// <summary>
+  ///   微信公众号
+  /// </summary>
+  WechatMedia = 32,
 
-	/// <summary>
-	///   微信开放平台
-	/// </summary>
-	WeixinOpen = 64
+  /// <summary>
+  ///   微信开放平台
+  /// </summary>
+  WeixinOpen = 64
 }
 
 /// <summary>
@@ -299,40 +299,40 @@ public enum ProgramWayType
 /// </summary>
 public enum ModifyAccountType
 {
-	/// <summary>
-	///   是否启用账户
-	/// </summary>
-	Enable = 1,
+  /// <summary>
+  ///   是否启用账户
+  /// </summary>
+  Enable = 1,
 
-	/// <summary>
-	///   是否为平台账户
-	/// </summary>
-	IsPlatform = 2,
+  /// <summary>
+  ///   是否为平台账户
+  /// </summary>
+  IsPlatform = 2,
 
-	/// <summary>
-	///   是否为虚拟账户
-	/// </summary>
-	IsVisual = 3,
+  /// <summary>
+  ///   是否为虚拟账户
+  /// </summary>
+  IsVisual = 3,
 
-	/// <summary>
-	///   是否允许提款
-	/// </summary>
-	AllowCashOut = 4,
+  /// <summary>
+  ///   是否允许提款
+  /// </summary>
+  AllowCashOut = 4,
 
-	/// <summary>
-	///   是否允许收款
-	/// </summary>
-	AllowCashIn = 5,
+  /// <summary>
+  ///   是否允许收款
+  /// </summary>
+  AllowCashIn = 5,
 
-	/// <summary>
-	///   是否允许自动提款
-	/// </summary>
-	AutoCashOut = 6,
+  /// <summary>
+  ///   是否允许自动提款
+  /// </summary>
+  AutoCashOut = 6,
 
-	/// <summary>
-	///   启用支付类型
-	/// </summary>
-	PayTypeEnable = 7
+  /// <summary>
+  ///   启用支付类型
+  /// </summary>
+  PayTypeEnable = 7
 }
 
 /// <summary>
@@ -340,10 +340,10 @@ public enum ModifyAccountType
 /// </summary>
 public static class EnumValue
 {
-	/// <summary>
-	///   商户类型值对象
-	/// </summary>
-	public static Dictionary<int, string> AllowShopTypeValue = new()
+  /// <summary>
+  ///   商户类型值对象
+  /// </summary>
+  public static Dictionary<int, string> AllowShopTypeValue = new()
   {
     [0] = "空",
     [1] = "JPOS",

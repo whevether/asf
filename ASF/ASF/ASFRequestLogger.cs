@@ -137,7 +137,8 @@ public class ASFRequestLogger
       Remark = "操作记录"
     };
     logInfo.SetOperate(httpContext.User.UserId(), httpContext.User.Name(), title, LoggingType.Error, null,
-      httpContext.Request.Path.Value, requestContent, httpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1",
+      httpContext.Request.Path.Value, requestContent,
+      httpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1",
       errorMsg);
     await serviceProvider.GetRequiredService<LoggerService>().Create(logInfo);
     //

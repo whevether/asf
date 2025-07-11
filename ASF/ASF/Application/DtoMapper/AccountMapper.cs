@@ -11,10 +11,10 @@ namespace ASF.Application.DtoMapper;
 /// </summary>
 public class AccountMapper : Profile
 {
-    /// <summary>
-    ///   账户映射
-    /// </summary>
-    public AccountMapper()
+  /// <summary>
+  ///   账户映射
+  /// </summary>
+  public AccountMapper()
   {
     // 账户权限菜单等响应
     CreateMap<Account, AccountInfoResponseDto>();
