@@ -5,13 +5,13 @@
 /// </summary>
 public enum PermissionType
 {
-    /// <summary>
-    ///   开放性Api
-    /// </summary>
-    OpenApi = 1,
+  /// <summary>
+  ///   开放性Api
+  /// </summary>
+  OpenApi = 1,
 
-    /// <summary>
-    ///   功能
-    /// </summary>
-    AuthApi = 1
+  /// <summary>
+  ///   功能
+  /// </summary>
+  AuthApi = 1
 }

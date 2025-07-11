@@ -63,7 +63,8 @@ public class MenuService
   /// <param name="menuUrl"></param>
   /// <param name="tenancyId"></param>
   /// <returns></returns>
-  public async Task<(IList<PermissionMenu> list, int total)> GetList(int pageNo, int pageSize, string permissionId = "",
+  public async Task<(IList<PermissionMenu> list, int total)> GetList(int pageNo, int pageSize,
+    string permissionId = "",
     string title = "", string menuUrl = "", long? tenancyId = null)
   {
     return await _menuRepositories.GetEntitiesForPaging(pageNo, pageSize, permissionId, title, menuUrl,

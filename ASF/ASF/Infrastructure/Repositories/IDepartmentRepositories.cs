@@ -8,11 +8,11 @@ namespace ASF.Infrastructure.Repositories;
 /// </summary>
 public interface IDepartmentRepositories : IRepositories<Department>
 {
-	/// <summary>
-	///   获取部门及其关联信息
-	/// </summary>
-	/// <param name="id"></param>
-	/// <param name="tenancyId" />
-	/// <returns></returns>
-	Task<Department> GetDepartmentAsync(long id, long? tenancyId = null);
+  /// <summary>
+  ///   获取部门及其关联信息
+  /// </summary>
+  /// <param name="id"></param>
+  /// <param name="tenancyId" />
+  /// <returns></returns>
+  Task<Department> GetDepartmentAsync(long id, long? tenancyId = null);
 }

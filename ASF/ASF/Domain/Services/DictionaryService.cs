@@ -75,7 +75,8 @@ public class DictionaryService
 
     if (!string.IsNullOrEmpty(key))
     {
-      var (list, total) = await _asfDictionaryRepository.GetEntitiesForPaging(pageNo, pageSize, f => f.Key.Equals(key));
+      var (list, total) =
+        await _asfDictionaryRepository.GetEntitiesForPaging(pageNo, pageSize, f => f.Key.Equals(key));
       return (list, total);
     }
 
@@ -129,7 +130,8 @@ public class DictionaryService
   public async Task<Result> Modify(AsfDictionary asfDictionary)
   {
     if (await _asfDictionaryRepository.GetEntity(f =>
-          f.Id != asfDictionary.Id && f.TenancyId == asfDictionary.TenancyId && f.Key.Equals(asfDictionary.Key)) !=
+          f.Id != asfDictionary.Id && f.TenancyId == asfDictionary.TenancyId &&
+          f.Key.Equals(asfDictionary.Key)) !=
         null)
       return Result.ReFailure(ResultCodes.TranslateNameExist);
     var isUpdate = await _asfDictionaryRepository.Update(asfDictionary);

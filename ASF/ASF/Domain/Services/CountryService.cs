@@ -97,7 +97,8 @@ public class CountryService
   public async Task<Result> Modify(Country country)
   {
     if (await _countryRepositories.GetEntity(f =>
-          f.Id != country.Id && (f.Name.Equals(country.Name) || f.LanguageCode.Equals(country.LanguageCode))) != null)
+          f.Id != country.Id && (f.Name.Equals(country.Name) || f.LanguageCode.Equals(country.LanguageCode))) !=
+        null)
       return Result.ReFailure(ResultCodes.CountryNameExistError);
     var isUpdate = await _countryRepositories.Update(country);
     if (!isUpdate) return Result.ReFailure(ResultCodes.CountryUpdateError);

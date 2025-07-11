@@ -50,7 +50,8 @@ public class UploadController : ControllerBase
         if (formFile.Name.Equals("file"))
         {
           var file = await _serviceProvider.GetRequiredService<UploadService>()
-            .UploadFile(uploadType.ToString(), formFile.FileName, st, formFile.ContentType, formFile.Length);
+            .UploadFile(uploadType.ToString(), formFile.FileName, st, formFile.ContentType,
+              formFile.Length);
           if (file != null)
             fileList.Add(file);
         }
@@ -59,7 +60,8 @@ public class UploadController : ControllerBase
           if (Convert.ToInt32(st.Length / 1024) > 5 * 1024)
             return ResultList<object>.ReFailure("上传失败,图片不能大于5M", 20002);
           var file = await _serviceProvider.GetRequiredService<UploadService>()
-            .UploadFile(uploadType.ToString(), formFile.FileName, st, formFile.ContentType, formFile.Length);
+            .UploadFile(uploadType.ToString(), formFile.FileName, st, formFile.ContentType,
+              formFile.Length);
           if (file != null)
             fileList.Add(file);
         }

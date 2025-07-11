@@ -63,7 +63,8 @@ public class TenancyService
     if (!string.IsNullOrEmpty(name) && status != null && tenancyId != null)
     {
       var (list, total) = await _repository.GetEntitiesForPaging(pageNo, pageSize,
-        f => f.Name.Equals(name) && f.Status == status && (Status)f.IsDeleted == Status.No && f.Id == tenancyId);
+        f => f.Name.Equals(name) && f.Status == status && (Status)f.IsDeleted == Status.No &&
+             f.Id == tenancyId);
       return (list, total);
     }
 
@@ -110,7 +111,8 @@ public class TenancyService
     }
 
     var (data, totalCount) =
-      await _repository.GetEntitiesForPaging(pageNo, pageSize, f => f.Id != 0 && (Status)f.IsDeleted == Status.No);
+      await _repository.GetEntitiesForPaging(pageNo, pageSize,
+        f => f.Id != 0 && (Status)f.IsDeleted == Status.No);
     return (data, totalCount);
   }
 

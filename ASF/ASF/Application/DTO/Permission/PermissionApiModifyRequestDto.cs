@@ -7,9 +7,9 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class PermissionApiModifyRequestDto : PermissionApiCreateRequestDto
 {
-	/// <summary>
-	///   权限功能Id
-	/// </summary>
-	[Required(ErrorMessage = "授权api id不能为空")]
+  /// <summary>
+  ///   权限功能Id
+  /// </summary>
+  [Required(ErrorMessage = "授权api id不能为空")]
   public string Id { get; set; }
 }

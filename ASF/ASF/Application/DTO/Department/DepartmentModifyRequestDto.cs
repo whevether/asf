@@ -8,14 +8,14 @@ namespace ASF.Application.DTO.Department;
 /// </summary>
 public class DepartmentModifyRequestDto : DepartmentCreateRequestDto
 {
-	/// <summary>
-	///   部门id
-	/// </summary>
-	public string Id { get; set; }
+  /// <summary>
+  ///   部门id
+  /// </summary>
+  public string Id { get; set; }
 
-	/// <summary>
-	///   角色id 集合
-	/// </summary>
-	[NotMapped]
+  /// <summary>
+  ///   角色id 集合
+  /// </summary>
+  [NotMapped]
   public List<string> RoleIds { get; set; }
 }

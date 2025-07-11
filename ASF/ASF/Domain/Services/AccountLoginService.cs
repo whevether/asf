@@ -126,7 +126,8 @@ public class AccountLoginService : IAccountLoginService
 
     if (!PasswordHelper.ValidatePassword(password, account.PasswordSalt, account.Password))
       return Result<AccessToken>.ReFailure(
-        ResultCodes.AccountPasswordNotSame2.ToFormat((maxLoginFailedCount - loginFailed.FailedCount).ToString()));
+        ResultCodes.AccountPasswordNotSame2.ToFormat((maxLoginFailedCount - loginFailed.FailedCount)
+          .ToString()));
 
     var role = new List<string>();
     if (account.Department != null && account.Department.Role.Count > 0)

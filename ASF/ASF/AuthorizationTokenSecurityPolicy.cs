@@ -64,7 +64,8 @@ public class AuthorizationTokenSecurityPolicy
         });
         context.Response.Headers.Append("blacklist", "error");
         context.Response.StatusCode = 403;
-        var result = JsonConvert.SerializeObject(new { status = 403, result = string.Empty, message = "无效的token" });
+        var result = JsonConvert.SerializeObject(new
+          { status = 403, result = string.Empty, message = "无效的token" });
         context.Response.ContentType = "application/json;charset=utf-8";
         await context.Response.WriteAsync(result);
         return;

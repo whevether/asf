@@ -67,7 +67,8 @@ public class Startup
             b.UseSqlite(asfOptions.DBConnectionString, opt => { opt.MigrationsAssembly("ASF.Web"); });
             break;
           case "mysql":
-            b.UseMySql(asfOptions.DBConnectionString, ServerVersion.AutoDetect(asfOptions.DBConnectionString),
+            b.UseMySql(asfOptions.DBConnectionString,
+              ServerVersion.AutoDetect(asfOptions.DBConnectionString),
               builder => { builder.MigrationsAssembly("ASF.Web"); });
             // b.EnableSensitiveDataLogging();
             b.EnableDetailedErrors();

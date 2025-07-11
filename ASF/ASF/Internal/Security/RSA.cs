@@ -179,7 +179,8 @@ public static class RSA
         throw new ArgumentException("PemToXmlPublicKey Conversion failed");
       }
 
-      byte[] modint = { lowbyte, highbyte, 0x00, 0x00 }; //reverse byte order since asn.1 key uses big endian order
+      byte[] modint =
+        { lowbyte, highbyte, 0x00, 0x00 }; //reverse byte order since asn.1 key uses big endian order
       var modsize = BitConverter.ToInt32(modint, 0);
 
       var firstbyte = binr.PeekChar();
@@ -194,7 +195,8 @@ public static class RSA
 
       if (binr.ReadByte() != 0x02) //expect an Integer for the exponent data
         throw new ArgumentException("PemToXmlPublicKey Conversion failed");
-      var expbytes = (int)binr.ReadByte(); // should only need one byte for actual exponent data (for all useful values)
+      var expbytes =
+        (int)binr.ReadByte(); // should only need one byte for actual exponent data (for all useful values)
       var exponent = binr.ReadBytes(expbytes);
 
       // ------- create RSACryptoServiceProvider instance and initialize with public key -----
@@ -214,7 +216,8 @@ public static class RSA
   /// <exception cref="ArgumentException"></exception>
   public static RSAParameters DecodePkcsPrivateKey(string privateKey)
   {
-    if (string.IsNullOrEmpty(privateKey)) throw new ArgumentNullException("pemFileConent", "This arg cann't be empty.");
+    if (string.IsNullOrEmpty(privateKey))
+      throw new ArgumentNullException("pemFileConent", "This arg cann't be empty.");
     try
     {
       privateKey = privateKey.Replace("-----BEGIN RSA PRIVATE KEY-----", "")
@@ -392,23 +395,23 @@ public static class RSA
 /// </summary>
 public enum PKCSType
 {
-    /// <summary>
-    ///   1024
-    /// </summary>
-    PKCS_1_1024,
+  /// <summary>
+  ///   1024
+  /// </summary>
+  PKCS_1_1024,
 
-    /// <summary>
-    ///   2048
-    /// </summary>
-    PKCS_1_2048,
+  /// <summary>
+  ///   2048
+  /// </summary>
+  PKCS_1_2048,
 
-    /// <summary>
-    ///   1023
-    /// </summary>
-    PKCS_8_1024,
+  /// <summary>
+  ///   1023
+  /// </summary>
+  PKCS_8_1024,
 
-    /// <summary>
-    ///   2048
-    /// </summary>
-    PKCS_8_2048
+  /// <summary>
+  ///   2048
+  /// </summary>
+  PKCS_8_2048
 }

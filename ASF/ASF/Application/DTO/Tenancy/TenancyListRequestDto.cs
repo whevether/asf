@@ -7,16 +7,16 @@ namespace ASF.Application.DTO.Tenancy;
 /// </summary>
 public class TenancyListRequestDto : PaginationRequestDto
 {
-	/// <summary>
-	///   租户名
-	/// </summary>
-	[MinLength(2, ErrorMessage = "最少输入两个字符的租户名")]
+  /// <summary>
+  ///   租户名
+  /// </summary>
+  [MinLength(2, ErrorMessage = "最少输入两个字符的租户名")]
   [MaxLength(50, ErrorMessage = "最多输入50个字符的租户名")]
   public string Name { get; set; }
 
-	/// <summary>
-	///   租户状态
-	/// </summary>
-	[Range(0, 1, ErrorMessage = "只能输入0-1之间的状态")]
+  /// <summary>
+  ///   租户状态
+  /// </summary>
+  [Range(0, 1, ErrorMessage = "只能输入0-1之间的状态")]
   public uint? Status { get; set; }
 }

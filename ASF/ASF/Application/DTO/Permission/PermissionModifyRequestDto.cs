@@ -5,8 +5,8 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class PermissionModifyRequestDto : PermissionCreateRequestDto
 {
-	/// <summary>
-	///   权限id
-	/// </summary>
-	public string Id { get; set; }
+  /// <summary>
+  ///   权限id
+  /// </summary>
+  public string Id { get; set; }
 }

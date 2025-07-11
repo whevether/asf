@@ -14,12 +14,12 @@ namespace System.ComponentModel.DataAnnotations;
 /// </summary>
 public static class ValidatorExtensions
 {
-    /// <summary>
-    ///   获取验证返回信息集合
-    /// </summary>
-    /// <param name="dictionary"></param>
-    /// <returns></returns>
-    public static List<string> GetErrorMessages(this ModelStateDictionary dictionary)
+  /// <summary>
+  ///   获取验证返回信息集合
+  /// </summary>
+  /// <param name="dictionary"></param>
+  /// <returns></returns>
+  public static List<string> GetErrorMessages(this ModelStateDictionary dictionary)
   {
     return dictionary.SelectMany(m => m.Value.Errors)
       .Select(m => m.ErrorMessage)
@@ -32,11 +32,11 @@ public static class ValidatorExtensions
 /// </summary>
 public class ValidationActionFilter : ActionFilterAttribute
 {
-    /// <summary>
-    ///   执行验证输出
-    /// </summary>
-    /// <param name="context"></param>
-    public override void OnActionExecuting(ActionExecutingContext context)
+  /// <summary>
+  ///   执行验证输出
+  /// </summary>
+  /// <param name="context"></param>
+  public override void OnActionExecuting(ActionExecutingContext context)
   {
     var modelState = context.ModelState;
     string result = null;

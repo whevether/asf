@@ -10,10 +10,10 @@ namespace ASF.Application.DtoMapper;
 /// </summary>
 public class TenancyMapper : Profile
 {
-	/// <summary>
-	///   租户映射
-	/// </summary>
-	public TenancyMapper()
+  /// <summary>
+  ///   租户映射
+  /// </summary>
+  public TenancyMapper()
   {
     //创建
     CreateMap<TenancyCreateRequestDto, Tenancy>();

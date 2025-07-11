@@ -5,16 +5,16 @@
 /// </summary>
 public class ListPagedAndSortedRequestDto : ListPagedRequestDto
 {
-    /// <summary>
-    ///   Sorting information.
-    ///   Should include sorting field and optionally a direction (ASC or DESC)
-    ///   Can contain more than one field separated by comma (,).
-    /// </summary>
-    /// <example>
-    ///   Examples:
-    ///   "Name"
-    ///   "Name DESC"
-    ///   "Name ASC, Age DESC"
-    /// </example>
-    public virtual string Sorting { get; set; }
+  /// <summary>
+  ///   Sorting information.
+  ///   Should include sorting field and optionally a direction (ASC or DESC)
+  ///   Can contain more than one field separated by comma (,).
+  /// </summary>
+  /// <example>
+  ///   Examples:
+  ///   "Name"
+  ///   "Name DESC"
+  ///   "Name ASC, Age DESC"
+  /// </example>
+  public virtual string Sorting { get; set; }
 }

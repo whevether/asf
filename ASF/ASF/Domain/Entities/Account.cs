@@ -14,10 +14,10 @@ namespace ASF.Domain.Entities;
 /// </summary>
 public class Account : Entity<long>
 {
-    /// <summary>
-    ///   账户模型
-    /// </summary>
-    public Account()
+  /// <summary>
+  ///   账户模型
+  /// </summary>
+  public Account()
   {
     Role = new JoinCollectionFacade<Role, Account, AccountRole>(this, AccountRole);
     Post = new JoinCollectionFacade<Post, Account, AccountPost>(this, AccountPost);

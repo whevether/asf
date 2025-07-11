@@ -7,13 +7,13 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class AudioListRequestDto : PaginationRequestDto
 {
-	/// <summary>
-	///   日志类型
-	/// </summary>
-	public LoggingType LogType { get; set; }
+  /// <summary>
+  ///   日志类型
+  /// </summary>
+  public LoggingType LogType { get; set; }
 
-	/// <summary>
-	///   操作账户名
-	/// </summary>
-	public string AccountName { get; set; }
+  /// <summary>
+  ///   操作账户名
+  /// </summary>
+  public string AccountName { get; set; }
 }

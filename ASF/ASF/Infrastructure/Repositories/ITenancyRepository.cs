@@ -8,10 +8,10 @@ namespace ASF.Infrastructure.Repositories;
 /// </summary>
 public interface ITenancyRepository : IRepositories<Tenancy>
 {
-	/// <summary>
-	///   获取对应租户下面的用户以及详情
-	/// </summary>
-	/// <param name="id"></param>
-	/// <returns></returns>
-	Task<Tenancy> GetAsync(long id);
+  /// <summary>
+  ///   获取对应租户下面的用户以及详情
+  /// </summary>
+  /// <param name="id"></param>
+  /// <returns></returns>
+  Task<Tenancy> GetAsync(long id);
 }

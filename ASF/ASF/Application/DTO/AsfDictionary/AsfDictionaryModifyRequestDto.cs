@@ -5,8 +5,8 @@
 /// </summary>
 public class AsfDictionaryModifyRequestDto : AsfDictionaryCreateRequestDto
 {
-    /// <summary>
-    ///   字典ID
-    /// </summary>
-    public string Id { get; set; }
+  /// <summary>
+  ///   字典ID
+  /// </summary>
+  public string Id { get; set; }
 }

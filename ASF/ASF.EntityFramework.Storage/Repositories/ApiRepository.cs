@@ -57,7 +57,8 @@ public class ApiRepository : Repositories<Api>, IApiRepository
            w.Name.Contains(name) || w.HttpMethods.Equals(httpMethod) || w.Path.Contains(path)) &&
           w.TenancyId == tenancyId).ToListAsync();
       else
-        query = await GetDbContext().Api.Include(f => f.Permission).Where(w => w.TenancyId == tenancyId).ToListAsync();
+        query = await GetDbContext().Api.Include(f => f.Permission).Where(w => w.TenancyId == tenancyId)
+          .ToListAsync();
     }
     else
     {

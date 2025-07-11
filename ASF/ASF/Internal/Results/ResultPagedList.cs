@@ -9,101 +9,101 @@ namespace ASF.Internal.Results;
 /// </summary>
 public class ResultPagedList<T> : ResultList<T>
 {
-    /// <summary>
-    ///   实体分页集合结果
-    /// </summary>
-    public ResultPagedList()
+  /// <summary>
+  ///   实体分页集合结果
+  /// </summary>
+  public ResultPagedList()
   {
   }
 
-    /// <summary>
-    ///   实体分页集合结果
-    /// </summary>
-    /// <param name="data">实体集合</param>
-    /// <param name="totalCount">总条数</param>
-    public ResultPagedList(IList<T> data, int totalCount) : base(data)
-  {
-    TotalCount = totalCount;
-  }
-
-    /// <summary>
-    ///   实体分页集合结果
-    /// </summary>
-    /// <param name="data"></param>
-    /// <param name="totalCount"></param>
-    /// <param name="result"></param>
-    public ResultPagedList(IList<T> data, int totalCount, ValueTuple<int, string> result) : base(data, result)
+  /// <summary>
+  ///   实体分页集合结果
+  /// </summary>
+  /// <param name="data">实体集合</param>
+  /// <param name="totalCount">总条数</param>
+  public ResultPagedList(IList<T> data, int totalCount) : base(data)
   {
     TotalCount = totalCount;
   }
 
-    /// <summary>
-    ///   Total count of Items.
-    /// </summary>
-    public int TotalCount { get; set; }
+  /// <summary>
+  ///   实体分页集合结果
+  /// </summary>
+  /// <param name="data"></param>
+  /// <param name="totalCount"></param>
+  /// <param name="result"></param>
+  public ResultPagedList(IList<T> data, int totalCount, ValueTuple<int, string> result) : base(data, result)
+  {
+    TotalCount = totalCount;
+  }
 
-    /// <summary>
-    ///   创建成功的返回消息
-    /// </summary>
-    /// <param name="data">实体集合</param>
-    /// <param name="totalCount">总条数</param>
-    /// <returns></returns>
-    public static ResultPagedList<T> ReSuccess(IList<T> data, int totalCount)
+  /// <summary>
+  ///   Total count of Items.
+  /// </summary>
+  public int TotalCount { get; set; }
+
+  /// <summary>
+  ///   创建成功的返回消息
+  /// </summary>
+  /// <param name="data">实体集合</param>
+  /// <param name="totalCount">总条数</param>
+  /// <returns></returns>
+  public static ResultPagedList<T> ReSuccess(IList<T> data, int totalCount)
   {
     return new ResultPagedList<T>(data, totalCount);
   }
 
-    /// <summary>
-    ///   创建成功的返回消息
-    /// </summary>
-    /// <returns></returns>
-    public new static ResultPagedList<T> ReSuccess()
+  /// <summary>
+  ///   创建成功的返回消息
+  /// </summary>
+  /// <returns></returns>
+  public new static ResultPagedList<T> ReSuccess()
   {
     return new ResultPagedList<T>(new List<T>(), 0);
   }
 
-    /// <summary>
-    ///   创建返回信息（返回处理失败）
-    /// </summary>
-    /// <param name="message">结果消息</param>
-    /// <param name="status">结果状态</param>
-    /// <returns></returns>
-    public new static ResultPagedList<T> ReFailure(string message, int status)
+  /// <summary>
+  ///   创建返回信息（返回处理失败）
+  /// </summary>
+  /// <param name="message">结果消息</param>
+  /// <param name="status">结果状态</param>
+  /// <returns></returns>
+  public new static ResultPagedList<T> ReFailure(string message, int status)
   {
     var result = new ResultPagedList<T>();
     result.To(message, status);
     return result;
   }
 
-    /// <summary>
-    ///   创建返回信息（返回处理失败）
-    /// </summary>
-    /// <param name="result">结果消息</param>
-    /// <returns></returns>
-    public new static ResultPagedList<T> ReFailure(ValueTuple<int, string> result)
+  /// <summary>
+  ///   创建返回信息（返回处理失败）
+  /// </summary>
+  /// <param name="result">结果消息</param>
+  /// <returns></returns>
+  public new static ResultPagedList<T> ReFailure(ValueTuple<int, string> result)
   {
     var res = new ResultPagedList<T>();
     res.To(result);
     return res;
   }
 
-    /// <summary>
-    ///   创建返回信息（返回处理失败）
-    /// </summary>
-    /// <param name="result">结果</param>
-    /// <returns></returns>
-    public new static ResultPagedList<T> ReFailure(Result result)
+  /// <summary>
+  ///   创建返回信息（返回处理失败）
+  /// </summary>
+  /// <param name="result">结果</param>
+  /// <returns></returns>
+  public new static ResultPagedList<T> ReFailure(Result result)
   {
     var re = new ResultPagedList<T>();
     re.To(result);
     return re;
   }
 
-    /// <summary>
-    ///   转换为 task
-    /// </summary>
-    /// <returns></returns>
-    public new Task<ResultPagedList<T>> AsTask()
+  /// <summary>
+  ///   转换为 task
+  /// </summary>
+  /// <returns></returns>
+  public new Task<ResultPagedList<T>> AsTask()
   {
     return Task.FromResult(this);
   }

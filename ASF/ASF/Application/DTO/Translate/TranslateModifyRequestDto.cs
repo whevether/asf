@@ -5,8 +5,8 @@ namespace ASF.Application.DTO.Translate;
 /// </summary>
 public class TranslateModifyRequestDto : TranslateCreateRequestDto
 {
-	/// <summary>
-	///   多语言id
-	/// </summary>
-	public string Id { get; set; }
+  /// <summary>
+  ///   多语言id
+  /// </summary>
+  public string Id { get; set; }
 }

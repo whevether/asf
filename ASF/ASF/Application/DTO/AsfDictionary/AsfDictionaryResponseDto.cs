@@ -7,8 +7,8 @@ namespace ASF.Application.DTO.AsfDictionary;
 /// </summary>
 public class AsfDictionaryResponseDto : AsfDictionaryModifyRequestDto
 {
-    /// <summary>
-    ///   创建时间
-    /// </summary>
-    public DateTime CreateTime { get; set; }
+  /// <summary>
+  ///   创建时间
+  /// </summary>
+  public DateTime CreateTime { get; set; }
 }
