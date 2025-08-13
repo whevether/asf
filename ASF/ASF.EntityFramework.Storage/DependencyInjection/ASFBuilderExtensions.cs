@@ -35,5 +35,6 @@ public static class ASFBuilderExtensions
     services.AddScoped<ISecurityTokenRepository, SecurityTokenRepository>();
     services.AddScoped<IAsfDictionaryRepository, AsfDictionaryRepository>();
     services.AddScoped<ICountryRepositories, CountryRepositories>();
+    services.AddScoped<IAppSettingRepository, AppSettingRepository>();
   }
 }

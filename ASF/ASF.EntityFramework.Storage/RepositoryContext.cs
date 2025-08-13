@@ -913,6 +913,67 @@ public class RepositoryContext : DbContext
         .HasColumnType("timestamp")
         .HasDefaultValueSql("CURRENT_TIMESTAMP");
     });
+     modelBuilder.Entity<AsfAppSetting>(entity =>
+    {
+      entity.HasKey(e => e.Id).HasName("asf_app_setting_pkey");
+
+      entity.ToTable("asf_app_setting", tb => tb.HasComment("app设置表"));
+
+      entity.HasIndex(e => new { e.WrapName, e.VersionNo }, "IX_appsetting_wrap_name");
+
+      entity.Property(e => e.Id).HasColumnName("id");
+      entity.Property(e => e.Content)
+        .IsRequired()
+        .HasComment("更新内容")
+        .HasColumnType("character varying")
+        .HasColumnName("content");
+      entity.Property(e => e.CreateTime)
+        .HasDefaultValueSql("CURRENT_TIMESTAMP")
+        .HasComment("创建时间")
+        .HasColumnType("timestamp(6) without time zone")
+        .HasColumnName("create_time");
+      entity.Property(e => e.DownUrl)
+        .IsRequired()
+        .HasMaxLength(255)
+        .HasComment("下载地址")
+        .HasColumnName("down_url");
+      entity.Property(e => e.OsType)
+        .HasDefaultValue(0)
+        .HasComment("系统类型 0 安卓 1 ios")
+        .HasColumnName("os_type");
+      entity.Property(e => e.UpdateStatus)
+        .HasDefaultValue(0)
+        .HasComment("更新开启状态， 0不开启 1开启")
+        .HasColumnName("update_status");
+      entity.Property(e => e.UpdateTime)
+        .HasDefaultValueSql("CURRENT_TIMESTAMP")
+        .HasComment("修改时间")
+        .HasColumnType("timestamp(6) without time zone")
+        .HasColumnName("update_time");
+      entity.Property(e => e.UpdateType)
+        .HasDefaultValue(2)
+        .HasComment("更新类型 0 强制升级 1 强提示升级 2 弱提示升级")
+        .HasColumnName("update_type");
+      entity.Property(e => e.VersionName)
+        .IsRequired()
+        .HasMaxLength(255)
+        .HasComment("版本名称")
+        .HasColumnName("version_name");
+      entity.Property(e => e.VersionNo)
+        .IsRequired()
+        .HasMaxLength(255)
+        .HasComment("版本号")
+        .HasColumnName("version_no");
+      entity.Property(e => e.WrapName)
+        .HasMaxLength(255)
+        .HasComment("包名")
+        .HasColumnName("wrap_name");
+      entity.Property(e => e.WrapSize)
+        .HasPrecision(10, 2)
+        .HasDefaultValueSql("0")
+        .HasComment("包体积")
+        .HasColumnName("wrap_size");
+    });
     base.OnModelCreating(modelBuilder);
   }
 }

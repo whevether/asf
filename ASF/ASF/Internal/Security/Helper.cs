@@ -232,4 +232,16 @@ public static class Helper
 
     return HideSensitiveInfo(email);
   }
+  /// <summary>
+  ///   解析版本
+  /// </summary>
+  /// <param name="version"></param>
+  /// <returns></returns>
+  public static int ParseVersion(this string version)
+  {
+    var sp = version.Split('.');
+    var num = "";
+    foreach (var item in sp) num = num + item.PadLeft(2, '0');
+    return int.Parse(num);
+  }
 }

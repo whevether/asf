@@ -189,6 +189,25 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="T:ASF.Application.AppSettingController">
+            <summary>
+             app设置
+            </summary>
+        </member>
+        <member name="M:ASF.Application.AppSettingController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+            <summary>
+              app设置
+            </summary>
+        </member>
+        <member name="M:ASF.Application.AppSettingController.GetAppSetting(System.String,System.Nullable{System.Int32},System.Nullable{System.Int64})">
+            <summary>
+              获取app设置
+            </summary>
+            <param name="versionNo"></param>
+            <param name="id"></param>
+            <param name="osType"></param>
+            <returns></returns>
+        </member>
         <member name="T:ASF.Application.AudioController">
             <summary>
               审计控制器
@@ -420,6 +439,16 @@
         <member name="M:ASF.Application.DtoMapper.AccountMapper.#ctor">
             <summary>
               账户映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AppSettingMapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AppSettingMapper.#ctor">
+            <summary>
+            
             </summary>
         </member>
         <member name="T:ASF.Application.DtoMapper.AsfDictionaryMapper">
@@ -935,6 +964,76 @@
         <member name="P:ASF.Application.DTO.AuthoriseByUsernameRequestDto.Password">
             <summary>
               登录密码
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DTO.AppSettingResponseDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.Id">
+            <summary>
+              id
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.Key">
+            <summary>
+              key
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.WrapName">
+            <summary>
+              包名
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.OsType">
+            <summary>
+              系统类型 0 安卓 1 ios
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.VersionNo">
+            <summary>
+              版本号
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.VersionName">
+            <summary>
+              版本名称
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.Content">
+            <summary>
+              更新内容
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.DownUrl">
+            <summary>
+              下载地址
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.WrapSize">
+            <summary>
+              包体积
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.UpdateStatus">
+            <summary>
+              更新开启状态， 0不开启 1开启
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.UpdateType">
+            <summary>
+              更新类型 0 强制升级 1 强提示升级 2 弱提示升级
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.CreateTime">
+            <summary>
+              创建时间
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.AppSettingResponseDto.UpdateTime">
+            <summary>
+              修改时间
             </summary>
         </member>
         <member name="T:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto">
@@ -3231,6 +3330,66 @@
               对应权限
             </summary>
         </member>
+        <member name="T:ASF.Domain.Entities.AsfAppSetting">
+            <summary>
+              app设置表
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.WrapName">
+            <summary>
+              包名
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.OsType">
+            <summary>
+              系统类型 0 安卓 1 ios
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.VersionNo">
+            <summary>
+              版本号
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.VersionName">
+            <summary>
+              版本名称
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.Content">
+            <summary>
+              更新内容
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.DownUrl">
+            <summary>
+              下载地址
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.WrapSize">
+            <summary>
+              包体积
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.UpdateStatus">
+            <summary>
+              更新开启状态， 0不开启 1开启
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.UpdateType">
+            <summary>
+              更新类型 0 强制升级 1 强提示升级 2 弱提示升级
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.CreateTime">
+            <summary>
+              创建时间
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Entities.AsfAppSetting.UpdateTime">
+            <summary>
+              修改时间
+            </summary>
+        </member>
         <member name="T:ASF.Domain.Entities.AsfDictionary">
             <summary>
               字典表
@@ -4211,6 +4370,27 @@
               批量删除授权api
             </summary>
             <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ASF.Domain.Services.AppSettingService">
+            <summary>
+              app设置服务
+            </summary>
+        </member>
+        <member name="M:ASF.Domain.Services.AppSettingService.#ctor(System.IServiceProvider)">
+            <summary>
+              app设置服务
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="stringLocalizer"></param>
+        </member>
+        <member name="M:ASF.Domain.Services.AppSettingService.GetAppSetting(System.String,System.Nullable{System.Int32},System.Nullable{System.Int64})">
+            <summary>
+              获取App设置
+            </summary>
+            <param name="versionNo"></param>
+            <param name="id"></param>
+            <param name="osType"></param>
             <returns></returns>
         </member>
         <member name="T:ASF.Domain.Services.CountryService">
@@ -5625,6 +5805,11 @@
             <param name="tenancyId"></param>
             <returns></returns>
         </member>
+        <member name="T:ASF.Infrastructure.Repositories.IAppSettingRepository">
+            <summary>
+            app设置服务
+            </summary>
+        </member>
         <member name="T:ASF.Infrastructure.Repositories.IAsfDictionaryRepository">
             <summary>
               字典仓储
@@ -6358,6 +6543,13 @@
             </summary>
             <param name="email">邮件地址</param>
             <param name="left">邮件头保留字符个数，默认值设置为3</param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Internal.Security.Helper.ParseVersion(System.String)">
+            <summary>
+              解析版本
+            </summary>
+            <param name="version"></param>
             <returns></returns>
         </member>
         <member name="T:ASF.Internal.Security.PasswordHelper">

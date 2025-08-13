@@ -101,6 +101,7 @@ public class ASFBuilder
     Services.AddTransient<RunSendPhoneTasks>();
     Services.AddTransient<RunSendPhoneTasksOne>();
     Services.AddTransient<CountryService>();
+    Services.AddTransient<AppSettingService>();
   }
   // /// <summary>
   // /// 添加账户仓储缓存
