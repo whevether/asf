@@ -2195,7 +2195,7 @@ INSERT INTO "public"."asf_account_role" VALUES (1, 1, 3, '2022-11-19 12:47:27.01
 --
 
 INSERT INTO "public"."asf_accounts" VALUES (348851403578789888, 1, 2, 'test', 'test111', 'cu7mQ8t0LplfAp5GiAbi/6dwkZhZcM/anBnxn9Pn/6E=', 'bfdf4f78-27fd-43d4-b24f-c11824d27b8b', '86+', NULL, NULL, 1, 0, 2, 1, '2022-11-19 15:30:56.104313', '127.0.0.1', '2023-11-18 05:48:06.206454+00', '本地', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QiLCJyb2xlIjoic3VwZXJhZG1pbiIsIm5hbWUiOiJ0ZXN0MTExIiwic3ViIjoiMzQ4ODUxNDAzNTc4Nzg5ODg4IiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzAwMjg2NDg2LCJleHAiOjE3MDAzNzI4ODYsImlhdCI6MTcwMDI4NjQ4NiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.ixnjqR7PJVQvSwl25sookDbFiVv8s9tFAqgspXUFPpl_bb7QbsFNbqJmtsBKB2-oR9cUKBKwzke3XjMkpt8wBNPqUeI8I2LJKs0ynmYB0L-DFJh2tn2zlXLw1l0YsC02FuPryKMxwOZP61rG_KdJLTRwCbaT58onN6Qm3sSRDhKzIYVG0PX1RgjDhy_noT-63Ya8N4u-GKy37Ut1k4U5MOfDRQiAzjutQGUryNS9yr3liwhDtPKpHrq71ZT97GJ01-1jdiU4RN9ei8g_74ktHXRuAR6KLXvIuMIwReG7x-Noq304YMESG9t_bUZXD21aBCZ27pCp6AafczNtnqVwFQ', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QiLCJyb2xlIjoic3VwZXJhZG1pbiIsIm5hbWUiOiJ0ZXN0MTExIiwic3ViIjoiMzQ4ODUxNDAzNTc4Nzg5ODg4IiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzAwMjg2NDg2LCJleHAiOjE3MDA0MTYwODYsImlhdCI6MTcwMDI4NjQ4NiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.lvpnK8HJYhd23-1JZn9c7nAYmZrFi6Em_AOoewyfsOccfxLhngNtVY2In6IU0t9emAxDLbCTh-4fU6NizGL1IKn_jtPEUMT0yzpAYmkCcByrVfc7AENGSnKbWiRj2VIg904DcJdKHZhL5cXFc3P4KU4vHz7D4f2T1MxKP7whMT3-Sjl8XtnCiid-XCVZZmRPSPpbjumjxHgHWG3dU5ck9EdiFSiICox-7yFn6-N-UlBjA70gaGStGG8NXWBGJGFvh7po3FKVTb80roaZlXwzj9H8GWOQF1zrid2kE8PS4eNJX6MVU58RYhgnrHNHe60LVZU-KdlLoxv6Fo2EJgXM9A', '2023-11-19 05:48:06.206452+00');
-INSERT INTO "public"."asf_accounts" VALUES (1, 1, 2, 'keep_wan', 'admin', '20V6MgmX8XVtiRz10AI4Ib5H16a9JyrNmSwmgJ2k0iI=', '8283e4c3-f87e-4d85-85fb-f5c0de063992', '86+13800000000', 'admin@qq.com', 'https://minioapi.zytravel.shop/avatar/333128767074963456avatarGroup1052.png', 1, 0, 1, 0, '2021-11-15 07:21:24.550098', '127.0.0.1', '2025-04-12 14:15:56.260576+00', '本地', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzQ0NDY3MzU2LCJleHAiOjE3NDQ1NTM3NTYsImlhdCI6MTc0NDQ2NzM1NiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.tJEA414JvbJPo8sVBEc5x6yDekq--kzHRwd6Z1_M-HN8LplC7pZQARPvjjMZZe1Hr4kEONxNYq5vXngnTwJ-dmqZFbOOR7-GrApNorW-9jGVkswB9R_fFdCajG8Du2J9vswTw3J6NG0gRoJtcJiiukpiaIGGEq9hF0CG0G4eCto7jnmTaaIeNwu2L9LY4aQ_hx2WhmTjq0FPFkWzvIhqjd4nv2dC9oF9joCuJq97IsHI5oySIbpncQdzbQzPlt8PBG-Nof9Mmy2OOzYm2mv0mwwT7ZVW6SO3jo2FaH--QrZwIqiOnQgJS3CmFFShjl1-VNmvrH04Qk9GyRaM9F23Ew', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzQ0NDY3MzU2LCJleHAiOjE3NDQ1OTY5NTYsImlhdCI6MTc0NDQ2NzM1NiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.x7i43zJCrc2uMMjtyHMrF1gCvDorjXqNaLQP5D88BLbhna2oPGf6u-sOqVH1QnQ2kYjJ15Vu5uUUmVluYI06UAOw43Va5FzBk7QyxEKx9pziPVkJQr2mHGvqkhIoJM4GOCVQOirF1L3axx_Ed3Cjp24fDWtLFxAZ7tNSG4hoorKjPkCmAVhhDAnglAItpzNF4kOToi2le43aYHr1ebItym7OqXjAaNsiP6bP5UQMhFEvlR0wgJsrtjomoVrF7fiRDYouyM3iqdtLfvWRTxYHYUM575_RGRmuxSOBJnKRRGxX_n0K2BlKKHNya1rER8Y9yKLwHvpNFpK73S4o0ajR3g', '2025-04-13 14:15:56.146049+00');
+INSERT INTO "public"."asf_accounts" VALUES (1, 1, 2, 'keep_wan', 'admin', '20V6MgmX8XVtiRz10AI4Ib5H16a9JyrNmSwmgJ2k0iI=', '8283e4c3-f87e-4d85-85fb-f5c0de063992', '86+13800000000', 'admin@qq.com', 'https://minioapi.zytravel.shop/avatar/333128767074963456avatarGroup1052.png', 1, 0, 1, 0, '2021-11-15 07:21:24.550098', '127.0.0.1', '2025-08-24 13:38:10.553781+00', '本地', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzU2MDQyNjkwLCJleHAiOjE3NTYxMjkwOTAsImlhdCI6MTc1NjA0MjY5MCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.VaW6iHxXQhZIX8e3CtSGgbXMN_4J6Z4qYu7YRqickqBINInuupoYP_N6SpuAymR5fldYcIloeAHDyBkAZKRZH-ROjSrMXWgGtGatIOop47N8j-4u84uS7enJg4EnKUs_lS1Gtks0bgHXpAJwQ4iCI3UlAb4hq2rTupNa0aKzU4N0_q95VmWRRP-eNGQjh8cl4GgT3CpI-HUg9-_czXT_Ylbv3EGS6ZFrnw9WaWRt7Vw-lCnbBCmwDD1-6f4_BulH6VRI35RytYRl-a2N5Y52iZJJ_uITKSmoyqbnBY7T6ZgM1qxMZAVJ_YCG-mJPJjGQ58hzkrZfKIHUuIyYxEG3vw', 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzU2MDQyNjkwLCJleHAiOjE3NTYxNzIyOTAsImlhdCI6MTc1NjA0MjY5MCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.ZYPWbVfvB9VEfHxFwwdrZtrN9BT7tDeJeIz60YgP5_Kq1JRNUr-_gm80SilPEXlEsUgkTsrqPVH12DiaSnt1jb9rsH0lDw_nwjWUiLcDZGeuboQocAw_XCOpDbHSZ42t0Nlk4ViAOSR5HJdZw033lWJt-aEAkvvYJHbah10SlcvUw1m4BXxkuN666v30HXE010YKkhjhbyHdkg5XUC4sd86cZqHEi0Rhww20Y3qZLvpJ1nrK3mN6yVjbanDxEnnUBPd7_xEUMifuMc8cXLl9RReso2hdoDtj-7UcCnUnee1hCYexG_iS93OajsPffJiJ-5iiADNCVL0zN_5Cr3DIIA', '2025-08-25 13:38:10.441893+00');
 
 
 --
@@ -2344,79 +2344,79 @@ INSERT INTO "public"."asf_apis" VALUES (660045853584830464, 660039519033339904, 
 -- Data for Name: asf_app_setting; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO "public"."asf_app_setting" VALUES (2, 'com.xqtech.web3', 0, '0.0.2', 'android第一版', '1. 修改432432;
-
-
-
-
-
-
-
-
-
-
-
-2. 修改432432;
-
-
-
-
-
-
-
-
-
-
-
-3. 修改432432;
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO "public"."asf_app_setting" VALUES (2, 'com.xqtech.web3', 0, '0.0.2', 'android第一版', '1. 修改432432;
+
+
+
+
+
+
+
+
+
+
+
+2. 修改432432;
+
+
+
+
+
+
+
+
+
+
+
+3. 修改432432;
+
+
+
+
+
+
+
+
+
+
+
 4. 修改432432;', 'https://baidu.com', 89.40, 1, 2, '2024-12-27 07:53:56.341973', '2024-12-27 07:53:56.341973');
-INSERT INTO "public"."asf_app_setting" VALUES (1, 'com.xqtech.web3', 1, '0.0.2', 'ios第一版', '1. 修改432432;
-
-
-
-
-
-
-
-
-
-
-
-2. 修改432432;
-
-
-
-
-
-
-
-
-
-
-
-3. 修改432432;
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO "public"."asf_app_setting" VALUES (1, 'com.xqtech.web3', 1, '0.0.2', 'ios第一版', '1. 修改432432;
+
+
+
+
+
+
+
+
+
+
+
+2. 修改432432;
+
+
+
+
+
+
+
+
+
+
+
+3. 修改432432;
+
+
+
+
+
+
+
+
+
+
+
 4. 修改432432;', 'https://baidu.com', 89.40, 1, 2, '2024-12-27 07:53:56.341973', '2024-12-27 07:53:56.341973');
 
 
@@ -2510,6 +2510,13 @@ INSERT INTO "public"."asf_department_role" VALUES (17, 3, 17, '2022-11-19 12:47:
 -- Data for Name: asf_loginfos; Type: TABLE DATA; Schema: public; Owner: -
 --
 
+INSERT INTO "public"."asf_loginfos" VALUES (714471547210039296, 0, NULL, 3, '异常消息', '127.0.0.1', '本地', NULL, '2025-08-24 13:34:51.229557', '/api/asf/translate/getLists', '?isAdmin=true', '42703: column a.country does not exist
+
+POSITION: 26', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (714471584795197440, 0, NULL, 3, '异常消息', '127.0.0.1', '本地', NULL, '2025-08-24 13:35:00.061352', '/api/asf/translate/getLists', '?isAdmin=true', '42703: column a.country does not exist
+
+POSITION: 26', '操作记录');
+INSERT INTO "public"."asf_loginfos" VALUES (714472384170524672, 0, NULL, 2, '登录', '127.0.0.1', '本地', 16, '2025-08-24 13:38:10.682564', '/api/asf/authorise/login', '{"tenancyId":"1","username":"admin","password":"admin","remember":true,"loginType":"account"}', '{"result":{"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzU2MDQyNjkwLCJleHAiOjE3NTYxMjkwOTAsImlhdCI6MTc1NjA0MjY5MCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.VaW6iHxXQhZIX8e3CtSGgbXMN_4J6Z4qYu7YRqickqBINInuupoYP_N6SpuAymR5fldYcIloeAHDyBkAZKRZH-ROjSrMXWgGtGatIOop47N8j-4u84uS7enJg4EnKUs_lS1Gtks0bgHXpAJwQ4iCI3UlAb4hq2rTupNa0aKzU4N0_q95VmWRRP-eNGQjh8cl4GgT3CpI-HUg9-_czXT_Ylbv3EGS6ZFrnw9WaWRt7Vw-lCnbBCmwDD1-6f4_BulH6VRI35RytYRl-a2N5Y52iZJJ_uITKSmoyqbnBY7T6ZgM1qxMZAVJ_YCG-mJPJjGQ58hzkrZfKIHUuIyYxEG3vw","tokenType":"Bearer","refreshToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzU2MDQyNjkwLCJleHAiOjE3NTYxNzIyOTAsImlhdCI6MTc1NjA0MjY5MCwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.ZYPWbVfvB9VEfHxFwwdrZtrN9BT7tDeJeIz60YgP5_Kq1JRNUr-_gm80SilPEXlEsUgkTsrqPVH12DiaSnt1jb9rsH0lDw_nwjWUiLcDZGeuboQocAw_XCOpDbHSZ42t0Nlk4ViAOSR5HJdZw033lWJt-aEAkvvYJHbah10SlcvUw1m4BXxkuN666v30HXE010YKkhjhbyHdkg5XUC4sd86cZqHEi0Rhww20Y3qZLvpJ1nrK3mN6yVjbanDxEnnUBPd7_xEUMifuMc8cXLl9RReso2hdoDtj-7UcCnUnee1hCYexG_iS93OajsPffJiJ-5iiADNCVL0zN_5Cr3DIIA","expired":1756129090},"status":200,"message":"Success"}', '操作记录');
 
 
 --
@@ -2589,7 +2596,6 @@ INSERT INTO "public"."asf_permission" VALUES (660039519033339904, '/member/tags'
 -- Data for Name: asf_permission_menu; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO "public"."asf_permission_menu" VALUES (10, 10, '调度任务', '调度任务', 'icon-schedule_date', 1, '/control/scheduled_task', NULL, NULL, '调度任务菜单', NULL, 1, 1, '2022-11-19 12:47:26.773561');
 INSERT INTO "public"."asf_permission_menu" VALUES (1, 1, '控制台', '控制台菜单', 'icon-dash_board', 0, '/', NULL, NULL, '控制台菜单', 'common.menu.dash', 1, 1, '2022-11-19 12:47:26.74763');
 INSERT INTO "public"."asf_permission_menu" VALUES (2, 2, '控制面板', '控制面板菜单', 'icon-dash_board', 0, '/control', NULL, NULL, '控制面板菜单', 'common.menu.control', 1, 1, '2022-11-19 12:47:26.752622');
 INSERT INTO "public"."asf_permission_menu" VALUES (3, 3, '账户管理', '账户管理', 'icon--proxyaccount', 0, '/control/account', NULL, NULL, '账户管理菜单', 'common.menu.account', 1, 1, '2022-11-19 12:47:26.754557');
@@ -2605,44 +2611,6 @@ INSERT INTO "public"."asf_permission_menu" VALUES (13, 13, '岗位管理', '岗�
 INSERT INTO "public"."asf_permission_menu" VALUES (14, 14, '多语言管理', '多语言管理', 'icon-EA', 0, '/control/translate', NULL, NULL, '多语言管理菜单', 'common.menu.translate', 1, 1, '2022-11-19 12:47:26.785668');
 INSERT INTO "public"."asf_permission_menu" VALUES (15, 15, '字典管理', '字典管理', 'icon-EA', 0, '/control/dictionary', NULL, NULL, '多语言管理菜单', 'common.menu.dictionary', 1, 1, '2022-11-19 12:47:26.789662');
 INSERT INTO "public"."asf_permission_menu" VALUES (478195315633975296, 478194271101284352, '国家管理', '国家管理', 'icon-dash_board', 0, '/control/country', NULL, NULL, '国家管理', 'common.menu.contry', 1, 1, '2023-11-11 13:37:27.761121');
-INSERT INTO "public"."asf_permission_menu" VALUES (485657045338300416, 485368188766449664, '签名审核', '签名审核', 'icon-qianming', 0, '/member/sign', NULL, NULL, '签名审核', 'common.member.sign', 1, 0, '2023-12-02 03:47:42.787798');
-INSERT INTO "public"."asf_permission_menu" VALUES (485658012532219904, 485371141669711872, '会员设备', '会员设备', 'icon-dash_board', 0, '/member/device', NULL, NULL, '会员设备', 'common.member.device', 1, 0, '2023-12-02 03:51:33.389099');
-INSERT INTO "public"."asf_permission_menu" VALUES (485659549140656128, 485374635382337536, '会员关注', '会员关注', 'icon-dash_board', 0, '/member/flow', NULL, NULL, '会员关注', 'common.member.flow', 1, 0, '2023-12-02 03:57:39.750965');
-INSERT INTO "public"."asf_permission_menu" VALUES (485659721832734720, 485377691046047744, '会员礼券', '会员礼券', 'icon-dash_board', 0, '/member/gift	', NULL, NULL, '会员礼券', 'common.member.gift', 1, 0, '2023-12-02 03:58:20.923906');
-INSERT INTO "public"."asf_permission_menu" VALUES (485659917350215680, 485377839499243520, '会员礼券记录', '会员礼券记录', 'icon-dash_board', 0, '/member/gift_record', NULL, NULL, '会员礼券记录', 'common.member.gift_record', 1, 0, '2023-12-02 03:59:07.54128');
-INSERT INTO "public"."asf_permission_menu" VALUES (485660090805657600, 485379729205161984, '会员支付记录', '会员支付记录', 'icon-dash_board', 0, '/member/payment_record', NULL, NULL, '会员支付记录', 'common.member.payment_record', 1, 0, '2023-12-02 03:59:48.897233');
-INSERT INTO "public"."asf_permission_menu" VALUES (485660263980081152, 485379905353347072, '会员消费记录', '会员消费记录', 'icon-dash_board', 0, '/member/purchase_history', NULL, NULL, '会员消费记录', 'common.member.purchase_history', 1, 0, '2023-12-02 04:00:30.186236');
-INSERT INTO "public"."asf_permission_menu" VALUES (485660412064178176, 485380090871607296, '会员设置', '会员设置', 'icon-dash_board', 0, '/member/setting', NULL, NULL, '会员设置', 'common.member.setting', 1, 0, '2023-12-02 04:01:05.494003');
-INSERT INTO "public"."asf_permission_menu" VALUES (485660586006159360, 485380826145681408, '会员社交账号', '会员社交账号', 'icon-dash_board', 0, '/member/socialize', NULL, NULL, '会员社交账号', 'common.member.socialize', 1, 0, '2023-12-02 04:01:46.967431');
-INSERT INTO "public"."asf_permission_menu" VALUES (485660714771292160, 485381004583956480, '会员提现记录', '会员提现记录', 'icon-dash_board', 0, '/member/withdrawal_record', NULL, NULL, '会员提现记录', 'common.member.withdrawal_record', 1, 0, '2023-12-02 04:02:17.663235');
-INSERT INTO "public"."asf_permission_menu" VALUES (485670550116376576, 485378624828141568, '会员收益记录', '会员收益记录', 'icon-dash_board', 0, '/member/income', NULL, NULL, '会员收益记录', 'common.member.income', 1, 0, '2023-12-02 04:41:22.63975');
-INSERT INTO "public"."asf_permission_menu" VALUES (485671543826685952, 485363648935686144, '社交设置', '社交设置', 'icon-dash_board', 0, '/setting', NULL, NULL, '社交设置', 'common.setting', 1, 0, '2023-12-02 04:45:19.564012');
-INSERT INTO "public"."asf_permission_menu" VALUES (485671684134543360, 485363950019604480, '活动设置', '活动设置', 'icon-dash_board', 0, '/setting/active', NULL, NULL, '活动设置', 'common.setting.active', 1, 0, '2023-12-02 04:45:53.016582');
-INSERT INTO "public"."asf_permission_menu" VALUES (485671865206841344, 485364164180766720, 'app设置', 'app设置', 'icon-dash_board', 0, '/setting/app', NULL, NULL, 'app设置', 'common.setting.app', 1, 0, '2023-12-02 04:46:36.189379');
-INSERT INTO "public"."asf_permission_menu" VALUES (485672001412669440, 485364447438893056, 'banner设置', 'banner设置', 'icon-dash_board', 0, '/setting/banner', NULL, NULL, 'banner设置', 'common.setting.banner', 1, 0, '2023-12-02 04:47:08.664398');
-INSERT INTO "public"."asf_permission_menu" VALUES (485672132849573888, 485364645519093760, '招呼语句设置', '招呼语句设置', 'icon-dash_board', 0, '/setting/call', NULL, NULL, '招呼语句设置', 'common.setting.call', 1, 0, '2023-12-02 04:47:40.001995');
-INSERT INTO "public"."asf_permission_menu" VALUES (485672535754416128, 485364858954641408, '收费设置', '收费设置', 'icon-dash_board', 0, '/setting/charge', NULL, NULL, '收费设置', 'common.setting.charge', 1, 0, '2023-12-02 04:49:16.065033');
-INSERT INTO "public"."asf_permission_menu" VALUES (485672688498384896, 485365171203796992, '颜色地址设置', '颜色地址设置', 'icon-dash_board', 0, '/setting/color', NULL, NULL, '颜色地址设置', 'common.setting.color', 1, 0, '2023-12-02 04:49:52.480587');
-INSERT INTO "public"."asf_permission_menu" VALUES (485354101487628288, 485352694336385024, '会员相册', '会员相册', 'icon-album', 0, '/member/memberalbum', NULL, NULL, '会员相册', 'common.member.album', 1, 0, '2023-12-01 07:43:55.257747');
-INSERT INTO "public"."asf_permission_menu" VALUES (485353855550418944, 485352564237463552, '会员列表', '会员列表', 'icon-huiyuanliebiao', 0, '/member/memberlist', NULL, NULL, '会员列表', 'common.member.list', 1, 0, '2023-12-01 07:42:56.620261');
-INSERT INTO "public"."asf_permission_menu" VALUES (485354273999351808, 485352864956477440, '会员动态', '会员动态', 'icon-icon_trends_imfor', 0, '/member/membertrends', NULL, NULL, '会员动态', 'common.member.trends', 1, 0, '2023-12-01 07:44:36.388581');
-INSERT INTO "public"."asf_permission_menu" VALUES (485653834292404224, 485368073548918784, '头像审核', '头像审核', 'icon-touxiang_avatar', 0, '/member/avatar', NULL, NULL, '头像审核', 'common.member.avatar', 1, 0, '2023-12-02 03:34:57.161582');
-INSERT INTO "public"."asf_permission_menu" VALUES (485657242206347264, 485368357465550848, '昵称审核', '昵称审核', 'icon-nickname', 0, '/member/nickname', NULL, NULL, '昵称审核', 'common.member.nickname', 1, 0, '2023-12-02 03:48:29.725974');
-INSERT INTO "public"."asf_permission_menu" VALUES (485657510146875392, 485368484557156352, '真人认证', '真人认证', 'icon-renlianmenjin', 0, '/member/real', NULL, NULL, '真人认证', 'common.member.real', 1, 0, '2023-12-02 03:49:33.608665');
-INSERT INTO "public"."asf_permission_menu" VALUES (485657715835543552, 485370971976560640, '会员黑名单', '会员黑名单', 'icon-dash_board', 0, '/member/blacklist', NULL, NULL, '会员黑名单', 'common.member.blacklist', 1, 0, '2023-12-02 03:50:22.651139');
-INSERT INTO "public"."asf_permission_menu" VALUES (485672827292098560, 485365440721383424, '货币分成设置', '货币分成设置', 'icon-dash_board', 0, '/setting/currency', NULL, NULL, '货币分成设置', 'common.setting.currency', 1, 0, '2023-12-02 04:50:25.568257');
-INSERT INTO "public"."asf_permission_menu" VALUES (485673017793191936, 485365912324730880, '货币兑换', '货币兑换', 'icon-dash_board', 0, '/setting/exchange', NULL, NULL, '货币兑换', 'common.setting.exchange', 1, 0, '2023-12-02 04:51:10.988238');
-INSERT INTO "public"."asf_permission_menu" VALUES (485673288560680960, 485368776342302720, '礼物价格', '礼物价格', 'icon-dash_board', 0, '/setting/gift_price', NULL, NULL, '礼物价格', 'common.setting.gift_price', 1, 0, '2023-12-02 04:52:15.5449');
-INSERT INTO "public"."asf_permission_menu" VALUES (485673451391950848, 485369079917637632, '帮助设置', '帮助设置', 'icon-dash_board', 0, '/setting/help', NULL, NULL, '帮助设置', 'common.setting.help', 1, 0, '2023-12-02 04:52:54.368576');
-INSERT INTO "public"."asf_permission_menu" VALUES (485673582468145152, 485369312634400768, '导航设置', '导航设置', 'icon-dash_board', 0, '/setting/nav', NULL, NULL, '导航设置', 'common.setting.nav', 1, 0, '2023-12-02 04:53:25.620541');
-INSERT INTO "public"."asf_permission_menu" VALUES (485673733320482816, 485369995576143872, '其他设置', '其他设置', 'icon-dash_board', 0, '/setting/other', NULL, NULL, '其他设置', 'common.setting.other', 1, 0, '2023-12-02 04:54:01.58823');
-INSERT INTO "public"."asf_permission_menu" VALUES (485673918771634176, 485370273377480704, '充值价格设置', '充值价格设置', 'icon-dash_board', 0, '/setting/recharge_price', NULL, NULL, '充值价格设置', 'common.setting.recharge_price', 1, 0, '2023-12-02 04:54:45.804309');
-INSERT INTO "public"."asf_permission_menu" VALUES (485674048832806912, 485370518333222912, '敏感词设置', '敏感词设置', 'icon-dash_board', 0, '/setting/sensitive', NULL, NULL, '敏感词设置', 'common.setting.sensitive', 1, 0, '2023-12-02 04:55:16.814006');
-INSERT INTO "public"."asf_permission_menu" VALUES (485674201807462400, 485370677171515392, '分享设置', '分享设置', 'icon-dash_board', 0, '/setting/share', NULL, NULL, '分享设置', 'common.setting.share', 1, 0, '2023-12-02 04:55:53.287528');
-INSERT INTO "public"."asf_permission_menu" VALUES (485674361568501760, 485381179968778240, 'vip价格设置', 'vip价格设置', 'icon-dash_board', 0, '/setting/vip_price', NULL, NULL, 'vip价格设置', 'common.setting.vip_price', 1, 0, '2023-12-02 04:56:31.378581');
-INSERT INTO "public"."asf_permission_menu" VALUES (485674493940736000, 485381332217819136, '提现设置', '提现设置', 'icon-dash_board', 0, '/setting/withdrawal_setting', NULL, NULL, '提现设置', 'common.setting.withdrawal_setting', 1, 0, '2023-12-02 04:57:02.938689');
-INSERT INTO "public"."asf_permission_menu" VALUES (485353654324490240, 485352284338974720, '会员管理', '会员管理', 'icon--proxyaccount', 0, '/member', NULL, NULL, '会员管理', 'common.member.manage', 1, 0, '2023-12-01 07:42:08.702084');
-INSERT INTO "public"."asf_permission_menu" VALUES (660040013126545408, 660039519033339904, '会员标签', '会员标签', 'icon-dash_board', 0, '/member/tags', NULL, NULL, NULL, NULL, 1, 0, '2025-03-27 08:43:22.096015');
 
 
 --
@@ -2758,6 +2726,8 @@ INSERT INTO "public"."asf_role_permission" VALUES (229, 660039519033339904, 1, '
 -- Data for Name: asf_security_token; Type: TABLE DATA; Schema: public; Owner: -
 --
 
+INSERT INTO "public"."asf_security_token" VALUES (308, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzQ0NDY3MzU2LCJleHAiOjE3NDQ1NTM3NTYsImlhdCI6MTc0NDQ2NzM1NiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.tJEA414JvbJPo8sVBEc5x6yDekq--kzHRwd6Z1_M-HN8LplC7pZQARPvjjMZZe1Hr4kEONxNYq5vXngnTwJ-dmqZFbOOR7-GrApNorW-9jGVkswB9R_fFdCajG8Du2J9vswTw3J6NG0gRoJtcJiiukpiaIGGEq9hF0CG0G4eCto7jnmTaaIeNwu2L9LY4aQ_hx2WhmTjq0FPFkWzvIhqjd4nv2dC9oF9joCuJq97IsHI5oySIbpncQdzbQzPlt8PBG-Nof9Mmy2OOzYm2mv0mwwT7ZVW6SO3jo2FaH--QrZwIqiOnQgJS3CmFFShjl1-VNmvrH04Qk9GyRaM9F23Ew', '2025-04-13 14:15:56.146049+00', '2025-08-24 13:38:10.514347');
+INSERT INTO "public"."asf_security_token" VALUES (309, 1, 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtlZXBfd2FuIiwicm9sZSI6WyJzdXBlcmFkbWluIiwidXNlciJdLCJuYW1lIjoiYWRtaW4iLCJzdWIiOiIxIiwiYXV0aF9tb2RlIjoiVXNlcm5hbWVBbmRQYXNzd29yZCIsInRlbmFuY3lfaWQiOiIxIiwibmJmIjoxNzQ0NDY3MzU2LCJleHAiOjE3NDQ1OTY5NTYsImlhdCI6MTc0NDQ2NzM1NiwiaXNzIjoiYXNmIiwiYXVkIjoiYXNmIn0.x7i43zJCrc2uMMjtyHMrF1gCvDorjXqNaLQP5D88BLbhna2oPGf6u-sOqVH1QnQ2kYjJ15Vu5uUUmVluYI06UAOw43Va5FzBk7QyxEKx9pziPVkJQr2mHGvqkhIoJM4GOCVQOirF1L3axx_Ed3Cjp24fDWtLFxAZ7tNSG4hoorKjPkCmAVhhDAnglAItpzNF4kOToi2le43aYHr1ebItym7OqXjAaNsiP6bP5UQMhFEvlR0wgJsrtjomoVrF7fiRDYouyM3iqdtLfvWRTxYHYUM575_RGRmuxSOBJnKRRGxX_n0K2BlKKHNya1rER8Y9yKLwHvpNFpK73S4o0ajR3g', '2025-04-13 14:15:56.146049+00', '2025-08-24 13:38:10.548138');
 
 
 --
@@ -2857,224 +2827,6 @@ INSERT INTO "public"."asf_translate" VALUES (478913853930762240, '添加', 1, 'c
 INSERT INTO "public"."asf_translate" VALUES (478914024651517952, '编辑', 1, 'common.edit', '编辑', 'CN', 'admin', '2023-11-13 21:13:21.270044', 1);
 INSERT INTO "public"."asf_translate" VALUES (478914182059552768, '操作', 1, 'common.action', '操作', 'CN', 'admin', '2023-11-13 21:13:58.799399', 1);
 INSERT INTO "public"."asf_translate" VALUES (485346010603909120, '手机号码登录', 1, 'common.phone.login', '手机号码登录', 'CN', 'admin', '2023-12-01 07:11:46.416365', 1);
-INSERT INTO "public"."asf_translate" VALUES (485348217550204928, '会员管理', 1, 'common.member.manage', '会员管理', 'CN', 'admin', '2023-12-01 07:20:32.356124', 1);
-INSERT INTO "public"."asf_translate" VALUES (485348677761822720, '会员列表', 1, 'common.member.list', '会员列表', 'CN', 'admin', '2023-12-01 07:22:22.081824', 1);
-INSERT INTO "public"."asf_translate" VALUES (485349025087942656, '会员相册', 1, 'common.member.album', '会员相册', 'CN', 'admin', '2023-12-01 07:23:44.887048', 1);
-INSERT INTO "public"."asf_translate" VALUES (485351354705047552, '会员动态', 1, 'common.member.trends', '会员动态', 'CN', 'admin', '2023-12-01 07:33:00.307528', 1);
-INSERT INTO "public"."asf_translate" VALUES (485647995749933056, '头像审核', 1, 'common.member.avatar', '头像审核', 'CN', 'admin', '2023-12-02 03:11:45.153721', 1);
-INSERT INTO "public"."asf_translate" VALUES (485648485858549760, '签名审核', 1, 'common.member.sign', '签名审核', 'CN', 'admin', '2023-12-02 03:13:41.94649', 1);
-INSERT INTO "public"."asf_translate" VALUES (485648812167012352, '昵称审核', 1, 'common.member.nickname', '昵称审核', 'CN', 'admin', '2023-12-02 03:14:59.745296', 1);
-INSERT INTO "public"."asf_translate" VALUES (485649248647258112, '真人认证', 1, 'common.member.real', '真人认证', 'CN', 'admin', '2023-12-02 03:16:43.812331', 1);
-INSERT INTO "public"."asf_translate" VALUES (485649984844079104, '会员设备', 1, 'common.member.device', '会员设备', 'CN', 'admin', '2023-12-02 03:19:39.329217', 1);
-INSERT INTO "public"."asf_translate" VALUES (485666796096856064, '礼物价格', 1, 'common.setting.gift_price', '礼物价格', 'CN', 'admin', '2023-12-02 04:26:27.611777', 1);
-INSERT INTO "public"."asf_translate" VALUES (485649666982944768, '会员黑名单', 1, 'common.member.blacklist', '会员黑名单', 'CN', 'admin', '2023-12-02 03:18:23.550545', 1);
-INSERT INTO "public"."asf_translate" VALUES (485650882651627520, '会员关注', 1, 'common.member.flow', '会员关注', 'CN', 'admin', '2023-12-02 03:23:13.388807', 1);
-INSERT INTO "public"."asf_translate" VALUES (485651571268263936, '会员礼券', 1, 'common.member.gift', '会员礼券', 'CN', 'admin', '2023-12-02 03:25:57.570287', 1);
-INSERT INTO "public"."asf_translate" VALUES (485651919861063680, '会员礼券记录', 1, 'common.member.gift_record', '会员礼券记录', 'CN', 'admin', '2023-12-02 03:27:20.683093', 1);
-INSERT INTO "public"."asf_translate" VALUES (485652271763169280, '会员支付记录', 1, 'common.member.payment_record', '会员支付记录', 'CN', 'admin', '2023-12-02 03:28:44.582532', 1);
-INSERT INTO "public"."asf_translate" VALUES (485652548511735808, '会员消费记录', 1, 'common.member.purchase_history', '会员消费记录', 'CN', 'admin', '2023-12-02 03:29:50.565824', 1);
-INSERT INTO "public"."asf_translate" VALUES (485652855446708224, '会员设置', 1, 'common.member.setting', '会员设置', 'CN', 'admin', '2023-12-02 03:31:03.745375', 1);
-INSERT INTO "public"."asf_translate" VALUES (485653168786382848, '会员社交账号', 1, 'common.member.socialize', '会员社交账号', 'CN', 'admin', '2023-12-02 03:32:18.452237', 1);
-INSERT INTO "public"."asf_translate" VALUES (485653438656290816, '会员提现记录', 1, 'common.member.withdrawal_record', '会员提现记录', 'CN', 'admin', '2023-12-02 03:33:22.794835', 1);
-INSERT INTO "public"."asf_translate" VALUES (485662779824283648, '社交设置', 1, 'common.setting', '社交设置', 'CN', 'admin', '2023-12-02 04:10:30.044127', 1);
-INSERT INTO "public"."asf_translate" VALUES (485663206003318784, '活动设置', 1, 'common.setting.active', '活动设置', 'CN', 'admin', '2023-12-02 04:12:11.654249', 1);
-INSERT INTO "public"."asf_translate" VALUES (485663505879277568, 'app设置', 1, 'common.setting.app', 'app设置', 'CN', 'admin', '2023-12-02 04:13:23.14891', 1);
-INSERT INTO "public"."asf_translate" VALUES (485669005354213376, '充值价格设置', 1, 'common.setting.recharge_price', 'Recharge Price Setting', 'ID', 'admin', '2023-12-02 04:35:14.347948', 1);
-INSERT INTO "public"."asf_translate" VALUES (485669294215929856, '敏感词设置', 1, 'common.setting.sensitive', 'Sensitive Setting', 'ID', 'admin', '2023-12-02 04:36:23.218716', 1);
-INSERT INTO "public"."asf_translate" VALUES (485670115070582784, '会员收益', 1, 'common.member.income', 'Member Income Record', 'ID', 'admin', '2023-12-02 04:39:38.914864', 1);
-INSERT INTO "public"."asf_translate" VALUES (485671092154671104, 'VIP价格', 1, 'common.setting.vip_price', 'Vip Price', 'ID', 'admin', '2023-12-02 04:43:31.874675', 1);
-INSERT INTO "public"."asf_translate" VALUES (485671329363533824, '提现设置', 1, 'common.setting.withdrawal_setting', 'Withdrawal Setting', 'ID', 'admin', '2023-12-02 04:44:28.431959', 1);
-INSERT INTO "public"."asf_translate" VALUES (485663787753283584, 'banner设置', 1, 'common.setting.banner', 'banner设置', 'CN', 'admin', '2023-12-02 04:14:30.355934', 1);
-INSERT INTO "public"."asf_translate" VALUES (485664088950448128, '招呼语句设置', 1, 'common.setting.call', '招呼语句设置', 'CN', 'admin', '2023-12-02 04:15:42.168606', 1);
-INSERT INTO "public"."asf_translate" VALUES (485665320486182912, '收费设置', 1, 'common.setting.charge', '收费设置', 'CN', 'admin', '2023-12-02 04:20:35.799305', 1);
-INSERT INTO "public"."asf_translate" VALUES (485665576531664896, '颜色设置', 1, 'common.setting.color', '颜色设置', 'CN', 'admin', '2023-12-02 04:21:36.847684', 1);
-INSERT INTO "public"."asf_translate" VALUES (485666047140962304, '货币分成设置', 1, 'common.setting.currency', '货币分成设置', 'CN', 'admin', '2023-12-02 04:23:29.053725', 1);
-INSERT INTO "public"."asf_translate" VALUES (485666425068724224, '货币兑换', 1, 'common.setting.exchange', '货币兑换', 'CN', 'admin', '2023-12-02 04:24:59.149971', 1);
-INSERT INTO "public"."asf_translate" VALUES (485667164453216256, '帮助设置', 1, 'common.setting.help', '帮助设置', 'CN', 'admin', '2023-12-02 04:27:55.439106', 1);
-INSERT INTO "public"."asf_translate" VALUES (485667513939402752, '导航设置', 1, 'common.setting.nav', '导航设置', 'CN', 'admin', '2023-12-02 04:29:18.764707', 1);
-INSERT INTO "public"."asf_translate" VALUES (485668459142586368, '其他设置', 1, 'common.setting.other', '其他设置', 'CN', 'admin', '2023-12-02 04:33:04.116738', 1);
-INSERT INTO "public"."asf_translate" VALUES (485668824357412864, '充值价格设置 ', 1, 'common.setting.recharge_price', '充值价格设置', 'CN', 'admin', '2023-12-02 04:34:31.193175', 1);
-INSERT INTO "public"."asf_translate" VALUES (485669167468257280, '敏感词设置', 1, 'common.setting.sensitive', '敏感词设置', 'CN', 'admin', '2023-12-02 04:35:52.999318', 1);
-INSERT INTO "public"."asf_translate" VALUES (485669446263644160, '分享设置', 1, 'common.setting.share', '分享设置', 'CN', 'admin', '2023-12-02 04:36:59.471944', 1);
-INSERT INTO "public"."asf_translate" VALUES (485670019734052864, '会员收益记录', 1, 'common.member.income', '会员收益记录', 'CN', 'admin', '2023-12-02 04:39:16.187259', 1);
-INSERT INTO "public"."asf_translate" VALUES (485670981156610048, 'VIP价格', 1, 'common.setting.vip_price', 'VIP价格', 'CN', 'admin', '2023-12-02 04:43:05.411174', 1);
-INSERT INTO "public"."asf_translate" VALUES (485671196638978048, '提现设置', 1, 'common.setting.withdrawal_setting', '提现设置', 'CN', 'admin', '2023-12-02 04:43:56.786516', 1);
-INSERT INTO "public"."asf_translate" VALUES (660042990917824512, '标签管理', 1, 'common.member.tags', '标签管理', 'CN', 'admin', '2025-03-27 08:55:12.050919', 1);
-INSERT INTO "public"."asf_translate" VALUES (660043157788209152, '标签管理', 1, 'common.member.tags', 'Tga Manage', 'ID', 'admin', '2025-03-27 08:55:51.826818', 1);
-INSERT INTO "public"."asf_translate" VALUES (665010395745214464, '温柔', 1, 'common.member.wr_tag', '温柔', 'CN', 'admin', '2025-04-10 08:43:07.00512', 0);
-INSERT INTO "public"."asf_translate" VALUES (665010548963139584, '感性', 1, 'common.member.gx_tag', '感性', 'CN', 'admin', '2025-04-10 08:43:43.525977', 0);
-INSERT INTO "public"."asf_translate" VALUES (665011922157297664, '内向', 1, 'common.member.nx_tag', '内向', 'CN', 'admin', '2025-04-10 08:49:10.920107', 0);
-INSERT INTO "public"."asf_translate" VALUES (665012032421355520, '社交聚会', 1, 'common.member.sjjh_tag', '社交聚会', 'CN', 'admin', '2025-04-10 08:49:37.208994', 0);
-INSERT INTO "public"."asf_translate" VALUES (665012117028855808, '陪我购物', 1, 'common.member.pwgw_tag', '陪我购物', 'CN', 'admin', '2025-04-10 08:49:57.381393', 0);
-INSERT INTO "public"."asf_translate" VALUES (665012317596278784, '旅游休闲', 1, 'common.member.lyxx_tag', '旅游休闲', 'CN', 'admin', '2025-04-10 08:50:45.200181', 0);
-INSERT INTO "public"."asf_translate" VALUES (665012581082456064, '约见面', 1, 'common.member.yjm_tag', '约见面', 'CN', 'admin', '2025-04-10 08:51:48.019235', 0);
-INSERT INTO "public"."asf_translate" VALUES (665012649143427072, '找陪伴', 1, 'common.member.zpb_tag', '找陪伴', 'CN', 'admin', '2025-04-10 08:52:04.246423', 0);
-INSERT INTO "public"."asf_translate" VALUES (665012740507951104, '网恋', 1, 'common.member.wl_tag', '网恋', 'CN', 'admin', '2025-04-10 08:52:26.029293', 0);
-INSERT INTO "public"."asf_translate" VALUES (665012829003571200, '文艺', 1, 'common.member.wy_tag', '文艺', 'CN', 'admin', '2025-04-10 08:52:47.128311', 0);
-INSERT INTO "public"."asf_translate" VALUES (665012921630580736, '吃货', 1, 'common.member.ch_tag', '吃货', 'CN', 'admin', '2025-04-10 08:53:09.212012', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013101964681216, '逗比', 1, 'common.member.db_tag', '逗比', 'CN', 'admin', '2025-04-10 08:53:52.207512', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013169979514880, '看电影', 1, 'common.member.kdy_tag', '看电影', 'CN', 'admin', '2025-04-10 08:54:08.424038', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013269032198144, '御姐', 1, 'common.member.yj_tag', '御姐', 'CN', 'admin', '2025-04-10 08:54:32.038886', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013344051519488, '萝莉', 1, 'common.member.ll_tag', '萝莉', 'CN', 'admin', '2025-04-10 08:54:49.925513', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013441942380544, '谈恋爱', 1, 'common.member.tla_tag', '谈恋爱', 'CN', 'admin', '2025-04-10 08:55:13.263726', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013547982774272, '美食', 1, 'common.member.ms_tag', '美食', 'CN', 'admin', '2025-04-10 08:55:38.545475', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013622721077248, '知己', 1, 'common.member.zj_tag', '知己', 'CN', 'admin', '2025-04-10 08:55:56.365554', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013689821552640, '骑行', 1, 'common.member.qx_tag', '骑行', 'CN', 'admin', '2025-04-10 08:56:12.362189', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013768116625408, '本科', 1, 'common.member.bk_tag', '本科', 'CN', 'admin', '2025-04-10 08:56:31.028632', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013879324401664, ' 旅行伙伴', 1, 'common.member.lxhb_tag', ' 旅行伙伴', 'CN', 'admin', '2025-04-10 08:56:57.543117', 0);
-INSERT INTO "public"."asf_translate" VALUES (665013945728622592, '高冷', 1, 'common.member.gl_tag', '高冷', 'CN', 'admin', '2025-04-10 08:57:13.375212', 0);
-INSERT INTO "public"."asf_translate" VALUES (665014018889867264, '学生', 1, 'common.member.xs_tag', '学生', 'CN', 'admin', '2025-04-10 08:57:30.818765', 0);
-INSERT INTO "public"."asf_translate" VALUES (665014083800915968, '宅女', 1, 'common.member.zn_tag', '宅女', 'CN', 'admin', '2025-04-10 08:57:46.294294', 0);
-INSERT INTO "public"."asf_translate" VALUES (665014150997860352, '纯交友', 1, 'common.member.cjy_tag', '纯交友', 'CN', 'admin', '2025-04-10 08:58:02.316128', 0);
-INSERT INTO "public"."asf_translate" VALUES (665014520692203520, '温柔', 1, 'common.member.wr_tag', 'Nhẹ nhàng', 'VN', 'admin', '2025-04-10 08:59:30.457177', 0);
-INSERT INTO "public"."asf_translate" VALUES (665014652842139648, '感性', 1, 'common.member.gx_tag', 'Cảm xúc', 'VN', 'admin', '2025-04-10 09:00:01.964249', 0);
-INSERT INTO "public"."asf_translate" VALUES (665014860271443968, '内向', 1, 'common.member.nx_tag', 'Hướng nội', 'VN', 'admin', '2025-04-10 09:00:51.419596', 0);
-INSERT INTO "public"."asf_translate" VALUES (665015002143776768, '社交聚会', 1, 'common.member.sjjh_tag', 'Họp mặt xã hội', 'VN', 'admin', '2025-04-10 09:01:25.244299', 0);
-INSERT INTO "public"."asf_translate" VALUES (665015109253718016, '陪我购物', 1, 'common.member.pwgw_tag', 'Mua sắm cùng tôi', 'VN', 'admin', '2025-04-10 09:01:50.781854', 0);
-INSERT INTO "public"."asf_translate" VALUES (665015232062939136, '旅游休闲', 1, 'common.member.lyxx_tag', 'Du lịch giải trí', 'VN', 'admin', '2025-04-10 09:02:20.060538', 0);
-INSERT INTO "public"."asf_translate" VALUES (665015990317604864, '约见面', 1, 'common.member.yjm_tag', 'Hẹn gặp', 'VN', 'admin', '2025-04-10 09:05:20.84237', 0);
-INSERT INTO "public"."asf_translate" VALUES (665016097939251200, '找陪伴', 1, 'common.member.zpb_tag', 'Tìm công ty', 'VN', 'admin', '2025-04-10 09:05:46.500843', 0);
-INSERT INTO "public"."asf_translate" VALUES (665016207997788160, '网恋', 1, 'common.member.wl_tag', 'tình yêu online', 'VN', 'admin', '2025-04-10 09:06:12.745109', 0);
-INSERT INTO "public"."asf_translate" VALUES (665016876179775488, '文艺', 1, 'common.member.wy_tag', 'Văn nghệ', 'VN', 'admin', '2025-04-10 09:08:52.048233', 0);
-INSERT INTO "public"."asf_translate" VALUES (665016969947635712, '吃货', 1, 'common.member.ch_tag', 'Ăn hàng', 'VN', 'admin', '2025-04-10 09:09:14.403583', 0);
-INSERT INTO "public"."asf_translate" VALUES (665017078282313728, '逗比', 1, 'common.member.db_tag', 'hài hước hơn', 'VN', 'admin', '2025-04-10 09:09:40.232083', 0);
-INSERT INTO "public"."asf_translate" VALUES (665017177628598272, '看电影', 1, 'common.member.kdy_tag', 'Xem phim', 'VN', 'admin', '2025-04-10 09:10:03.918676', 0);
-INSERT INTO "public"."asf_translate" VALUES (665017278996537344, '御姐', 1, 'common.member.yj_tag', 'Chị Ngự', 'VN', 'admin', '2025-04-10 09:10:28.086316', 0);
-INSERT INTO "public"."asf_translate" VALUES (665017387062779904, '萝莉', 1, 'common.member.ll_tag', 'Việt', 'VN', 'admin', '2025-04-10 09:10:53.850766', 0);
-INSERT INTO "public"."asf_translate" VALUES (665017487369560064, '谈恋爱', 1, 'common.member.tla_tag', 'Yêu đương', 'VN', 'admin', '2025-04-10 09:11:17.766155', 0);
-INSERT INTO "public"."asf_translate" VALUES (665017600141811712, '美食', 1, 'common.member.ms_tag', 'Ẩm thực', 'VN', 'admin', '2025-04-10 09:11:44.652415', 0);
-INSERT INTO "public"."asf_translate" VALUES (665017734011412480, '知己', 1, 'common.member.zj_tag', 'Trang chủ', 'VN', 'admin', '2025-04-10 09:12:16.570698', 0);
-INSERT INTO "public"."asf_translate" VALUES (665017834855063552, '骑行', 1, 'common.member.qx_tag', 'cưỡi ngựa', 'VN', 'admin', '2025-04-10 09:12:40.613032', 0);
-INSERT INTO "public"."asf_translate" VALUES (665018225810333696, '本科', 1, 'common.member.bk_tag', 'Đại học', 'VN', 'admin', '2025-04-10 09:14:13.824178', 0);
-INSERT INTO "public"."asf_translate" VALUES (665018321113309184, '旅行伙伴', 1, 'common.member.lxhb_tag', 'Đối tác du lịch', 'VN', 'admin', '2025-04-10 09:14:36.545918', 0);
-INSERT INTO "public"."asf_translate" VALUES (665018422066012160, '高冷', 1, 'common.member.gl_tag', 'Lạnh cao', 'VN', 'admin', '2025-04-10 09:15:00.615284', 0);
-INSERT INTO "public"."asf_translate" VALUES (665018526109917184, '学生', 1, 'common.member.xs_tag', 'Sinh viên', 'VN', 'admin', '2025-04-10 09:15:25.42278', 0);
-INSERT INTO "public"."asf_translate" VALUES (665018621698105344, '宅女', 1, 'common.member.zn_tag', 'Trang chủ', 'VN', 'admin', '2025-04-10 09:15:48.21005', 0);
-INSERT INTO "public"."asf_translate" VALUES (665018794230800384, '纯交友', 1, 'common.member.cjy_tag', 'Bạn bè thuần khiết', 'VN', 'admin', '2025-04-10 09:16:29.345446', 0);
-INSERT INTO "public"."asf_translate" VALUES (665020156209389568, '温柔', 1, 'common.member.wr_tag', 'lembut', 'ID', 'admin', '2025-04-10 09:21:54.065307', 0);
-INSERT INTO "public"."asf_translate" VALUES (665020253592739840, '感性', 1, 'common.member.gx_tag', 'emosional', 'ID', 'admin', '2025-04-10 09:22:17.283099', 0);
-INSERT INTO "public"."asf_translate" VALUES (665020359666688000, '内向', 1, 'common.member.nx_tag', 'introvert', 'ID', 'admin', '2025-04-10 09:22:42.573571', 0);
-INSERT INTO "public"."asf_translate" VALUES (665020474808721408, '社交聚会', 1, 'common.member.sjjh_tag', 'Pertemuan sosial', 'ID', 'admin', '2025-04-10 09:23:10.025334', 0);
-INSERT INTO "public"."asf_translate" VALUES (665020622204952576, '陪我购物', 1, 'common.member.pwgw_tag', 'Ikuti aku belanja', 'ID', 'admin', '2025-04-10 09:23:45.166687', 0);
-INSERT INTO "public"."asf_translate" VALUES (665020747446870016, '旅游休闲', 1, 'common.member.lyxx_tag', 'Turisme dan hiburan', 'ID', 'admin', '2025-04-10 09:24:15.026819', 0);
-INSERT INTO "public"."asf_translate" VALUES (665020891026284544, '约见面', 1, 'common.member.yjm_tag', 'Turisme dan hiburan', 'ID', 'admin', '2025-04-10 09:24:49.259773', 0);
-INSERT INTO "public"."asf_translate" VALUES (665021084413059072, '找陪伴', 1, 'common.member.zpb_tag', 'Cari persahabatan', 'ID', 'admin', '2025-04-10 09:25:35.366', 0);
-INSERT INTO "public"."asf_translate" VALUES (665021215162097664, '网恋', 1, 'common.member.wl_tag', 'kencan online', 'ID', 'admin', '2025-04-10 09:26:06.538717', 0);
-INSERT INTO "public"."asf_translate" VALUES (665021310632845312, '文艺', 1, 'common.member.wy_tag', 'literatur dan seni', 'ID', 'admin', '2025-04-10 09:26:29.300364', 0);
-INSERT INTO "public"."asf_translate" VALUES (665021415968595968, '吃货', 1, 'common.member.ch_tag', 'foodie', 'ID', 'admin', '2025-04-10 09:26:54.414518', 0);
-INSERT INTO "public"."asf_translate" VALUES (665021523338584064, '逗比', 1, 'common.member.db_tag', 'Perbandingan lucu', 'ID', 'admin', '2025-04-10 09:27:20.01381', 0);
-INSERT INTO "public"."asf_translate" VALUES (665022120297095168, '看电影', 1, 'common.member.kdy_tag', 'pergi ke film', 'ID', 'admin', '2025-04-10 09:29:42.339046', 0);
-INSERT INTO "public"."asf_translate" VALUES (665022361624764416, '御姐', 1, 'common.member.yj_tag', 'wanita dewasa dan menawan', 'ID', 'admin', '2025-04-10 09:30:39.876366', 0);
-INSERT INTO "public"."asf_translate" VALUES (665022477333028864, '萝莉', 1, 'common.member.ll_tag', 'Lori', 'ID', 'admin', '2025-04-10 09:31:07.463024', 0);
-INSERT INTO "public"."asf_translate" VALUES (665022585483157504, '谈恋爱', 1, 'common.member.tla_tag', 'jatuh cinta', 'ID', 'admin', '2025-04-10 09:31:33.247164', 0);
-INSERT INTO "public"."asf_translate" VALUES (665022693767503872, '美食', 1, 'common.member.ms_tag', 'makanan lezat', 'ID', 'admin', '2025-04-10 09:31:59.064991', 0);
-INSERT INTO "public"."asf_translate" VALUES (665029186638176256, '知己', 1, 'common.member.zj_tag', 'confidant', 'ID', 'admin', '2025-04-10 09:57:47.086283', 0);
-INSERT INTO "public"."asf_translate" VALUES (665029295467782144, '骑行', 1, 'common.member.qx_tag', 'RIDE', 'ID', 'admin', '2025-04-10 09:58:13.033398', 0);
-INSERT INTO "public"."asf_translate" VALUES (665029398924484608, '本科', 1, 'common.member.bk_tag', 'mahasiswa', 'ID', 'admin', '2025-04-10 09:58:37.699733', 0);
-INSERT INTO "public"."asf_translate" VALUES (665029513097633792, '旅行伙伴', 1, 'common.member.lxhb_tag', 'Fellow Travelers', 'ID', 'admin', '2025-04-10 09:59:04.92087', 0);
-INSERT INTO "public"."asf_translate" VALUES (665029646119985152, '高冷', 1, 'common.member.gl_tag', 'sombong dan tidak peduli', 'ID', 'admin', '2025-04-10 09:59:36.634814', 0);
-INSERT INTO "public"."asf_translate" VALUES (665029744338001920, '学生', 1, 'common.member.xs_tag', 'siswa', 'ID', 'admin', '2025-04-10 10:00:00.051552', 0);
-INSERT INTO "public"."asf_translate" VALUES (665029829767585792, '宅女', 1, 'common.member.zn_tag', 'OTAKU', 'ID', 'admin', '2025-04-10 10:00:20.420691', 0);
-INSERT INTO "public"."asf_translate" VALUES (665029916778422272, '纯交友', 1, 'common.member.cjy_tag', 'Persahabatan murni', 'ID', 'admin', '2025-04-10 10:00:41.165193', 0);
-INSERT INTO "public"."asf_translate" VALUES (665063616211705856, '温柔', 1, 'common.member.wr_tag', 'lembut', 'MY', 'admin', '2025-04-10 12:14:35.788101', 0);
-INSERT INTO "public"."asf_translate" VALUES (665063806939291648, '感性', 1, 'common.member.gx_tag', 'emosional', 'MY', 'admin', '2025-04-10 12:15:21.261552', 0);
-INSERT INTO "public"."asf_translate" VALUES (665063915483684864, '内向', 1, 'common.member.nx_tag', 'introverted', 'MY', 'admin', '2025-04-10 12:15:47.140414', 0);
-INSERT INTO "public"."asf_translate" VALUES (665064042432684032, '社交聚会', 1, 'common.member.sjjh_tag', 'Pengumpulan sosial', 'MY', 'admin', '2025-04-10 12:16:17.407956', 0);
-INSERT INTO "public"."asf_translate" VALUES (665064143465078784, '陪我购物', 1, 'common.member.pwgw_tag', 'Ikut saya belanja.', 'MY', 'admin', '2025-04-10 12:16:41.496394', 0);
-INSERT INTO "public"."asf_translate" VALUES (665064263422173184, '旅游休闲', 1, 'common.member.lyxx_tag', 'Perjalanan dan hiburan', 'MY', 'admin', '2025-04-10 12:17:10.095801', 0);
-INSERT INTO "public"."asf_translate" VALUES (665064362147700736, '约见面', 1, 'common.member.yjm_tag', 'Jumpa', 'MY', 'admin', '2025-04-10 12:17:33.632482', 0);
-INSERT INTO "public"."asf_translate" VALUES (665064935991402496, '找陪伴', 1, 'common.member.zpb_tag', 'Cari persahabatan', 'MY', 'admin', '2025-04-10 12:19:50.449589', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065037833297920, '网恋', 1, 'common.member.wl_tag', 'tarikh online', 'MY', 'admin', '2025-04-10 12:20:14.73121', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065135673827328, '文艺', 1, 'common.member.wy_tag', 'literatur dan seni', 'MY', 'admin', '2025-04-10 12:20:38.058064', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065218637160448, '吃货', 1, 'common.member.ch_tag', 'foodie', 'MY', 'admin', '2025-04-10 12:20:57.838029', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065386476429312, '逗比', 1, 'common.member.db_tag', 'Perbandingan lucu', 'MY', 'admin', '2025-04-10 12:21:37.854273', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065478407184384, '看电影', 1, 'common.member.kdy_tag', 'pergi ke filem', 'MY', 'admin', '2025-04-10 12:21:59.771736', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065581691920384, '御姐', 1, 'common.member.yj_tag', 'wanita dewasa dan menawan', 'MY', 'admin', '2025-04-10 12:22:24.397448', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065710138286080, '萝莉', 1, 'common.member.ll_tag', 'Lori', 'MY', 'admin', '2025-04-10 12:22:55.021458', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065824927997952, '谈恋爱', 1, 'common.member.tla_tag', 'jatuh cinta', 'MY', 'admin', '2025-04-10 12:23:22.390529', 0);
-INSERT INTO "public"."asf_translate" VALUES (665065914795155456, '美食', 1, 'common.member.ms_tag', 'makanan yang sedap', 'MY', 'admin', '2025-04-10 12:23:43.816207', 0);
-INSERT INTO "public"."asf_translate" VALUES (665066014590230528, '知己', 1, 'common.member.zj_tag', 'konfidant', 'MY', 'admin', '2025-04-10 12:24:07.608526', 0);
-INSERT INTO "public"."asf_translate" VALUES (665066111671590912, '骑行', 1, 'common.member.qx_tag', 'RIDE', 'MY', 'admin', '2025-04-10 12:24:30.754187', 0);
-INSERT INTO "public"."asf_translate" VALUES (665066322607333376, '旅行伙伴', 1, 'common.member.lxhb_tag', 'Penjelajah rakan', 'MY', 'admin', '2025-04-10 12:25:21.045674', 0);
-INSERT INTO "public"."asf_translate" VALUES (665066409689473024, '高冷', 1, 'common.member.gl_tag', 'sombong takbur', 'MY', 'admin', '2025-04-10 12:25:41.807869', 0);
-INSERT INTO "public"."asf_translate" VALUES (665066500663926784, '学生', 1, 'common.member.xs_tag', 'pelajar', 'MY', 'admin', '2025-04-10 12:26:03.497344', 0);
-INSERT INTO "public"."asf_translate" VALUES (665066606104535040, '宅女', 1, 'common.member.zn_tag', 'OTAKU', 'MY', 'admin', '2025-04-10 12:26:28.637595', 0);
-INSERT INTO "public"."asf_translate" VALUES (665066705144635392, '纯交友', 1, 'common.member.cjy_tag', 'Persahabatan murni', 'MY', 'admin', '2025-04-10 12:26:52.250155', 0);
-INSERT INTO "public"."asf_translate" VALUES (665067987930570752, '温柔', 1, 'common.member.wr_tag', 'malumanay', 'PH', 'admin', '2025-04-10 12:31:58.091912', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068166431760384, '感性', 1, 'common.member.gx_tag', 'emosyonal', 'PH', 'admin', '2025-04-10 12:32:40.649357', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068281678651392, '内向', 1, 'common.member.nx_tag', 'introverted', 'PH', 'admin', '2025-04-10 12:33:08.127531', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068391082876928, '社交聚会', 1, 'common.member.sjjh_tag', 'Social gatherings', 'PH', 'admin', '2025-04-10 12:33:34.21168', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068480132145152, '陪我购物', 1, 'common.member.pwgw_tag', 'Magkasama ako sa pagbili', 'PH', 'admin', '2025-04-10 12:33:55.442716', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068610365284352, '旅游休闲', 1, 'common.member.lyxx_tag', 'Turismo at libangan', 'PH', 'admin', '2025-04-10 12:34:26.492353', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068697761996800, '约见面', 1, 'common.member.yjm_tag', 'Makilala', 'PH', 'admin', '2025-04-10 12:34:47.329393', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068776031903744, '找陪伴', 1, 'common.member.zpb_tag', 'Hanapin ang kasamahan', 'PH', 'admin', '2025-04-10 12:35:05.992133', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068879337611264, '网恋', 1, 'common.member.wl_tag', 'online dating', 'PH', 'admin', '2025-04-10 12:35:30.619842', 0);
-INSERT INTO "public"."asf_translate" VALUES (665068984627224576, '文艺', 1, 'common.member.wy_tag', 'literatura at sining', 'PH', 'admin', '2025-04-10 12:35:55.723852', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069075224190976, '吃货', 1, 'common.member.ch_tag', 'foodie', 'PH', 'admin', '2025-04-10 12:36:17.324078', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069165351395328, '逗比', 1, 'common.member.db_tag', 'Nakakatawa paghahambing', 'PH', 'admin', '2025-04-10 12:36:38.811607', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069277553221632, '看电影', 1, 'common.member.kdy_tag', 'pumunta sa mga pelikula', 'PH', 'admin', '2025-04-10 12:37:05.563031', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069356485828608, '御姐', 1, 'common.member.yj_tag', 'matapos at nakakatuwa na babae', 'PH', 'admin', '2025-04-10 12:37:24.381867', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069459661512704, '萝莉', 1, 'common.member.ll_tag', 'Lori', 'PH', 'admin', '2025-04-10 12:37:48.980981', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069566834368512, '谈恋爱', 1, 'common.member.tla_tag', 'mahulog sa pag-ibig', 'PH', 'admin', '2025-04-10 12:38:14.534345', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069685839355904, '美食', 1, 'common.member.ms_tag', 'masarap na pagkain', 'PH', 'admin', '2025-04-10 12:38:42.906989', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069783948320768, '知己', 1, 'common.member.zj_tag', 'confidant', 'PH', 'admin', '2025-04-10 12:39:06.297055', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069871105957888, '骑行', 1, 'common.member.qx_tag', 'RIDE', 'PH', 'admin', '2025-04-10 12:39:27.076998', 0);
-INSERT INTO "public"."asf_translate" VALUES (665069967193268224, '本科', 1, 'common.member.bk_tag', 'mag-aaral', 'PH', 'admin', '2025-04-10 12:39:49.987311', 0);
-INSERT INTO "public"."asf_translate" VALUES (665070051465224192, '旅行伙伴', 1, 'common.member.lxhb_tag', 'Mga Kaawang Travelers', 'PH', 'admin', '2025-04-10 12:40:10.078525', 0);
-INSERT INTO "public"."asf_translate" VALUES (665070155391688704, '高冷', 1, 'common.member.gl_tag', 'malakas at walang pakiramdam', 'PH', 'admin', '2025-04-10 12:40:34.856946', 0);
-INSERT INTO "public"."asf_translate" VALUES (665070246361948160, '学生', 1, 'common.member.xs_tag', 'mag-aaral', 'PH', 'admin', '2025-04-10 12:40:56.546703', 0);
-INSERT INTO "public"."asf_translate" VALUES (665070573115006976, '宅女', 1, 'common.member.zn_tag', 'OTAKU', 'PH', 'admin', '2025-04-10 12:42:14.451733', 0);
-INSERT INTO "public"."asf_translate" VALUES (665070691851558912, '纯交友', 1, 'common.member.cjy_tag', 'Malinaw na pagkakaibigan', 'PH', 'admin', '2025-04-10 12:42:42.759912', 0);
-INSERT INTO "public"."asf_translate" VALUES (665070886999941120, '温柔', 1, 'common.member.wr_tag', 'อ่อนโยน', 'TH', 'admin', '2025-04-10 12:43:29.288479', 0);
-INSERT INTO "public"."asf_translate" VALUES (665071363024084992, '感性', 1, 'common.member.gx_tag', 'กระตุ้นความรู้สึก', 'TH', 'admin', '2025-04-10 12:45:22.780205', 0);
-INSERT INTO "public"."asf_translate" VALUES (665071496344231936, '内向', 1, 'common.member.nx_tag', 'เก็บตัว', 'TH', 'admin', '2025-04-10 12:45:54.566825', 0);
-INSERT INTO "public"."asf_translate" VALUES (665073492929404928, '社交聚会', 1, 'common.member.sjjh_tag', 'งานเลี้ยงสังสรรค์', 'TH', 'admin', '2025-04-10 12:53:50.591185', 0);
-INSERT INTO "public"."asf_translate" VALUES (665073574693167104, '陪我购物', 1, 'common.member.pwgw_tag', 'ช้อปปิ้งกับฉัน', 'TH', 'admin', '2025-04-10 12:54:10.085759', 0);
-INSERT INTO "public"."asf_translate" VALUES (665073691462590464, '旅游休闲', 1, 'common.member.lyxx_tag', 'ท่องเที่ยวและสันทนาการ', 'TH', 'admin', '2025-04-10 12:54:37.925218', 0);
-INSERT INTO "public"."asf_translate" VALUES (665073783489814528, '约见面', 1, 'common.member.yjm_tag', 'นัดเจอกัน', 'TH', 'admin', '2025-04-10 12:54:59.867256', 0);
-INSERT INTO "public"."asf_translate" VALUES (665073879111557120, '找陪伴', 1, 'common.member.zpb_tag', 'ค้นหา บริษัท', 'TH', 'admin', '2025-04-10 12:55:22.664396', 0);
-INSERT INTO "public"."asf_translate" VALUES (665073970123759616, '网恋', 1, 'common.member.wl_tag', 'รักออนไลน์', 'TH', 'admin', '2025-04-10 12:55:44.364565', 0);
-INSERT INTO "public"."asf_translate" VALUES (665074179130122240, '文艺', 1, 'common.member.wy_tag', 'วรรณกรรมและศิลปะ', 'TH', 'admin', '2025-04-10 12:56:34.195013', 0);
-INSERT INTO "public"."asf_translate" VALUES (665074598204006400, '吃货', 1, 'common.member.ch_tag', 'กิน', 'TH', 'admin', '2025-04-10 12:58:14.111331', 0);
-INSERT INTO "public"."asf_translate" VALUES (665074691179143168, '逗比', 1, 'common.member.db_tag', 'แซวบี้', 'TH', 'admin', '2025-04-10 12:58:36.277315', 0);
-INSERT INTO "public"."asf_translate" VALUES (665074811975098368, '看电影', 1, 'common.member.kdy_tag', 'ดูหนัง', 'TH', 'admin', '2025-04-10 12:59:05.078645', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075010172739584, '御姐', 1, 'common.member.yj_tag', 'น้องสาวหลวง', 'TH', 'admin', '2025-04-10 12:59:52.331698', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075104443916288, '萝莉', 1, 'common.member.ll_tag', 'โลลิ', 'TH', 'admin', '2025-04-10 13:00:14.803245', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075213646815232, '谈恋爱', 1, 'common.member.tla_tag', 'มีความรัก', 'TH', 'admin', '2025-04-10 13:00:40.838133', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075311638339584, '美食', 1, 'common.member.ms_tag', 'อาหารอร่อย', 'TH', 'admin', '2025-04-10 13:01:04.198926', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075421881425920, '知己', 1, 'common.member.zj_tag', 'เพื่อนสนิท', 'TH', 'admin', '2025-04-10 13:01:30.482576', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075547282726912, '骑行', 1, 'common.member.qx_tag', 'ขี่ม้า', 'TH', 'admin', '2025-04-10 13:02:00.380138', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075686164520960, '本科', 1, 'common.member.bk_tag', 'มหาวิทยาลัย', 'TH', 'admin', '2025-04-10 13:02:33.493136', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075784160239616, '旅行伙伴', 1, 'common.member.lxhb_tag', 'เพื่อนเดินทาง', 'TH', 'admin', '2025-04-10 13:02:56.856993', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075865978527744, '高冷', 1, 'common.member.gl_tag', 'ความเย็นสูง', 'TH', 'admin', '2025-04-10 13:03:16.363499', 0);
-INSERT INTO "public"."asf_translate" VALUES (665075998635974656, '学生', 1, 'common.member.xs_tag', 'นักเรียน', 'TH', 'admin', '2025-04-10 13:03:47.991499', 0);
-INSERT INTO "public"."asf_translate" VALUES (665076074607403008, '宅女', 1, 'common.member.zn_tag', 'บ้าน หญิง', 'TH', 'admin', '2025-04-10 13:04:06.104754', 0);
-INSERT INTO "public"."asf_translate" VALUES (665076167028891648, '纯交友', 1, 'common.member.cjy_tag', 'ออกเดทบริสุทธิ์', 'TH', 'admin', '2025-04-10 13:04:28.140969', 0);
-INSERT INTO "public"."asf_translate" VALUES (665076428413722624, '温柔', 1, 'common.member.wr_tag', 'नीला', 'IN', 'admin', '2025-04-10 13:05:30.4596', 0);
-INSERT INTO "public"."asf_translate" VALUES (665078795976695808, '感性', 1, 'common.member.gx_tag', 'भावना', 'IN', 'admin', '2025-04-10 13:14:54.932037', 0);
-INSERT INTO "public"."asf_translate" VALUES (665078883306299392, '内向', 1, 'common.member.nx_tag', 'अंतर्गत', 'IN', 'admin', '2025-04-10 13:15:15.753098', 0);
-INSERT INTO "public"."asf_translate" VALUES (665078958925406208, '社交聚会', 1, 'common.member.sjjh_tag', 'सामाजिक संघटना', 'IN', 'admin', '2025-04-10 13:15:33.782304', 0);
-INSERT INTO "public"."asf_translate" VALUES (665079057487355904, '陪我购物', 1, 'common.member.pwgw_tag', 'मुझे शॉपिंग संपूर्ण करें', 'IN', 'admin', '2025-04-10 13:15:57.281242', 0);
-INSERT INTO "public"."asf_translate" VALUES (665079745625841664, '旅游休闲', 1, 'common.member.lyxx_tag', 'टूरिज्म और खाली', 'IN', 'admin', '2025-04-10 13:18:41.345817', 0);
-INSERT INTO "public"."asf_translate" VALUES (665079834800939008, '约见面', 1, 'common.member.yjm_tag', 'मिटाएँ', 'IN', 'admin', '2025-04-10 13:19:02.607762', 0);
-INSERT INTO "public"."asf_translate" VALUES (665079923900538880, '找陪伴', 1, 'common.member.zpb_tag', 'सहभागी ढूंढें', 'IN', 'admin', '2025-04-10 13:19:23.851005', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080006847094784, '网恋', 1, 'common.member.wl_tag', 'ऑनलाइन डेटिंग', 'IN', 'admin', '2025-04-10 13:19:43.625679', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080101705474048, '文艺', 1, 'common.member.wy_tag', 'साहित्य और कला', 'IN', 'admin', '2025-04-10 13:20:06.242262', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080174657003520, '吃货', 1, 'common.member.ch_tag', 'फूडी', 'IN', 'admin', '2025-04-10 13:20:23.6362', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080249449832448, '逗比', 1, 'common.member.db_tag', 'मज़ा तुलना', 'IN', 'admin', '2025-04-10 13:20:41.467069', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080328063672320, '看电影', 1, 'common.member.kdy_tag', 'फिल्मों में जाओ', 'IN', 'admin', '2025-04-10 13:21:00.210231', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080431168053248, '御姐', 1, 'common.member.yj_tag', 'ज्यादा और चमत्कारी महिला', 'IN', 'admin', '2025-04-10 13:21:24.792544', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080526924013568, '萝莉', 1, 'common.member.ll_tag', 'लोरीfrance. kgm', 'IN', 'admin', '2025-04-10 13:21:47.622537', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080638211481600, '谈恋爱', 1, 'common.member.tla_tag', 'प्रेम में पड़ें', 'IN', 'admin', '2025-04-10 13:22:14.155201', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080729978658816, '美食', 1, 'common.member.ms_tag', 'सुखद खाना', 'IN', 'admin', '2025-04-10 13:22:36.035138', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080814619713536, '知己', 1, 'common.member.zj_tag', 'विश्वास', 'IN', 'admin', '2025-04-10 13:22:56.214691', 0);
-INSERT INTO "public"."asf_translate" VALUES (665080897130061824, '骑行', 1, 'common.member.qx_tag', 'विश्वास', 'IN', 'admin', '2025-04-10 13:23:15.887003', 0);
-INSERT INTO "public"."asf_translate" VALUES (665081018752294912, '旅行伙伴', 1, 'common.member.lxhb_tag', 'फेल्लो ट्रायलर', 'IN', 'admin', '2025-04-10 13:23:44.884048', 0);
-INSERT INTO "public"."asf_translate" VALUES (665081101866622976, '高冷', 1, 'common.member.gl_tag', 'अभिमान और अभिमान', 'IN', 'admin', '2025-04-10 13:24:04.701144', 0);
-INSERT INTO "public"."asf_translate" VALUES (665081192677498880, '学生', 1, 'common.member.xs_tag', 'विद्यार्थी', 'IN', 'admin', '2025-04-10 13:24:26.350932', 0);
-INSERT INTO "public"."asf_translate" VALUES (665081270381174784, '宅女', 1, 'common.member.zn_tag', 'Constellation name (optional)', 'IN', 'admin', '2025-04-10 13:24:44.877764', 0);
-INSERT INTO "public"."asf_translate" VALUES (665081427000680448, '纯交友', 1, 'common.member.cjy_tag', 'शुद्ध मित्रता', 'IN', 'admin', '2025-04-10 13:25:22.218786', 0);
-INSERT INTO "public"."asf_translate" VALUES (665066198791479296, '本科', 1, 'common.member.bk_tag', 'belajar', 'MY', 'admin', '2025-04-10 12:24:51.526095', 0);
 
 
 --
@@ -3284,7 +3036,7 @@ SELECT pg_catalog.setval('"public"."asf_security_token_id_seq"', 1, true);
 -- Name: asf_security_token_id_seq1; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('"public"."asf_security_token_id_seq1"', 307, true);
+SELECT pg_catalog.setval('"public"."asf_security_token_id_seq1"', 309, true);
 
 
 --
