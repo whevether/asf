@@ -98,7 +98,6 @@ public class ASFBuilder
     Services.AddTransient<DictionaryService>();
     Services.AddTransient<RunSendPhoneTasks>();
     Services.AddTransient<UploadService>();
-    Services.AddTransient<RunSendPhoneTasks>();
     Services.AddTransient<RunSendPhoneTasksOne>();
     Services.AddTransient<CountryService>();
     Services.AddTransient<AppSettingService>();
