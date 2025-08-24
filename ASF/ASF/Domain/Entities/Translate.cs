@@ -18,19 +18,10 @@ public class Translate : Entity<long>
   public long? TenancyId { get; set; }
 
   /// <summary>
-  ///   国家
-  /// </summary>
-  public string Country { get; set; }
-
-  /// <summary>
   ///   国家语言code 利用国家code 分组 例如zh en 等等
   /// </summary>
   public string CountryCode { get; set; }
-
-  /// <summary>
-  ///   国家id
-  /// </summary>
-  public long CountryId { get; set; }
+  
 
   /// <summary>
   ///   多语言 key 例如 sex.max

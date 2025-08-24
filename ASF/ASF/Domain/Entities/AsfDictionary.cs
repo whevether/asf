@@ -45,13 +45,8 @@ public class AsfDictionary : Entity<long>
   /// <summary>
   ///   国家
   /// </summary>
-  public string Country { get; set; }
-
-  /// <summary>
-  ///   国家id
-  /// </summary>
-  public long CountryId { get; set; }
-
+  public string CountryCode { get; set; }
+  
   /// <summary>
   ///   创建时间
   /// </summary>

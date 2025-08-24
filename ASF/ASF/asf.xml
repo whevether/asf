@@ -431,116 +431,6 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:ASF.Application.DtoMapper.AccountMapper">
-            <summary>
-              账户映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.AccountMapper.#ctor">
-            <summary>
-              账户映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.AppSettingMapper">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.AppSettingMapper.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.AsfDictionaryMapper">
-            <summary>
-              字典映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.AsfDictionaryMapper.#ctor">
-            <summary>
-              字典映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.AudioMapper">
-            <summary>
-              审计日志映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.AudioMapper.#ctor">
-            <summary>
-              审计日志映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.CountryMapper">
-            <summary>
-              国家映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.CountryMapper.#ctor">
-            <summary>
-              国家映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.DepartmentMapper">
-            <summary>
-              部门映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.DepartmentMapper.#ctor">
-            <summary>
-              部门映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.PermissionMapper">
-            <summary>
-              权限映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.PermissionMapper.#ctor">
-            <summary>
-              权限映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.PostMapper">
-            <summary>
-              岗位映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.PostMapper.#ctor">
-            <summary>
-              岗位映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.RoleMapper">
-            <summary>
-              角色映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.RoleMapper.#ctor">
-            <summary>
-              角色映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.TenancyMapper">
-            <summary>
-              租户映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.TenancyMapper.#ctor">
-            <summary>
-              租户映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.TranslateMapper">
-            <summary>
-              多语言映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.TranslateMapper.#ctor">
-            <summary>
-              多语言映射
-            </summary>
-        </member>
         <member name="T:ASF.Application.DTO.AccountAssignDepartmentRequestDto">
             <summary>
               账户分配部门
@@ -1061,12 +951,7 @@
               字典值
             </summary>
         </member>
-        <member name="P:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto.Country">
-            <summary>
-              国家
-            </summary>
-        </member>
-        <member name="P:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto.CountryId">
+        <member name="P:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto.CountryCode">
             <summary>
               国家id
             </summary>
@@ -2396,19 +2281,9 @@
               多语言名称
             </summary>
         </member>
-        <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.Country">
-            <summary>
-              国家
-            </summary>
-        </member>
         <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.CountryCode">
             <summary>
               国家语言code 利用国家code 分组 例如zh en 等等
-            </summary>
-        </member>
-        <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.CountryId">
-            <summary>
-              国家id
             </summary>
         </member>
         <member name="P:ASF.Application.DTO.Translate.TranslateCreateRequestDto.Key">
@@ -2487,6 +2362,116 @@
         <member name="P:ASF.Application.DTO.ListPagedRequestDto.SkipPage">
             <summary>
               跳过页
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AccountMapper">
+            <summary>
+              账户映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AccountMapper.#ctor">
+            <summary>
+              账户映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AppSettingMapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AppSettingMapper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AsfDictionaryMapper">
+            <summary>
+              字典映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AsfDictionaryMapper.#ctor">
+            <summary>
+              字典映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AudioMapper">
+            <summary>
+              审计日志映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AudioMapper.#ctor">
+            <summary>
+              审计日志映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.CountryMapper">
+            <summary>
+              国家映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.CountryMapper.#ctor">
+            <summary>
+              国家映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.DepartmentMapper">
+            <summary>
+              部门映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.DepartmentMapper.#ctor">
+            <summary>
+              部门映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.PermissionMapper">
+            <summary>
+              权限映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.PermissionMapper.#ctor">
+            <summary>
+              权限映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.PostMapper">
+            <summary>
+              岗位映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.PostMapper.#ctor">
+            <summary>
+              岗位映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.RoleMapper">
+            <summary>
+              角色映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.RoleMapper.#ctor">
+            <summary>
+              角色映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.TenancyMapper">
+            <summary>
+              租户映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.TenancyMapper.#ctor">
+            <summary>
+              租户映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.TranslateMapper">
+            <summary>
+              多语言映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.TranslateMapper.#ctor">
+            <summary>
+              多语言映射
             </summary>
         </member>
         <member name="T:ASF.Application.MenuController">
@@ -3430,14 +3415,9 @@
               添加者
             </summary>
         </member>
-        <member name="P:ASF.Domain.Entities.AsfDictionary.Country">
+        <member name="P:ASF.Domain.Entities.AsfDictionary.CountryCode">
             <summary>
               国家
-            </summary>
-        </member>
-        <member name="P:ASF.Domain.Entities.AsfDictionary.CountryId">
-            <summary>
-              国家id
             </summary>
         </member>
         <member name="P:ASF.Domain.Entities.AsfDictionary.CreateTime">
@@ -4087,19 +4067,9 @@
               租户id
             </summary>
         </member>
-        <member name="P:ASF.Domain.Entities.Translate.Country">
-            <summary>
-              国家
-            </summary>
-        </member>
         <member name="P:ASF.Domain.Entities.Translate.CountryCode">
             <summary>
               国家语言code 利用国家code 分组 例如zh en 等等
-            </summary>
-        </member>
-        <member name="P:ASF.Domain.Entities.Translate.CountryId">
-            <summary>
-              国家id
             </summary>
         </member>
         <member name="P:ASF.Domain.Entities.Translate.Key">
@@ -4382,7 +4352,6 @@
               app设置服务
             </summary>
             <param name="serviceProvider"></param>
-            <param name="stringLocalizer"></param>
         </member>
         <member name="M:ASF.Domain.Services.AppSettingService.GetAppSetting(System.String,System.Nullable{System.Int32},System.Nullable{System.Int64})">
             <summary>

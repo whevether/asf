@@ -21,7 +21,6 @@ public class AppSettingService
     ///   app设置服务
     /// </summary>
     /// <param name="serviceProvider"></param>
-    /// <param name="stringLocalizer"></param>
     public AppSettingService(IServiceProvider serviceProvider)
     {
         _serviceProvider = serviceProvider;

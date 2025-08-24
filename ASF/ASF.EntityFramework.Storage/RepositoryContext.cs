@@ -791,20 +791,13 @@ public class RepositoryContext : DbContext
         .HasColumnName("name")
         .HasColumnType("varchar(255)")
         .HasComment("多语言名称");
-
-      e.Property(x => x.Country)
-        .HasColumnName("country")
-        .HasColumnType("varchar(255)")
-        .HasComment("国家名称");
+      
 
       e.Property(x => x.CountryCode)
         .HasColumnName("country_code")
         .HasColumnType("varchar(255)")
         .HasComment("国家语言code 利用国家code 分组 例如zh en 等等");
-
-      e.Property(x => x.CountryId)
-        .HasColumnName("country_id")
-        .HasComment("国家id");
+      
 
       e.Property(x => x.Key)
         .HasColumnName("key")
@@ -894,13 +887,9 @@ public class RepositoryContext : DbContext
       e.Property(x => x.Key).HasColumnName("key").HasColumnType("varchar(255)").HasComment("字典键");
       e.Property(x => x.Value).HasColumnName("value").HasColumnType("varchar(255)").HasComment("字典值");
       e.Property(x => x.Options).HasColumnName("options").HasColumnType("varchar(255)").HasComment("字典额外配置");
-      e.Property(x => x.Country)
-        .HasColumnName("country")
-        .HasColumnType("varchar(255)")
-        .HasComment("国家名称");
 
-      e.Property(x => x.CountryId)
-        .HasColumnName("country_id")
+      e.Property(x => x.CountryCode)
+        .HasColumnName("country_code")
         .HasComment("国家id");
 
       e.Property(x => x.AddUser)
