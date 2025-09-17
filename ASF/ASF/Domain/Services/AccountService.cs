@@ -147,8 +147,8 @@ public class AccountService
   {
     if (await _accountsRepository.GetEntity(f =>
           f.TenancyId == account.TenancyId &&
-          (f.Username.Equals(account.Username) || f.Email.Equals(account.Email) ||
-           f.TelPhone.Equals(account.TelPhone))) != null)
+          (f.Username.Equals(account.Username) || (!string.IsNullOrEmpty(account.Email)&&f.Email.Equals(account.Email)) ||
+           (!string.IsNullOrEmpty(account.TelPhone) && f.TelPhone.Equals(account.TelPhone)))) != null)
       return Result.ReFailure(ResultCodes.AccountExist);
     account.SetId(_idGenerator.GenId());
     var isAdd = await _accountsRepository.Add(account);
