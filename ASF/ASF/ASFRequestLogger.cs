@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,12 +56,16 @@ public class ASFRequestLogger
       //request.EnableRewind();//2.0版使用这个
       request.EnableBuffering(); //3.1版使用这个方法
 
-      var stream = request.Body;
-      if (request.ContentLength != null)
+      // var stream = request.Body;
+      // if (request.ContentLength != null)
+      // {
+      //   var buffer = new byte[request.ContentLength.Value];
+      //   await stream.ReadExactlyAsync(buffer);
+      //   requestContent = Encoding.UTF8.GetString(buffer);
+      // }
+      using (var reader = new StreamReader(request.Body, Encoding.UTF8, leaveOpen: true))
       {
-        var buffer = new byte[request.ContentLength.Value];
-        await stream.ReadExactlyAsync(buffer);
-        requestContent = Encoding.UTF8.GetString(buffer);
+        requestContent = await reader.ReadToEndAsync();
       }
 
       request.Body.Position = 0;
@@ -116,14 +120,17 @@ public class ASFRequestLogger
       //request.EnableRewind();//2.0版使用这个
       request.EnableBuffering(); //3.1版使用这个方法
 
-      var stream = request.Body;
-      if (request.ContentLength != null)
+      // var stream = request.Body;
+      // if (request.ContentLength != null)
+      // {
+      //   var buffer = new byte[request.ContentLength.Value];
+      //   await stream.ReadExactlyAsync(buffer);
+      //   requestContent = Encoding.UTF8.GetString(buffer);
+      // }
+      using (var reader = new StreamReader(request.Body, Encoding.UTF8, leaveOpen: true))
       {
-        var buffer = new byte[request.ContentLength.Value];
-        await stream.ReadExactlyAsync(buffer);
-        requestContent = Encoding.UTF8.GetString(buffer);
+        requestContent = await reader.ReadToEndAsync();
       }
-
       request.Body.Position = 0;
     }
     else if (request.Method.ToLower().Equals("get"))
@@ -137,8 +144,7 @@ public class ASFRequestLogger
       Remark = "操作记录"
     };
     logInfo.SetOperate(httpContext.User.UserId(), httpContext.User.Name(), title, LoggingType.Error, null,
-      httpContext.Request.Path.Value, requestContent,
-      httpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1",
+      httpContext.Request.Path.Value, requestContent, httpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1",
       errorMsg);
     await serviceProvider.GetRequiredService<LoggerService>().Create(logInfo);
     //
