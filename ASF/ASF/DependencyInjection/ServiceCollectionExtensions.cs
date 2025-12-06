@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using ASF.DependencyInjection;
 using Microsoft.AspNetCore.Http;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -39,15 +39,9 @@ public static class ServiceCollectionExtensions
         BearerFormat = "JWT"
       });
 
-      c.AddSecurityRequirement(new OpenApiSecurityRequirement
+      c.AddSecurityRequirement((doc) => new OpenApiSecurityRequirement
       {
-        {
-          new OpenApiSecurityScheme
-          {
-            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
-          },
-          new string[] { }
-        }
+        [new OpenApiSecuritySchemeReference("bearer", doc)] = []
       });
     });
     services.AddMvcCore().AddApplicationPart(typeof(ASFBuilder).Assembly).AddApiExplorer();
