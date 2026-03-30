@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO.Translate;
@@ -7,10 +8,10 @@ namespace ASF.Application.DTO.Translate;
 /// </summary>
 public class TranslateListRequestDto : PaginationRequestDto
 {
-  /// <summary>
-  ///   多语言名称
-  /// </summary>
-  [MinLength(2, ErrorMessage = "多语言名称最少输入2个字符")]
-  [MaxLength(50, ErrorMessage = "多语言名字最多输入50个字符")]
+	/// <summary>
+	///   多语言名称
+	/// </summary>
+	[MinLength(2, ErrorMessageResourceName = "Val_TranslateNameMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(50, ErrorMessageResourceName = "Val_TranslateNameMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Name { get; set; }
 }

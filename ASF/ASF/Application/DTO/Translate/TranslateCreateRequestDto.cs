@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO.Translate;
@@ -7,45 +8,44 @@ namespace ASF.Application.DTO.Translate;
 /// </summary>
 public class TranslateCreateRequestDto
 {
-  /// <summary>
-  ///   租户id
-  /// </summary>
-  public string TenancyId { get; set; }
+	/// <summary>
+	///   租户id
+	/// </summary>
+	public string TenancyId { get; set; }
 
-  /// <summary>
-  ///   多语言名称
-  /// </summary>
-  [Required(ErrorMessage = "多语言名称不能为空")]
-  [MinLength(2, ErrorMessage = "多语言名称最少输入2个字符")]
-  [MaxLength(50, ErrorMessage = "多语言名字最多输入50个字符")]
+	/// <summary>
+	///   多语言名称
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_TranslateNameRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MinLength(2, ErrorMessageResourceName = "Val_TranslateNameMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(50, ErrorMessageResourceName = "Val_TranslateNameMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Name { get; set; }
-  
+	
 
-  /// <summary>
-  ///   国家语言code 利用国家code 分组 例如zh en 等等
-  /// </summary>
-  [Required(ErrorMessage = "国家code不能为空")]
+	/// <summary>
+	///   国家语言code 利用国家code 分组 例如zh en 等等
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_CountryCodeRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string CountryCode { get; set; }
-  
 
-  /// <summary>
-  ///   多语言key
-  /// </summary>
-  [Required(ErrorMessage = "多语言key不能为空")]
-  [MinLength(2, ErrorMessage = "多语言key最少输入2个字符")]
-  [MaxLength(500, ErrorMessage = "多语言key最多输入500个字符")]
+	/// <summary>
+	///   多语言key
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_TranslateKeyRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MinLength(2, ErrorMessageResourceName = "Val_TranslateKeyMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(500, ErrorMessageResourceName = "Val_TranslateKeyMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Key { get; set; }
 
-  /// <summary>
-  ///   多语言值
-  /// </summary>
-  [Required(ErrorMessage = "多语言值不能为空")]
-  [MinLength(2, ErrorMessage = "多语言值最少输入2个字符")]
-  [MaxLength(5000, ErrorMessage = "多语言值最多输入5000个字符")]
+	/// <summary>
+	///   多语言值
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_TranslateValueRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MinLength(2, ErrorMessageResourceName = "Val_TranslateValueMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(5000, ErrorMessageResourceName = "Val_TranslateValueMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Value { get; set; }
 
-  /// <summary>
-  ///   是否为管理后台
-  /// </summary>
-  public uint? IsAdmin { get; set; }
+	/// <summary>
+	///   是否为管理后台
+	/// </summary>
+	public uint? IsAdmin { get; set; }
 }

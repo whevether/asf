@@ -9,16 +9,18 @@ namespace ASF.Application.DtoMapper;
 /// </summary>
 public class TranslateMapper : Profile
 {
-  /// <summary>
-  ///   多语言映射
-  /// </summary>
-  public TranslateMapper()
+	/// <summary>
+	///   多语言映射
+	/// </summary>
+	public TranslateMapper()
   {
     // 创建
     CreateMap<TranslateCreateRequestDto, Translate>();
     // 修改
     CreateMap<TranslateModifyRequestDto, Translate>();
     // 多语言响应
-    CreateMap<Translate, TranslateResponseDto>();
+    CreateMap<Translate, TranslateResponseDto>()
+      .ForMember(f => f.Keys, s => s.MapFrom(o => o.Key))
+      .ForMember(f => f.Key, s => s.MapFrom(o => o.Id));
   }
 }

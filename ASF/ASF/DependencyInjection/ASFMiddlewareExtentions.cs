@@ -1,4 +1,4 @@
-﻿using ASF;
+using ASF;
 using ASF.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 
@@ -26,6 +26,8 @@ internal static class ASFMiddlewareExtentions
 
     app.Map("/API/ASF", builder =>
     {
+      // AES 加解密中间件：先解密请求 params/data，再加密响应
+      builder.UseMiddleware<AesEncryptionMiddleware>();
       builder.UseRouting();
 
       #region asf 控制器重的身份验证

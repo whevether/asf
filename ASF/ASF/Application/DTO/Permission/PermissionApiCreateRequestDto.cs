@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO;
@@ -7,66 +8,66 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class PermissionApiCreateRequestDto
 {
-  /// <summary>
-  ///   租户id
-  /// </summary>
-  public string TenancyId { get; set; }
+	/// <summary>
+	///   租户id
+	/// </summary>
+	public string TenancyId { get; set; }
 
-  /// <summary>
-  ///   权限id
-  /// </summary>
-  [Required(ErrorMessage = "权限id不能为空")]
+	/// <summary>
+	///   权限id
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_PermissionIdRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string PermissionId { get; set; }
 
-  /// <summary>
-  ///   名称
-  /// </summary>
-  [Required(ErrorMessage = "权限功能名不能为空")]
-  [MinLength(2, ErrorMessage = "最少输入两个字符的权限功能名")]
-  [MaxLength(50, ErrorMessage = "最多输入50个字符的权限功能名")]
+	/// <summary>
+	///   名称
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_ApiNameRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MinLength(2, ErrorMessageResourceName = "Val_ApiNameMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(50, ErrorMessageResourceName = "Val_ApiNameMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Name { get; set; }
 
-  /// <summary>
-  ///   api 功能 状态
-  /// </summary>
-  [Range(0, 1, ErrorMessage = "权限功能状态只能为0-1之间的数字")]
+	/// <summary>
+	///   api 功能 状态
+	/// </summary>
+	[Range(0, 1, ErrorMessageResourceName = "Val_ApiStatusRange", ErrorMessageResourceType = typeof(SharedResource))]
   public uint? Status { get; set; }
 
-  /// <summary>
-  ///   api功能类型
-  /// </summary>
-  [Range(1, 2, ErrorMessage = "权限功能类型只能为1-2指甲你的数字")]
+	/// <summary>
+	///   api功能类型
+	/// </summary>
+	[Range(1, 2, ErrorMessageResourceName = "Val_ApiTypeRange", ErrorMessageResourceType = typeof(SharedResource))]
   public uint? Type { get; set; }
 
-  /// <summary>
-  ///   api路径
-  /// </summary>
-  [Required(ErrorMessage = "权限功能路径不能为空")]
-  [MaxLength(500, ErrorMessage = "权限功能路径最多输入500个字符")]
+	/// <summary>
+	///   api路径
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_ApiPathRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(500, ErrorMessageResourceName = "Val_ApiPathMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Path { get; set; }
 
-  /// <summary>
-  ///   Http 方法
-  /// </summary>
-  [Required(ErrorMessage = "请求方法不能为空")]
-  [MaxLength(30, ErrorMessage = "最多输入30个字符的请求方法")]
+	/// <summary>
+	///   Http 方法
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_HttpMethodRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(30, ErrorMessageResourceName = "Val_HttpMethodMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string HttpMethods { get; set; }
 
-  /// <summary>
-  ///   是否日志记录
-  /// </summary>
-  [Range(0, 1, ErrorMessage = "是否记录日志权限功能只能为0-1之间的数字")]
+	/// <summary>
+	///   是否日志记录
+	/// </summary>
+	[Range(0, 1, ErrorMessageResourceName = "Val_ApiLogRange", ErrorMessageResourceType = typeof(SharedResource))]
   public uint? IsLogger { get; set; }
 
-  /// <summary>
-  ///   描述
-  /// </summary>
-  [MaxLength(ErrorMessage = "最多输入500个字符的描述")]
+	/// <summary>
+	///   描述
+	/// </summary>
+	[MaxLength(500, ErrorMessageResourceName = "Val_DescriptionMaxLength500", ErrorMessageResourceType = typeof(SharedResource))]
   public string Description { get; set; }
 
-  /// <summary>
-  ///   是否系统权限
-  /// </summary>
-  [Range(0, 1, ErrorMessage = "是否为系统权限功能只能为0-1之间的数字")]
+	/// <summary>
+	///   是否系统权限
+	/// </summary>
+	[Range(0, 1, ErrorMessageResourceName = "Val_IsSystemPermissionRange", ErrorMessageResourceType = typeof(SharedResource))]
   public uint? IsSystem { get; set; }
 }

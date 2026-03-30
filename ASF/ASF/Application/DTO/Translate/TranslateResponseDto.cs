@@ -7,8 +7,12 @@ namespace ASF.Application.DTO.Translate;
 /// </summary>
 public class TranslateResponseDto : TranslateModifyRequestDto
 {
-  /// <summary>
-  ///   创建时间
-  /// </summary>
-  public DateTime CreateTime { get; set; }
+	/// <summary>
+	///   创建时间
+	/// </summary>
+	public DateTime CreateTime { get; set; }
+
+	/// <summary>
+	/// </summary>
+	public string Keys { get; set; }
 }

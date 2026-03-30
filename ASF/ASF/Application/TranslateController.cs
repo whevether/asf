@@ -55,23 +55,67 @@ public class TranslateController : ControllerBase
   ///   获取多语言列表
   /// </summary>
   /// <param name="isAdmin"></param>
+  /// <param name="keyword"></param>
+  /// <param name="isList"></param>
   /// <returns></returns>
   [HttpGet]
   [AllowAnonymous]
-  public async Task<Result<object>> GetLists([FromQuery] bool isAdmin = false)
+  public async Task<Result<object>> GetLists([FromQuery] string keyword, [FromQuery] bool isAdmin = false,[FromQuery] bool isList = false)
   {
-    var data = await _serviceProvider.GetRequiredService<TranslateService>().GetList(isAdmin);
+    var data = await _serviceProvider.GetRequiredService<TranslateService>().GetList(keyword, isAdmin);
     if (!data.Success)
       return Result<object>.ReFailure(data.Message, data.Status);
     var res = _mapper.Map<List<TranslateResponseDto>>(data.Data);
     var dic = new Dictionary<string, object>();
     foreach (var item in res.GroupBy(f => f.CountryCode))
     {
-      var dic1 = new Dictionary<string, object>();
-      dic1.Add("translation", item.ToDictionary(vk => vk.Key, vv => vv.Value));
-      dic.Add(item.Key, dic1);
+      if (isAdmin)
+      {
+        var dic1 = new Dictionary<string, object>();
+        dic1.Add("translation", item.ToDictionary(vk => vk.Keys, vv => vv.Value));
+        var dic2 = new Dictionary<string, string>
+        {
+          ["CN"] = "CN",
+          ["ID"] = "IDN",
+          ["MY"] = "MYS",
+          ["VN"] = "VN",
+          ["TH"] = "TH",
+          ["IN"] = "IND",
+          ["PH"] = "PHL"
+        };
+        dic.Add(dic2[item.Key], dic1);
+      }
+      else
+      {
+        if (isList)
+        {
+          dic.Add(item.Key, item);
+        }
+        else
+        {
+          var dic1 = new Dictionary<string, object>();
+          dic1.Add("translation", item.ToDictionary(vk => vk.Keys, vv => vv.Value));
+          dic.Add(item.Key, dic1);
+        }
+      }
     }
 
+    // List<FetchUserData> list = new List<FetchUserData>();
+    // string path = Path.Combine("wwwroot/st", $"st1.json");
+    // using (FileStream fileStream = new FileStream(path,FileMode.Open))
+    // {
+    // 	using (StreamReader sr = new StreamReader(fileStream,Encoding.UTF8))
+    // 	{
+    // 		var json = sr.ReadToEnd().ReadToObject<List<JObject>>();
+    // 		list.AddRange(json.Select(s => (string)s["identification"]).Distinct().Select(s=>new FetchUserData()
+    // 		{
+    // 			UserId = s,
+    // 			Type = 1
+    // 		}));
+    // 	}
+    // }
+    //
+    // var s = await _serviceProvider.GetRequiredService<IFetchUserDataRepositories>().AddRange(list);
     return Result<object>.ReSuccess(dic);
   }
 

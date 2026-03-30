@@ -8,6 +8,10 @@ namespace ASF.Application.DTO.Country;
 public class CountryResponseDto : CountryModifyRequestDto
 {
   /// <summary>
+  /// </summary>
+  public string Key { get; set; }
+
+  /// <summary>
   ///   创建时间
   /// </summary>
   public DateTime CreateTime { get; set; }

@@ -34,7 +34,7 @@ public class ASFPermissionAuthorizationMiddleware
     var logger = serviceProvider.GetRequiredService<ILogger<ASFPermissionAuthorizationMiddleware>>();
     var requestPath = httpContext.Request.PathBase + httpContext.Request.Path;
     if (requestPath.Value != null &&
-        (requestPath.Value.Equals("/swagger/v1/swagger.json") || requestPath.Value.Contains("assets")))
+        (requestPath.Value.Contains("swagger") || requestPath.Value.Contains("assets") || requestPath.Value.Equals("/favicon.ico")))
     {
       await _next(httpContext);
     }

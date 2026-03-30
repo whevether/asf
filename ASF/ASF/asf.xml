@@ -431,116 +431,6 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:ASF.Application.DtoMapper.AccountMapper">
-            <summary>
-              账户映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.AccountMapper.#ctor">
-            <summary>
-              账户映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.AppSettingMapper">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.AppSettingMapper.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.AsfDictionaryMapper">
-            <summary>
-              字典映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.AsfDictionaryMapper.#ctor">
-            <summary>
-              字典映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.AudioMapper">
-            <summary>
-              审计日志映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.AudioMapper.#ctor">
-            <summary>
-              审计日志映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.CountryMapper">
-            <summary>
-              国家映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.CountryMapper.#ctor">
-            <summary>
-              国家映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.DepartmentMapper">
-            <summary>
-              部门映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.DepartmentMapper.#ctor">
-            <summary>
-              部门映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.PermissionMapper">
-            <summary>
-              权限映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.PermissionMapper.#ctor">
-            <summary>
-              权限映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.PostMapper">
-            <summary>
-              岗位映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.PostMapper.#ctor">
-            <summary>
-              岗位映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.RoleMapper">
-            <summary>
-              角色映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.RoleMapper.#ctor">
-            <summary>
-              角色映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.TenancyMapper">
-            <summary>
-              租户映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.TenancyMapper.#ctor">
-            <summary>
-              租户映射
-            </summary>
-        </member>
-        <member name="T:ASF.Application.DtoMapper.TranslateMapper">
-            <summary>
-              多语言映射
-            </summary>
-        </member>
-        <member name="M:ASF.Application.DtoMapper.TranslateMapper.#ctor">
-            <summary>
-              多语言映射
-            </summary>
-        </member>
         <member name="T:ASF.Application.DTO.AccountAssignDepartmentRequestDto">
             <summary>
               账户分配部门
@@ -1063,7 +953,7 @@
         </member>
         <member name="P:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto.CountryCode">
             <summary>
-              国家id
+              国家
             </summary>
         </member>
         <member name="P:ASF.Application.DTO.AsfDictionary.AsfDictionaryCreateRequestDto.Options">
@@ -1264,6 +1154,10 @@
         <member name="T:ASF.Application.DTO.Country.CountryResponseDto">
             <summary>
               国家相应
+            </summary>
+        </member>
+        <member name="P:ASF.Application.DTO.Country.CountryResponseDto.Key">
+            <summary>
             </summary>
         </member>
         <member name="P:ASF.Application.DTO.Country.CountryResponseDto.CreateTime">
@@ -2441,6 +2335,10 @@
               创建时间
             </summary>
         </member>
+        <member name="P:ASF.Application.DTO.Translate.TranslateResponseDto.Keys">
+            <summary>
+            </summary>
+        </member>
         <member name="T:ASF.Application.DTO.ListPagedAndSortedRequestDto">
             <summary>
               集合分页排序请求对象
@@ -2472,6 +2370,116 @@
         <member name="P:ASF.Application.DTO.ListPagedRequestDto.SkipPage">
             <summary>
               跳过页
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AccountMapper">
+            <summary>
+              账户映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AccountMapper.#ctor">
+            <summary>
+              账户映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AppSettingMapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AppSettingMapper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AsfDictionaryMapper">
+            <summary>
+              字典映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AsfDictionaryMapper.#ctor">
+            <summary>
+              字典映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.AudioMapper">
+            <summary>
+              审计日志映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.AudioMapper.#ctor">
+            <summary>
+              审计日志映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.CountryMapper">
+            <summary>
+              国家映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.CountryMapper.#ctor">
+            <summary>
+              国家映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.DepartmentMapper">
+            <summary>
+              部门映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.DepartmentMapper.#ctor">
+            <summary>
+              部门映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.PermissionMapper">
+            <summary>
+              权限映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.PermissionMapper.#ctor">
+            <summary>
+              权限映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.PostMapper">
+            <summary>
+              岗位映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.PostMapper.#ctor">
+            <summary>
+              岗位映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.RoleMapper">
+            <summary>
+              角色映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.RoleMapper.#ctor">
+            <summary>
+              角色映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.TenancyMapper">
+            <summary>
+              租户映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.TenancyMapper.#ctor">
+            <summary>
+              租户映射
+            </summary>
+        </member>
+        <member name="T:ASF.Application.DtoMapper.TranslateMapper">
+            <summary>
+              多语言映射
+            </summary>
+        </member>
+        <member name="M:ASF.Application.DtoMapper.TranslateMapper.#ctor">
+            <summary>
+              多语言映射
             </summary>
         </member>
         <member name="T:ASF.Application.MenuController">
@@ -2782,11 +2790,13 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
-        <member name="M:ASF.Application.TranslateController.GetLists(System.Boolean)">
+        <member name="M:ASF.Application.TranslateController.GetLists(System.String,System.Boolean,System.Boolean)">
             <summary>
               获取多语言列表
             </summary>
             <param name="isAdmin"></param>
+            <param name="keyword"></param>
+            <param name="isList"></param>
             <returns></returns>
         </member>
         <member name="M:ASF.Application.TranslateController.Details(System.Int64)">
@@ -2915,6 +2925,47 @@
             </summary>
             <param name="context"></param>
             <returns></returns>
+        </member>
+        <member name="T:ASF.DependencyInjection.AesEncryptionMiddleware">
+            <summary>
+              AES 加解密中间件
+              请求：对 params 和 data 参数进行 AES 解密
+              响应：对返回数据统一进行 AES 加密
+            </summary>
+        </member>
+        <member name="M:ASF.DependencyInjection.AesEncryptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Options.IOptions{ASF.DependencyInjection.AesEncryptionOptions},Microsoft.Extensions.Logging.ILogger{ASF.DependencyInjection.AesEncryptionMiddleware})">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+            <param name="options"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:ASF.DependencyInjection.AesEncryptionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:ASF.DependencyInjection.AesEncryptionOptions">
+            <summary>
+              AES 加解密配置选项
+            </summary>
+        </member>
+        <member name="P:ASF.DependencyInjection.AesEncryptionOptions.Enabled">
+            <summary>
+              是否启用 AES 加解密
+            </summary>
+        </member>
+        <member name="P:ASF.DependencyInjection.AesEncryptionOptions.Key">
+            <summary>
+              AES 密钥 (16/24/32 字节对应 AES-128/192/256)
+            </summary>
+        </member>
+        <member name="P:ASF.DependencyInjection.AesEncryptionOptions.ExcludePaths">
+            <summary>
+              排除的路径，这些路径不进行加解密处理 (如: /swagger, /health)
+            </summary>
         </member>
         <member name="T:ASF.DependencyInjection.ASFBuilder">
             <summary>
@@ -4811,7 +4862,16 @@
               角色领域服务
             </summary>
         </member>
-        <member name="M:ASF.Domain.Services.RoleService.#ctor(ASF.Infrastructure.Repositories.IRoleRepositories)">
+        <member name="F:ASF.Domain.Services.RoleService._idGenerator">
+            <summary>
+              雪花算法id
+            </summary>
+        </member>
+        <member name="F:ASF.Domain.Services.RoleService._roleRepositories">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:ASF.Domain.Services.RoleService.#ctor(ASF.Infrastructure.Repositories.IRoleRepositories,ASF.Internal.IIdGenerator)">
             <summary>
               角色领域服务
             </summary>
@@ -4976,11 +5036,12 @@
             <param name="tenancyId">租户id</param>
             <returns></returns>
         </member>
-        <member name="M:ASF.Domain.Services.TranslateService.GetList(System.Boolean)">
+        <member name="M:ASF.Domain.Services.TranslateService.GetList(System.String,System.Boolean)">
             <summary>
               获取多语言列表
             </summary>
             <param name="isAdmin">是否为管理后台</param>
+            <param name="keyword"></param>
             <returns></returns>
         </member>
         <member name="M:ASF.Domain.Services.TranslateService.Create(ASF.Domain.Entities.Translate)">
@@ -5052,6 +5113,26 @@
         <member name="P:ASF.Domain.Values.AccessToken.Expired">
             <summary>
               过期时间
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Values.AccessToken.ImToken">
+            <summary>
+              im token
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Values.AccessToken.UserId">
+            <summary>
+              im user id
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Values.AccessToken.EmailToken">
+            <summary>
+              email验证token
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Values.AccessToken.IsBindEmail">
+            <summary>
+              是否为绑定邮箱
             </summary>
         </member>
         <member name="T:ASF.Domain.Values.ApiType">
@@ -5917,6 +5998,17 @@
               生成id
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:ASF.Internal.Filters.AcceptLanguageActionFilter">
+            <summary>
+              根据请求头 Accept-Language 设置当前请求的语言文化，用于多语言返回
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Filters.AcceptLanguageActionFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
         </member>
         <member name="T:ASF.Internal.IIdGenerator">
             <summary>
@@ -6951,6 +7043,11 @@
             <param name="primaryKey">实体唯一标识</param>
             <returns></returns>
         </member>
+        <member name="T:ASF.Resources.SharedResource">
+            <summary>
+              多语言
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Builder.ApplicationBuilderExtensions">
             <summary>
               asf 中间件扩展
@@ -7070,6 +7167,13 @@
         <member name="M:System.ValidationHelperExtensions.IsUrl(System.String)">
             <summary>
               验证URL格式
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.ValidationHelperExtensions.IsEmail(System.String)">
+            <summary>
+              验证是否为email
             </summary>
             <param name="value"></param>
             <returns></returns>

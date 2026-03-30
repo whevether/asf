@@ -54,10 +54,15 @@ public class RepositoryContext : DbContext
 
   //字典表
   public virtual DbSet<AsfDictionary> AsfDictionary { get; set; }
-  // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-  // {
-  //     optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-  // }
+  
+  public virtual DbSet<AsfAppSetting> AsfAppSettings { get; set; }
+  
+
+  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+  {
+    optionsBuilder.EnableSensitiveDataLogging(false);
+    // optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+  }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
@@ -791,13 +796,12 @@ public class RepositoryContext : DbContext
         .HasColumnName("name")
         .HasColumnType("varchar(255)")
         .HasComment("多语言名称");
-      
 
       e.Property(x => x.CountryCode)
         .HasColumnName("country_code")
         .HasColumnType("varchar(255)")
         .HasComment("国家语言code 利用国家code 分组 例如zh en 等等");
-      
+
 
       e.Property(x => x.Key)
         .HasColumnName("key")
@@ -887,10 +891,11 @@ public class RepositoryContext : DbContext
       e.Property(x => x.Key).HasColumnName("key").HasColumnType("varchar(255)").HasComment("字典键");
       e.Property(x => x.Value).HasColumnName("value").HasColumnType("varchar(255)").HasComment("字典值");
       e.Property(x => x.Options).HasColumnName("options").HasColumnType("varchar(255)").HasComment("字典额外配置");
-
       e.Property(x => x.CountryCode)
         .HasColumnName("country_code")
-        .HasComment("国家id");
+        .HasColumnType("varchar(255)")
+        .HasComment("国家代码");
+
 
       e.Property(x => x.AddUser)
         .HasColumnName("add_user")
@@ -902,7 +907,10 @@ public class RepositoryContext : DbContext
         .HasColumnType("timestamp")
         .HasDefaultValueSql("CURRENT_TIMESTAMP");
     });
-     modelBuilder.Entity<AsfAppSetting>(entity =>
+
+
+
+    modelBuilder.Entity<AsfAppSetting>(entity =>
     {
       entity.HasKey(e => e.Id).HasName("asf_app_setting_pkey");
 
@@ -915,7 +923,7 @@ public class RepositoryContext : DbContext
         .IsRequired()
         .HasComment("更新内容")
         .HasColumnType("character varying")
-        .HasColumnName("content");
+        .HasColumnName("content ");
       entity.Property(e => e.CreateTime)
         .HasDefaultValueSql("CURRENT_TIMESTAMP")
         .HasComment("创建时间")
@@ -925,15 +933,15 @@ public class RepositoryContext : DbContext
         .IsRequired()
         .HasMaxLength(255)
         .HasComment("下载地址")
-        .HasColumnName("down_url");
+        .HasColumnName("down_url ");
       entity.Property(e => e.OsType)
         .HasDefaultValue(0)
         .HasComment("系统类型 0 安卓 1 ios")
-        .HasColumnName("os_type");
+        .HasColumnName("os_type ");
       entity.Property(e => e.UpdateStatus)
         .HasDefaultValue(0)
         .HasComment("更新开启状态， 0不开启 1开启")
-        .HasColumnName("update_status");
+        .HasColumnName("update_status ");
       entity.Property(e => e.UpdateTime)
         .HasDefaultValueSql("CURRENT_TIMESTAMP")
         .HasComment("修改时间")
@@ -947,13 +955,14 @@ public class RepositoryContext : DbContext
         .IsRequired()
         .HasMaxLength(255)
         .HasComment("版本名称")
-        .HasColumnName("version_name");
+        .HasColumnName("version_name ");
       entity.Property(e => e.VersionNo)
         .IsRequired()
         .HasMaxLength(255)
         .HasComment("版本号")
-        .HasColumnName("version_no");
+        .HasColumnName("version_no ");
       entity.Property(e => e.WrapName)
+        .IsRequired()
         .HasMaxLength(255)
         .HasComment("包名")
         .HasColumnName("wrap_name");
@@ -961,8 +970,9 @@ public class RepositoryContext : DbContext
         .HasPrecision(10, 2)
         .HasDefaultValueSql("0")
         .HasComment("包体积")
-        .HasColumnName("wrap_size");
+        .HasColumnName("wrap_size ");
     });
+    
     base.OnModelCreating(modelBuilder);
   }
 }

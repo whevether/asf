@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,78 +9,78 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class AccountCreateRequestDto
 {
-  /// <summary>
-  ///   部门id
-  /// </summary>
-  [Required(ErrorMessage = "部门id不能为空")]
+	/// <summary>
+	///   部门id
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_DepartmentIdRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string DepartmentId { get; set; }
 
-  /// <summary>
-  ///   租户id
-  /// </summary>
-  public string TenancyId { get; set; }
+	/// <summary>
+	///   租户id
+	/// </summary>
+	public string TenancyId { get; set; }
 
-  /// <summary>
-  ///   状态
-  /// </summary>
-  [Range(0, 1, ErrorMessage = "账户状态只能为0-1之间的数字")]
+	/// <summary>
+	///   状态
+	/// </summary>
+	[Range(0, 1, ErrorMessageResourceName = "Val_AccountStatusRange", ErrorMessageResourceType = typeof(SharedResource))]
   public uint? Status { get; set; }
 
-  /// <summary>
-  ///   昵称
-  /// </summary>
-  [Required(ErrorMessage = "昵称不能为空")]
-  [MinLength(2, ErrorMessage = "账户昵称最少输入2个字符")]
-  [MaxLength(50, ErrorMessage = "账户昵称最多输入50个字符")]
+	/// <summary>
+	///   昵称
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_NickNameRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MinLength(2, ErrorMessageResourceName = "Val_AccountNickNameMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(50, ErrorMessageResourceName = "Val_AccountNickNameMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Name { get; set; }
 
-  /// <summary>
-  ///   用户名
-  /// </summary>
-  [Required(ErrorMessage = "账户名称不能为空")]
-  [MinLength(2, ErrorMessage = "账户名称最少输入2个字符")]
-  [MaxLength(50, ErrorMessage = "账户名称最多输入50个字符")]
+	/// <summary>
+	///   用户名
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_AccountNameRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MinLength(2, ErrorMessageResourceName = "Val_AccountNameMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(50, ErrorMessageResourceName = "Val_AccountNameMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Username { get; set; }
 
-  /// <summary>
-  ///   登录密码
-  /// </summary>
-  [Required(ErrorMessage = "账户密码不能为空")]
-  [MinLength(2, ErrorMessage = "账户密码最少输入2个字符")]
-  [MaxLength(255, ErrorMessage = "账户密码最多输入255个字符")]
+	/// <summary>
+	///   登录密码
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_AccountPasswordRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MinLength(2, ErrorMessageResourceName = "Val_AccountPasswordMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(255, ErrorMessageResourceName = "Val_AccountPasswordMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Password { get; set; }
 
-  /// <summary>
-  ///   手机号码
-  /// </summary>
-  [RegularExpression(@"^1[0-9]{10}$", ErrorMessage = "手机号码不正确")]
+	/// <summary>
+	///   手机号码
+	/// </summary>
+	[RegularExpression(@"^1[0-9]{10}$", ErrorMessageResourceName = "Val_InvalidPhone", ErrorMessageResourceType = typeof(SharedResource))]
   public string TelPhone { get; set; }
 
-  /// <summary>
-  ///   手机区号。默认 86
-  /// </summary>
-  public int Area { get; set; } = 86;
+	/// <summary>
+	///   手机区号。默认 86
+	/// </summary>
+	public int Area { get; set; } = 86;
 
-  /// <summary>
-  ///   邮箱地址
-  /// </summary>
-  [RegularExpression(@"^[-\w\+]+(?:\.[-\w]+)*@[-a-z0-9]+(?:\.[a-z0-9]+)*(?:\.[a-z]{2,})$", ErrorMessage = "邮箱格式不正确")]
+	/// <summary>
+	///   邮箱地址
+	/// </summary>
+	[RegularExpression(@"^[-\w\+]+(?:\.[-\w]+)*@[-a-z0-9]+(?:\.[a-z0-9]+)*(?:\.[a-z]{2,})$", ErrorMessageResourceName = "Val_InvalidEmail", ErrorMessageResourceType = typeof(SharedResource))]
   public string Email { get; set; }
 
-  /// <summary>
-  ///   头像
-  /// </summary>
-  [MaxLength(255, ErrorMessage = "头像最多500个字符")]
+	/// <summary>
+	///   头像
+	/// </summary>
+	[MaxLength(255, ErrorMessageResourceName = "Val_AvatarMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Avatar { get; set; }
 
-  /// <summary>
-  ///   性别
-  /// </summary>
-  [Range(0, 2, ErrorMessage = "性别只能输入0-2之间的数字")]
+	/// <summary>
+	///   性别
+	/// </summary>
+	[Range(0, 2, ErrorMessageResourceName = "Val_GenderRange", ErrorMessageResourceType = typeof(SharedResource))]
   public uint? Sex { get; set; }
 
-  /// <summary>
-  ///   岗位id
-  /// </summary>
-  public List<string> PostId { get; set; }
+	/// <summary>
+	///   岗位id
+	/// </summary>
+	public List<string> PostId { get; set; }
 }

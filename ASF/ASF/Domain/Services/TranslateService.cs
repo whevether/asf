@@ -77,8 +77,7 @@ public class TranslateService
 
     if (!string.IsNullOrEmpty(name))
     {
-      var (list, total) =
-        await _translateRepositories.GetEntitiesForPaging(pageNo, pageSize, f => f.Name.Equals(name));
+      var (list, total) = await _translateRepositories.GetEntitiesForPaging(pageNo, pageSize, f => f.Name.Equals(name));
       return (list, total);
     }
 
@@ -90,13 +89,16 @@ public class TranslateService
   ///   获取多语言列表
   /// </summary>
   /// <param name="isAdmin">是否为管理后台</param>
+  /// <param name="keyword"></param>
   /// <returns></returns>
-  public async Task<ResultList<Translate>> GetList(bool isAdmin = false)
+  public async Task<ResultList<Translate>> GetList(string keyword, bool isAdmin = false)
   {
     var b = Convert.ToUInt32(isAdmin);
     var list = await _translateRepositories.GetEntities(f => f.IsAdmin == b);
     if (list == null)
       return ResultList<Translate>.ReFailure(ResultCodes.TranslateNotExist);
+    if (!string.IsNullOrEmpty(keyword))
+      list = list.Where(f => f.CountryCode.ToLower().Equals(keyword.ToLower()));
     return ResultList<Translate>.ReSuccess(list.ToList());
   }
 
@@ -107,9 +109,6 @@ public class TranslateService
   /// <returns></returns>
   public async Task<Result> Create(Translate translate)
   {
-    if (await _translateRepositories.GetEntity(f =>
-          f.TenancyId == translate.TenancyId && f.Value.Equals(translate.Value)) != null)
-      return Result.ReFailure(ResultCodes.TranslateNameExist);
     translate.SetId(_idGenerator.GenId());
     var isAdd = await _translateRepositories.Add(translate);
     if (!isAdd) return Result.ReFailure(ResultCodes.TranslateCreateError);
