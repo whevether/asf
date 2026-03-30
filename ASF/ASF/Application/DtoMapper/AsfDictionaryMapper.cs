@@ -11,10 +11,10 @@ namespace ASF.Application.DtoMapper;
 /// </summary>
 public class AsfDictionaryMapper : Profile
 {
-  /// <summary>
-  ///   字典映射
-  /// </summary>
-  public AsfDictionaryMapper()
+    /// <summary>
+    ///   字典映射
+    /// </summary>
+    public AsfDictionaryMapper()
   {
     CreateMap<AsfDictionaryCreateRequestDto, AsfDictionary>()
       .ForMember(f => f.Options,

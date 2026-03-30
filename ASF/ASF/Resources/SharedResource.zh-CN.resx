@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+      Microsoft ResX Schema 
+      
+      Version 2.0
+      
+      The primary goals of this format is to allow a simple XML format 
+      that is mostly human readable. The generation and parsing of the 
+      various data types are done through the TypeConverter classes 
+      associated with the data types.
+      
+      Example:
+      
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+                  
+      There are any number of "resheader" rows that contain simple 
+      name/value pairs.
+      
+      Each data row contains a name, and value. The row also contains a 
+      type or mimetype. Type corresponds to a .NET class that support 
+      text/value conversion through the TypeConverter architecture. 
+      Classes that don't support this are serialized and stored with the 
+      mimetype set.
+      
+      The mimetype is used for serialized objects, and tells the 
+      ResXResourceReader how to depersist the object. This is currently not 
+      extensible. For a given mimetype the value must be set accordingly:
+      
+      Note - application/x-microsoft.net.object.binary.base64 is the format 
+      that the ResXResourceWriter will generate, however the reader can 
+      read any of the formats listed below.
+      
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+      
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+  
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array 
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+                xmlns="">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="dataNotFound" xml:space="preserve">
+    <value>数据不存在</value>
+  </data>
+    <data name="succeeded" xml:space="preserve">
+    <value>成功</value>
+  </data>
+    <data name="unknownError" xml:space="preserve">
+    <value>未知错误</value>
+  </data>
+    <data name="loginTypeError" xml:space="preserve">
+    <value>登录类型错误</value>
+  </data>
+    <data name="memberFrozen" xml:space="preserve">
+    <value>会员已冻结</value>
+  </data>
+    <data name="memberLogout" xml:space="preserve">
+    <value>会员已注销</value>
+  </data>
+    <data name="emailNotEmpty" xml:space="preserve">
+    <value>邮箱地址不能为空</value>
+  </data>
+    <data name="timeInterval" xml:space="preserve">
+    <value>发送时间间隔剩余</value>
+  </data>
+    <data name="second" xml:space="preserve">
+    <value>秒</value>
+  </data>
+    <data name="registerCaptcha" xml:space="preserve">
+    <value>wchat注册验证码</value>
+  </data>
+    <data name="hello" xml:space="preserve">
+    <value>你好</value>
+  </data>
+    <data name="youCaptchaCode" xml:space="preserve">
+    <value>您的验证码是</value>
+  </data>
+    <data name="captchaExpired" xml:space="preserve">
+    <value>验证码已过期</value>
+  </data>
+    <data name="captchaCodeError" xml:space="preserve">
+    <value>验证码错误,重试次数剩余</value>
+  </data>
+    <data name="emailVerifyFail" xml:space="preserve">
+    <value>邮箱验证失败</value>
+  </data>
+    <data name="tokenError" xml:space="preserve">
+    <value>Token错误</value>
+  </data>
+    <data name="emailInconsistent" xml:space="preserve">
+    <value>邮箱地址不一致</value>
+  </data>
+    <data name="modifyFail" xml:space="preserve">
+    <value>修改失败</value>
+  </data>
+    <data name="memberNotEmpty" xml:space="preserve">
+    <value>会员信息不能为空</value>
+  </data>
+    <data name="registerMemberFail" xml:space="preserve">
+    <value>注册会员失败</value>
+  </data>
+    <data name="imAdminTokenEmpty" xml:space="preserve">
+    <value>im管理员token是空的</value>
+  </data>
+    <data name="getTokenError" xml:space="preserve">
+    <value>获取用户token失败</value>
+  </data>
+    <data name="checkMemberIsRegister" xml:space="preserve">
+    <value>检查用户是否注册失败</value>
+  </data>
+    <data name="countryNotYet" xml:space="preserve">
+    <value>所属国家尚未开通运营</value>
+  </data>
+    <data name="Val_TranslateNameRequired" xml:space="preserve">
+    <value>多语言名称不能为空</value>
+  </data>
+    <data name="Val_TranslateNameMinLength" xml:space="preserve">
+    <value>多语言名称最少输入2个字符</value>
+  </data>
+    <data name="Val_TranslateNameMaxLength" xml:space="preserve">
+    <value>多语言名字最多输入50个字符</value>
+  </data>
+    <data name="Val_CountryCodeRequired" xml:space="preserve">
+    <value>国家code不能为空</value>
+  </data>
+    <data name="Val_TranslateKeyRequired" xml:space="preserve">
+    <value>多语言key不能为空</value>
+  </data>
+    <data name="Val_TranslateKeyMinLength" xml:space="preserve">
+    <value>多语言key最少输入2个字符</value>
+  </data>
+    <data name="Val_TranslateKeyMaxLength" xml:space="preserve">
+    <value>多语言key最多输入500个字符</value>
+  </data>
+    <data name="Val_TranslateValueRequired" xml:space="preserve">
+    <value>多语言值不能为空</value>
+  </data>
+    <data name="Val_TranslateValueMinLength" xml:space="preserve">
+    <value>多语言值最少输入2个字符</value>
+  </data>
+    <data name="Val_TranslateValueMaxLength" xml:space="preserve">
+    <value>多语言值最多输入5000个字符</value>
+  </data>
+    <data name="Val_RoleIdRequired" xml:space="preserve">
+    <value>角色id不能为空</value>
+  </data>
+    <data name="Val_NameRequired" xml:space="preserve">
+    <value>姓名不能为空</value>
+  </data>
+    <data name="Val_ContactRequired" xml:space="preserve">
+    <value>联系方式不能为空</value>
+  </data>
+    <data name="Val_MemberIdRequired" xml:space="preserve">
+    <value>会员id不能为空</value>
+  </data>
+    <data name="Val_MemberVipStatusRequired" xml:space="preserve">
+    <value>会员VIP状态不能为空</value>
+  </data>
+    <data name="Val_MemberVipStatusRange" xml:space="preserve">
+    <value>会员Vip状态只能是0-1之间的数字</value>
+  </data>
+    <data name="Val_MemberInfoIdRequired" xml:space="preserve">
+    <value>会员信息id不能为空</value>
+  </data>
+    <data name="Val_AvatarMaxLength" xml:space="preserve">
+    <value>头像最多500个字符</value>
+  </data>
+    <data name="Val_PageNameRequired" xml:space="preserve">
+    <value>页面名称不能为空</value>
+  </data>
+    <data name="Val_PagePathRequired" xml:space="preserve">
+    <value>页面路径不能为空</value>
+  </data>
+    <data name="Val_PageContentRequired" xml:space="preserve">
+    <value>页面内容不能为空</value>
+  </data>
+    <data name="Val_DepartmentNameMinLength" xml:space="preserve">
+    <value>最少输入2个字符的部门名称</value>
+  </data>
+    <data name="Val_DepartmentNameMaxLength" xml:space="preserve">
+    <value>最多输入50个字符的部门名称</value>
+  </data>
+    <data name="Val_DepartmentStatusRange" xml:space="preserve">
+    <value>部门状态只能输入0-1之间数字</value>
+  </data>
+    <data name="Val_DepartmentNameRequired" xml:space="preserve">
+    <value>部门名称不能为空</value>
+  </data>
+    <data name="Val_EnabledRange" xml:space="preserve">
+    <value>是否启用只能为0-1之间的数字</value>
+  </data>
+    <data name="Val_TenancyIdRequired" xml:space="preserve">
+    <value>租户id不能为空</value>
+  </data>
+    <data name="Val_PageNameMinLength" xml:space="preserve">
+    <value>页面名称最少输入2个字符</value>
+  </data>
+    <data name="Val_PageNameMaxLength" xml:space="preserve">
+    <value>页面名称最多输入50个字符</value>
+  </data>
+    <data name="Val_PageTypeRange" xml:space="preserve">
+    <value>页面类型只能输入0-1之间的数字</value>
+  </data>
+    <data name="Val_RoleNameRequired" xml:space="preserve">
+    <value>角色名称不能为空</value>
+  </data>
+    <data name="Val_RoleNameMinLength" xml:space="preserve">
+    <value>最少输入2个字符的角色名称</value>
+  </data>
+    <data name="Val_RoleNameMaxLength" xml:space="preserve">
+    <value>最多输入50个字符的角色名称</value>
+  </data>
+    <data name="Val_RoleNameMaxLength255" xml:space="preserve">
+    <value>最多输入255个字符的角色名称</value>
+  </data>
+    <data name="Val_StatusRange01" xml:space="preserve">
+    <value>只能输入0-1之间的状态</value>
+  </data>
+    <data name="Val_TenancyNameMinLength" xml:space="preserve">
+    <value>最少输入两个字符的租户名</value>
+  </data>
+    <data name="Val_TenancyNameMaxLength" xml:space="preserve">
+    <value>最多输入50个字符的租户名</value>
+  </data>
+    <data name="Val_MemberEmailRequired" xml:space="preserve">
+    <value>会员邮箱地址不能为空</value>
+  </data>
+    <data name="Val_IdRequired" xml:space="preserve">
+    <value>ID不能为空</value>
+  </data>
+    <data name="Val_ReviewStatusRequired" xml:space="preserve">
+    <value>审核状态不能为空</value>
+  </data>
+    <data name="Val_AccountIdRequired" xml:space="preserve">
+    <value>账户id不能为空</value>
+  </data>
+    <data name="Val_InvalidPhone" xml:space="preserve">
+    <value>手机号码不正确</value>
+  </data>
+    <data name="Val_MemberBirthdayRequired" xml:space="preserve">
+    <value>会员生日不能为空</value>
+  </data>
+    <data name="Val_AccountNameMaxLength" xml:space="preserve">
+    <value>账户名称最多输入50个字符</value>
+  </data>
+    <data name="Val_InvalidEmail" xml:space="preserve">
+    <value>邮箱格式不正确</value>
+  </data>
+    <data name="Val_StatusRange" xml:space="preserve">
+    <value>状态只能输入0-1之间的数字</value>
+  </data>
+    <data name="Val_GenderRange" xml:space="preserve">
+    <value>性别只能输入0-2之间的数字</value>
+  </data>
+    <data name="Val_DepartmentIdRequired" xml:space="preserve">
+    <value>部门id不能为空</value>
+  </data>
+    <data name="Val_AccountStatusRange" xml:space="preserve">
+    <value>账户状态只能为0-1之间的数字</value>
+  </data>
+    <data name="Val_NickNameRequired" xml:space="preserve">
+    <value>昵称不能为空</value>
+  </data>
+    <data name="Val_AccountNickNameMinLength" xml:space="preserve">
+    <value>账户昵称最少输入2个字符</value>
+  </data>
+    <data name="Val_AccountNickNameMaxLength" xml:space="preserve">
+    <value>账户昵称最多输入50个字符</value>
+  </data>
+    <data name="Val_AccountNameRequired" xml:space="preserve">
+    <value>账户名称不能为空</value>
+  </data>
+    <data name="Val_AccountNameMinLength" xml:space="preserve">
+    <value>账户名称最少输入2个字符</value>
+  </data>
+    <data name="Val_AccountPasswordRequired" xml:space="preserve">
+    <value>账户密码不能为空</value>
+  </data>
+    <data name="Val_AccountPasswordMinLength" xml:space="preserve">
+    <value>账户密码最少输入2个字符</value>
+  </data>
+    <data name="Val_AccountPasswordMaxLength" xml:space="preserve">
+    <value>账户密码最多输入255个字符</value>
+  </data>
+    <data name="Val_LoginTypeRequired" xml:space="preserve">
+    <value>登录类型不能为空</value>
+  </data>
+    <data name="Val_UserNameRequired" xml:space="preserve">
+    <value>用户名不能为空</value>
+  </data>
+    <data name="Val_UserNameLength" xml:space="preserve">
+    <value>请输入2-32位长度的用户名</value>
+  </data>
+    <data name="Val_LoginPasswordRequired" xml:space="preserve">
+    <value>登录密码不能为空</value>
+  </data>
+    <data name="Val_PasswordLength" xml:space="preserve">
+    <value>请输入5-32位长度的密码</value>
+  </data>
+    <data name="Val_PermissionIdRequired" xml:space="preserve">
+    <value>权限id不能为空</value>
+  </data>
+    <data name="Val_PermissionCodeRequired" xml:space="preserve">
+    <value>权限代码不能为空</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength" xml:space="preserve">
+    <value>最多输入255个字符的权限代码</value>
+  </data>
+    <data name="Val_PermissionNameRequired" xml:space="preserve">
+    <value>权限名称不能为空</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength" xml:space="preserve">
+    <value>最多输入255个字符的权限名称</value>
+  </data>
+    <data name="Val_PermissionTypeRequired" xml:space="preserve">
+    <value>权限类型不能为空</value>
+  </data>
+    <data name="Val_PermissionTypeRange" xml:space="preserve">
+    <value>只能输入1-3之间的权限类型</value>
+  </data>
+    <data name="Val_IsSystemPermissionRange" xml:space="preserve">
+    <value>是否为系统权限功能只能为0-1之间的数字</value>
+  </data>
+    <data name="Val_DescriptionMaxLength500" xml:space="preserve">
+    <value>最多输入500个字符的描述</value>
+  </data>
+    <data name="Val_SortOrderRange" xml:space="preserve">
+    <value>只能输入0-100之间的排序规则</value>
+  </data>
+    <data name="Val_PostNameRequired" xml:space="preserve">
+    <value>岗位名称不能为空</value>
+  </data>
+    <data name="Val_PostNameMinLength" xml:space="preserve">
+    <value>最少输入两个字符的岗位名</value>
+  </data>
+    <data name="Val_PostNameMaxLength" xml:space="preserve">
+    <value>最多输入50个字符的岗位名</value>
+  </data>
+    <data name="Val_SortRange100" xml:space="preserve">
+    <value>只能输入0-100之间的排序</value>
+  </data>
+    <data name="Val_StateRange01" xml:space="preserve">
+    <value>只能输入0-1之间的状态</value>
+  </data>
+    <data name="Val_PostDescriptionMaxLength" xml:space="preserve">
+    <value>最多输入255个字符的岗位描述</value>
+  </data>
+    <data name="Val_CountryNameRequired" xml:space="preserve">
+    <value>国家名称不能为空</value>
+  </data>
+    <data name="Val_CountryCurrencyCodeRequired" xml:space="preserve">
+    <value>国家币种代码不能为空</value>
+  </data>
+    <data name="Val_CountryExchangeRateRequired" xml:space="preserve">
+    <value>国家与RMB之间汇率不能为空</value>
+  </data>
+    <data name="Val_WithdrawFeeRateRequired" xml:space="preserve">
+    <value>提现手续费利率不能为空</value>
+  </data>
+    <data name="Val_StatusRange01Num" xml:space="preserve">
+    <value>状态只能为0到1之间的数字</value>
+  </data>
+    <data name="Val_CountryIdRequired" xml:space="preserve">
+    <value>国家id不能为空</value>
+  </data>
+    <data name="Val_EmailRequired" xml:space="preserve">
+    <value>邮件地址不能为空</value>
+  </data>
+    <data name="Val_MemberNickNameRequired" xml:space="preserve">
+    <value>会员昵称不能为空</value>
+  </data>
+    <data name="Val_DictionaryCodeRequired" xml:space="preserve">
+    <value>字典编码不能为空</value>
+  </data>
+    <data name="Val_CodeMaxLength" xml:space="preserve">
+    <value>最多输入255个编码字符</value>
+  </data>
+    <data name="Val_DictionaryKeyRequired" xml:space="preserve">
+    <value>字典key不能为空</value>
+  </data>
+    <data name="Val_KeyMaxLength" xml:space="preserve">
+    <value>最多输入255个key字符</value>
+  </data>
+    <data name="Val_DictionaryValueRequired" xml:space="preserve">
+    <value>字典值不能为空</value>
+  </data>
+    <data name="Val_ValueMaxLength" xml:space="preserve">
+    <value>最多输入255个值字符</value>
+  </data>
+    <data name="Val_PostStatusRange" xml:space="preserve">
+    <value>岗位状态只能输入0-1之间数字</value>
+  </data>
+    <data name="Val_MemberCountryIdRequired" xml:space="preserve">
+    <value>会员国家Id不能为空</value>
+  </data>
+    <data name="Val_TenancyNameRequired" xml:space="preserve">
+    <value>租户名称不能为空</value>
+  </data>
+    <data name="Val_LevelRange" xml:space="preserve">
+    <value>只能输入0-10之间的等级</value>
+  </data>
+    <data name="Val_MenuTitleRequired" xml:space="preserve">
+    <value>权限菜单标题不能为空</value>
+  </data>
+    <data name="Val_MenuTitleMinLength" xml:space="preserve">
+    <value>最少输入两个字符的权限菜单标题</value>
+  </data>
+    <data name="Val_MenuTitleMaxLength" xml:space="preserve">
+    <value>最多输入50个字符的权限菜单标题</value>
+  </data>
+    <data name="Val_MenuSubTitleMinLength" xml:space="preserve">
+    <value>最少输入两个字符的权限菜单副标题</value>
+  </data>
+    <data name="Val_MenuSubTitleMaxLength" xml:space="preserve">
+    <value>最多输入50个字符的权限菜单副标题</value>
+  </data>
+    <data name="Val_MenuIconRequired" xml:space="preserve">
+    <value>权限菜单图标不能为空</value>
+  </data>
+    <data name="Val_MenuHiddenRange" xml:space="preserve">
+    <value>是否隐藏菜单只能为0-1之间的数字</value>
+  </data>
+    <data name="Val_MenuPathMaxLength" xml:space="preserve">
+    <value>权限菜单地址最多输入255个字符</value>
+  </data>
+    <data name="Val_MenuDescriptionMaxLength" xml:space="preserve">
+    <value>权限菜单描述最多输入500个字符</value>
+  </data>
+    <data name="Val_MenuExternalUrlMaxLength" xml:space="preserve">
+    <value>权限菜单外部地址最多输入255个字符</value>
+  </data>
+    <data name="Val_MenuRedirectMaxLength" xml:space="preserve">
+    <value>权限菜单重定向地址最多输入255个字符</value>
+  </data>
+    <data name="Val_MenuLocaleMaxLength" xml:space="preserve">
+    <value>权限菜单多语言最多输入255个字符</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength50" xml:space="preserve">
+    <value>权限代码最多50个字符</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength100" xml:space="preserve">
+    <value>权限名称最多输100个字符</value>
+  </data>
+    <data name="Val_PermissionTypeRange13" xml:space="preserve">
+    <value>权限类型只能输入1-3数字</value>
+  </data>
+    <data name="Val_IsSystemPermission01" xml:space="preserve">
+    <value>是否为系统权限只能输入0-1数字</value>
+  </data>
+    <data name="Val_PermissionStatus01" xml:space="preserve">
+    <value>权限状态只能输入0-1数字</value>
+  </data>
+    <data name="Val_MemberSexRequired" xml:space="preserve">
+    <value>会员性别不能为空</value>
+  </data>
+    <data name="Val_MemberSexRange" xml:space="preserve">
+    <value>会员性别只能是0-2之间的数字</value>
+  </data>
+    <data name="Val_ApiNameRequired" xml:space="preserve">
+    <value>权限功能名不能为空</value>
+  </data>
+    <data name="Val_ApiNameMinLength" xml:space="preserve">
+    <value>最少输入两个字符的权限功能名</value>
+  </data>
+    <data name="Val_ApiNameMaxLength" xml:space="preserve">
+    <value>最多输入50个字符的权限功能名</value>
+  </data>
+    <data name="Val_ApiStatusRange" xml:space="preserve">
+    <value>权限功能状态只能为0-1之间的数字</value>
+  </data>
+    <data name="Val_ApiTypeRange" xml:space="preserve">
+    <value>权限功能类型只能为1-2之间的数字</value>
+  </data>
+    <data name="Val_ApiPathRequired" xml:space="preserve">
+    <value>权限功能路径不能为空</value>
+  </data>
+    <data name="Val_ApiPathMaxLength" xml:space="preserve">
+    <value>权限功能路径最多输入500个字符</value>
+  </data>
+    <data name="Val_HttpMethodRequired" xml:space="preserve">
+    <value>请求方法不能为空</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength" xml:space="preserve">
+    <value>最多输入30个字符的请求方法</value>
+  </data>
+    <data name="Val_ApiLogRange" xml:space="preserve">
+    <value>是否记录日志权限功能只能为0-1之间的数字</value>
+  </data>
+    <data name="Val_AuthorizeApiIdRequired" xml:space="preserve">
+    <value>授权api id不能为空</value>
+  </data>
+    <data name="Val_ApiTypeRange12" xml:space="preserve">
+    <value>功能api类型只能输入1-2数字</value>
+  </data>
+    <data name="Val_ApiStatus01" xml:space="preserve">
+    <value>功能api状态只能输入0-1数字</value>
+  </data>
+    <data name="Val_ApiNameMinLength1" xml:space="preserve">
+    <value>最少输入1个字符的api名称</value>
+  </data>
+    <data name="Val_ApiNameMaxLength50" xml:space="preserve">
+    <value>最多输入50个字符的api名称</value>
+  </data>
+    <data name="Val_HttpMethodMinLength1" xml:space="preserve">
+    <value>最少输入1个字符的请求方法</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength5" xml:space="preserve">
+    <value>最多输入5个字符的请求方法</value>
+  </data>
+    <data name="Val_ApiPathMinLength1" xml:space="preserve">
+    <value>最少输入1个字符的请求路径</value>
+  </data>
+    <data name="Val_ApiPathMaxLength100" xml:space="preserve">
+    <value>最多输入100个字符的请求路径</value>
+  </data>
+    <data name="Val_MenuIdRequired" xml:space="preserve">
+    <value>菜单id不能为空</value>
+  </data>
+    <data name="Val_MemberStatusRequired" xml:space="preserve">
+    <value>会员状态不能为空</value>
+  </data>
+    <data name="Val_MemberStatusRange" xml:space="preserve">
+    <value>会员状态只能是1-3之间的数字</value>
+  </data>
+    <data name="Val_MemberRealAuthRequired" xml:space="preserve">
+    <value>会员真人认证状态不能为空</value>
+  </data>
+    <data name="Val_MemberRealAuthRange" xml:space="preserve">
+    <value>会员真人认证状态只能是0-1之间的数字</value>
+  </data>
+    <data name="Val_VerifyUrlRequired" xml:space="preserve">
+    <value>验证码地址不能为空</value>
+  </data>
+    <data name="Val_EmailVerifyTokenRequired" xml:space="preserve">
+    <value>邮件验证token不能为空</value>
+  </data>
+    <data name="Val_MemberInviteCodeRequired" xml:space="preserve">
+    <value>会员推荐码不能为空</value>
+  </data>
+    <data name="Val_MemberAgeRequired" xml:space="preserve">
+    <value>会员年龄不能为空</value>
+  </data>
+    <data name="Val_MemberAgeRange" xml:space="preserve">
+    <value>会员年龄只能是18-100之间的数字</value>
+  </data>
+    <data name="Val_MenuTitleMinLength1" xml:space="preserve">
+    <value>最少输入1个字符的权限菜单标题</value>
+  </data>
+    <data name="Val_MenuPathMinLength1" xml:space="preserve">
+    <value>最少输入1个字符的权限菜单地址</value>
+  </data>
+    <data name="Val_MenuPathMaxLength255" xml:space="preserve">
+    <value>最多输入255个字符的权限菜单地址</value>
+  </data>
+    <data name="Val_MemberRecommendRequired" xml:space="preserve">
+    <value>会员推荐值不能为空</value>
+  </data>
+    <data name="Val_MemberRatingRequired" xml:space="preserve">
+    <value>会员受欢迎程度不能为空</value>
+  </data>
+</root>

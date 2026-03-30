@@ -86,7 +86,7 @@ public class AccountController : ControllerBase
     var accountInfo = _mapper.Map<AccountInfoResponseDto>(account.Data);
     foreach (var item in permissionList.Data)
       accountInfo.Actions.AddRange(item.Apis.Select(a =>
-        new Regex("/").Replace(a.Path, "", 1).Replace("api/asf/", "").Replace("/", ".")));
+        new Regex("/").Replace(a.Path.ToLower(), "", 1).Replace("api/asf/", "").Replace("/", ".")));
 
     accountInfo.BreadcrumbItems = breadcrumbItems;
     accountInfo.RoleName = string.Join(",", role);
@@ -141,8 +141,7 @@ public class AccountController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<AccountService>().GetList(dto.PageNo,
-      dto.PageSize,
+    var (list, total) = await _serviceProvider.GetRequiredService<AccountService>().GetList(dto.PageNo, dto.PageSize,
       dto.Username, dto.TelPhone, dto.Email, dto.Sex, dto.Status, tenancyId);
     return ResultPagedList<AccountResponseDto>.ReSuccess(_mapper.Map<List<AccountResponseDto>>(list),
       total);

@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO;
@@ -7,20 +8,20 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class AccountModifyTelPhoneRequestDto
 {
-  /// <summary>
-  ///   账户id
-  /// </summary>
-  [Required(ErrorMessage = "账户id不能为空")]
+	/// <summary>
+	///   账户id
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_AccountIdRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string Id { get; set; }
 
-  /// <summary>
-  ///   手机区号 默认 86
-  /// </summary>
-  public int Area { get; set; } = 86;
+	/// <summary>
+	///   手机区号 默认 86
+	/// </summary>
+	public int Area { get; set; } = 86;
 
-  /// <summary>
-  ///   新手机号码
-  /// </summary>
-  [RegularExpression(@"^1[0-9]{10}$", ErrorMessage = "手机号码不正确")]
+	/// <summary>
+	///   新手机号码
+	/// </summary>
+	[RegularExpression(@"^1[0-9]{10}$", ErrorMessageResourceName = "Val_InvalidPhone", ErrorMessageResourceType = typeof(SharedResource))]
   public string NewTelPhone { get; set; }
 }

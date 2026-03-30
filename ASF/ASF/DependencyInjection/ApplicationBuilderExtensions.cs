@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace Microsoft.AspNetCore.Builder;
 
@@ -9,13 +10,15 @@ namespace Microsoft.AspNetCore.Builder;
 /// </summary>
 public static class ApplicationBuilderExtensions
 {
-  /// <summary>
-  ///   asf 中间件
-  /// </summary>
-  /// <param name="app"></param>
-  /// <returns></returns>
-  public static IApplicationBuilder UseASF(this IApplicationBuilder app)
+    /// <summary>
+    ///   asf 中间件
+    /// </summary>
+    /// <param name="app"></param>
+    /// <returns></returns>
+    public static IApplicationBuilder UseASF(this IApplicationBuilder app)
   {
+    var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+    app.UseRequestLocalization(locOptions.Value);
     // Nginx 代理时获取真实 IP
     app.Use((context, next) =>
     {
@@ -23,8 +26,7 @@ public static class ApplicationBuilderExtensions
       try
       {
         if (headers.ContainsKey("X-Forwarded-For"))
-          context.Connection.RemoteIpAddress =
-            IPAddress.Parse(headers["X-Forwarded-For"].ToString().Split(',')[0]);
+          context.Connection.RemoteIpAddress = IPAddress.Parse(headers["X-Forwarded-For"].ToString().Split(',')[0]);
         else
           context.Connection.RemoteIpAddress = IPAddress.Parse("127.0.0.1");
       }

@@ -109,8 +109,7 @@ public class MenuController : ControllerBase
     var result = await server.Get(long.Parse(dto.Id), tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
-    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes &&
-        !HttpContext.User.IsSuperRole())
+    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes && !HttpContext.User.IsSuperRole())
       return Result.ReFailure(ResultCodes.PermissionSystemNotModify);
     // 除总超级管理员之外其他不允许操作其他租户信息
     if (tenancyId != null && result.Data.TenancyId != tenancyId)
@@ -135,8 +134,7 @@ public class MenuController : ControllerBase
     var result = await server.Get(long.Parse(dto.Id), tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
-    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes &&
-        !HttpContext.User.IsSuperRole())
+    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes && !HttpContext.User.IsSuperRole())
       return Result.ReFailure(ResultCodes.PermissionSystemNotModify);
     // 除总超级管理员之外其他不允许操作其他租户信息
     if (tenancyId != null && result.Data.TenancyId != tenancyId)
@@ -162,8 +160,7 @@ public class MenuController : ControllerBase
     var result = await server.Get(long.Parse(id), tenancyId);
     if (!result.Success)
       return result;
-    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes &&
-        !HttpContext.User.IsSuperRole())
+    if (result.Data.IsSystem != null && (Status)result.Data.IsSystem == Status.Yes && !HttpContext.User.IsSuperRole())
       return Result.ReFailure(ResultCodes.PermissionSysDeleteError);
     // 除总超级管理员之外其他不允许操作其他租户信息
     if (tenancyId != null && result.Data.TenancyId != tenancyId)

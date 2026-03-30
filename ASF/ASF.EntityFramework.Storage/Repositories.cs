@@ -103,8 +103,8 @@ public class Repositories<T> : IRepositories<T> where T : class
     var count = query.Count();
     var p = page == 0 ? 1 : page;
     var c = pageSize == 0 ? count : pageSize;
-    var totalPages = (int)Math.Ceiling((decimal)count / c);
-    p = Math.Min(p, totalPages);
+    // int totalPages = (int)Math.Ceiling(((decimal)count / c)); //计算总页数
+    // p = Math.Min(p, totalPages); //最小页数。如果开启则如果只有一页数据每次都只返回第一页的数据
     var dic = new Dictionary<string, IList<T>>
     {
       ["acs"] = query.OrderBy(f =>

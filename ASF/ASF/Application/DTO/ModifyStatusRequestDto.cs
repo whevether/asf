@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO;
@@ -7,14 +8,14 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class ModifyStatusRequestDto
 {
-  /// <summary>
-  ///   id
-  /// </summary>
-  [Required(ErrorMessage = "id不能为空")]
+	/// <summary>
+	///   id
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_IdRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string Id { get; set; }
 
-  /// <summary>
-  ///   状态
-  /// </summary>
-  public uint Status { get; set; }
+	/// <summary>
+	///   状态
+	/// </summary>
+	public uint Status { get; set; }
 }

@@ -9,6 +9,8 @@ using ASF.Internal.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+//using System.IO;
+// using Aspose.Cells;
 
 namespace ASF.Application;
 
@@ -37,6 +39,22 @@ public class AuthoriseController : ControllerBase
   [HttpPost]
   public async Task<Result<AccessToken>> Login([FromBody] AuthoriseByUsernameRequestDto dto)
   {
+    // #region 测试 Aspose.Cells
+    //string path = Path.Combine("wwwroot/excel/");
+    //var workbook = new Aspose.Cells.Workbook(path + "test.xls");
+    //workbook.Save(path+"out.html",SaveFormat.Html);
+    // var book = new Aspose.Cells.Workbook();
+    // // access first (default) worksheet
+    // var sheet = book.Worksheets[0];
+    // // access CellsCollection of first worksheet
+    // var cells = sheet.Cells;
+    // // write HelloWorld to cells A1
+    // cells["A1"].Value = "Hello World";
+    // // save spreadsheet to disc
+    // book.Save(path+"output.xlsx", SaveFormat.Xlsx);
+    // #endregion
+
+
     //账户登录验证
     var service = _serviceProvider.GetRequiredService<IAccountLoginService>();
     var ip = HttpContext.Connection.RemoteIpAddress?.ToString();
@@ -47,8 +65,7 @@ public class AuthoriseController : ControllerBase
     // 如果为手机号码就试用手机号码/密码登录
     if (Regex.IsMatch(dto.Username, @"^1[0-9]{10}$") &&
         dto.LoginType.Equals(LoginTypeValue.Mobile.ToString().ToLower()))
-      return await service.LoginByTelephone(new PhoneNumber(dto.Username, 86), long.Parse(dto.TenancyId),
-        dto.Password,
+      return await service.LoginByTelephone(new PhoneNumber(dto.Username, 86), long.Parse(dto.TenancyId), dto.Password,
         ip);
     // 如果为有限就使用邮箱/密码登录
     if (Regex.IsMatch(dto.Username, @"^[-\w\+]+(?:\.[-\w]+)*@[-a-z0-9]+(?:\.[a-z0-9]+)*(?:\.[a-z]{2,})$") &&

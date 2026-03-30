@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO;
@@ -7,22 +8,22 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class PermissionMenuListRequestDto : PaginationRequestDto
 {
-  /// <summary>
-  ///   权限id
-  /// </summary>
-  public string PermissionId { get; set; }
+	/// <summary>
+	///   权限id
+	/// </summary>
+	public string PermissionId { get; set; }
 
-  /// <summary>
-  ///   权限菜单标题
-  /// </summary>
-  [MinLength(1, ErrorMessage = "最少输入1个字符的权限菜单标题")]
-  [MaxLength(50, ErrorMessage = "最多输入50个字符的权限菜单标题")]
+	/// <summary>
+	///   权限菜单标题
+	/// </summary>
+	[MinLength(1, ErrorMessageResourceName = "Val_MenuTitleMinLength1", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(50, ErrorMessageResourceName = "Val_MenuTitleMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Title { get; set; }
 
-  /// <summary>
-  ///   权限菜单地址
-  /// </summary>
-  [MinLength(1, ErrorMessage = "最少输入1个字符的权限菜单地址")]
-  [MaxLength(255, ErrorMessage = "最多输入255个字符的权限菜单地址")]
+	/// <summary>
+	///   权限菜单地址
+	/// </summary>
+	[MinLength(1, ErrorMessageResourceName = "Val_MenuPathMinLength1", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(255, ErrorMessageResourceName = "Val_MenuPathMaxLength255", ErrorMessageResourceType = typeof(SharedResource))]
   public string MenuUrl { get; set; }
 }

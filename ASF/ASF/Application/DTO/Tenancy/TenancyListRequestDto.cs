@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO.Tenancy;
@@ -7,16 +8,16 @@ namespace ASF.Application.DTO.Tenancy;
 /// </summary>
 public class TenancyListRequestDto : PaginationRequestDto
 {
-  /// <summary>
-  ///   租户名
-  /// </summary>
-  [MinLength(2, ErrorMessage = "最少输入两个字符的租户名")]
-  [MaxLength(50, ErrorMessage = "最多输入50个字符的租户名")]
+	/// <summary>
+	///   租户名
+	/// </summary>
+	[MinLength(2, ErrorMessageResourceName = "Val_TenancyNameMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(50, ErrorMessageResourceName = "Val_TenancyNameMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Name { get; set; }
 
-  /// <summary>
-  ///   租户状态
-  /// </summary>
-  [Range(0, 1, ErrorMessage = "只能输入0-1之间的状态")]
+	/// <summary>
+	///   租户状态
+	/// </summary>
+	[Range(0, 1, ErrorMessageResourceName = "Val_StatusRange01", ErrorMessageResourceType = typeof(SharedResource))]
   public uint? Status { get; set; }
 }

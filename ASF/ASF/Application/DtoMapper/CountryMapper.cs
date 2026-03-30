@@ -19,6 +19,7 @@ public class CountryMapper : Profile
     // 修改
     CreateMap<CountryModifyRequestDto, Country>();
     // 国家响应
-    CreateMap<Country, CountryResponseDto>();
+    CreateMap<Country, CountryResponseDto>()
+      .ForMember(f => f.Key, o => o.MapFrom(m => m.Id));
   }
 }

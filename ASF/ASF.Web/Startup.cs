@@ -1,8 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
 using ASF.Application.DtoMapper;
 using ASF.DependencyInjection;
-using ASF.Domain.Services;
-using Coravel;
+// using ASF.Domain.Services;
+// using Coravel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -46,13 +46,17 @@ public class Startup
         .AllowCredentials();
     }));
     services.AddOptions().Configure<MinioOp>(Configuration.GetSection("Minio"));
+    services.AddOptions().Configure<ASFOptions>(Configuration.GetSection("ASF"));
+    services.AddOptions().Configure<AesEncryptionOptions>(Configuration.GetSection("AesEncryption"));
     services.AddMinio(opt =>
     {
-      opt.Endpoint = Configuration["Minio:Endpoint"];
-      opt.AccessKey = Configuration["Minio:AccessKey"];
-      opt.SecretKey = Configuration["Minio:SecretKey"];
+      opt.Endpoint = Configuration["Minio:MinioUrl"] ?? "";
+      opt.AccessKey = Configuration["Minio:AccessKey"] ?? "";
+      opt.SecretKey = Configuration["Minio:SecretKey"] ?? "";
+      var endpoint = Configuration["Minio:Endpoint"] ?? "";
       //如果是http 就注释掉。如果是https 就开启
-      opt.ConfigureClient(client => { client.WithSSL(); });
+      if (endpoint.Contains("https"))
+        opt.ConfigureClient(client => { client.WithSSL(); });
     });
     // 添加asf 服务
     services.AddASF(build =>
@@ -67,8 +71,7 @@ public class Startup
             b.UseSqlite(asfOptions.DBConnectionString, opt => { opt.MigrationsAssembly("ASF.Web"); });
             break;
           case "mysql":
-            b.UseMySql(asfOptions.DBConnectionString,
-              ServerVersion.AutoDetect(asfOptions.DBConnectionString),
+            b.UseMySql(asfOptions.DBConnectionString, ServerVersion.AutoDetect(asfOptions.DBConnectionString),
               builder => { builder.MigrationsAssembly("ASF.Web"); });
             // b.EnableSensitiveDataLogging();
             b.EnableDetailedErrors();
@@ -90,23 +93,26 @@ public class Startup
   public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
   {
     if (env.IsDevelopment())
+    {
       // app.UseDeveloperExceptionPage();
       app.UseSwaggerUI(c =>
       {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "asf API");
         //c.RoutePrefix = "";
       });
+    }
+    
     app.UseStaticFiles();
     app.UseCors("CorsPolicy");
 
-    var provider = app.ApplicationServices;
-    provider.UseScheduler(scheduler =>
-    {
-      scheduler.Schedule<RunSendPhoneTasks>()
-        .EverySeconds(59);
-      scheduler.Schedule<RunSendPhoneTasksOne>()
-        .EveryFiveMinutes();
-    });
+    // var provider = app.ApplicationServices;
+    // provider.UseScheduler(scheduler =>
+    // {
+    //   scheduler.Schedule<RunSendPhoneTasks>()
+    //       .EverySeconds(35);
+    //   // scheduler.Schedule<RunFetchData>()
+    //   //     .EveryFiveMinutes();
+    // });
     app.UseASF();
 
     app.UseOcelot().Wait();

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+using ASF.Resources;
+using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO;
 
@@ -7,29 +8,29 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class AuthoriseByUsernameRequestDto
 {
-  /// <summary>
-  ///   登录类型
-  /// </summary>
-  [Required(ErrorMessage = "登录类型不能为空")]
+    /// <summary>
+    ///   登录类型
+    /// </summary>
+    [Required(ErrorMessageResourceName = "Val_LoginTypeRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string LoginType { get; set; }
 
-  /// <summary>
-  ///   租户id
-  /// </summary>
-  [Required(ErrorMessage = "租户id不能为空")]
+    /// <summary>
+    ///   租户id
+    /// </summary>
+    [Required(ErrorMessageResourceName = "Val_TenancyIdRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string TenancyId { get; set; }
 
-  /// <summary>
-  ///   用户名
-  /// </summary>
-  [Required(ErrorMessage = "用户名不能为空")]
-  [StringLength(32, MinimumLength = 2, ErrorMessage = "清输入2-32位长度的用户名")]
+    /// <summary>
+    ///   用户名
+    /// </summary>
+    [Required(ErrorMessageResourceName = "Val_UserNameRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [StringLength(32, MinimumLength = 2, ErrorMessageResourceName = "Val_UserNameLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Username { get; set; }
 
-  /// <summary>
-  ///   登录密码
-  /// </summary>
-  [Required(ErrorMessage = "登录密码不能为空")]
-  [StringLength(32, MinimumLength = 5, ErrorMessage = "请输入5-32位长度的密码")]
+    /// <summary>
+    ///   登录密码
+    /// </summary>
+    [Required(ErrorMessageResourceName = "Val_LoginPasswordRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [StringLength(32, MinimumLength = 5, ErrorMessageResourceName = "Val_PasswordLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Password { get; set; }
 }

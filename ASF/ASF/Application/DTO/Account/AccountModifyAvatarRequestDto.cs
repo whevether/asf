@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO;
@@ -7,14 +8,14 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class AccountModifyAvatarRequestDto
 {
-  /// <summary>
-  ///   账户id
-  /// </summary>
-  public string Id { get; set; }
+	/// <summary>
+	///   账户id
+	/// </summary>
+	public string Id { get; set; }
 
-  /// <summary>
-  ///   头像
-  /// </summary>
-  [MaxLength(255, ErrorMessage = "头像最多500个字符")]
+	/// <summary>
+	///   头像
+	/// </summary>
+	[MaxLength(255, ErrorMessageResourceName = "Val_AvatarMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Avatar { get; set; }
 }

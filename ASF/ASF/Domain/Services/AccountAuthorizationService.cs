@@ -129,6 +129,6 @@ public class AccountAuthorizationService
     var enumerable = api as Api[] ?? api.ToArray();
     if (!enumerable.Any())
       return await Task.FromResult<Api>(null);
-    return enumerable.FirstOrDefault(f => Regex.IsMatch(requestPath, $"^{f.Path}$"));
+    return enumerable.FirstOrDefault(f => Regex.IsMatch(requestPath, $"^{f.Path.ToLower()}$"));
   }
 }

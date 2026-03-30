@@ -27,6 +27,7 @@ public class ResultCodes : BaseResultCodes
   public static ValueTuple<int, string> AccountNotAllowedLogin = (11005, "账户被禁止登陆，请联系管理员");
   public static ValueTuple<int, string> AccountUnavailable = (11006, "账户暂不可以使用");
   public static ValueTuple<int, string> AccountPasswordNotSame2 = (11007, "账户密码不匹配，失败{0}次之后自动锁定账号");
+  public static ValueTuple<int, string> AccountPasswordNotSame = (11007, "账户密码不匹配");
   public static ValueTuple<int, string> AccountPasswordNotSameOverrun = (11008, "登录失败超限，请30分钟之后再试");
   public static ValueTuple<int, string> AccountLoginExpired = (11009, "登录状态已过期，请重新登录");
   public static ValueTuple<int, string> AccountExist = (11010, "输入的账户名或手机号码或邮箱地址已经被人使用了");

@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO.Country;
@@ -10,6 +11,6 @@ public class CountryModifyRequestDto : CountryCreateRequestDto
   /// <summary>
   ///   ID
   /// </summary>
-  [Required(ErrorMessage = "国家id不能为空")]
+  [Required(ErrorMessageResourceName = "Val_CountryIdRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string Id { get; set; }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using ASF.Resources;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO.AsfDictionary;
@@ -8,41 +9,40 @@ namespace ASF.Application.DTO.AsfDictionary;
 /// </summary>
 public class AsfDictionaryCreateRequestDto
 {
-  /// <summary>
-  ///   租户id
-  /// </summary>
-  public string TenancyId { get; set; }
+    /// <summary>
+    ///   租户id
+    /// </summary>
+    public string TenancyId { get; set; }
 
-  /// <summary>
-  ///   字典编码
-  /// </summary>
-  [Required(ErrorMessage = "字典编码不能为空")]
-  [MaxLength(255, ErrorMessage = "最多输入255个编码字符")]
+    /// <summary>
+    ///   字典编码
+    /// </summary>
+    [Required(ErrorMessageResourceName = "Val_DictionaryCodeRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(255, ErrorMessageResourceName = "Val_CodeMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Code { get; set; }
 
-  /// <summary>
-  ///   字典Key
-  /// </summary>
-  [Required(ErrorMessage = "字典key不能为空")]
-  [MaxLength(255, ErrorMessage = "最多输入255个key字符")]
+    /// <summary>
+    ///   字典Key
+    /// </summary>
+    [Required(ErrorMessageResourceName = "Val_DictionaryKeyRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(255, ErrorMessageResourceName = "Val_KeyMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Key { get; set; }
 
-  /// <summary>
-  ///   字典值
-  /// </summary>
-  [Required(ErrorMessage = "字典值不能为空")]
-  [MaxLength(255, ErrorMessage = "最多输入255个值字符")]
+    /// <summary>
+    ///   字典值
+    /// </summary>
+    [Required(ErrorMessageResourceName = "Val_DictionaryValueRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(255, ErrorMessageResourceName = "Val_ValueMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Value { get; set; }
-  
 
-  /// <summary>
-  ///   国家id
-  /// </summary>
-  [Required(ErrorMessage = "国家代码不能为空")]
+    /// <summary>
+    ///   国家
+    /// </summary>
+    [Required(ErrorMessageResourceName = "Val_CountryNameRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string CountryCode { get; set; }
 
-  /// <summary>
-  ///   字典扩充字段
-  /// </summary>
-  public Dictionary<string, string> Options { get; set; }
+    /// <summary>
+    ///   字典扩充字段
+    /// </summary>
+    public Dictionary<string, string> Options { get; set; }
 }

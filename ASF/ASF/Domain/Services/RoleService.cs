@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using ASF.Domain.Entities;
 using ASF.Domain.Values;
 using ASF.Infrastructure.Repositories;
+using ASF.Internal;
 using ASF.Internal.Results;
 
 namespace ASF.Domain.Services;
@@ -13,23 +14,31 @@ namespace ASF.Domain.Services;
 /// </summary>
 public class RoleService
 {
-  private readonly IRoleRepositories _roleRepositories;
+	/// <summary>
+	///   雪花算法id
+	/// </summary>
+	private readonly IIdGenerator _idGenerator;
 
-  /// <summary>
-  ///   角色领域服务
-  /// </summary>
-  public RoleService(IRoleRepositories roleRepositories)
+	/// <summary>
+	/// </summary>
+	private readonly IRoleRepositories _roleRepositories;
+
+	/// <summary>
+	///   角色领域服务
+	/// </summary>
+	public RoleService(IRoleRepositories roleRepositories, IIdGenerator idGenerator)
   {
     _roleRepositories = roleRepositories;
+    _idGenerator = idGenerator;
   }
 
-  /// <summary>
-  ///   获取角色详情
-  /// </summary>
-  /// <param name="id"></param>
-  /// <param name="tenancyId"></param>
-  /// <returns></returns>
-  public async Task<Result<Role>> Get(long id, long? tenancyId = null)
+	/// <summary>
+	///   获取角色详情
+	/// </summary>
+	/// <param name="id"></param>
+	/// <param name="tenancyId"></param>
+	/// <returns></returns>
+	public async Task<Result<Role>> Get(long id, long? tenancyId = null)
   {
     var role = await _roleRepositories.GetRoleAsync(id, tenancyId);
     if (role == null)
@@ -39,16 +48,16 @@ public class RoleService
     return Result<Role>.ReSuccess(role);
   }
 
-  /// <summary>
-  ///   获取角色分页列表
-  /// </summary>
-  /// <param name="pageNo"></param>
-  /// <param name="pageSize"></param>
-  /// <param name="name"></param>
-  /// <param name="enable"></param>
-  /// <param name="tenancyId"></param>
-  /// <returns></returns>
-  public async Task<(IList<Role> list, int total)> GetList(int pageNo, int pageSize, string name, long? enable = null,
+	/// <summary>
+	///   获取角色分页列表
+	/// </summary>
+	/// <param name="pageNo"></param>
+	/// <param name="pageSize"></param>
+	/// <param name="name"></param>
+	/// <param name="enable"></param>
+	/// <param name="tenancyId"></param>
+	/// <returns></returns>
+	public async Task<(IList<Role> list, int total)> GetList(int pageNo, int pageSize, string name, long? enable = null,
     long? tenancyId = null)
   {
     if (!string.IsNullOrEmpty(name) && enable != null && tenancyId != null)
@@ -105,13 +114,13 @@ public class RoleService
     return (data, totalCount);
   }
 
-  /// <summary>
-  ///   获取角色列表
-  /// </summary>
-  /// <param name="tenancyId"></param>
-  /// <param name="isSuperAdmin">是否为超级管理员</param>
-  /// <returns></returns>
-  public async Task<ResultList<Role>> GetList(long? tenancyId = null, bool isSuperAdmin = false)
+	/// <summary>
+	///   获取角色列表
+	/// </summary>
+	/// <param name="tenancyId"></param>
+	/// <param name="isSuperAdmin">是否为超级管理员</param>
+	/// <returns></returns>
+	public async Task<ResultList<Role>> GetList(long? tenancyId = null, bool isSuperAdmin = false)
   {
     if (tenancyId != null)
     {
@@ -122,8 +131,7 @@ public class RoleService
       }
       else
       {
-        var list = await _roleRepositories.GetEntities(f =>
-          f.TenancyId == tenancyId && !f.Name.Equals("superadmin"));
+        var list = await _roleRepositories.GetEntities(f => f.TenancyId == tenancyId && !f.Name.Equals("superadmin"));
         return ResultList<Role>.ReSuccess(list.ToList());
       }
     }
@@ -140,27 +148,28 @@ public class RoleService
     }
   }
 
-  /// <summary>
-  ///   创建角色
-  /// </summary>
-  /// <param name="role"></param>
-  /// <returns></returns>
-  public async Task<Result> Create(Role role)
+	/// <summary>
+	///   创建角色
+	/// </summary>
+	/// <param name="role"></param>
+	/// <returns></returns>
+	public async Task<Result> Create(Role role)
   {
     if (await _roleRepositories.GetEntity(f => f.TenancyId == role.TenancyId && f.Name.Equals(role.Name)) != null)
       return Result.ReFailure(ResultCodes.RoleNameExist);
+    role.SetId(_idGenerator.GenId());
     var isAdd = await _roleRepositories.Add(role);
     if (!isAdd)
       return Result.ReFailure(ResultCodes.RoleCreateFailed);
     return Result.ReSuccess();
   }
 
-  /// <summary>
-  ///   修改角色
-  /// </summary>
-  /// <param name="role"></param>
-  /// <returns></returns>
-  public async Task<Result> Modify(Role role)
+	/// <summary>
+	///   修改角色
+	/// </summary>
+	/// <param name="role"></param>
+	/// <returns></returns>
+	public async Task<Result> Modify(Role role)
   {
     //判断是否存在相同的角色名称
     if (await _roleRepositories.GetEntity(f =>
@@ -172,12 +181,12 @@ public class RoleService
     return Result.ReSuccess();
   }
 
-  /// <summary>
-  ///   删除角色
-  /// </summary>
-  /// <param name="role"></param>
-  /// <returns></returns>
-  public async Task<Result> Delete(Role role)
+	/// <summary>
+	///   删除角色
+	/// </summary>
+	/// <param name="role"></param>
+	/// <returns></returns>
+	public async Task<Result> Delete(Role role)
   {
     var isDelete = await _roleRepositories.Delete(role);
     if (!isDelete) return Result.ReFailure(ResultCodes.RoleDeleteError);

@@ -21,7 +21,6 @@ public class Translate : Entity<long>
   ///   国家语言code 利用国家code 分组 例如zh en 等等
   /// </summary>
   public string CountryCode { get; set; }
-  
 
   /// <summary>
   ///   多语言 key 例如 sex.max

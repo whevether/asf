@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+      Microsoft ResX Schema 
+      
+      Version 2.0
+      
+      The primary goals of this format is to allow a simple XML format 
+      that is mostly human readable. The generation and parsing of the 
+      various data types are done through the TypeConverter classes 
+      associated with the data types.
+      
+      Example:
+      
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+                  
+      There are any number of "resheader" rows that contain simple 
+      name/value pairs.
+      
+      Each data row contains a name, and value. The row also contains a 
+      type or mimetype. Type corresponds to a .NET class that support 
+      text/value conversion through the TypeConverter architecture. 
+      Classes that don't support this are serialized and stored with the 
+      mimetype set.
+      
+      The mimetype is used for serialized objects, and tells the 
+      ResXResourceReader how to depersist the object. This is currently not 
+      extensible. For a given mimetype the value must be set accordingly:
+      
+      Note - application/x-microsoft.net.object.binary.base64 is the format 
+      that the ResXResourceWriter will generate, however the reader can 
+      read any of the formats listed below.
+      
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+      
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+  
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array 
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+                xmlns="">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="dataNotFound" xml:space="preserve">
+    <value>Data does not exist</value>
+  </data>
+    <data name="succeeded" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="unknownError" xml:space="preserve">
+    <value>unknown error</value>
+  </data>
+    <data name="loginTypeError" xml:space="preserve">
+    <value>Login Type Error</value>
+  </data>
+    <data name="memberFrozen" xml:space="preserve">
+    <value>Member frozen</value>
+  </data>
+    <data name="memberLogout" xml:space="preserve">
+    <value>Member has been cancelled</value>
+  </data>
+    <data name="emailNotEmpty" xml:space="preserve">
+    <value>Email address cannot be empty</value>
+  </data>
+    <data name="timeInterval" xml:space="preserve">
+    <value>Remaining time interval for sending</value>
+  </data>
+    <data name="second" xml:space="preserve">
+    <value>second</value>
+  </data>
+    <data name="registerCaptcha" xml:space="preserve">
+    <value>WChat registration verification code</value>
+  </data>
+    <data name="hello" xml:space="preserve">
+    <value>hello</value>
+  </data>
+    <data name="youCaptchaCode" xml:space="preserve">
+    <value>What is your verification code</value>
+  </data>
+    <data name="captchaExpired" xml:space="preserve">
+    <value>The verification code has expired</value>
+  </data>
+    <data name="captchaCodeError" xml:space="preserve">
+    <value>Verification code error, retry attempts remaining</value>
+  </data>
+    <data name="emailVerifyFail" xml:space="preserve">
+    <value>Email verification failed</value>
+  </data>
+    <data name="tokenError" xml:space="preserve">
+    <value>Token error</value>
+  </data>
+    <data name="emailInconsistent" xml:space="preserve">
+    <value>Inconsistent email addresses</value>
+  </data>
+    <data name="modifyFail" xml:space="preserve">
+    <value>Modification failed</value>
+  </data>
+    <data name="memberNotEmpty" xml:space="preserve">
+    <value>Member information cannot be empty</value>
+  </data>
+    <data name="registerMemberFail" xml:space="preserve">
+    <value>Member registration failed</value>
+  </data>
+    <data name="imAdminTokenEmpty" xml:space="preserve">
+    <value>The IM administrator token is empty</value>
+  </data>
+    <data name="getTokenError" xml:space="preserve">
+    <value>Failed to obtain user token</value>
+  </data>
+    <data name="checkMemberIsRegister" xml:space="preserve">
+    <value>Check if the user has failed to register</value>
+  </data>
+    <data name="countryNotYet" xml:space="preserve">
+    <value>The country to which it belongs has not yet opened for operation</value>
+  </data>
+    <data name="Val_TranslateNameRequired" xml:space="preserve">
+    <value>Translate name is required</value>
+  </data>
+    <data name="Val_TranslateNameMinLength" xml:space="preserve">
+    <value>Translate name at least 2 characters</value>
+  </data>
+    <data name="Val_TranslateNameMaxLength" xml:space="preserve">
+    <value>Translate name at most 50 characters</value>
+  </data>
+    <data name="Val_CountryCodeRequired" xml:space="preserve">
+    <value>Country code is required</value>
+  </data>
+    <data name="Val_TranslateKeyRequired" xml:space="preserve">
+    <value>Translate key is required</value>
+  </data>
+    <data name="Val_TranslateKeyMinLength" xml:space="preserve">
+    <value>Translate key at least 2 characters</value>
+  </data>
+    <data name="Val_TranslateKeyMaxLength" xml:space="preserve">
+    <value>Translate key at most 500 characters</value>
+  </data>
+    <data name="Val_TranslateValueRequired" xml:space="preserve">
+    <value>Translate value is required</value>
+  </data>
+    <data name="Val_TranslateValueMinLength" xml:space="preserve">
+    <value>Translate value at least 2 characters</value>
+  </data>
+    <data name="Val_TranslateValueMaxLength" xml:space="preserve">
+    <value>Translate value at most 5000 characters</value>
+  </data>
+    <data name="Val_RoleIdRequired" xml:space="preserve">
+    <value>Role ID is required</value>
+  </data>
+    <data name="Val_NameRequired" xml:space="preserve">
+    <value>Name is required</value>
+  </data>
+    <data name="Val_ContactRequired" xml:space="preserve">
+    <value>Contact is required</value>
+  </data>
+    <data name="Val_MemberIdRequired" xml:space="preserve">
+    <value>Member ID is required</value>
+  </data>
+    <data name="Val_MemberVipStatusRequired" xml:space="preserve">
+    <value>Member VIP status is required</value>
+  </data>
+    <data name="Val_MemberVipStatusRange" xml:space="preserve">
+    <value>Member VIP status must be 0 or 1</value>
+  </data>
+    <data name="Val_MemberInfoIdRequired" xml:space="preserve">
+    <value>Member info ID is required</value>
+  </data>
+    <data name="Val_AvatarMaxLength" xml:space="preserve">
+    <value>Avatar at most 500 characters</value>
+  </data>
+    <data name="Val_PageNameRequired" xml:space="preserve">
+    <value>Page name is required</value>
+  </data>
+    <data name="Val_PagePathRequired" xml:space="preserve">
+    <value>Page path is required</value>
+  </data>
+    <data name="Val_PageContentRequired" xml:space="preserve">
+    <value>Page content is required</value>
+  </data>
+    <data name="Val_DepartmentNameMinLength" xml:space="preserve">
+    <value>Department name at least 2 characters</value>
+  </data>
+    <data name="Val_DepartmentNameMaxLength" xml:space="preserve">
+    <value>Department name at most 50 characters</value>
+  </data>
+    <data name="Val_DepartmentStatusRange" xml:space="preserve">
+    <value>Department status must be 0 or 1</value>
+  </data>
+    <data name="Val_DepartmentNameRequired" xml:space="preserve">
+    <value>Department name is required</value>
+  </data>
+    <data name="Val_EnabledRange" xml:space="preserve">
+    <value>Enabled must be 0 or 1</value>
+  </data>
+    <data name="Val_TenancyIdRequired" xml:space="preserve">
+    <value>Tenancy ID is required</value>
+  </data>
+    <data name="Val_PageNameMinLength" xml:space="preserve">
+    <value>Page name at least 2 characters</value>
+  </data>
+    <data name="Val_PageNameMaxLength" xml:space="preserve">
+    <value>Page name at most 50 characters</value>
+  </data>
+    <data name="Val_PageTypeRange" xml:space="preserve">
+    <value>Page type must be 0 or 1</value>
+  </data>
+    <data name="Val_RoleNameRequired" xml:space="preserve">
+    <value>Role name is required</value>
+  </data>
+    <data name="Val_RoleNameMinLength" xml:space="preserve">
+    <value>Role name at least 2 characters</value>
+  </data>
+    <data name="Val_RoleNameMaxLength" xml:space="preserve">
+    <value>Role name at most 50 characters</value>
+  </data>
+    <data name="Val_RoleNameMaxLength255" xml:space="preserve">
+    <value>Role name at most 255 characters</value>
+  </data>
+    <data name="Val_StatusRange01" xml:space="preserve">
+    <value>Status must be 0 or 1</value>
+  </data>
+    <data name="Val_TenancyNameMinLength" xml:space="preserve">
+    <value>Tenancy name at least 2 characters</value>
+  </data>
+    <data name="Val_TenancyNameMaxLength" xml:space="preserve">
+    <value>Tenancy name at most 50 characters</value>
+  </data>
+    <data name="Val_MemberEmailRequired" xml:space="preserve">
+    <value>Member email is required</value>
+  </data>
+    <data name="Val_IdRequired" xml:space="preserve">
+    <value>ID is required</value>
+  </data>
+    <data name="Val_ReviewStatusRequired" xml:space="preserve">
+    <value>Review status is required</value>
+  </data>
+    <data name="Val_AccountIdRequired" xml:space="preserve">
+    <value>Account ID is required</value>
+  </data>
+    <data name="Val_InvalidPhone" xml:space="preserve">
+    <value>Invalid phone number</value>
+  </data>
+    <data name="Val_MemberBirthdayRequired" xml:space="preserve">
+    <value>Member birthday is required</value>
+  </data>
+    <data name="Val_AccountNameMaxLength" xml:space="preserve">
+    <value>Account name at most 50 characters</value>
+  </data>
+    <data name="Val_InvalidEmail" xml:space="preserve">
+    <value>Invalid email format</value>
+  </data>
+    <data name="Val_StatusRange" xml:space="preserve">
+    <value>Status must be 0 or 1</value>
+  </data>
+    <data name="Val_GenderRange" xml:space="preserve">
+    <value>Gender must be 0-2</value>
+  </data>
+    <data name="Val_DepartmentIdRequired" xml:space="preserve">
+    <value>Department ID is required</value>
+  </data>
+    <data name="Val_AccountStatusRange" xml:space="preserve">
+    <value>Account status must be 0 or 1</value>
+  </data>
+    <data name="Val_NickNameRequired" xml:space="preserve">
+    <value>Nick name is required</value>
+  </data>
+    <data name="Val_AccountNickNameMinLength" xml:space="preserve">
+    <value>Account nick name at least 2 characters</value>
+  </data>
+    <data name="Val_AccountNickNameMaxLength" xml:space="preserve">
+    <value>Account nick name at most 50 characters</value>
+  </data>
+    <data name="Val_AccountNameRequired" xml:space="preserve">
+    <value>Account name is required</value>
+  </data>
+    <data name="Val_AccountNameMinLength" xml:space="preserve">
+    <value>Account name at least 2 characters</value>
+  </data>
+    <data name="Val_AccountPasswordRequired" xml:space="preserve">
+    <value>Account password is required</value>
+  </data>
+    <data name="Val_AccountPasswordMinLength" xml:space="preserve">
+    <value>Account password at least 2 characters</value>
+  </data>
+    <data name="Val_AccountPasswordMaxLength" xml:space="preserve">
+    <value>Account password at most 255 characters</value>
+  </data>
+    <data name="Val_LoginTypeRequired" xml:space="preserve">
+    <value>Login type is required</value>
+  </data>
+    <data name="Val_UserNameRequired" xml:space="preserve">
+    <value>User name is required</value>
+  </data>
+    <data name="Val_UserNameLength" xml:space="preserve">
+    <value>User name length must be 2-32</value>
+  </data>
+    <data name="Val_LoginPasswordRequired" xml:space="preserve">
+    <value>Login password is required</value>
+  </data>
+    <data name="Val_PasswordLength" xml:space="preserve">
+    <value>Password length must be 5-32</value>
+  </data>
+    <data name="Val_PermissionIdRequired" xml:space="preserve">
+    <value>Permission ID is required</value>
+  </data>
+    <data name="Val_PermissionCodeRequired" xml:space="preserve">
+    <value>Permission code is required</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength" xml:space="preserve">
+    <value>Permission code at most 255 characters</value>
+  </data>
+    <data name="Val_PermissionNameRequired" xml:space="preserve">
+    <value>Permission name is required</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength" xml:space="preserve">
+    <value>Permission name at most 255 characters</value>
+  </data>
+    <data name="Val_PermissionTypeRequired" xml:space="preserve">
+    <value>Permission type is required</value>
+  </data>
+    <data name="Val_PermissionTypeRange" xml:space="preserve">
+    <value>Permission type must be 1-3</value>
+  </data>
+    <data name="Val_IsSystemPermissionRange" xml:space="preserve">
+    <value>Is system permission must be 0 or 1</value>
+  </data>
+    <data name="Val_DescriptionMaxLength500" xml:space="preserve">
+    <value>Description at most 500 characters</value>
+  </data>
+    <data name="Val_SortOrderRange" xml:space="preserve">
+    <value>Sort order must be 0-100</value>
+  </data>
+    <data name="Val_PostNameRequired" xml:space="preserve">
+    <value>Post name is required</value>
+  </data>
+    <data name="Val_PostNameMinLength" xml:space="preserve">
+    <value>Post name at least 2 characters</value>
+  </data>
+    <data name="Val_PostNameMaxLength" xml:space="preserve">
+    <value>Post name at most 50 characters</value>
+  </data>
+    <data name="Val_SortRange100" xml:space="preserve">
+    <value>Sort must be 0-100</value>
+  </data>
+    <data name="Val_StateRange01" xml:space="preserve">
+    <value>State must be 0 or 1</value>
+  </data>
+    <data name="Val_PostDescriptionMaxLength" xml:space="preserve">
+    <value>Post description at most 255 characters</value>
+  </data>
+    <data name="Val_CountryNameRequired" xml:space="preserve">
+    <value>Country name is required</value>
+  </data>
+    <data name="Val_CountryCurrencyCodeRequired" xml:space="preserve">
+    <value>Country currency code is required</value>
+  </data>
+    <data name="Val_CountryExchangeRateRequired" xml:space="preserve">
+    <value>Country exchange rate is required</value>
+  </data>
+    <data name="Val_WithdrawFeeRateRequired" xml:space="preserve">
+    <value>Withdraw fee rate is required</value>
+  </data>
+    <data name="Val_StatusRange01Num" xml:space="preserve">
+    <value>Status must be 0 or 1</value>
+  </data>
+    <data name="Val_CountryIdRequired" xml:space="preserve">
+    <value>Country ID is required</value>
+  </data>
+    <data name="Val_EmailRequired" xml:space="preserve">
+    <value>Email is required</value>
+  </data>
+    <data name="Val_MemberNickNameRequired" xml:space="preserve">
+    <value>Member nick name is required</value>
+  </data>
+    <data name="Val_DictionaryCodeRequired" xml:space="preserve">
+    <value>Dictionary code is required</value>
+  </data>
+    <data name="Val_CodeMaxLength" xml:space="preserve">
+    <value>Code at most 255 characters</value>
+  </data>
+    <data name="Val_DictionaryKeyRequired" xml:space="preserve">
+    <value>Dictionary key is required</value>
+  </data>
+    <data name="Val_KeyMaxLength" xml:space="preserve">
+    <value>Key at most 255 characters</value>
+  </data>
+    <data name="Val_DictionaryValueRequired" xml:space="preserve">
+    <value>Dictionary value is required</value>
+  </data>
+    <data name="Val_ValueMaxLength" xml:space="preserve">
+    <value>Value at most 255 characters</value>
+  </data>
+    <data name="Val_PostStatusRange" xml:space="preserve">
+    <value>Post status must be 0 or 1</value>
+  </data>
+    <data name="Val_MemberCountryIdRequired" xml:space="preserve">
+    <value>Member country ID is required</value>
+  </data>
+    <data name="Val_TenancyNameRequired" xml:space="preserve">
+    <value>Tenancy name is required</value>
+  </data>
+    <data name="Val_LevelRange" xml:space="preserve">
+    <value>Level must be 0-10</value>
+  </data>
+    <data name="Val_MenuTitleRequired" xml:space="preserve">
+    <value>Menu title is required</value>
+  </data>
+    <data name="Val_MenuTitleMinLength" xml:space="preserve">
+    <value>Menu title at least 2 characters</value>
+  </data>
+    <data name="Val_MenuTitleMaxLength" xml:space="preserve">
+    <value>Menu title at most 50 characters</value>
+  </data>
+    <data name="Val_MenuSubTitleMinLength" xml:space="preserve">
+    <value>Menu sub title at least 2 characters</value>
+  </data>
+    <data name="Val_MenuSubTitleMaxLength" xml:space="preserve">
+    <value>Menu sub title at most 50 characters</value>
+  </data>
+    <data name="Val_MenuIconRequired" xml:space="preserve">
+    <value>Menu icon is required</value>
+  </data>
+    <data name="Val_MenuHiddenRange" xml:space="preserve">
+    <value>Menu hidden must be 0 or 1</value>
+  </data>
+    <data name="Val_MenuPathMaxLength" xml:space="preserve">
+    <value>Menu path at most 255 characters</value>
+  </data>
+    <data name="Val_MenuDescriptionMaxLength" xml:space="preserve">
+    <value>Menu description at most 500 characters</value>
+  </data>
+    <data name="Val_MenuExternalUrlMaxLength" xml:space="preserve">
+    <value>Menu external URL at most 255 characters</value>
+  </data>
+    <data name="Val_MenuRedirectMaxLength" xml:space="preserve">
+    <value>Menu redirect at most 255 characters</value>
+  </data>
+    <data name="Val_MenuLocaleMaxLength" xml:space="preserve">
+    <value>Menu locale at most 255 characters</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength50" xml:space="preserve">
+    <value>Permission code at most 50 characters</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength100" xml:space="preserve">
+    <value>Permission name at most 100 characters</value>
+  </data>
+    <data name="Val_PermissionTypeRange13" xml:space="preserve">
+    <value>Permission type must be 1-3</value>
+  </data>
+    <data name="Val_IsSystemPermission01" xml:space="preserve">
+    <value>Is system permission must be 0 or 1</value>
+  </data>
+    <data name="Val_PermissionStatus01" xml:space="preserve">
+    <value>Permission status must be 0 or 1</value>
+  </data>
+    <data name="Val_MemberSexRequired" xml:space="preserve">
+    <value>Member sex is required</value>
+  </data>
+    <data name="Val_MemberSexRange" xml:space="preserve">
+    <value>Member sex must be 0-2</value>
+  </data>
+    <data name="Val_ApiNameRequired" xml:space="preserve">
+    <value>API name is required</value>
+  </data>
+    <data name="Val_ApiNameMinLength" xml:space="preserve">
+    <value>API name at least 2 characters</value>
+  </data>
+    <data name="Val_ApiNameMaxLength" xml:space="preserve">
+    <value>API name at most 50 characters</value>
+  </data>
+    <data name="Val_ApiStatusRange" xml:space="preserve">
+    <value>API status must be 0 or 1</value>
+  </data>
+    <data name="Val_ApiTypeRange" xml:space="preserve">
+    <value>API type must be 1 or 2</value>
+  </data>
+    <data name="Val_ApiPathRequired" xml:space="preserve">
+    <value>API path is required</value>
+  </data>
+    <data name="Val_ApiPathMaxLength" xml:space="preserve">
+    <value>API path at most 500 characters</value>
+  </data>
+    <data name="Val_HttpMethodRequired" xml:space="preserve">
+    <value>HTTP method is required</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength" xml:space="preserve">
+    <value>HTTP method at most 30 characters</value>
+  </data>
+    <data name="Val_ApiLogRange" xml:space="preserve">
+    <value>API log must be 0 or 1</value>
+  </data>
+    <data name="Val_AuthorizeApiIdRequired" xml:space="preserve">
+    <value>Authorize API ID is required</value>
+  </data>
+    <data name="Val_ApiTypeRange12" xml:space="preserve">
+    <value>API type must be 1 or 2</value>
+  </data>
+    <data name="Val_ApiStatus01" xml:space="preserve">
+    <value>API status must be 0 or 1</value>
+  </data>
+    <data name="Val_ApiNameMinLength1" xml:space="preserve">
+    <value>API name at least 1 character</value>
+  </data>
+    <data name="Val_ApiNameMaxLength50" xml:space="preserve">
+    <value>API name at most 50 characters</value>
+  </data>
+    <data name="Val_HttpMethodMinLength1" xml:space="preserve">
+    <value>HTTP method at least 1 character</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength5" xml:space="preserve">
+    <value>HTTP method at most 5 characters</value>
+  </data>
+    <data name="Val_ApiPathMinLength1" xml:space="preserve">
+    <value>API path at least 1 character</value>
+  </data>
+    <data name="Val_ApiPathMaxLength100" xml:space="preserve">
+    <value>API path at most 100 characters</value>
+  </data>
+    <data name="Val_MenuIdRequired" xml:space="preserve">
+    <value>Menu ID is required</value>
+  </data>
+    <data name="Val_MemberStatusRequired" xml:space="preserve">
+    <value>Member status is required</value>
+  </data>
+    <data name="Val_MemberStatusRange" xml:space="preserve">
+    <value>Member status must be 1-3</value>
+  </data>
+    <data name="Val_MemberRealAuthRequired" xml:space="preserve">
+    <value>Member real auth status is required</value>
+  </data>
+    <data name="Val_MemberRealAuthRange" xml:space="preserve">
+    <value>Member real auth status must be 0 or 1</value>
+  </data>
+    <data name="Val_VerifyUrlRequired" xml:space="preserve">
+    <value>Verify URL is required</value>
+  </data>
+    <data name="Val_EmailVerifyTokenRequired" xml:space="preserve">
+    <value>Email verify token is required</value>
+  </data>
+    <data name="Val_MemberInviteCodeRequired" xml:space="preserve">
+    <value>Member invite code is required</value>
+  </data>
+    <data name="Val_MemberAgeRequired" xml:space="preserve">
+    <value>Member age is required</value>
+  </data>
+    <data name="Val_MemberAgeRange" xml:space="preserve">
+    <value>Member age must be 18-100</value>
+  </data>
+    <data name="Val_MenuTitleMinLength1" xml:space="preserve">
+    <value>Menu title at least 1 character</value>
+  </data>
+    <data name="Val_MenuPathMinLength1" xml:space="preserve">
+    <value>Menu path at least 1 character</value>
+  </data>
+    <data name="Val_MenuPathMaxLength255" xml:space="preserve">
+    <value>Menu path at most 255 characters</value>
+  </data>
+    <data name="Val_MemberRecommendRequired" xml:space="preserve">
+    <value>Member recommend value is required</value>
+  </data>
+    <data name="Val_MemberRatingRequired" xml:space="preserve">
+    <value>Member rating is required</value>
+  </data>
+</root>

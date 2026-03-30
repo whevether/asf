@@ -1,5 +1,7 @@
 ﻿using System;
+using ASF;
 using ASF.DependencyInjection;
+using ASF.Domain.Entities;
 using ASF.EntityFramework.Repository;
 using ASF.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +37,5 @@ public static class ASFBuilderExtensions
     services.AddScoped<ISecurityTokenRepository, SecurityTokenRepository>();
     services.AddScoped<IAsfDictionaryRepository, AsfDictionaryRepository>();
     services.AddScoped<ICountryRepositories, CountryRepositories>();
-    services.AddScoped<IAppSettingRepository, AppSettingRepository>();
   }
 }

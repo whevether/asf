@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO;
@@ -7,17 +8,17 @@ namespace ASF.Application.DTO;
 /// </summary>
 public class AccountModifyPasswordRequestDto
 {
-  /// <summary>
-  ///   账户id
-  /// </summary>
-  [Required(ErrorMessage = "账户id不能为空")]
+	/// <summary>
+	///   账户id
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_AccountIdRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string Id { get; set; }
 
-  /// <summary>
-  ///   登录密码
-  /// </summary>
-  [Required(ErrorMessage = "账户密码不能为空")]
-  [MinLength(2, ErrorMessage = "账户密码最少输入2个字符")]
-  [MaxLength(255, ErrorMessage = "账户密码最多输入255个字符")]
+	/// <summary>
+	///   登录密码
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_AccountPasswordRequired", ErrorMessageResourceType = typeof(SharedResource))]
+  [MinLength(2, ErrorMessageResourceName = "Val_AccountPasswordMinLength", ErrorMessageResourceType = typeof(SharedResource))]
+  [MaxLength(255, ErrorMessageResourceName = "Val_AccountPasswordMaxLength", ErrorMessageResourceType = typeof(SharedResource))]
   public string Password { get; set; }
 }

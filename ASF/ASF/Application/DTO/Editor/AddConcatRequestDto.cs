@@ -1,3 +1,4 @@
+using ASF.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASF.Application.DTO.Editor;
@@ -7,25 +8,25 @@ namespace ASF.Application.DTO.Editor;
 /// </summary>
 public class AddConcatRequestDto
 {
-  /// <summary>
-  ///   姓名
-  /// </summary>
-  [Required(ErrorMessage = "姓名不能为空")]
+	/// <summary>
+	///   姓名
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_NameRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string Name { get; set; }
 
-  /// <summary>
-  ///   手机号码
-  /// </summary>
-  [Required(ErrorMessage = "联系方式不能为空")]
+	/// <summary>
+	///   手机号码
+	/// </summary>
+	[Required(ErrorMessageResourceName = "Val_ContactRequired", ErrorMessageResourceType = typeof(SharedResource))]
   public string TelPhone { get; set; }
 
-  /// <summary>
-  ///   面积
-  /// </summary>
-  public string Area { get; set; }
+	/// <summary>
+	///   面积
+	/// </summary>
+	public string Area { get; set; }
 
-  /// <summary>
-  ///   内容
-  /// </summary>
-  public string Content { get; set; }
+	/// <summary>
+	///   内容
+	/// </summary>
+	public string Content { get; set; }
 }
