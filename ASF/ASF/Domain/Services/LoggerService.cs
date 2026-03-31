@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ASF.Domain.Entities;
+using ASF.Domain.Values;
 using ASF.Infrastructure.Repositories;
 using ASF.Internal;
 using ASF.Internal.Results;
@@ -49,20 +50,20 @@ public class LoggerService
   /// <param name="type"></param>
   /// <param name="accountName"></param>
   /// <returns></returns>
-  public async Task<(IList<LogInfo> list, int total)> GetList(int pageNo, int pageSize, uint? type = null,
+  public async Task<(IList<LogInfo> list, int total)> GetList(int pageNo, int pageSize, LoggingType? type = null,
     string accountName = "")
   {
     if (type != null && !string.IsNullOrEmpty(accountName))
     {
       var (list, total) = await _loggingsRepository.GetEntitiesForPaging(pageNo, pageSize,
-        f => f.Type == type && f.AccountName.Equals(accountName));
+        f => f.Type == (uint)type && f.AccountName.Equals(accountName));
       return (list, total);
     }
 
     if (type != null)
     {
       var (list, total) = await _loggingsRepository.GetEntitiesForPaging(pageNo, pageSize,
-        f => f.Type == type);
+        f => f.Type == (uint)type);
       return (list, total);
     }
 
