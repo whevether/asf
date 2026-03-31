@@ -4637,7 +4637,7 @@
             <param name="logInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:ASF.Domain.Services.LoggerService.GetList(System.Int32,System.Int32,System.Nullable{System.UInt32},System.String)">
+        <member name="M:ASF.Domain.Services.LoggerService.GetList(System.Int32,System.Int32,System.Nullable{ASF.Domain.Values.LoggingType},System.String)">
             <summary>
               获取日志分页列表
             </summary>

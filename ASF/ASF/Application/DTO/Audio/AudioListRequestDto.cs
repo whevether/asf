@@ -10,7 +10,7 @@ public class AudioListRequestDto : PaginationRequestDto
 	/// <summary>
 	///   日志类型
 	/// </summary>
-	public LoggingType LogType { get; set; }
+	public LoggingType? LogType { get; set; }
 
 	/// <summary>
 	///   操作账户名

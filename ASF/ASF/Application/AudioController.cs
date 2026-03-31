@@ -41,7 +41,7 @@ public class AudioController : ControllerBase
   public async Task<ResultPagedList<AudioResponseDto>> GetLogList([FromQuery] AudioListRequestDto dto)
   {
     var (list, total) = await _serviceProvider.GetRequiredService<LoggerService>()
-      .GetList(dto.PageNo, dto.PageSize, (uint)dto.LogType, dto.AccountName);
+      .GetList(dto.PageNo, dto.PageSize, dto.LogType, dto.AccountName);
     return ResultPagedList<AudioResponseDto>.ReSuccess(_mapper.Map<List<AudioResponseDto>>(list),
       total);
   }
