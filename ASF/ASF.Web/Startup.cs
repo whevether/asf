@@ -33,7 +33,12 @@ public class Startup
     //添加日志
     services.AddLogging();
     //automapper
-    services.AddAutoMapper(typeof(AudioMapper).Assembly);
+    services.AddAutoMapper(cfg =>
+    {
+      cfg.LicenseKey =
+        "eyJhbGciOiJSUzI1NiIsImtpZCI6Ikx1Y2t5UGVubnlTb2Z0d2FyZUxpY2Vuc2VLZXkvYmJiMTNhY2I1OTkwNGQ4OWI0Y2IxYzg1ZjA4OGNjZjkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2x1Y2t5cGVubnlzb2Z0d2FyZS5jb20iLCJhdWQiOiJMdWNreVBlbm55U29mdHdhcmUiLCJleHAiOiIxODA2NTM3NjAwIiwiaWF0IjoiMTc3NTAwODg2MCIsImFjY291bnRfaWQiOiIwMTlkNDZjMzUyNjI3YjNlOWYzMjhjNDkwY2Y3OGU2NyIsImN1c3RvbWVyX2lkIjoiY3RtXzAxa24zY2JqcnRxdjU5OW43cHQwc3YxeGJ6Iiwic3ViX2lkIjoiLSIsImVkaXRpb24iOiIwIiwidHlwZSI6IjIifQ.tdHcBUPDYppylawO-wWZjiX3iSxolTjozMUBwQwzZMqfhEAnS1zQMlaLM6He1c9VpVS18sNpY6RyxjwwOw9xhUNgaZtkewTTTSdHYdTAQoGhOaGuJb7l-Y5OKmHJ3J07z7QNdLLOfuRI2YS9Ady_xDLmeHvy5z_FgeTqO1B8WzBE99mRJm4diGhNsKGlCXd97xzsjSuhyEiR_f_KjuWJUodCCRoBbOvFETLY6JdT_Fatc8YdXdAvidjxh3JU6x-SlQXmyZWE63AVYYl1F3M7XrIs-s1_Tc3wo5ZtlUVx9bhLqfAKjP1tW4R7wvx8DgaTtzulqWW9plEea595T-sy1w";
+      cfg.AddMaps(typeof(AudioMapper).Assembly);
+    });
     // 跨域处理中间件
     services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
     {
