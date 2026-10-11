@@ -8,10 +8,11 @@ using ASF.Domain.Entities;
 using ASF.Domain.Services;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -23,15 +24,17 @@ namespace ASF.Application;
 public class TranslateController : ControllerBase
 {
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
+  private readonly TranslateService _translateService;
 
   /// <summary>
   ///   多语言控制器
   /// </summary>
-  public TranslateController(IServiceProvider serviceProvider, IMapper mapper)
+  public TranslateController(TranslateService translateService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _translateService = translateService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -45,7 +48,7 @@ public class TranslateController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<TranslateService>()
+    var (list, total) = await _translateService
       .GetList(dto.PageNo, dto.PageSize, dto.Name, tenancyId);
     return ResultPagedList<TranslateResponseDto>.ReSuccess(_mapper.Map<List<TranslateResponseDto>>(list),
       total);
@@ -62,61 +65,55 @@ public class TranslateController : ControllerBase
   [AllowAnonymous]
   public async Task<Result<object>> GetLists([FromQuery] string keyword, [FromQuery] bool isAdmin = false,[FromQuery] bool isList = false)
   {
-    var data = await _serviceProvider.GetRequiredService<TranslateService>().GetList(keyword, isAdmin);
+    var data = await _translateService.GetList(keyword, isAdmin);
     if (!data.Success)
       return Result<object>.ReFailure(data.Message, data.Status);
     var res = _mapper.Map<List<TranslateResponseDto>>(data.Data);
     var dic = new Dictionary<string, object>();
     foreach (var item in res.GroupBy(f => f.CountryCode))
     {
+      var langCode = ToI18nLangCode(item.Key);
       if (isAdmin)
       {
         var dic1 = new Dictionary<string, object>();
         dic1.Add("translation", item.ToDictionary(vk => vk.Keys, vv => vv.Value));
-        var dic2 = new Dictionary<string, string>
-        {
-          ["CN"] = "CN",
-          ["ID"] = "IDN",
-          ["MY"] = "MYS",
-          ["VN"] = "VN",
-          ["TH"] = "TH",
-          ["IN"] = "IND",
-          ["PH"] = "PHL"
-        };
-        dic.Add(dic2[item.Key], dic1);
+        dic.Add(langCode, dic1);
       }
       else
       {
         if (isList)
         {
-          dic.Add(item.Key, item);
+          dic.Add(langCode, item);
         }
         else
         {
           var dic1 = new Dictionary<string, object>();
           dic1.Add("translation", item.ToDictionary(vk => vk.Keys, vv => vv.Value));
-          dic.Add(item.Key, dic1);
+          dic.Add(langCode, dic1);
         }
       }
     }
 
-    // List<FetchUserData> list = new List<FetchUserData>();
-    // string path = Path.Combine("wwwroot/st", $"st1.json");
-    // using (FileStream fileStream = new FileStream(path,FileMode.Open))
-    // {
-    // 	using (StreamReader sr = new StreamReader(fileStream,Encoding.UTF8))
-    // 	{
-    // 		var json = sr.ReadToEnd().ReadToObject<List<JObject>>();
-    // 		list.AddRange(json.Select(s => (string)s["identification"]).Distinct().Select(s=>new FetchUserData()
-    // 		{
-    // 			UserId = s,
-    // 			Type = 1
-    // 		}));
-    // 	}
-    // }
-    //
-    // var s = await _serviceProvider.GetRequiredService<IFetchUserDataRepositories>().AddRange(list);
     return Result<object>.ReSuccess(dic);
+  }
+
+  /// <summary>
+  ///   国家/地区码转为前端 i18n 语言码（与 asf-react RightContent 一致）
+  /// </summary>
+  private static string ToI18nLangCode(string countryCode)
+  {
+    return countryCode?.ToUpperInvariant() switch
+    {
+      "CN" => "cn",
+      "ID" => "idn",
+      "MY" => "mys",
+      "VN" => "vn",
+      "TH" => "tb",
+      "IN" => "ind",
+      "PH" => "phl",
+      "EN" => "en",
+      _ => countryCode?.ToLowerInvariant() ?? "cn"
+    };
   }
 
   /// <summary>
@@ -130,7 +127,7 @@ public class TranslateController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<TranslateService>().Get(id, tenancyId);
+    var data = await _translateService.Get(id, tenancyId);
     if (!data.Success)
       return Result<TranslateResponseDto>.ReFailure(data.Message, data.Status);
     return Result<TranslateResponseDto>.ReSuccess(_mapper.Map<TranslateResponseDto>(data.Data));
@@ -145,7 +142,7 @@ public class TranslateController : ControllerBase
   public async Task<Result> Create([FromBody] TranslateCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     // 只有超级管理员才能选择租户创建
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? long.Parse(dto.TenancyId)
@@ -153,7 +150,7 @@ public class TranslateController : ControllerBase
     var translate = _mapper.Map<Translate>(dto);
     translate.TenancyId = tenancyId;
     translate.AddUser = HttpContext.User.Name();
-    return await _serviceProvider.GetRequiredService<TranslateService>().Create(translate);
+    return await _translateService.Create(translate);
   }
 
   /// <summary>
@@ -165,8 +162,8 @@ public class TranslateController : ControllerBase
   public async Task<Result> Modify([FromBody] TranslateModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<TranslateService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _translateService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -177,7 +174,7 @@ public class TranslateController : ControllerBase
     if (tenancyId != null && result.Data.TenancyId != tenancyId)
       return Result.ReFailure(ResultCodes.TenancyMatchExist);
     result.Data.AddUser = HttpContext.User.Name();
-    return await _serviceProvider.GetRequiredService<TranslateService>().Modify(_mapper.Map(dto, result.Data));
+    return await _translateService.Modify(_mapper.Map(dto, result.Data));
   }
 
   /// <summary>
@@ -189,8 +186,8 @@ public class TranslateController : ControllerBase
   public async Task<Result> Delete([FromRoute] long id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<TranslateService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _translateService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());

@@ -9,10 +9,11 @@ using ASF.Domain.Services;
 using ASF.Domain.Values;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -23,18 +24,21 @@ namespace ASF.Application;
 [Route("[controller]/[action]")]
 public class ApiController : ControllerBase
 {
+  private readonly ApiService _apiService;
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   api 控制器
   /// </summary>
-  /// <param name="serviceProvider"></param>
+  /// <param name="apiService"></param>
   /// <param name="mapper"></param>
-  public ApiController(IServiceProvider serviceProvider, IMapper mapper)
+  /// <param name="stringLocalizer"></param>
+  public ApiController(ApiService apiService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _apiService = apiService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -48,7 +52,7 @@ public class ApiController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<ApiService>().GetList(dto.PageNo, dto.PageSize,
+    var (list, total) = await _apiService.GetList(dto.PageNo, dto.PageSize,
       dto.PermissionId,
       dto.Type, dto.Status, dto.Name, dto.HttpMethod, dto.Path, tenancyId);
     return ResultPagedList<PermissionApiResponseDto>.ReSuccess(_mapper.Map<List<PermissionApiResponseDto>>(list),
@@ -66,7 +70,7 @@ public class ApiController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var result = await _serviceProvider.GetRequiredService<ApiService>().Get(id, tenancyId);
+    var result = await _apiService.Get(id, tenancyId);
     if (!result.Success)
       return Result<PermissionApiResponseDto>.ReFailure(result.Message, result.Status);
     return Result<PermissionApiResponseDto>.ReSuccess(_mapper.Map<PermissionApiResponseDto>(result.Data));
@@ -81,7 +85,7 @@ public class ApiController : ControllerBase
   public async Task<Result> Create([FromBody] PermissionApiCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? long.Parse(dto.TenancyId)
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -89,7 +93,7 @@ public class ApiController : ControllerBase
     api.TenancyId = tenancyId;
     if (api.IsSystem != null && (Status)api.IsSystem == Status.Yes && !HttpContext.User.IsSuperRole())
       return Result.ReFailure(ResultCodes.PermissionSystemNotCreate);
-    return await _serviceProvider.GetRequiredService<ApiService>().Create(api);
+    return await _apiService.Create(api);
   }
 
   /// <summary>
@@ -101,11 +105,11 @@ public class ApiController : ControllerBase
   public async Task<Result> Modify([FromBody] PermissionApiModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var server = _serviceProvider.GetRequiredService<ApiService>();
+    var server = _apiService;
     var result = await server.Get(long.Parse(dto.Id), tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
@@ -114,7 +118,7 @@ public class ApiController : ControllerBase
     // 除总超级管理员之外其他不允许操作其他租户信息
     if (tenancyId != null && result.Data.TenancyId != tenancyId)
       return Result.ReFailure(ResultCodes.TenancyMatchExist);
-    return await _serviceProvider.GetRequiredService<ApiService>().Modify(_mapper.Map(dto, result.Data));
+    return await _apiService.Modify(_mapper.Map(dto, result.Data));
   }
 
   /// <summary>
@@ -126,11 +130,11 @@ public class ApiController : ControllerBase
   public async Task<Result> ModifyStatus([FromBody] ModifyStatusRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var server = _serviceProvider.GetRequiredService<ApiService>();
+    var server = _apiService;
     var result = await server.Get(long.Parse(dto.Id), tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
@@ -140,7 +144,7 @@ public class ApiController : ControllerBase
     if (tenancyId != null && result.Data.TenancyId != tenancyId)
       return Result.ReFailure(ResultCodes.TenancyMatchExist);
     result.Data.Status = dto.Status;
-    return await _serviceProvider.GetRequiredService<ApiService>().Modify(result.Data);
+    return await _apiService.Modify(result.Data);
   }
 
   /// <summary>
@@ -152,11 +156,11 @@ public class ApiController : ControllerBase
   public async Task<Result> Delete([FromRoute] string id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var server = _serviceProvider.GetRequiredService<ApiService>();
+    var server = _apiService;
     var result = await server.Get(long.Parse(id), tenancyId);
     if (!result.Success)
       return result;
@@ -177,11 +181,11 @@ public class ApiController : ControllerBase
   public async Task<Result> BatchDelete([FromBody] IdArrayRequestDto<string> dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var server = _serviceProvider.GetRequiredService<ApiService>();
+    var server = _apiService;
     var result = await server.GetList(dto.Ids, tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);

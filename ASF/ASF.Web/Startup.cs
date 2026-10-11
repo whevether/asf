@@ -1,8 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using ASF.Application.DtoMapper;
 using ASF.DependencyInjection;
-// using ASF.Domain.Services;
-// using Coravel;
+using ASF.Internal.Security;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -13,23 +13,29 @@ using Minio;
 using Minio.AspNetCore;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using Ocelot.Provider.Consul;
+using Ocelot.Discovery.Consul;
 
 namespace ASF.Web;
 
 public class Startup
 {
-  public Startup(IConfiguration configuration)
+  public Startup(IConfiguration configuration, IWebHostEnvironment env)
   {
     Configuration = configuration;
+    Env = env;
   }
 
   public IConfiguration Configuration { get; }
+  public IWebHostEnvironment Env { get; }
 
   // This method gets called by the runtime. Use this method to add services to the container.
   public void ConfigureServices(IServiceCollection services)
   {
     JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+    var jwtKeyPath = Configuration["ASF:JwtKeyPath"];
+    if (string.IsNullOrWhiteSpace(jwtKeyPath))
+      jwtKeyPath = Path.Combine(Env.ContentRootPath, "Data", "jwt-rsa.pem");
+    RSA.Initialize(jwtKeyPath);
     //添加日志
     services.AddLogging();
     //automapper
@@ -75,12 +81,6 @@ public class Startup
           case "sqlite":
             b.UseSqlite(asfOptions.DBConnectionString, opt => { opt.MigrationsAssembly("ASF.Web"); });
             break;
-          case "mysql":
-            b.UseMySql(asfOptions.DBConnectionString, ServerVersion.AutoDetect(asfOptions.DBConnectionString),
-              builder => { builder.MigrationsAssembly("ASF.Web"); });
-            // b.EnableSensitiveDataLogging();
-            b.EnableDetailedErrors();
-            break;
           case "sqlserver":
             b.UseSqlServer(asfOptions.DBConnectionString, opt => { opt.MigrationsAssembly("ASF.Web"); });
             break;
@@ -90,8 +90,17 @@ public class Startup
         }
       });
     });
-    //网关服务
-    services.AddOcelot().AddConsul();
+    // 网关仍用 Ocelot，但不要 AddNewtonsoftJson。
+    // 默认 AddOcelot() 会把 Newtonsoft 格式化器插到最前，DateTime 会被写成 ISO，盖住 UnixSecondsDateTimeConverter。
+    services.AddOcelotUsingBuilder(Configuration, (builder, assembly) =>
+    {
+      builder.Services.AddMiddlewareAnalysis().AddWebEncoders();
+      return builder
+        .AddApplicationPart(assembly)
+        .AddControllersAsServices()
+        .AddAuthorization()
+        .AddJsonOptions(_ => { });
+    }).AddConsul();
   }
 
   // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

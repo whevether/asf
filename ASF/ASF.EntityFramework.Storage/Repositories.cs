@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -85,7 +84,7 @@ public class Repositories<T> : IRepositories<T> where T : class
 
   public async Task<IEnumerable<T>> GetEntities(Expression<Func<T, bool>> exp)
   {
-    return await Task.FromResult(CompileQuery(exp));
+    return await _context.Set<T>().AsNoTracking().Where(exp).ToListAsync();
   }
 
   /// <summary>
@@ -99,60 +98,20 @@ public class Repositories<T> : IRepositories<T> where T : class
   public async Task<(IList<T> list, int total)> GetEntitiesForPaging(int page, int pageSize,
     Expression<Func<T, bool>> exp, string sort = "acs", string sortFiled = "Id")
   {
-    IList<T> query = CompileQuery(exp).ToList();
-    var count = query.Count();
+    var queryable = _context.Set<T>().AsNoTracking().Where(exp);
+    var count = await queryable.CountAsync();
     var p = page == 0 ? 1 : page;
     var c = pageSize == 0 ? count : pageSize;
-    // int totalPages = (int)Math.Ceiling(((decimal)count / c)); //计算总页数
-    // p = Math.Min(p, totalPages); //最小页数。如果开启则如果只有一页数据每次都只返回第一页的数据
-    var dic = new Dictionary<string, IList<T>>
-    {
-      ["acs"] = query.OrderBy(f =>
-        {
-          var propertyInfo = f.GetType().GetTypeInfo().GetProperty(sortFiled);
-          return propertyInfo.GetValue(f, null);
-        }).Skip((p - 1) * c)
-        .Take(c)
-        .ToList(),
-      ["desc"] = query.OrderByDescending(f =>
-        {
-          var propertyInfo = f.GetType().GetTypeInfo().GetProperty(sortFiled);
-          return propertyInfo.GetValue(f, null);
-        }).Skip((p - 1) * c)
-        .Take(c)
-        .ToList()
-    };
-    var list = dic[sort];
-    return await Task.FromResult<(IList<T> list, int total)>((list, count));
+    queryable = sort == "desc"
+      ? queryable.OrderByDescending(e => EF.Property<object>(e, sortFiled))
+      : queryable.OrderBy(e => EF.Property<object>(e, sortFiled));
+    var list = await queryable.Skip((p - 1) * c).Take(c).ToListAsync();
+    return (list, count);
   }
 
   public async Task<T> GetEntity(Expression<Func<T, bool>> exp)
   {
-    return await Task.FromResult(CompileQuerySingle(exp));
-  }
-
-  /// <summary>
-  ///   查询集合
-  /// </summary>
-  /// <param name="exp"></param>
-  /// <returns></returns>
-  private IEnumerable<T> CompileQuery(Expression<Func<T, bool>> exp)
-  {
-    var func = EF.CompileQuery((RepositoryContext context, Expression<Func<T, bool>> exps) =>
-      context.Set<T>().Where(exp));
-    return func(_context, exp);
-  }
-
-  /// <summary>
-  ///   查询单个
-  /// </summary>
-  /// <param name="exp"></param>
-  /// <returns></returns>
-  private T CompileQuerySingle(Expression<Func<T, bool>> exp)
-  {
-    var func = EF.CompileQuery((RepositoryContext context, Expression<Func<T, bool>> exps) =>
-      context.Set<T>().FirstOrDefault(exp));
-    return func(_context, exp);
+    return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(exp);
   }
 
   /// <summary>

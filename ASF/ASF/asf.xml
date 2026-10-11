@@ -9,12 +9,14 @@
               账户控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.AccountController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.AccountController.#ctor(ASF.Domain.Services.AccountService,ASF.Domain.Services.PermissionService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               账户控制器
             </summary>
-            <param name="serviceProvider"></param>
+            <param name="accountService"></param>
+            <param name="permissionService"></param>
             <param name="mapper"></param>
+            <param name="stringLocalizer"></param>
         </member>
         <member name="M:ASF.Application.AccountController.AccountInfo">
             <summary>
@@ -133,12 +135,13 @@
               api 控制器 只有超级管理员才有权限控制
             </summary>
         </member>
-        <member name="M:ASF.Application.ApiController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.ApiController.#ctor(ASF.Domain.Services.ApiService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               api 控制器
             </summary>
-            <param name="serviceProvider"></param>
+            <param name="apiService"></param>
             <param name="mapper"></param>
+            <param name="stringLocalizer"></param>
         </member>
         <member name="M:ASF.Application.ApiController.GetList(ASF.Application.DTO.PermissionApiListRequestDto)">
             <summary>
@@ -213,7 +216,7 @@
               审计控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.AudioController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.AudioController.#ctor(ASF.Domain.Services.LoggerService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               审计控制器
             </summary>
@@ -237,11 +240,11 @@
               管理员账户验证
             </summary>
         </member>
-        <member name="M:ASF.Application.AuthoriseController.#ctor(System.IServiceProvider)">
+        <member name="M:ASF.Application.AuthoriseController.#ctor(ASF.Domain.Services.IAccountLoginService)">
             <summary>
               授权控制器
             </summary>
-            <param name="serviceProvider"></param>
+            <param name="accountLoginService"></param>
         </member>
         <member name="M:ASF.Application.AuthoriseController.Login(ASF.Application.DTO.AuthoriseByUsernameRequestDto)">
             <summary>
@@ -261,7 +264,7 @@
               国家控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.CountryController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.CountryController.#ctor(ASF.Domain.Services.CountryService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               国家控制器
             </summary>
@@ -312,7 +315,7 @@
               部门控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.DepartmentController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.DepartmentController.#ctor(ASF.Domain.Services.DepartmentService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               部门控制器
             </summary>
@@ -385,7 +388,7 @@
               字典控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.DictionaryController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.DictionaryController.#ctor(ASF.Domain.Services.DictionaryService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               字典控制器
             </summary>
@@ -2487,12 +2490,13 @@
               权限菜单控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.MenuController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.MenuController.#ctor(ASF.Domain.Services.MenuService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               菜单控制器
             </summary>
-            <param name="serviceProvider"></param>
+            <param name="menuService"></param>
             <param name="mapper"></param>
+            <param name="stringLocalizer"></param>
         </member>
         <member name="M:ASF.Application.MenuController.GetList(ASF.Application.DTO.PermissionMenuListRequestDto)">
             <summary>
@@ -2541,12 +2545,14 @@
               权限控制器 只有超级管理员才能有权限控制
             </summary>
         </member>
-        <member name="M:ASF.Application.PermissionController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.PermissionController.#ctor(ASF.Domain.Services.PermissionService,ASF.Domain.Services.RoleService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               权限控制器
             </summary>
-            <param name="serviceProvider"></param>
+            <param name="permissionService"></param>
+            <param name="roleService"></param>
             <param name="mapper"></param>
+            <param name="stringLocalizer"></param>
         </member>
         <member name="M:ASF.Application.PermissionController.GetList(ASF.Application.DTO.PermissionListRequestDto)">
             <summary>
@@ -2609,7 +2615,7 @@
               岗位控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.PostController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.PostController.#ctor(ASF.Domain.Services.PostService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               岗位控制器
             </summary>
@@ -2660,12 +2666,13 @@
               角色控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.RoleController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.RoleController.#ctor(ASF.Domain.Services.RoleService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               角色控制器
             </summary>
-            <param name="serviceProvider"></param>
+            <param name="roleService"></param>
             <param name="mapper"></param>
+            <param name="stringLocalizer"></param>
         </member>
         <member name="M:ASF.Application.RoleController.GetList(ASF.Application.DTO.Role.RoleListRequestDto)">
             <summary>
@@ -2727,7 +2734,7 @@
               租户控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.TenancyController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.TenancyController.#ctor(ASF.Domain.Services.TenancyService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               租户控制器
             </summary>
@@ -2778,7 +2785,7 @@
               多语言控制器
             </summary>
         </member>
-        <member name="M:ASF.Application.TranslateController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+        <member name="M:ASF.Application.TranslateController.#ctor(ASF.Domain.Services.TranslateService,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               多语言控制器
             </summary>
@@ -2798,6 +2805,11 @@
             <param name="keyword"></param>
             <param name="isList"></param>
             <returns></returns>
+        </member>
+        <member name="M:ASF.Application.TranslateController.ToI18nLangCode(System.String)">
+            <summary>
+              国家/地区码转为前端 i18n 语言码（与 asf-react RightContent 一致）
+            </summary>
         </member>
         <member name="M:ASF.Application.TranslateController.Details(System.Int64)">
             <summary>
@@ -2831,7 +2843,7 @@
             <summary>
             </summary>
         </member>
-        <member name="M:ASF.Application.UploadController.#ctor(System.IServiceProvider)">
+        <member name="M:ASF.Application.UploadController.#ctor(ASF.Domain.Services.UploadService,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
             </summary>
         </member>
@@ -4155,7 +4167,7 @@
         </member>
         <member name="T:ASF.Domain.ResultCodes">
             <summary>
-              错误结果代码
+              错误结果代码（Item2 为 SharedResource 多语言键）
             </summary>
         </member>
         <member name="T:ASF.Domain.Services.AccountAuthorizationService">
@@ -4163,26 +4175,15 @@
               账号权限认证服务
             </summary>
         </member>
-        <member name="M:ASF.Domain.Services.AccountAuthorizationService.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,System.IServiceProvider,Microsoft.Extensions.Logging.ILogger{ASF.Domain.Services.AccountAuthorizationService})">
+        <member name="M:ASF.Domain.Services.AccountAuthorizationService.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,ASF.Infrastructure.Repositories.IApiRepository,ASF.Infrastructure.Repositories.IAccountsRepository,Microsoft.Extensions.Caching.Memory.IMemoryCache,Microsoft.Extensions.Logging.ILogger{ASF.Domain.Services.AccountAuthorizationService})">
             <summary>
               账户认证服务
             </summary>
-            <param name="httpContextAccessor"></param>
-            <param name="serviceProvider"></param>
-            <param name="logger"></param>
         </member>
         <member name="M:ASF.Domain.Services.AccountAuthorizationService.Authentication">
             <summary>
               认证
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:ASF.Domain.Services.AccountAuthorizationService.MatchApiPermission(System.String)">
-            <summary>
-              匹配权限
-            </summary>
-            <param name="requestPath"></param>
-            <returns></returns>
         </member>
         <member name="T:ASF.Domain.Services.AccountLoginService">
             <summary>
@@ -4623,12 +4624,13 @@
               日志服务
             </summary>
         </member>
-        <member name="M:ASF.Domain.Services.LoggerService.#ctor(ASF.Infrastructure.Repositories.ILoggingsRepository,ASF.Internal.IIdGenerator)">
+        <member name="M:ASF.Domain.Services.LoggerService.#ctor(ASF.Infrastructure.Repositories.ILoggingsRepository,ASF.Internal.IIdGenerator,Microsoft.Extensions.Localization.IStringLocalizer{ASF.Resources.SharedResource})">
             <summary>
               日志服务
             </summary>
             <param name="loggingsRepository"></param>
             <param name="idGenerator"></param>
+            <param name="stringLocalizer"></param>
         </member>
         <member name="M:ASF.Domain.Services.LoggerService.Create(ASF.Domain.Entities.LogInfo)">
             <summary>
@@ -4637,7 +4639,7 @@
             <param name="logInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:ASF.Domain.Services.LoggerService.GetList(System.Int32,System.Int32,System.Nullable{ASF.Domain.Values.LoggingType},System.String)">
+        <member name="M:ASF.Domain.Services.LoggerService.GetList(System.Int32,System.Int32,System.Nullable{System.UInt32},System.String)">
             <summary>
               获取日志分页列表
             </summary>
@@ -5122,7 +5124,7 @@
         </member>
         <member name="P:ASF.Domain.Values.AccessToken.UserId">
             <summary>
-              im user id
+              ASF 会员 Id（= go-chat users.id）
             </summary>
         </member>
         <member name="P:ASF.Domain.Values.AccessToken.EmailToken">
@@ -5133,6 +5135,16 @@
         <member name="P:ASF.Domain.Values.AccessToken.IsBindEmail">
             <summary>
               是否为绑定邮箱
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Values.AccessToken.Account">
+            <summary>
+              未注册社交登录时的账号（google_{sub} / apple_{sub}）
+            </summary>
+        </member>
+        <member name="P:ASF.Domain.Values.AccessToken.Email">
+            <summary>
+              未注册社交登录时的邮箱；没有真实邮箱则为空
             </summary>
         </member>
         <member name="T:ASF.Domain.Values.ApiType">
@@ -6109,6 +6121,73 @@
             <param name="e"></param>
             <returns></returns>
         </member>
+        <member name="T:ASF.Internal.Json.AsfJson">
+            <summary>
+              全局 JSON 契约：camelCase + Unix 秒时间戳。MVC 与手写序列化必须共用。
+            </summary>
+        </member>
+        <member name="F:ASF.Internal.Json.AsfJson.Default">
+            <summary>
+              默认序列化选项
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Json.AsfJson.CreateOptions">
+            <summary>
+              创建与 MVC 一致的选项副本
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Json.AsfJson.Serialize(System.Object)">
+            <summary>
+              序列化
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Json.AsfJson.Deserialize``1(System.String)">
+            <summary>
+              反序列化
+            </summary>
+        </member>
+        <member name="T:ASF.Internal.Json.JsonNodeExtensions">
+            <summary>
+              JsonNode 取值，对齐原 Newtonsoft Value&lt;T&gt;。
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Json.JsonNodeExtensions.AsInt(System.Text.Json.Nodes.JsonNode)">
+            <summary>
+              读取整数，失败返回 null
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Json.JsonNodeExtensions.AsBool(System.Text.Json.Nodes.JsonNode)">
+            <summary>
+              读取布尔，失败返回 null
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Json.JsonNodeExtensions.AsString(System.Text.Json.Nodes.JsonNode)">
+            <summary>
+              读取字符串
+            </summary>
+        </member>
+        <member name="T:ASF.Internal.Json.UnixSecondsDateTimeConverter">
+            <summary>
+              DateTime ↔ Unix 秒（数字），对齐原 MyUnixDateTimeConverter。
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Json.UnixSecondsDateTimeConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASF.Internal.Json.UnixSecondsDateTimeConverter.Write(System.Text.Json.Utf8JsonWriter,System.DateTime,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:ASF.Internal.Json.UnixSecondsNullableDateTimeConverter">
+            <summary>
+              DateTime? ↔ Unix 秒
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Json.UnixSecondsNullableDateTimeConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASF.Internal.Json.UnixSecondsNullableDateTimeConverter.Write(System.Text.Json.Utf8JsonWriter,System.Nullable{System.DateTime},System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
         <member name="T:ASF.Internal.Results.Result">
             <summary>
               结果对象
@@ -6247,7 +6326,7 @@
         </member>
         <member name="P:ASF.Internal.Results.Result`1.Data">
             <summary>
-              返回对象
+              返回对象（C# 属性名 Data；
             </summary>
         </member>
         <member name="M:ASF.Internal.Results.Result`1.ReSuccess(`0)">
@@ -6399,6 +6478,37 @@
             <summary>
               转换为 task
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ASF.Internal.Results.ResultMessage">
+            <summary>
+              按当前请求文化解析 ResultCodes / 中间件提示语
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Results.ResultMessage.Configure(System.IServiceProvider)">
+            <summary>
+              注入根服务，供无 HttpContext 时回退解析本地化
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ASF.Internal.Results.ResultMessage.Localize(System.String)">
+            <summary>
+              按当前请求文化解析资源键；非资源键原样返回
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASF.Internal.Results.ResultMessage.IsResourceKey(System.String)">
+            <summary>
+              仅字母数字下划线视为资源键，已格式化的句子不再二次查找
+            </summary>
+        </member>
+        <member name="M:ASF.Internal.Results.ResultMessage.Format(System.String,System.Object[])">
+            <summary>
+              本地化后按 string.Format 填充占位符
+            </summary>
+            <param name="key"></param>
+            <param name="args"></param>
             <returns></returns>
         </member>
         <member name="T:ASF.Internal.Results.ResultPagedList`1">
@@ -6640,6 +6750,11 @@
               rsa 辅助方法
             </summary>
         </member>
+        <member name="M:ASF.Internal.Security.RSA.Initialize(System.String)">
+            <summary>
+              从 PEM 文件或配置初始化 JWT 签名密钥；无配置时生成并持久化到 Data/jwt-rsa.pem
+            </summary>
+        </member>
         <member name="P:ASF.Internal.Security.RSA.RSAPrivateKey">
             <summary>
               用于签名的私钥
@@ -6760,10 +6875,8 @@
         </member>
         <member name="M:ASF.Internal.Utils.ClaimsPrincipalExtension.UserId(System.Security.Claims.ClaimsPrincipal)">
             <summary>
-              账户Id
+              账户Id（后台管理员雪花 long）
             </summary>
-            <param name="principal"></param>
-            <returns></returns>
         </member>
         <member name="M:ASF.Internal.Utils.ClaimsPrincipalExtension.Name(System.Security.Claims.ClaimsPrincipal)">
             <summary>
@@ -7138,19 +7251,6 @@
               执行验证输出
             </summary>
             <param name="context"></param>
-        </member>
-        <member name="T:System.ComponentModel.DataAnnotations.MyUnixDateTimeConverter">
-            <summary>
-              Converts a <see cref="T:System.DateTime" /> to and from Unix epoch time
-            </summary>
-        </member>
-        <member name="M:System.ComponentModel.DataAnnotations.MyUnixDateTimeConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
-            <summary>
-              Writes the JSON representation of the object.
-            </summary>
-            <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to write to.</param>
-            <param name="value">The value.</param>
-            <param name="serializer">The calling serializer.</param>
         </member>
         <member name="T:System.ValidationHelperExtensions">
             <summary>

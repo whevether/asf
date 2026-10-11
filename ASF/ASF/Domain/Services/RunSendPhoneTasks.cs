@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Coravel.Invocable;
 using IdGen;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using ASF.Internal.Json;
 
 namespace ASF.Domain.Services;
 
@@ -109,7 +109,7 @@ public class RunSendPhoneTasks : IInvocable
           
         
           var httpContent1 = new StringContent(
-            JsonConvert.SerializeObject(new { phone = data, validType = "DL" }),
+            AsfJson.Serialize(new { phone = data, validType = "DL" }),
             Encoding.UTF8, "application/json");
           var response3 = await http.PostAsync(new Uri(senLingHang), httpContent1);
           if (response3.IsSuccessStatusCode)
@@ -173,7 +173,7 @@ public class RunSendPhoneTasks : IInvocable
           
 
           var xwhttpContent = new StringContent(
-            JsonConvert.SerializeObject(new { mobile = data, type = "1" }),
+            AsfJson.Serialize(new { mobile = data, type = "1" }),
             Encoding.UTF8, "application/json");
           var response17 = await http.PostAsync(new Uri(xwys), xwhttpContent);
           if (response17.IsSuccessStatusCode)
@@ -213,7 +213,7 @@ public class RunSendPhoneTasks : IInvocable
             variables = new { }
           };
           var sshttpContent = new StringContent(
-            JsonConvert.SerializeObject(obj),
+            AsfJson.Serialize(obj),
             Encoding.UTF8, "application/json");
           //短信发送1
           var ssRes = await http.PostAsync(new Uri(ssUrl), sshttpContent);

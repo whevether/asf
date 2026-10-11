@@ -1,5 +1,6 @@
 ﻿using System;
 using ASF.Domain.Values;
+using ASF.Internal.Results;
 using ASF.Internal.Security;
 
 namespace ASF.Domain.Entities;
@@ -121,7 +122,7 @@ public class LogInfo : Entity<long>
       ClientIp = ip;
       if (ip.Equals("127.0.0.1"))
       {
-        ClientLocation = "本地";
+        ClientLocation = ResultMessage.Localize("locationLocal");
       }
       else
       {
@@ -130,7 +131,7 @@ public class LogInfo : Entity<long>
           ClientLocation =
             $"{ipConvertValue.Country},{ipConvertValue.RegionName},{ipConvertValue.City}";
         else
-          ClientLocation = "未知";
+          ClientLocation = ResultMessage.Localize("locationUnknown");
       }
     }
   }

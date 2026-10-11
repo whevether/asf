@@ -6,10 +6,11 @@ using ASF.Domain.Entities;
 using ASF.Domain.Services;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -20,16 +21,18 @@ namespace ASF.Application;
 [Route("[controller]/[action]")]
 public class CountryController : ControllerBase
 {
+  private readonly CountryService _countryService;
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   国家控制器
   /// </summary>
-  public CountryController(IServiceProvider serviceProvider, IMapper mapper)
+  public CountryController(CountryService countryService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _countryService = countryService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -40,7 +43,7 @@ public class CountryController : ControllerBase
   [HttpGet]
   public async Task<ResultPagedList<CountryResponseDto>> GetList([FromQuery] CountryListRequestDto dto)
   {
-    var (list, total) = await _serviceProvider.GetRequiredService<CountryService>()
+    var (list, total) = await _countryService
       .GetList(dto.PageNo, dto.PageSize, dto.Name);
     return ResultPagedList<CountryResponseDto>.ReSuccess(_mapper.Map<List<CountryResponseDto>>(list),
       total);
@@ -54,7 +57,7 @@ public class CountryController : ControllerBase
   [AllowAnonymous]
   public async Task<ResultList<CountryResponseDto>> GetLists()
   {
-    var data = await _serviceProvider.GetRequiredService<CountryService>().GetList();
+    var data = await _countryService.GetList();
     if (!data.Success)
       return ResultList<CountryResponseDto>.ReFailure(data.Message, data.Status);
     return ResultList<CountryResponseDto>.ReSuccess(_mapper.Map<List<CountryResponseDto>>(data.Data));
@@ -68,7 +71,7 @@ public class CountryController : ControllerBase
   [HttpGet]
   public async Task<Result<CountryResponseDto>> Details([FromQuery] long id)
   {
-    var data = await _serviceProvider.GetRequiredService<CountryService>().Get(id);
+    var data = await _countryService.Get(id);
     if (!data.Success)
       return Result<CountryResponseDto>.ReFailure(data.Message, data.Status);
     return Result<CountryResponseDto>.ReSuccess(_mapper.Map<CountryResponseDto>(data.Data));
@@ -83,9 +86,9 @@ public class CountryController : ControllerBase
   public async Task<Result> Create([FromBody] CountryCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     var country = _mapper.Map<Country>(dto);
-    return await _serviceProvider.GetRequiredService<CountryService>().Create(country);
+    return await _countryService.Create(country);
   }
 
   /// <summary>
@@ -97,12 +100,12 @@ public class CountryController : ControllerBase
   public async Task<Result> Modify([FromBody] CountryModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<CountryService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _countryService;
     var result = await server.Get(long.Parse(dto.Id));
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
-    return await _serviceProvider.GetRequiredService<CountryService>().Modify(_mapper.Map(dto, result.Data));
+    return await _countryService.Modify(_mapper.Map(dto, result.Data));
   }
 
   /// <summary>
@@ -114,8 +117,8 @@ public class CountryController : ControllerBase
   public async Task<Result> Delete([FromRoute] long id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<CountryService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _countryService;
     var result = await server.Get(id);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);

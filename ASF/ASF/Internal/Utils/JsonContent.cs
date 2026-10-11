@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 using System.Text;
-using Newtonsoft.Json;
+using ASF.Internal.Json;
 
 namespace ASF.Internal.Utils;
 
@@ -14,7 +14,7 @@ public class JsonContent : StringContent
     /// </summary>
     /// <param name="obj"></param>
     public JsonContent(object obj) :
-    base(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json")
+    base(AsfJson.Serialize(obj), Encoding.UTF8, "application/json")
   {
   }
 }

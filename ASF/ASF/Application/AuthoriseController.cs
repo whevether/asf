@@ -8,7 +8,6 @@ using ASF.Domain.Values;
 using ASF.Internal.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 //using System.IO;
 // using Aspose.Cells;
 
@@ -20,15 +19,15 @@ namespace ASF.Application;
 [Route("[controller]/[action]")]
 public class AuthoriseController : ControllerBase
 {
-  private readonly IServiceProvider _serviceProvider;
+  private readonly IAccountLoginService _accountLoginService;
 
   /// <summary>
   ///   授权控制器
   /// </summary>
-  /// <param name="serviceProvider"></param>
-  public AuthoriseController(IServiceProvider serviceProvider)
+  /// <param name="accountLoginService"></param>
+  public AuthoriseController(IAccountLoginService accountLoginService)
   {
-    _serviceProvider = serviceProvider;
+    _accountLoginService = accountLoginService;
   }
 
   /// <summary>
@@ -56,7 +55,7 @@ public class AuthoriseController : ControllerBase
 
 
     //账户登录验证
-    var service = _serviceProvider.GetRequiredService<IAccountLoginService>();
+    var service = _accountLoginService;
     var ip = HttpContext.Connection.RemoteIpAddress?.ToString();
     if (string.IsNullOrEmpty(ip))
       ip = "127.0.0.1";

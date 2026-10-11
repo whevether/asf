@@ -9,10 +9,11 @@ using ASF.Domain.Entities;
 using ASF.Domain.Services;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -23,16 +24,18 @@ namespace ASF.Application;
 [Route("[controller]/[action]")]
 public class DepartmentController : ControllerBase
 {
+  private readonly DepartmentService _departmentService;
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   部门控制器
   /// </summary>
-  public DepartmentController(IServiceProvider serviceProvider, IMapper mapper)
+  public DepartmentController(DepartmentService departmentService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _departmentService = departmentService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -46,7 +49,7 @@ public class DepartmentController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<DepartmentService>()
+    var (list, total) = await _departmentService
       .GetList(dto.PageNo, dto.PageSize, dto.Name, dto.Status, tenancyId);
     var data = TreeSortMultiLevelFormat(_mapper.Map<List<DepartmentResponseDto>>(list));
     return ResultPagedList<DepartmentResponseDto>.ReSuccess(data.ToList(),
@@ -63,7 +66,7 @@ public class DepartmentController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<DepartmentService>().GetList(tenancyId);
+    var data = await _departmentService.GetList(tenancyId);
     if (!data.Success)
       return ResultList<DepartmentResponseDto>.ReFailure(data.Message, data.Status);
     var list = TreeSortMultiLevelFormat(_mapper.Map<List<DepartmentResponseDto>>(data.Data)).ToList();
@@ -105,7 +108,7 @@ public class DepartmentController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<DepartmentService>().Get(id, tenancyId);
+    var data = await _departmentService.Get(id, tenancyId);
     if (!data.Success)
       return Result<DepartmentResponseDto>.ReFailure(data.Message, data.Status);
     return Result<DepartmentResponseDto>.ReSuccess(_mapper.Map<DepartmentResponseDto>(data.Data));
@@ -120,7 +123,7 @@ public class DepartmentController : ControllerBase
   public async Task<Result> Create([FromBody] DepartmentCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     // 只有超级管理员才能选择租户创建
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? long.Parse(dto.TenancyId)
@@ -138,7 +141,7 @@ public class DepartmentController : ControllerBase
     // 		});
     // 	});
     // }
-    return await _serviceProvider.GetRequiredService<DepartmentService>().Create(data);
+    return await _departmentService.Create(data);
   }
 
   /// <summary>
@@ -150,8 +153,8 @@ public class DepartmentController : ControllerBase
   public async Task<Result> Modify([FromBody] DepartmentModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<DepartmentService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _departmentService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -188,8 +191,8 @@ public class DepartmentController : ControllerBase
   public async Task<Result> ModifyStatus([FromBody] ModifyStatusRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<DepartmentService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _departmentService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -212,8 +215,8 @@ public class DepartmentController : ControllerBase
   public async Task<Result> Assign([FromBody] AssignIdArrayRequestDto<long> dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<DepartmentService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _departmentService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -244,11 +247,11 @@ public class DepartmentController : ControllerBase
   public async Task<Result> Delete([FromRoute] long id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var server = _serviceProvider.GetRequiredService<DepartmentService>();
+    var server = _departmentService;
     var result = await server.Get(id, tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);

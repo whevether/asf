@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+      Microsoft ResX Schema 
+      
+      Version 2.0
+      
+      The primary goals of this format is to allow a simple XML format 
+      that is mostly human readable. The generation and parsing of the 
+      various data types are done through the TypeConverter classes 
+      associated with the data types.
+      
+      Example:
+      
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+                  
+      There are any number of "resheader" rows that contain simple 
+      name/value pairs.
+      
+      Each data row contains a name, and value. The row also contains a 
+      type or mimetype. Type corresponds to a .NET class that support 
+      text/value conversion through the TypeConverter architecture. 
+      Classes that don't support this are serialized and stored with the 
+      mimetype set.
+      
+      The mimetype is used for serialized objects, and tells the 
+      ResXResourceReader how to depersist the object. This is currently not 
+      extensible. For a given mimetype the value must be set accordingly:
+      
+      Note - application/x-microsoft.net.object.binary.base64 is the format 
+      that the ResXResourceWriter will generate, however the reader can 
+      read any of the formats listed below.
+      
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+      
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+  
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array 
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+                xmlns="">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="dataNotFound" xml:space="preserve">
+    <value>ไม่พบข้อมูล</value>
+  </data>
+    <data name="succeeded" xml:space="preserve">
+    <value>สำเร็จ</value>
+  </data>
+    <data name="unknownError" xml:space="preserve">
+    <value>ข้อผิดพลาดที่ไม่รู้จัก</value>
+  </data>
+    <data name="loginTypeError" xml:space="preserve">
+    <value>ประเภทการเข้าสู่ระบบไม่ถูกต้อง</value>
+  </data>
+    <data name="memberFrozen" xml:space="preserve">
+    <value>สมาชิกถูกระงับ</value>
+  </data>
+    <data name="memberLogout" xml:space="preserve">
+    <value>สมาชิกถูกยกเลิกแล้ว</value>
+  </data>
+    <data name="emailNotEmpty" xml:space="preserve">
+    <value>อีเมลต้องไม่ว่าง</value>
+  </data>
+    <data name="timeInterval" xml:space="preserve">
+    <value>กรุณารออีก {0} วินาทีก่อนส่งอีกครั้ง</value>
+  </data>
+    <data name="second" xml:space="preserve">
+    <value>วินาที</value>
+  </data>
+    <data name="registerCaptcha" xml:space="preserve">
+    <value>รหัสยืนยันการลงทะเบียน wchat</value>
+  </data>
+    <data name="hello" xml:space="preserve">
+    <value>สวัสดี</value>
+  </data>
+    <data name="youCaptchaCode" xml:space="preserve">
+    <value>รหัสยืนยันของคุณคือ</value>
+  </data>
+    <data name="captchaExpired" xml:space="preserve">
+    <value>รหัสยืนยันหมดอายุแล้ว</value>
+  </data>
+    <data name="captchaCodeError" xml:space="preserve">
+    <value>รหัสยืนยันไม่ถูกต้อง เหลืออีก {0} ครั้ง</value>
+  </data>
+    <data name="emailVerifyFail" xml:space="preserve">
+    <value>ยืนยันอีเมลไม่สำเร็จ</value>
+  </data>
+    <data name="tokenError" xml:space="preserve">
+    <value>Token ไม่ถูกต้อง</value>
+  </data>
+    <data name="emailInconsistent" xml:space="preserve">
+    <value>อีเมลไม่ตรงกัน</value>
+  </data>
+    <data name="modifyFail" xml:space="preserve">
+    <value>แก้ไขไม่สำเร็จ</value>
+  </data>
+    <data name="memberNotEmpty" xml:space="preserve">
+    <value>ข้อมูลสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="registerMemberFail" xml:space="preserve">
+    <value>ลงทะเบียนสมาชิกไม่สำเร็จ</value>
+  </data>
+    <data name="imAdminTokenEmpty" xml:space="preserve">
+    <value>โทเคนผู้ดูแล IM ว่างอยู่</value>
+  </data>
+    <data name="getTokenError" xml:space="preserve">
+    <value>รับโทเคนผู้ใช้ไม่สำเร็จ</value>
+  </data>
+  <data name="imRequestFailed" xml:space="preserve">
+    <value>คำขอระบบข้อความล้มเหลว</value>
+  </data>
+  <data name="googleAuthFailed" xml:space="preserve">
+    <value>ยืนยันการเข้าสู่ระบบ Google ไม่สำเร็จ</value>
+  </data>
+  <data name="appleAuthFailed" xml:space="preserve">
+    <value>ยืนยันการเข้าสู่ระบบ Apple ไม่สำเร็จ</value>
+  </data>
+    <data name="checkMemberIsRegister" xml:space="preserve">
+    <value>ตรวจสอบการลงทะเบียนของผู้ใช้ไม่สำเร็จ</value>
+  </data>
+    <data name="countryNotYet" xml:space="preserve">
+    <value>ประเทศนี้ยังไม่เปิดให้บริการ</value>
+  </data>
+    <data name="Val_TranslateNameRequired" xml:space="preserve">
+    <value>ชื่อภาษาต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_TranslateNameMinLength" xml:space="preserve">
+    <value>ชื่อภาษาต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_TranslateNameMaxLength" xml:space="preserve">
+    <value>ชื่อภาษาต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_CountryCodeRequired" xml:space="preserve">
+    <value>รหัสประเทศต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_TranslateKeyRequired" xml:space="preserve">
+    <value>คีย์ภาษาต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_TranslateKeyMinLength" xml:space="preserve">
+    <value>คีย์ภาษาต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_TranslateKeyMaxLength" xml:space="preserve">
+    <value>คีย์ภาษาต้องไม่เกิน 500 ตัวอักษร</value>
+  </data>
+    <data name="Val_TranslateValueRequired" xml:space="preserve">
+    <value>ค่าภาษาต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_TranslateValueMinLength" xml:space="preserve">
+    <value>ค่าภาษาต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_TranslateValueMaxLength" xml:space="preserve">
+    <value>ค่าภาษาต้องไม่เกิน 5000 ตัวอักษร</value>
+  </data>
+    <data name="Val_RoleIdRequired" xml:space="preserve">
+    <value>รหัสบทบาทต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_NameRequired" xml:space="preserve">
+    <value>ชื่อต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_ContactRequired" xml:space="preserve">
+    <value>ช่องทางติดต่อต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberIdRequired" xml:space="preserve">
+    <value>รหัสสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberVipStatusRequired" xml:space="preserve">
+    <value>สถานะ VIP ของสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberVipStatusRange" xml:space="preserve">
+    <value>สถานะ VIP ของสมาชิกต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_MemberInfoIdRequired" xml:space="preserve">
+    <value>รหัสข้อมูลสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_AvatarMaxLength" xml:space="preserve">
+    <value>รูปโปรไฟล์ต้องไม่เกิน 500 ตัวอักษร</value>
+  </data>
+    <data name="Val_PageNameRequired" xml:space="preserve">
+    <value>ชื่อหน้าต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PagePathRequired" xml:space="preserve">
+    <value>เส้นทางหน้าต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PageContentRequired" xml:space="preserve">
+    <value>เนื้อหาหน้าต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_DepartmentNameMinLength" xml:space="preserve">
+    <value>ชื่อแผนกต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_DepartmentNameMaxLength" xml:space="preserve">
+    <value>ชื่อแผนกต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_DepartmentStatusRange" xml:space="preserve">
+    <value>สถานะแผนกต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_DepartmentNameRequired" xml:space="preserve">
+    <value>ชื่อแผนกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_EnabledRange" xml:space="preserve">
+    <value>สถานะเปิดใช้งานต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_TenancyIdRequired" xml:space="preserve">
+    <value>รหัสผู้เช่าต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PageNameMinLength" xml:space="preserve">
+    <value>ชื่อหน้าต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_PageNameMaxLength" xml:space="preserve">
+    <value>ชื่อหน้าต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_PageTypeRange" xml:space="preserve">
+    <value>ประเภทหน้าต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_RoleNameRequired" xml:space="preserve">
+    <value>ชื่อบทบาทต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_RoleNameMinLength" xml:space="preserve">
+    <value>ชื่อบทบาทต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_RoleNameMaxLength" xml:space="preserve">
+    <value>ชื่อบทบาทต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_RoleNameMaxLength255" xml:space="preserve">
+    <value>ชื่อบทบาทต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_StatusRange01" xml:space="preserve">
+    <value>สถานะต้องเป็น 0 หรือ 1</value>
+  </data>
+    <data name="Val_TenancyNameMinLength" xml:space="preserve">
+    <value>ชื่อผู้เช่าต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_TenancyNameMaxLength" xml:space="preserve">
+    <value>ชื่อผู้เช่าต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_MemberEmailRequired" xml:space="preserve">
+    <value>อีเมลสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_IdRequired" xml:space="preserve">
+    <value>ID ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_ReviewStatusRequired" xml:space="preserve">
+    <value>สถานะการตรวจสอบต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_AccountIdRequired" xml:space="preserve">
+    <value>รหัสบัญชีต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_InvalidPhone" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์ไม่ถูกต้อง</value>
+  </data>
+    <data name="Val_MemberBirthdayRequired" xml:space="preserve">
+    <value>วันเกิดสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_AccountNameMaxLength" xml:space="preserve">
+    <value>ชื่อบัญชีต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_InvalidEmail" xml:space="preserve">
+    <value>รูปแบบอีเมลไม่ถูกต้อง</value>
+  </data>
+    <data name="Val_StatusRange" xml:space="preserve">
+    <value>สถานะต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_GenderRange" xml:space="preserve">
+    <value>เพศต้องเป็นตัวเลข 0-2</value>
+  </data>
+    <data name="Val_DepartmentIdRequired" xml:space="preserve">
+    <value>รหัสแผนกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_AccountStatusRange" xml:space="preserve">
+    <value>สถานะบัญชีต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_NickNameRequired" xml:space="preserve">
+    <value>ชื่อเล่นต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_AccountNickNameMinLength" xml:space="preserve">
+    <value>ชื่อเล่นบัญชีต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_AccountNickNameMaxLength" xml:space="preserve">
+    <value>ชื่อเล่นบัญชีต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_AccountNameRequired" xml:space="preserve">
+    <value>ชื่อบัญชีต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_AccountNameMinLength" xml:space="preserve">
+    <value>ชื่อบัญชีต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_AccountPasswordRequired" xml:space="preserve">
+    <value>รหัสผ่านบัญชีต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_AccountPasswordMinLength" xml:space="preserve">
+    <value>รหัสผ่านบัญชีต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_AccountPasswordMaxLength" xml:space="preserve">
+    <value>รหัสผ่านบัญชีต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_LoginTypeRequired" xml:space="preserve">
+    <value>ประเภทการเข้าสู่ระบบต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_UserNameRequired" xml:space="preserve">
+    <value>ชื่อผู้ใช้ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_UserNameLength" xml:space="preserve">
+    <value>กรุณาใส่ชื่อผู้ใช้ 2-32 ตัวอักษร</value>
+  </data>
+    <data name="Val_LoginPasswordRequired" xml:space="preserve">
+    <value>รหัสผ่านเข้าสู่ระบบต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PasswordLength" xml:space="preserve">
+    <value>กรุณาใส่รหัสผ่าน 5-32 ตัวอักษร</value>
+  </data>
+    <data name="Val_PermissionIdRequired" xml:space="preserve">
+    <value>รหัสสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PermissionCodeRequired" xml:space="preserve">
+    <value>รหัสสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength" xml:space="preserve">
+    <value>รหัสสิทธิ์ต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_PermissionNameRequired" xml:space="preserve">
+    <value>ชื่อสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength" xml:space="preserve">
+    <value>ชื่อสิทธิ์ต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_PermissionTypeRequired" xml:space="preserve">
+    <value>ประเภทสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PermissionTypeRange" xml:space="preserve">
+    <value>ประเภทสิทธิ์ต้องเป็น 1-3</value>
+  </data>
+    <data name="Val_IsSystemPermissionRange" xml:space="preserve">
+    <value>สิทธิ์ระบบต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_DescriptionMaxLength500" xml:space="preserve">
+    <value>คำอธิบายต้องไม่เกิน 500 ตัวอักษร</value>
+  </data>
+    <data name="Val_SortOrderRange" xml:space="preserve">
+    <value>ลำดับต้องเป็น 0-100</value>
+  </data>
+    <data name="Val_PostNameRequired" xml:space="preserve">
+    <value>ชื่อตำแหน่งต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_PostNameMinLength" xml:space="preserve">
+    <value>ชื่อตำแหน่งต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_PostNameMaxLength" xml:space="preserve">
+    <value>ชื่อตำแหน่งต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_SortRange100" xml:space="preserve">
+    <value>ลำดับต้องเป็น 0-100</value>
+  </data>
+    <data name="Val_StateRange01" xml:space="preserve">
+    <value>สถานะต้องเป็น 0 หรือ 1</value>
+  </data>
+    <data name="Val_PostDescriptionMaxLength" xml:space="preserve">
+    <value>คำอธิบายตำแหน่งต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_CountryNameRequired" xml:space="preserve">
+    <value>ชื่อประเทศต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_CountryCurrencyCodeRequired" xml:space="preserve">
+    <value>รหัสสกุลเงินต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_CountryExchangeRateRequired" xml:space="preserve">
+    <value>อัตราแลกเปลี่ยนกับ RMB ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_WithdrawFeeRateRequired" xml:space="preserve">
+    <value>อัตราค่าธรรมเนียมถอนต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_StatusRange01Num" xml:space="preserve">
+    <value>สถานะต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_CountryIdRequired" xml:space="preserve">
+    <value>รหัสประเทศต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_EmailRequired" xml:space="preserve">
+    <value>อีเมลต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberNickNameRequired" xml:space="preserve">
+    <value>ชื่อเล่นสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_DictionaryCodeRequired" xml:space="preserve">
+    <value>รหัสพจนานุกรมต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_CodeMaxLength" xml:space="preserve">
+    <value>รหัสต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_DictionaryKeyRequired" xml:space="preserve">
+    <value>คีย์พจนานุกรมต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_KeyMaxLength" xml:space="preserve">
+    <value>คีย์ต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_DictionaryValueRequired" xml:space="preserve">
+    <value>ค่าพจนานุกรมต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_ValueMaxLength" xml:space="preserve">
+    <value>ค่าต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_PostStatusRange" xml:space="preserve">
+    <value>สถานะตำแหน่งต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_MemberCountryIdRequired" xml:space="preserve">
+    <value>รหัสประเทศของสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_TenancyNameRequired" xml:space="preserve">
+    <value>ชื่อผู้เช่าต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_LevelRange" xml:space="preserve">
+    <value>ระดับต้องเป็น 0-10</value>
+  </data>
+    <data name="Val_MenuTitleRequired" xml:space="preserve">
+    <value>ชื่อเมนูสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MenuTitleMinLength" xml:space="preserve">
+    <value>ชื่อเมนูสิทธิ์ต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuTitleMaxLength" xml:space="preserve">
+    <value>ชื่อเมนูสิทธิ์ต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuSubTitleMinLength" xml:space="preserve">
+    <value>ชื่อรองเมนูสิทธิ์ต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuSubTitleMaxLength" xml:space="preserve">
+    <value>ชื่อรองเมนูสิทธิ์ต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuIconRequired" xml:space="preserve">
+    <value>ไอคอนเมนูสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MenuHiddenRange" xml:space="preserve">
+    <value>การซ่อนเมนูต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_MenuPathMaxLength" xml:space="preserve">
+    <value>ที่อยู่เมนูสิทธิ์ต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuDescriptionMaxLength" xml:space="preserve">
+    <value>คำอธิบายเมนูสิทธิ์ต้องไม่เกิน 500 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuExternalUrlMaxLength" xml:space="preserve">
+    <value>ที่อยู่ภายนอกของเมนูต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuRedirectMaxLength" xml:space="preserve">
+    <value>ที่อยู่เปลี่ยนเส้นทางของเมนูต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuLocaleMaxLength" xml:space="preserve">
+    <value>ภาษาของเมนูต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength50" xml:space="preserve">
+    <value>รหัสสิทธิ์ต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength100" xml:space="preserve">
+    <value>ชื่อสิทธิ์ต้องไม่เกิน 100 ตัวอักษร</value>
+  </data>
+    <data name="Val_PermissionTypeRange13" xml:space="preserve">
+    <value>ประเภทสิทธิ์ต้องเป็นตัวเลข 1-3</value>
+  </data>
+    <data name="Val_IsSystemPermission01" xml:space="preserve">
+    <value>สิทธิ์ระบบต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_PermissionStatus01" xml:space="preserve">
+    <value>สถานะสิทธิ์ต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_MemberSexRequired" xml:space="preserve">
+    <value>เพศสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberSexRange" xml:space="preserve">
+    <value>เพศสมาชิกต้องเป็นตัวเลข 0-2</value>
+  </data>
+    <data name="Val_ApiNameRequired" xml:space="preserve">
+    <value>ชื่อฟังก์ชันสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_ApiNameMinLength" xml:space="preserve">
+    <value>ชื่อฟังก์ชันสิทธิ์ต้องมีอย่างน้อย 2 ตัวอักษร</value>
+  </data>
+    <data name="Val_ApiNameMaxLength" xml:space="preserve">
+    <value>ชื่อฟังก์ชันสิทธิ์ต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_ApiStatusRange" xml:space="preserve">
+    <value>สถานะฟังก์ชันสิทธิ์ต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_ApiTypeRange" xml:space="preserve">
+    <value>ประเภทฟังก์ชันสิทธิ์ต้องเป็นตัวเลข 1-2</value>
+  </data>
+    <data name="Val_ApiPathRequired" xml:space="preserve">
+    <value>เส้นทางฟังก์ชันสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_ApiPathMaxLength" xml:space="preserve">
+    <value>เส้นทางฟังก์ชันสิทธิ์ต้องไม่เกิน 500 ตัวอักษร</value>
+  </data>
+    <data name="Val_HttpMethodRequired" xml:space="preserve">
+    <value>เมธอดคำขอต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength" xml:space="preserve">
+    <value>เมธอดคำขอต้องไม่เกิน 30 ตัวอักษร</value>
+  </data>
+    <data name="Val_ApiLogRange" xml:space="preserve">
+    <value>การบันทึกประวัติของฟังก์ชันสิทธิ์ต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_AuthorizeApiIdRequired" xml:space="preserve">
+    <value>รหัส API ที่อนุญาตต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_ApiTypeRange12" xml:space="preserve">
+    <value>ประเภท API ต้องเป็นตัวเลข 1-2</value>
+  </data>
+    <data name="Val_ApiStatus01" xml:space="preserve">
+    <value>สถานะ API ต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_ApiNameMinLength1" xml:space="preserve">
+    <value>ชื่อ API ต้องมีอย่างน้อย 1 ตัวอักษร</value>
+  </data>
+    <data name="Val_ApiNameMaxLength50" xml:space="preserve">
+    <value>ชื่อ API ต้องไม่เกิน 50 ตัวอักษร</value>
+  </data>
+    <data name="Val_HttpMethodMinLength1" xml:space="preserve">
+    <value>เมธอดคำขอต้องมีอย่างน้อย 1 ตัวอักษร</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength5" xml:space="preserve">
+    <value>เมธอดคำขอต้องไม่เกิน 5 ตัวอักษร</value>
+  </data>
+    <data name="Val_ApiPathMinLength1" xml:space="preserve">
+    <value>เส้นทางคำขอต้องมีอย่างน้อย 1 ตัวอักษร</value>
+  </data>
+    <data name="Val_ApiPathMaxLength100" xml:space="preserve">
+    <value>เส้นทางคำขอต้องไม่เกิน 100 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuIdRequired" xml:space="preserve">
+    <value>รหัสเมนูต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberStatusRequired" xml:space="preserve">
+    <value>สถานะสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberStatusRange" xml:space="preserve">
+    <value>สถานะสมาชิกต้องเป็นตัวเลข 1-3</value>
+  </data>
+    <data name="Val_MemberRealAuthRequired" xml:space="preserve">
+    <value>สถานะยืนยันตัวตนสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberRealAuthRange" xml:space="preserve">
+    <value>สถานะยืนยันตัวตนสมาชิกต้องเป็นตัวเลข 0-1</value>
+  </data>
+    <data name="Val_VerifyUrlRequired" xml:space="preserve">
+    <value>ที่อยู่รหัสยืนยันต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_EmailVerifyTokenRequired" xml:space="preserve">
+    <value>โทเคนยืนยันอีเมลต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberInviteCodeRequired" xml:space="preserve">
+    <value>รหัสเชิญสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberAgeRequired" xml:space="preserve">
+    <value>อายุสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberAgeRange" xml:space="preserve">
+    <value>อายุสมาชิกต้องเป็นตัวเลข 18-100</value>
+  </data>
+    <data name="Val_MenuTitleMinLength1" xml:space="preserve">
+    <value>ชื่อเมนูสิทธิ์ต้องมีอย่างน้อย 1 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuPathMinLength1" xml:space="preserve">
+    <value>ที่อยู่เมนูสิทธิ์ต้องมีอย่างน้อย 1 ตัวอักษร</value>
+  </data>
+    <data name="Val_MenuPathMaxLength255" xml:space="preserve">
+    <value>ที่อยู่เมนูสิทธิ์ต้องไม่เกิน 255 ตัวอักษร</value>
+  </data>
+    <data name="Val_MemberRecommendRequired" xml:space="preserve">
+    <value>ค่าแนะนำสมาชิกต้องไม่ว่าง</value>
+  </data>
+    <data name="Val_MemberRatingRequired" xml:space="preserve">
+    <value>ความนิยมของสมาชิกต้องไม่ว่าง</value>
+  </data>
+
+  <data name="onlySuperAdmin" xml:space="preserve">
+    <value>เฉพาะผู้ดูแลระบบสูงสุดเท่านั้นที่ดำเนินการได้</value>
+  </data>
+  <data name="uploadImageTooLarge" xml:space="preserve">
+    <value>อัปโหลดไม่สำเร็จ รูปภาพต้องไม่เกิน 5M</value>
+  </data>
+  <data name="uploadFailed" xml:space="preserve">
+    <value>อัปโหลดไม่สำเร็จ</value>
+  </data>
+  <data name="invalidTagId" xml:space="preserve">
+    <value>รหัสแท็กไม่ถูกต้อง</value>
+  </data>
+  <data name="hostUserIdInvalid" xml:space="preserve">
+    <value>hostUserId ไม่ถูกต้อง</value>
+  </data>
+  <data name="accountIdNotEmpty" xml:space="preserve">
+    <value>รหัสบัญชีต้องไม่ว่าง</value>
+  </data>
+  <data name="addMessageInboxFailed" xml:space="preserve">
+    <value>เพิ่มข้อความในแอปไม่สำเร็จ</value>
+  </data>
+  <data name="invalidUserId" xml:space="preserve">
+    <value>รหัสผู้ใช้ไม่ถูกต้อง</value>
+  </data>
+  <data name="noLogData" xml:space="preserve">
+    <value>ไม่มีข้อมูลบันทึก</value>
+  </data>
+
+  <data name="liveGroupInitFailed" xml:space="preserve">
+    <value>เริ่มกลุ่มไลฟ์ไม่สำเร็จ</value>
+  </data>
+  <data name="createLiveGroupFailed" xml:space="preserve">
+    <value>สร้างกลุ่มไลฟ์ไม่สำเร็จ</value>
+  </data>
+  <data name="saveLiveRoomFailed" xml:space="preserve">
+    <value>บันทึกเซสชันไลฟ์ไม่สำเร็จ</value>
+  </data>
+  <data name="liveNotExistOrEnded" xml:space="preserve">
+    <value>ไม่พบไลฟ์หรือไลฟ์จบแล้ว</value>
+  </data>
+  <data name="unfollowFailed" xml:space="preserve">
+    <value>เลิกติดตามไม่สำเร็จ</value>
+  </data>
+  <data name="followFailed" xml:space="preserve">
+    <value>ติดตามไม่สำเร็จ</value>
+  </data>
+  <data name="deleteFriendFailed" xml:space="preserve">
+    <value>ลบเพื่อนไม่สำเร็จ</value>
+  </data>
+  <data name="addFriendFailed" xml:space="preserve">
+    <value>เพิ่มเพื่อนไม่สำเร็จ</value>
+  </data>
+  <data name="handleFriendFailed" xml:space="preserve">
+    <value>ดำเนินการไม่สำเร็จ</value>
+  </data>
+  <data name="getTagsListFailed" xml:space="preserve">
+    <value>ดึงรายการแท็กไม่สำเร็จ</value>
+  </data>
+  <data name="getTagsFailed" xml:space="preserve">
+    <value>ดึงแท็กไม่สำเร็จ</value>
+  </data>
+  <data name="add_tagsFailed" xml:space="preserve">
+    <value>เพิ่มแท็กไม่สำเร็จ</value>
+  </data>
+  <data name="update_tagsFailed" xml:space="preserve">
+    <value>แก้ไขแท็กไม่สำเร็จ</value>
+  </data>
+  <data name="serviceNotFound" xml:space="preserve">
+    <value>ไม่พบบริการ</value>
+  </data>
+  <data name="badGateway" xml:space="preserve">
+    <value>คำขอผิดพลาด</value>
+  </data>
+  <data name="internalServerError" xml:space="preserve">
+    <value>ข้อผิดพลาดภายในเซิร์ฟเวอร์</value>
+  </data>
+  <data name="invalidToken" xml:space="preserve">
+    <value>โทเคนไม่ถูกต้อง</value>
+  </data>
+  <data name="BadRequest" xml:space="preserve">
+    <value>คำขอไม่ถูกต้อง</value>
+  </data>
+  <data name="UnAuthorized" xml:space="preserve">
+    <value>ไม่ได้รับอนุญาต</value>
+  </data>
+  <data name="NotAcceptable" xml:space="preserve">
+    <value>ปฏิเสธคำขอ</value>
+  </data>
+  <data name="RequestTimeout" xml:space="preserve">
+    <value>คำขอหมดเวลา</value>
+  </data>
+  <data name="liveRoomName" xml:space="preserve">
+    <value>ห้องไลฟ์ของ {0}</value>
+  </data>
+  <data name="liveAssistantName" xml:space="preserve">
+    <value>ผู้ช่วยไลฟ์</value>
+  </data>
+  <data name="TenancyNameExist" xml:space="preserve">
+    <value>ชื่อผู้เช่านี้ถูกใช้แล้ว กรุณาใส่ใหม่</value>
+  </data>
+  <data name="TenancyNotExist" xml:space="preserve">
+    <value>ไม่พบผู้เช่านี้</value>
+  </data>
+  <data name="TenancyCreateFailure" xml:space="preserve">
+    <value>สร้างผู้เช่าไม่สำเร็จ</value>
+  </data>
+  <data name="TenancyModifyFailure" xml:space="preserve">
+    <value>แก้ไขผู้เช่าไม่สำเร็จ</value>
+  </data>
+  <data name="TenancyDisabled" xml:space="preserve">
+    <value>ผู้เช่าถูกปิดใช้งาน</value>
+  </data>
+  <data name="TenancyMatchExist" xml:space="preserve">
+    <value>ไม่อนุญาตให้ดำเนินการข้อมูลผู้เช่าอื่น</value>
+  </data>
+  <data name="TenancyIsDelete" xml:space="preserve">
+    <value>ผู้เช่าถูกลบแล้ว</value>
+  </data>
+  <data name="AccountUpdateError" xml:space="preserve">
+    <value>อัปเดตบัญชีไม่สำเร็จ</value>
+  </data>
+  <data name="AccountOldPasswordAndNewPasswordSame" xml:space="preserve">
+    <value>รหัสผ่านใหม่ต้องไม่เหมือนรหัสผ่านเดิม กรุณาใส่อีกครั้งเพื่อความปลอดภัย</value>
+  </data>
+  <data name="AccountNotExist" xml:space="preserve">
+    <value>ไม่พบผู้ใช้</value>
+  </data>
+  <data name="AccountRoleAssignationFailed" xml:space="preserve">
+    <value>กำหนดบทบาทบัญชีไม่สำเร็จ กรุณาลองอีกครั้ง</value>
+  </data>
+  <data name="AccountNotAllowedLogin" xml:space="preserve">
+    <value>บัญชีถูกห้ามเข้าสู่ระบบ กรุณาติดต่อผู้ดูแล</value>
+  </data>
+  <data name="AccountUnavailable" xml:space="preserve">
+    <value>บัญชียังใช้ไม่ได้ชั่วคราว</value>
+  </data>
+  <data name="AccountPasswordNotSame2" xml:space="preserve">
+    <value>รหัสผ่านบัญชีไม่ตรงกัน บัญชีจะถูกล็อกอัตโนมัติหลังจากล้มเหลว {0} ครั้ง</value>
+  </data>
+  <data name="AccountPasswordNotSame" xml:space="preserve">
+    <value>รหัสผ่านบัญชีไม่ตรงกัน</value>
+  </data>
+  <data name="AccountPasswordNotSameOverrun" xml:space="preserve">
+    <value>เข้าสู่ระบบล้มเหลวเกินกำหนด กรุณาลองอีกครั้งใน 30 นาที</value>
+  </data>
+  <data name="AccountLoginExpired" xml:space="preserve">
+    <value>สถานะการเข้าสู่ระบบหมดอายุ กรุณาเข้าสู่ระบบอีกครั้ง</value>
+  </data>
+  <data name="AccountExist" xml:space="preserve">
+    <value>ชื่อบัญชี หมายเลขโทรศัพท์ หรืออีเมลนี้ถูกใช้แล้ว</value>
+  </data>
+  <data name="AccountCreate" xml:space="preserve">
+    <value>สร้างบัญชีไม่สำเร็จ</value>
+  </data>
+  <data name="AccountOldEmailError" xml:space="preserve">
+    <value>อีเมลเดิมของบัญชีไม่ตรงกัน</value>
+  </data>
+  <data name="AccountOldTelPhoneError" xml:space="preserve">
+    <value>เหมือนหมายเลขโทรศัพท์เดิม ไม่ต้องแก้ไข</value>
+  </data>
+  <data name="AccountExistTelPhoneError" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์มีอยู่แล้ว</value>
+  </data>
+  <data name="AccountExistEmailError" xml:space="preserve">
+    <value>อีเมลมีอยู่แล้ว</value>
+  </data>
+  <data name="AccountExistUserNameError" xml:space="preserve">
+    <value>ชื่อบัญชีมีอยู่แล้ว</value>
+  </data>
+  <data name="AccountExistTypeError" xml:space="preserve">
+    <value>ประเภทการเข้าสู่ระบบของบัญชีไม่ถูกต้อง</value>
+  </data>
+  <data name="AccountNameExistTypeError" xml:space="preserve">
+    <value>ชื่อบัญชีมีอยู่แล้ว</value>
+  </data>
+  <data name="RoleNotExist" xml:space="preserve">
+    <value>ไม่พบบทบาท</value>
+  </data>
+  <data name="RoleUnavailable" xml:space="preserve">
+    <value>บทบาท {0} ถูกห้ามใช้</value>
+  </data>
+  <data name="RoleCreateFailed" xml:space="preserve">
+    <value>สร้างบทบาทไม่สำเร็จ</value>
+  </data>
+  <data name="RolePermissionAssignationFailed" xml:space="preserve">
+    <value>กำหนดสิทธิ์บทบาทไม่สำเร็จ กรุณาลองอีกครั้ง</value>
+  </data>
+  <data name="RoleIdNotExist" xml:space="preserve">
+    <value>รหัสบทบาทต้องไม่ว่าง</value>
+  </data>
+  <data name="RoleNameExist" xml:space="preserve">
+    <value>ชื่อบทบาทมีอยู่แล้ว</value>
+  </data>
+  <data name="RoleModifyFailed" xml:space="preserve">
+    <value>แก้ไขบทบาทไม่สำเร็จ</value>
+  </data>
+  <data name="RoleNotSuperFailed" xml:space="preserve">
+    <value>เฉพาะผู้ดูแลระบบสูงสุดเท่านั้นที่ดำเนินการได้</value>
+  </data>
+  <data name="RoleDeleteError" xml:space="preserve">
+    <value>ลบบทบาทไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionNotExist" xml:space="preserve">
+    <value>ไม่พบสิทธิ์</value>
+  </data>
+  <data name="PermissionCreateError" xml:space="preserve">
+    <value>เพิ่มสิทธิ์ไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionUpdateError" xml:space="preserve">
+    <value>แก้ไขสิทธิ์ไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionDeleteError" xml:space="preserve">
+    <value>ลบสิทธิ์ไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionSysDeleteError" xml:space="preserve">
+    <value>สิทธิ์ระบบลบไม่ได้</value>
+  </data>
+  <data name="PermissionSystemNotModify" xml:space="preserve">
+    <value>สิทธิ์นี้เป็นสิทธิ์ระบบ แก้ไขไม่ได้</value>
+  </data>
+  <data name="PermissionSystemNotCreate" xml:space="preserve">
+    <value>เฉพาะผู้ดูแลระบบสูงสุดเท่านั้นที่สร้างสิทธิ์ระบบได้</value>
+  </data>
+  <data name="PermissionApiNotExist" xml:space="preserve">
+    <value>ไม่พบฟังก์ชันสิทธิ์</value>
+  </data>
+  <data name="PermissionApiCreateError" xml:space="preserve">
+    <value>สร้างฟังก์ชันสิทธิ์ไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionApiUpdateError" xml:space="preserve">
+    <value>แก้ไขฟังก์ชันสิทธิ์ไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionSysApiUpdateError" xml:space="preserve">
+    <value>ฟังก์ชันสิทธิ์ระบบแก้ไขไม่ได้</value>
+  </data>
+  <data name="PermissionSysApiDeleteError" xml:space="preserve">
+    <value>ฟังก์ชันสิทธิ์ระบบลบไม่ได้</value>
+  </data>
+  <data name="PermissionApiPathExist" xml:space="preserve">
+    <value>มีที่อยู่ API เดียวกันอยู่แล้ว</value>
+  </data>
+  <data name="PermissionMenuNotExist" xml:space="preserve">
+    <value>ไม่พบเมนูสิทธิ์</value>
+  </data>
+  <data name="PermissionMenuTitleOrUrlExist" xml:space="preserve">
+    <value>มีชื่อหรือที่อยู่เมนูเดียวกันอยู่แล้ว</value>
+  </data>
+  <data name="PermissionMenuCreateError" xml:space="preserve">
+    <value>สร้างเมนูสิทธิ์ไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionMenuUpdateError" xml:space="preserve">
+    <value>แก้ไขเมนูสิทธิ์ไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionMenuDeleteError" xml:space="preserve">
+    <value>ลบเมนูสิทธิ์ไม่สำเร็จ</value>
+  </data>
+  <data name="PermissionNameOrCodeExist" xml:space="preserve">
+    <value>ชื่อหรือรหัสสิทธิ์มีอยู่แล้ว</value>
+  </data>
+  <data name="PermissionIdNotExist" xml:space="preserve">
+    <value>รหัสสิทธิ์ต้องไม่ว่าง</value>
+  </data>
+  <data name="LogginDeletedCannoBeWithinThreeMonths" xml:space="preserve">
+    <value>ลบบันทึกภายในสามเดือนไม่ได้</value>
+  </data>
+  <data name="LogginDeletedError" xml:space="preserve">
+    <value>ลบบันทึกไม่สำเร็จ</value>
+  </data>
+  <data name="LoggingNotExist" xml:space="preserve">
+    <value>ไม่พบบันทึกนี้</value>
+  </data>
+  <data name="TranslateNotExist" xml:space="preserve">
+    <value>ไม่พบภาษา</value>
+  </data>
+  <data name="TranslateNameExist" xml:space="preserve">
+    <value>ชื่อภาษามีอยู่แล้ว</value>
+  </data>
+  <data name="TranslateCreateError" xml:space="preserve">
+    <value>เพิ่มภาษาไม่สำเร็จ</value>
+  </data>
+  <data name="TranslateUpdateError" xml:space="preserve">
+    <value>แก้ไขภาษาไม่สำเร็จ</value>
+  </data>
+  <data name="TranslateDeleteError" xml:space="preserve">
+    <value>ลบภาษาไม่สำเร็จ</value>
+  </data>
+  <data name="CountryNotExist" xml:space="preserve">
+    <value>ไม่พบประเทศ</value>
+  </data>
+  <data name="CountryCreateError" xml:space="preserve">
+    <value>เพิ่มประเทศไม่สำเร็จ</value>
+  </data>
+  <data name="CountryUpdateError" xml:space="preserve">
+    <value>แก้ไขประเทศไม่สำเร็จ</value>
+  </data>
+  <data name="CountryDeleteError" xml:space="preserve">
+    <value>ลบประเทศไม่สำเร็จ</value>
+  </data>
+  <data name="CountryNameExistError" xml:space="preserve">
+    <value>มีชื่อหรือรหัสประเทศเดียวกันอยู่แล้ว</value>
+  </data>
+  <data name="DepartmentNotExist" xml:space="preserve">
+    <value>ไม่พบแผนก</value>
+  </data>
+  <data name="DepartmentNameExist" xml:space="preserve">
+    <value>แผนกมีอยู่แล้ว</value>
+  </data>
+  <data name="DepartmentCreateError" xml:space="preserve">
+    <value>เพิ่มแผนกไม่สำเร็จ</value>
+  </data>
+  <data name="DepartmentUpdateError" xml:space="preserve">
+    <value>แก้ไขแผนกไม่สำเร็จ</value>
+  </data>
+  <data name="DepartmentUnavailable" xml:space="preserve">
+    <value>แผนกถูกปิดใช้งาน</value>
+  </data>
+  <data name="PostNotExist" xml:space="preserve">
+    <value>ไม่พบตำแหน่ง</value>
+  </data>
+  <data name="PostNameExist" xml:space="preserve">
+    <value>ชื่อตำแหน่งมีอยู่แล้ว</value>
+  </data>
+  <data name="PostCreateError" xml:space="preserve">
+    <value>เพิ่มตำแหน่งไม่สำเร็จ</value>
+  </data>
+  <data name="PostModifyError" xml:space="preserve">
+    <value>แก้ไขตำแหน่งไม่สำเร็จ</value>
+  </data>
+  <data name="PostDeleteError" xml:space="preserve">
+    <value>ลบตำแหน่งไม่สำเร็จ</value>
+  </data>
+  <data name="PostUnavailable" xml:space="preserve">
+    <value>ตำแหน่งถูกปิดใช้งาน</value>
+  </data>
+  <data name="DictionaryNotExist" xml:space="preserve">
+    <value>ไม่พบพจนานุกรม</value>
+  </data>
+  <data name="DictionaryKeyExist" xml:space="preserve">
+    <value>คีย์พจนานุกรมมีอยู่แล้ว</value>
+  </data>
+  <data name="DictionaryCreateError" xml:space="preserve">
+    <value>สร้างพจนานุกรมไม่สำเร็จ</value>
+  </data>
+  <data name="DictionaryUpdateError" xml:space="preserve">
+    <value>แก้ไขพจนานุกรมไม่สำเร็จ</value>
+  </data>
+  <data name="DictionaryDeleteError" xml:space="preserve">
+    <value>ลบพจนานุกรมไม่สำเร็จ</value>
+  </data>
+  <data name="locationLocal" xml:space="preserve">
+    <value>ในเครื่อง</value>
+  </data>
+  <data name="locationUnknown" xml:space="preserve">
+    <value>ไม่ทราบ</value>
+  </data>
+  <data name="invalidTarget" xml:space="preserve">
+    <value>เป้าหมายไม่ถูกต้อง</value>
+  </data>
+  <data name="cannotReportSelf" xml:space="preserve">
+    <value>ไม่สามารถรายงานตัวเองได้</value>
+  </data>
+  <data name="alreadyReported" xml:space="preserve">
+    <value>รายงานไปแล้ว</value>
+  </data>
+  <data name="handleFailed" xml:space="preserve">
+    <value>ดำเนินการไม่สำเร็จ</value>
+  </data>
+  <data name="publishFailed" xml:space="preserve">
+    <value>เผยแพร่ไม่สำเร็จ</value>
+  </data>
+  <data name="contentEmpty" xml:space="preserve">
+    <value>เนื้อหาว่างไม่ได้</value>
+  </data>
+  <data name="commentFailed" xml:space="preserve">
+    <value>แสดงความคิดเห็นไม่สำเร็จ</value>
+  </data>
+  <data name="idRequired" xml:space="preserve">
+    <value>ต้องระบุ id</value>
+  </data>
+  <data name="deleteFailed" xml:space="preserve">
+    <value>ลบไม่สำเร็จ</value>
+  </data>
+  <data name="addFailed" xml:space="preserve">
+    <value>เพิ่มไม่สำเร็จ</value>
+  </data>
+  <data name="invalidAmount" xml:space="preserve">
+    <value>จำนวนเงินไม่ถูกต้อง</value>
+  </data>
+  <data name="createFailed" xml:space="preserve">
+    <value>สร้างไม่สำเร็จ</value>
+  </data>
+  <data name="inviteCodeEmpty" xml:space="preserve">
+    <value>รหัสเชิญว่างไม่ได้</value>
+  </data>
+  <data name="alreadyBound" xml:space="preserve">
+    <value>ผูกโค้ดเชิญแล้ว</value>
+  </data>
+  <data name="inviteCodeInvalid" xml:space="preserve">
+    <value>รหัสเชิญไม่ถูกต้อง</value>
+  </data>
+  <data name="cannotBindSelf" xml:space="preserve">
+    <value>ไม่สามารถผูกโค้ดของตัวเองได้</value>
+  </data>
+  <data name="alreadyClaimed" xml:space="preserve">
+    <value>รับรางวัลแล้ว</value>
+  </data>
+  <data name="alreadyOwned" xml:space="preserve">
+    <value>มีไอเท็มนี้แล้ว</value>
+  </data>
+  <data name="insufficientDiamond" xml:space="preserve">
+    <value>เพชรไม่พอ</value>
+  </data>
+  <data name="insufficientCoin" xml:space="preserve">
+    <value>เหรียญไม่พอ</value>
+  </data>
+  <data name="notOwned" xml:space="preserve">
+    <value>ยังไม่มีไอเท็มนี้</value>
+  </data>
+  <data name="reportResultTitle" xml:space="preserve">
+    <value>ผลการรายงาน</value>
+  </data>
+  <data name="reportAccepted" xml:space="preserve">
+    <value>รับเรื่องแล้ว</value>
+  </data>
+  <data name="reportRejected" xml:space="preserve">
+    <value>ปฏิเสธแล้ว</value>
+  </data>
+  <data name="Val_TargetUserIdRequired" xml:space="preserve">
+    <value>ต้องระบุรหัสผู้ใช้เป้าหมาย</value>
+  </data>
+  <data name="Val_ReasonCodeRequired" xml:space="preserve">
+    <value>ต้องระบุรหัสเหตุผล</value>
+  </data>
+  <data name="Val_DynamicIdRequired" xml:space="preserve">
+    <value>ต้องระบุรหัสโพสต์</value>
+  </data>
+  <data name="Val_ContentRequired" xml:space="preserve">
+    <value>ต้องระบุเนื้อหา</value>
+  </data>
+  <data name="Val_ActionInvalid" xml:space="preserve">
+    <value>การดำเนินการไม่ถูกต้อง</value>
+  </data>
+  <data name="Val_MediaTypeInvalid" xml:space="preserve">
+    <value>ประเภทสื่อไม่ถูกต้อง</value>
+  </data>
+  <data name="Val_TypeInvalid" xml:space="preserve">
+    <value>ประเภทไม่ถูกต้อง</value>
+  </data>
+  <data name="Val_AmountRequired" xml:space="preserve">
+    <value>ต้องระบุจำนวนเงิน</value>
+  </data>
+  <data name="Val_HarvestAccountRequired" xml:space="preserve">
+    <value>ต้องระบุบัญชีรับเงิน</value>
+  </data>
+  <data name="Val_InviteCodeRequired" xml:space="preserve">
+    <value>ต้องระบุรหัสเชิญ</value>
+  </data>
+  <data name="Val_TaskIdRequired" xml:space="preserve">
+    <value>ต้องระบุรหัสภารกิจ</value>
+  </data>
+  <data name="Val_AdornItemIdRequired" xml:space="preserve">
+    <value>ต้องระบุรหัสไอเท็มแต่งตัว</value>
+  </data>
+  <data name="Val_AlbumIdRequiredWhenDelete" xml:space="preserve">
+    <value>ต้องระบุรหัสอัลบั้มเมื่อลบ</value>
+  </data>
+  <data name="Val_AlbumContentRequired" xml:space="preserve">
+    <value>ต้องระบุเนื้อหาอัลบั้ม</value>
+  </data>
+  <data name="Val_TrendsContentRequired" xml:space="preserve">
+    <value>ต้องระบุเนื้อหาโพสต์</value>
+  </data>
+  <data name="vipProductNotFound" xml:space="preserve">
+    <value>ไม่พบสินค้า VIP</value>
+  </data>
+  <data name="rechargeProductNotFound" xml:space="preserve">
+    <value>ไม่พบสินค้าเติมเงิน</value>
+  </data>
+  <data name="createOrderFailed" xml:space="preserve">
+    <value>สร้างออเดอร์ไม่สำเร็จ</value>
+  </data>
+  <data name="purchaseTokenRequired" xml:space="preserve">
+    <value>ต้องมี purchaseToken/productId</value>
+  </data>
+  <data name="platformInvalid" xml:space="preserve">
+    <value>platform ต้องเป็น ios หรือ android</value>
+  </data>
+  <data name="verifyFailed" xml:space="preserve">
+    <value>ยืนยันไม่สำเร็จ</value>
+  </data>
+  <data name="invalidUser" xml:space="preserve">
+    <value>ผู้ใช้ไม่ถูกต้อง</value>
+  </data>
+  <data name="giftIdOrCodeRequired" xml:space="preserve">
+    <value>ต้องมี giftId หรือ code</value>
+  </data>
+  <data name="giftNotFound" xml:space="preserve">
+    <value>ไม่พบของขวัญ</value>
+  </data>
+  <data name="sendGiftFailed" xml:space="preserve">
+    <value>ส่งของขวัญไม่สำเร็จ</value>
+  </data>
+  <data name="vipFeatureOnly" xml:space="preserve">
+    <value>ฟีเจอร์นี้สำหรับ VIP เท่านั้น</value>
+  </data>
+  <data name="dailyMessageLimitReached" xml:space="preserve">
+    <value>ผู้ที่ไม่ใช่ VIP ส่งได้วันละ 5 ข้อความ</value>
+  </data>
+  <data name="cannotSendRedPacketToSelf" xml:space="preserve">
+    <value>Cannot send a red packet to yourself</value>
+  </data>
+  <data name="redPacketAmountInvalid" xml:space="preserve">
+    <value>Invalid red packet amount</value>
+  </data>
+  <data name="redPacketUnavailable" xml:space="preserve">
+    <value>Red packet is unavailable</value>
+  </data>
+  <data name="musicNotFound" xml:space="preserve">
+    <value>Music not found</value>
+  </data>
+</root>

@@ -6,13 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ASF.Domain.Values;
+using ASF.Internal.Json;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 
 namespace ASF.Internal.Security;
 
@@ -97,12 +96,7 @@ public static class Helper
 	/// <returns></returns>
 	public static string WriteFromObject(this object obj)
   {
-    var settings = new JsonSerializerSettings
-    {
-      ContractResolver = new CamelCasePropertyNamesContractResolver()
-    };
-    var dcjs = JsonConvert.SerializeObject(obj, settings);
-    return dcjs;
+    return AsfJson.Serialize(obj);
   }
 
 	/// <summary>
@@ -110,10 +104,9 @@ public static class Helper
 	/// </summary>
 	/// <param name="json"></param>
 	/// <returns></returns>
-	public static JObject ReadToObject(this string json)
+	public static JsonObject ReadToObject(this string json)
   {
-    var dcjs = (JObject)JsonConvert.DeserializeObject(json);
-    return dcjs;
+    return JsonNode.Parse(json) as JsonObject;
   }
 
 	/// <summary>
@@ -124,8 +117,7 @@ public static class Helper
 	/// <returns></returns>
 	public static T ReadToObject<T>(this string json) where T : class
   {
-    var dcjs = JsonConvert.DeserializeObject<T>(json);
-    return dcjs;
+    return AsfJson.Deserialize<T>(json);
   }
 
 	/// <summary>

@@ -1,12 +1,12 @@
 using System;
-using ASF.Internal.Filters;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Reflection;
 using ASF.DependencyInjection;
+using ASF.Internal.Filters;
+using ASF.Internal.Json;
 using Microsoft.AspNetCore.Http;
 using Microsoft.OpenApi;
-using Newtonsoft.Json.Serialization;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -50,11 +50,13 @@ public static class ServiceCollectionExtensions
       options.Filters.Add(new ValidationActionFilter()); // 添加全局请求拦截
       options.Filters.Add(new AcceptLanguageActionFilter()); // 根据 Accept-Language 多语言
       options.EnableEndpointRouting = false;
-    }).AddNewtonsoftJson(opt =>
+    }).AddJsonOptions(opt =>
     {
-      opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-      // opt.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore; //是否移除空值
-      opt.SerializerSettings.Converters.Add(new MyUnixDateTimeConverter()); //统一时间戳转换
+      var src = AsfJson.Default;
+      opt.JsonSerializerOptions.PropertyNamingPolicy = src.PropertyNamingPolicy;
+      opt.JsonSerializerOptions.PropertyNameCaseInsensitive = src.PropertyNameCaseInsensitive;
+      foreach (var converter in src.Converters)
+        opt.JsonSerializerOptions.Converters.Add(converter);
     });
     services.AddASFCore(startupAction);
     return services;

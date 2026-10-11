@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -6,7 +8,6 @@ using ASF.Domain.Values;
 using ASF.Internal.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -15,13 +16,15 @@ namespace ASF.Application;
 [Route("[controller]/[action]")]
 public class UploadController : ControllerBase
 {
-  private readonly IServiceProvider _serviceProvider;
+  private readonly UploadService _uploadService;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   /// </summary>
-  public UploadController(IServiceProvider serviceProvider)
+  public UploadController(UploadService uploadService, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _uploadService = uploadService;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -44,7 +47,7 @@ public class UploadController : ControllerBase
       {
         if (formFile.Name.Equals("file"))
         {
-          var file = await _serviceProvider.GetRequiredService<UploadService>()
+          var file = await _uploadService
             .UploadFile(uploadType.ToString(), formFile.FileName, st, formFile.ContentType, formFile.Length);
           if (file != null)
             fileList.Add(file);
@@ -52,8 +55,8 @@ public class UploadController : ControllerBase
         else if ( /*formFile.ContentType.ToString().Equals("image/jpeg") && */formFile.Name.Equals("img"))
         {
           if (Convert.ToInt32(st.Length / 1024) > 10 * 1024)
-            return ResultList<string>.ReFailure("上传失败,图片不能大于5M", 20002);
-          var file = await _serviceProvider.GetRequiredService<UploadService>()
+            return ResultList<string>.ReFailure(_stringLocalizer["uploadImageTooLarge"], 20002);
+          var file = await _uploadService
             .UploadFile(uploadType.ToString(), formFile.FileName, st, formFile.ContentType, formFile.Length);
           if (file != null)
             fileList.Add(file);
@@ -61,7 +64,7 @@ public class UploadController : ControllerBase
       }
 
     if (fileList.Count == 0)
-      return ResultList<string>.ReFailure("上传失败", 20003);
+      return ResultList<string>.ReFailure(_stringLocalizer["uploadFailed"], 20003);
     return ResultList<string>.ReSuccess(fileList);
   }
 }

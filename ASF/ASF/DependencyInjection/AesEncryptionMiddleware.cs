@@ -8,7 +8,8 @@ using ASF.Internal.Security;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace ASF.DependencyInjection;
 
@@ -129,19 +130,19 @@ public class AesEncryptionMiddleware
         // 尝试解析为 JSON，检查是否有 data 或 params 加密字段
         try
         {
-          var json = JObject.Parse(body);
-          var dataToken = json["data"];
-          var paramsToken = json["params"];
+          var json = JsonNode.Parse(body);
+          var dataToken = json?["data"];
+          var paramsToken = json?["params"];
 
           // 解密 data 字段：解密后的内容作为新的 body（替换整个 body）
-          if (dataToken?.Type == JTokenType.String)
+          if (dataToken != null && dataToken.GetValueKind() == JsonValueKind.String)
           {
-            decryptedBody = Decrypt(dataToken.Value<string>());
+            decryptedBody = Decrypt(dataToken.GetValue<string>());
           }
           // 解密 params 字段
-          else if (paramsToken?.Type == JTokenType.String)
+          else if (paramsToken != null && paramsToken.GetValueKind() == JsonValueKind.String)
           {
-            decryptedBody = Decrypt(paramsToken.Value<string>());
+            decryptedBody = Decrypt(paramsToken.GetValue<string>());
           }
         }
         catch

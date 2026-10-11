@@ -12,7 +12,7 @@ public static class ASFBuilderExtensions
 {
   public static ASFBuilder AddDbContext(this ASFBuilder builder, Action<DbContextOptionsBuilder> configureDbContext)
   {
-    builder.Services.AddDbContext<RepositoryContext>(configureDbContext, ServiceLifetime.Transient);
+    builder.Services.AddDbContext<RepositoryContext>(configureDbContext, ServiceLifetime.Scoped);
     builder.Services.AddRepositories();
     return builder;
   }
@@ -37,5 +37,6 @@ public static class ASFBuilderExtensions
     services.AddScoped<ISecurityTokenRepository, SecurityTokenRepository>();
     services.AddScoped<IAsfDictionaryRepository, AsfDictionaryRepository>();
     services.AddScoped<ICountryRepositories, CountryRepositories>();
+    services.AddScoped(typeof(IRepositories<>), typeof(Repositories<>));
   }
 }

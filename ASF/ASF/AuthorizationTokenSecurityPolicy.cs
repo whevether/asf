@@ -1,10 +1,11 @@
 using System;
 using System.Threading.Tasks;
 using ASF.Infrastructure.Repositories;
+using ASF.Internal.Json;
+using ASF.Internal.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
 
 namespace ASF;
 
@@ -64,7 +65,7 @@ public class AuthorizationTokenSecurityPolicy
         });
         context.Response.Headers.Append("blacklist", "error");
         context.Response.StatusCode = 403;
-        var result = JsonConvert.SerializeObject(new { status = 403, result = string.Empty, message = "无效的token" });
+        var result = AsfJson.Serialize(new { status = 403, result = string.Empty, message = ResultMessage.Localize("invalidToken") });
         context.Response.ContentType = "application/json;charset=utf-8";
         await context.Response.WriteAsync(result);
         return;

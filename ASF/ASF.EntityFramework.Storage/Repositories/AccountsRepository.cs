@@ -29,44 +29,34 @@ public class AccountsRepository : Repositories<Account>, IAccountsRepository
     string telPhone, string email, int? sex,
     uint? status, long? tenancyId = null)
   {
-    var query = new List<Account>();
-    if (tenancyId != null)
-    {
-      if (!string.IsNullOrEmpty(username) || !string.IsNullOrEmpty(telPhone) || !string.IsNullOrEmpty(email) ||
-          sex != null || status != null)
-        query = await GetDbContext().Account.Include("Department").Include("AccountRole.Role")
-          .Include("AccountPost.Post").AsSplitQuery().Where(f =>
-            f.TenancyId == tenancyId && f.IsDeleted != 1 && (f.Username.Equals(username) ||
-                                                             f.TelPhone.Equals(telPhone) || f.Email.Equals(email) ||
-                                                             f.Sex == sex || f.Status == status)).ToListAsync();
-      else
-        query = await GetDbContext().Account.Include("Department").Include("AccountRole.Role")
-          .Include("AccountPost.Post").AsSplitQuery().Where(f => f.TenancyId == tenancyId && f.IsDeleted != 1)
-          .ToListAsync();
-    }
-    else
-    {
-      if (!string.IsNullOrEmpty(username) || !string.IsNullOrEmpty(telPhone) || !string.IsNullOrEmpty(email) ||
-          sex != null || status != null)
-        query = await GetDbContext().Account.Include("Department").Include("AccountRole.Role")
-          .Include("AccountPost.Post").AsSplitQuery().Where(f =>
-            f.IsDeleted != 1 && (f.Username.Equals(username) || f.TelPhone.Equals(telPhone) || f.Email.Equals(email) ||
-                                 f.Sex == sex || f.Status == status)).ToListAsync();
-      else
-        query = await GetDbContext().Account.Include("Department").Include("AccountRole.Role")
-          .Include("AccountPost.Post").AsSplitQuery().Where(f => f.IsDeleted != 1).ToListAsync();
-    }
+    var queryable = GetDbContext().Account
+      .Include("Department")
+      .Include("AccountRole.Role")
+      .Include("AccountPost.Post")
+      .AsSplitQuery()
+      .Where(f => f.IsDeleted != 1);
 
-    var count = query.Count();
+    if (tenancyId != null)
+      queryable = queryable.Where(f => f.TenancyId == tenancyId);
+    if (!string.IsNullOrEmpty(username))
+      queryable = queryable.Where(f => f.Username.Equals(username));
+    if (!string.IsNullOrEmpty(telPhone))
+      queryable = queryable.Where(f => f.TelPhone.Equals(telPhone));
+    if (!string.IsNullOrEmpty(email))
+      queryable = queryable.Where(f => f.Email.Equals(email));
+    if (sex != null)
+      queryable = queryable.Where(f => f.Sex == sex);
+    if (status != null)
+      queryable = queryable.Where(f => f.Status == status);
+
+    var count = await queryable.CountAsync();
     var p = pageNo == 0 ? 1 : pageNo;
     var c = pageSize == 0 ? count : pageSize;
-    // int totalPages = (int)Math.Ceiling(((decimal)count / c));
-    // p = Math.Min(p, totalPages);
-    var list = query
+    var list = await queryable
       .Skip((p - 1) * c)
       .Take(c)
-      .ToList();
-    return await Task.FromResult<(IList<Account> list, int total)>((list, count));
+      .ToListAsync();
+    return (list, count);
   }
 
   /// <summary>

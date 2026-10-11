@@ -233,7 +233,7 @@ public class Account : Entity<long>
       LoginIp = ip;
       if (ip.Equals("127.0.0.1"))
       {
-        LoginLocation = "本地";
+        LoginLocation = ResultMessage.Localize("locationLocal");
       }
       else
       {
@@ -242,7 +242,7 @@ public class Account : Entity<long>
           LoginLocation =
             $"{ipConvertValue.Country},{ipConvertValue.RegionName},{ipConvertValue.City}";
         else
-          LoginLocation = "未知";
+          LoginLocation = ResultMessage.Localize("locationUnknown");
       }
     }
   }

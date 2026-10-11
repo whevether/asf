@@ -7,10 +7,11 @@ using ASF.Domain.Entities;
 using ASF.Domain.Services;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -21,16 +22,18 @@ namespace ASF.Application;
 [Route("[controller]/[action]")]
 public class DictionaryController : ControllerBase
 {
+  private readonly DictionaryService _dictionaryService;
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   字典控制器
   /// </summary>
-  public DictionaryController(IServiceProvider serviceProvider, IMapper mapper)
+  public DictionaryController(DictionaryService dictionaryService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _dictionaryService = dictionaryService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -45,7 +48,7 @@ public class DictionaryController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<DictionaryService>()
+    var (list, total) = await _dictionaryService
       .GetList(dto.PageNo, dto.PageSize, dto.Key, tenancyId);
     return ResultPagedList<AsfDictionaryResponseDto>.ReSuccess(_mapper.Map<List<AsfDictionaryResponseDto>>(list),
       total);
@@ -61,7 +64,7 @@ public class DictionaryController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<DictionaryService>().GetList(tenancyId);
+    var data = await _dictionaryService.GetList(tenancyId);
     if (!data.Success)
       return ResultList<AsfDictionaryResponseDto>.ReFailure(data.Message, data.Status);
     return ResultList<AsfDictionaryResponseDto>.ReSuccess(_mapper.Map<List<AsfDictionaryResponseDto>>(data.Data));
@@ -78,7 +81,7 @@ public class DictionaryController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<DictionaryService>().Get(id, tenancyId);
+    var data = await _dictionaryService.Get(id, tenancyId);
     if (!data.Success)
       return Result<AsfDictionaryResponseDto>.ReFailure(data.Message, data.Status);
     return Result<AsfDictionaryResponseDto>.ReSuccess(_mapper.Map<AsfDictionaryResponseDto>(data.Data));
@@ -93,14 +96,14 @@ public class DictionaryController : ControllerBase
   public async Task<Result> Create([FromBody] AsfDictionaryCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     // 只有超级管理员才能选择租户创建
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? long.Parse(dto.TenancyId)
       : Convert.ToInt64(HttpContext.User.TenancyId());
     var asfDictionary = _mapper.Map<AsfDictionary>(dto);
     asfDictionary.TenancyId = tenancyId;
-    return await _serviceProvider.GetRequiredService<DictionaryService>().Create(asfDictionary);
+    return await _dictionaryService.Create(asfDictionary);
   }
 
   /// <summary>
@@ -112,8 +115,8 @@ public class DictionaryController : ControllerBase
   public async Task<Result> Modify([FromBody] AsfDictionaryModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<DictionaryService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _dictionaryService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -123,7 +126,7 @@ public class DictionaryController : ControllerBase
     // 除总超级管理员之外其他不允许操作其他租户信息
     if (tenancyId != null && result.Data.TenancyId != tenancyId)
       return Result.ReFailure(ResultCodes.TenancyMatchExist);
-    return await _serviceProvider.GetRequiredService<DictionaryService>().Modify(_mapper.Map(dto, result.Data));
+    return await _dictionaryService.Modify(_mapper.Map(dto, result.Data));
   }
 
   /// <summary>
@@ -135,8 +138,8 @@ public class DictionaryController : ControllerBase
   public async Task<Result> Delete([FromRoute] long id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<DictionaryService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _dictionaryService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());

@@ -9,10 +9,11 @@ using ASF.Domain.Services;
 using ASF.Domain.Values;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -24,17 +25,23 @@ namespace ASF.Application;
 public class PermissionController : ControllerBase
 {
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly PermissionService _permissionService;
+  private readonly RoleService _roleService;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   权限控制器
   /// </summary>
-  /// <param name="serviceProvider"></param>
+  /// <param name="permissionService"></param>
+  /// <param name="roleService"></param>
   /// <param name="mapper"></param>
-  public PermissionController(IServiceProvider serviceProvider, IMapper mapper)
+  /// <param name="stringLocalizer"></param>
+  public PermissionController(PermissionService permissionService, RoleService roleService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _permissionService = permissionService;
+    _roleService = roleService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -49,7 +56,7 @@ public class PermissionController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (data, total) = await _serviceProvider.GetRequiredService<PermissionService>().GetList(dto.PageNo, dto.PageSize,
+    var (data, total) = await _permissionService.GetList(dto.PageNo, dto.PageSize,
       dto.Code,
       dto.Name, dto.Type, dto.IsSystem, dto.Status, tenancyId);
     var list = _mapper.Map<IEnumerable<PermissionResponseDto>>(data);
@@ -66,7 +73,7 @@ public class PermissionController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<PermissionService>()
+    var data = await _permissionService
       .GetList(tenancyId, HttpContext.User.IsSuperRole());
     if (!data.Success)
       return ResultList<PermissionResponseDto>.ReFailure(data.Message, data.Status);
@@ -84,7 +91,7 @@ public class PermissionController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var result = await _serviceProvider.GetRequiredService<PermissionService>().Get(id, tenancyId);
+    var result = await _permissionService.Get(id, tenancyId);
     if (!result.Success)
       return Result<PermissionResponseDto>.ReFailure(result.Message, result.Status);
     return Result<PermissionResponseDto>.ReSuccess(_mapper.Map<PermissionResponseDto>(result.Data));
@@ -99,7 +106,7 @@ public class PermissionController : ControllerBase
   public async Task<Result> Create([FromBody] PermissionCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? long.Parse(dto.TenancyId)
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -107,7 +114,7 @@ public class PermissionController : ControllerBase
     permission.TenancyId = tenancyId;
     if (permission.IsSystem != null && (Status)permission.IsSystem == Status.Yes && !HttpContext.User.IsSuperRole())
       return Result.ReFailure(ResultCodes.PermissionSystemNotCreate);
-    return await _serviceProvider.GetRequiredService<PermissionService>().Create(permission);
+    return await _permissionService.Create(permission);
   }
 
   /// <summary>
@@ -119,11 +126,11 @@ public class PermissionController : ControllerBase
   public async Task<Result> Modify([FromBody] PermissionModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var server = _serviceProvider.GetRequiredService<PermissionService>();
+    var server = _permissionService;
     var result = await server.Get(long.Parse(dto.Id), tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
@@ -145,11 +152,11 @@ public class PermissionController : ControllerBase
   public async Task<Result> Delete([FromRoute] long id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var server = _serviceProvider.GetRequiredService<PermissionService>();
+    var server = _permissionService;
     var result = await server.Get(id, tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
@@ -171,8 +178,8 @@ public class PermissionController : ControllerBase
   public async Task<Result> AssignPermission([FromBody] AssignIdArrayRequestDto<long> dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<RoleService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _roleService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());

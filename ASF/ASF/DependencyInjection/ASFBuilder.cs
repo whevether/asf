@@ -39,6 +39,7 @@ public class ASFBuilder
 	/// </summary>
 	public void Build()
   {
+    Services.AddHttpContextAccessor();
     Services.AddMemoryCache();
     Services.AddSingleton<IIdGenerator, DefaultIdGenerator>();
     // httpclient 
@@ -53,7 +54,12 @@ public class ASFBuilder
         {
           new("en-US"),
           new("zh-HK"),
-          new("zh-CN")
+          new("zh-CN"),
+          new("vi-VN"),
+          new("th-TH"),
+          new("id-ID"),
+          new("hi-IN"),
+          new("ms-MY")
         };
 
         options.DefaultRequestCulture = new RequestCulture("zh-CN", "zh-CN");

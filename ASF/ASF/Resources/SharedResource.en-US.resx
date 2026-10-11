@@ -144,7 +144,7 @@
     <value>Email address cannot be empty</value>
   </data>
     <data name="timeInterval" xml:space="preserve">
-    <value>Remaining time interval for sending</value>
+    <value>Please wait {0} seconds before sending again</value>
   </data>
     <data name="second" xml:space="preserve">
     <value>second</value>
@@ -162,7 +162,7 @@
     <value>The verification code has expired</value>
   </data>
     <data name="captchaCodeError" xml:space="preserve">
-    <value>Verification code error, retry attempts remaining</value>
+    <value>Incorrect verification code, {0} attempts remaining</value>
   </data>
     <data name="emailVerifyFail" xml:space="preserve">
     <value>Email verification failed</value>
@@ -187,6 +187,15 @@
   </data>
     <data name="getTokenError" xml:space="preserve">
     <value>Failed to obtain user token</value>
+  </data>
+  <data name="imRequestFailed" xml:space="preserve">
+    <value>IM service request failed</value>
+  </data>
+  <data name="googleAuthFailed" xml:space="preserve">
+    <value>Google sign-in verification failed</value>
+  </data>
+  <data name="appleAuthFailed" xml:space="preserve">
+    <value>Apple sign-in verification failed</value>
   </data>
     <data name="checkMemberIsRegister" xml:space="preserve">
     <value>Check if the user has failed to register</value>
@@ -640,5 +649,526 @@
   </data>
     <data name="Val_MemberRatingRequired" xml:space="preserve">
     <value>Member rating is required</value>
+  </data>
+
+  <data name="onlySuperAdmin" xml:space="preserve">
+    <value>Only super admin can operate</value>
+  </data>
+  <data name="uploadImageTooLarge" xml:space="preserve">
+    <value>Upload failed, image size must be &lt;= 5MB</value>
+  </data>
+  <data name="uploadFailed" xml:space="preserve">
+    <value>Upload failed</value>
+  </data>
+  <data name="invalidTagId" xml:space="preserve">
+    <value>Invalid tag id</value>
+  </data>
+  <data name="hostUserIdInvalid" xml:space="preserve">
+    <value>Invalid hostUserId</value>
+  </data>
+  <data name="accountIdNotEmpty" xml:space="preserve">
+    <value>Account id cannot be empty</value>
+  </data>
+  <data name="addMessageInboxFailed" xml:space="preserve">
+    <value>Failed to add inbox message</value>
+  </data>
+  <data name="invalidUserId" xml:space="preserve">
+    <value>Invalid user id</value>
+  </data>
+  <data name="noLogData" xml:space="preserve">
+    <value>No log data</value>
+  </data>
+
+  <data name="liveGroupInitFailed" xml:space="preserve">
+    <value>Failed to initialize live group</value>
+  </data>
+  <data name="createLiveGroupFailed" xml:space="preserve">
+    <value>Failed to create live group</value>
+  </data>
+  <data name="saveLiveRoomFailed" xml:space="preserve">
+    <value>Failed to save live session</value>
+  </data>
+  <data name="liveNotExistOrEnded" xml:space="preserve">
+    <value>Live not found or ended</value>
+  </data>
+  <data name="unfollowFailed" xml:space="preserve">
+    <value>Failed to unfollow</value>
+  </data>
+  <data name="followFailed" xml:space="preserve">
+    <value>Failed to follow</value>
+  </data>
+  <data name="deleteFriendFailed" xml:space="preserve">
+    <value>Failed to delete friend</value>
+  </data>
+  <data name="addFriendFailed" xml:space="preserve">
+    <value>Failed to add friend</value>
+  </data>
+  <data name="handleFriendFailed" xml:space="preserve">
+    <value>Failed to handle request</value>
+  </data>
+  <data name="getTagsListFailed" xml:space="preserve">
+    <value>Failed to get tags list</value>
+  </data>
+  <data name="getTagsFailed" xml:space="preserve">
+    <value>Failed to get tag</value>
+  </data>
+  <data name="add_tagsFailed" xml:space="preserve">
+    <value>Failed to add tag</value>
+  </data>
+  <data name="update_tagsFailed" xml:space="preserve">
+    <value>Failed to update tag</value>
+  </data>
+  <data name="serviceNotFound" xml:space="preserve">
+    <value>Service not found</value>
+  </data>
+  <data name="badGateway" xml:space="preserve">
+    <value>Bad gateway</value>
+  </data>
+  <data name="internalServerError" xml:space="preserve">
+    <value>Internal server error</value>
+  </data>
+  <data name="invalidToken" xml:space="preserve">
+    <value>Invalid token</value>
+  </data>
+  <data name="BadRequest" xml:space="preserve">
+    <value>Bad request</value>
+  </data>
+  <data name="UnAuthorized" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="NotAcceptable" xml:space="preserve">
+    <value>Forbidden</value>
+  </data>
+  <data name="RequestTimeout" xml:space="preserve">
+    <value>Request timeout</value>
+  </data>
+  <data name="liveRoomName" xml:space="preserve">
+    <value>{0}'s live room</value>
+  </data>
+  <data name="liveAssistantName" xml:space="preserve">
+    <value>Live assistant</value>
+  </data>
+  <data name="TenancyNameExist" xml:space="preserve">
+    <value>This tenant name is already in use, please enter another</value>
+  </data>
+  <data name="TenancyNotExist" xml:space="preserve">
+    <value>Tenant not found</value>
+  </data>
+  <data name="TenancyCreateFailure" xml:space="preserve">
+    <value>Failed to create tenant</value>
+  </data>
+  <data name="TenancyModifyFailure" xml:space="preserve">
+    <value>Failed to update tenant</value>
+  </data>
+  <data name="TenancyDisabled" xml:space="preserve">
+    <value>Tenant is disabled</value>
+  </data>
+  <data name="TenancyMatchExist" xml:space="preserve">
+    <value>You cannot operate data of another tenant</value>
+  </data>
+  <data name="TenancyIsDelete" xml:space="preserve">
+    <value>Tenant has been deleted</value>
+  </data>
+  <data name="AccountUpdateError" xml:space="preserve">
+    <value>Failed to update account</value>
+  </data>
+  <data name="AccountOldPasswordAndNewPasswordSame" xml:space="preserve">
+    <value>New password cannot be the same as the old password</value>
+  </data>
+  <data name="AccountNotExist" xml:space="preserve">
+    <value>User not found</value>
+  </data>
+  <data name="AccountRoleAssignationFailed" xml:space="preserve">
+    <value>Failed to assign account roles, please try again</value>
+  </data>
+  <data name="AccountNotAllowedLogin" xml:space="preserve">
+    <value>Account is forbidden to log in, please contact the administrator</value>
+  </data>
+  <data name="AccountUnavailable" xml:space="preserve">
+    <value>Account is currently unavailable</value>
+  </data>
+  <data name="AccountPasswordNotSame2" xml:space="preserve">
+    <value>Incorrect password. The account will be locked after {0} more failed attempts</value>
+  </data>
+  <data name="AccountPasswordNotSame" xml:space="preserve">
+    <value>Incorrect password</value>
+  </data>
+  <data name="AccountPasswordNotSameOverrun" xml:space="preserve">
+    <value>Too many failed logins, please try again in 30 minutes</value>
+  </data>
+  <data name="AccountLoginExpired" xml:space="preserve">
+    <value>Login expired, please sign in again</value>
+  </data>
+  <data name="AccountExist" xml:space="preserve">
+    <value>Username, phone number or email is already in use</value>
+  </data>
+  <data name="AccountCreate" xml:space="preserve">
+    <value>Failed to create account</value>
+  </data>
+  <data name="AccountOldEmailError" xml:space="preserve">
+    <value>Old email does not match</value>
+  </data>
+  <data name="AccountOldTelPhoneError" xml:space="preserve">
+    <value>Same as the old phone number, no change needed</value>
+  </data>
+  <data name="AccountExistTelPhoneError" xml:space="preserve">
+    <value>Phone number already exists</value>
+  </data>
+  <data name="AccountExistEmailError" xml:space="preserve">
+    <value>Email already exists</value>
+  </data>
+  <data name="AccountExistUserNameError" xml:space="preserve">
+    <value>Username already exists</value>
+  </data>
+  <data name="AccountExistTypeError" xml:space="preserve">
+    <value>Invalid account login type</value>
+  </data>
+  <data name="AccountNameExistTypeError" xml:space="preserve">
+    <value>Username already exists</value>
+  </data>
+  <data name="RoleNotExist" xml:space="preserve">
+    <value>Role not found</value>
+  </data>
+  <data name="RoleUnavailable" xml:space="preserve">
+    <value>Role {0} is disabled</value>
+  </data>
+  <data name="RoleCreateFailed" xml:space="preserve">
+    <value>Failed to create role</value>
+  </data>
+  <data name="RolePermissionAssignationFailed" xml:space="preserve">
+    <value>Failed to assign role permissions, please try again</value>
+  </data>
+  <data name="RoleIdNotExist" xml:space="preserve">
+    <value>Role id is required</value>
+  </data>
+  <data name="RoleNameExist" xml:space="preserve">
+    <value>Role name already exists</value>
+  </data>
+  <data name="RoleModifyFailed" xml:space="preserve">
+    <value>Failed to update role</value>
+  </data>
+  <data name="RoleNotSuperFailed" xml:space="preserve">
+    <value>Only super administrators can perform this operation</value>
+  </data>
+  <data name="RoleDeleteError" xml:space="preserve">
+    <value>Failed to delete role</value>
+  </data>
+  <data name="PermissionNotExist" xml:space="preserve">
+    <value>Permission not found</value>
+  </data>
+  <data name="PermissionCreateError" xml:space="preserve">
+    <value>Failed to add permission</value>
+  </data>
+  <data name="PermissionUpdateError" xml:space="preserve">
+    <value>Failed to update permission</value>
+  </data>
+  <data name="PermissionDeleteError" xml:space="preserve">
+    <value>Failed to delete permission</value>
+  </data>
+  <data name="PermissionSysDeleteError" xml:space="preserve">
+    <value>System permissions cannot be deleted</value>
+  </data>
+  <data name="PermissionSystemNotModify" xml:space="preserve">
+    <value>This is a system permission and cannot be modified</value>
+  </data>
+  <data name="PermissionSystemNotCreate" xml:space="preserve">
+    <value>Only super administrators can create system permissions</value>
+  </data>
+  <data name="PermissionApiNotExist" xml:space="preserve">
+    <value>Permission API not found</value>
+  </data>
+  <data name="PermissionApiCreateError" xml:space="preserve">
+    <value>Failed to create permission API</value>
+  </data>
+  <data name="PermissionApiUpdateError" xml:space="preserve">
+    <value>Failed to update permission API</value>
+  </data>
+  <data name="PermissionSysApiUpdateError" xml:space="preserve">
+    <value>System permission APIs cannot be modified</value>
+  </data>
+  <data name="PermissionSysApiDeleteError" xml:space="preserve">
+    <value>System permission APIs cannot be deleted</value>
+  </data>
+  <data name="PermissionApiPathExist" xml:space="preserve">
+    <value>The same API path already exists</value>
+  </data>
+  <data name="PermissionMenuNotExist" xml:space="preserve">
+    <value>Permission menu not found</value>
+  </data>
+  <data name="PermissionMenuTitleOrUrlExist" xml:space="preserve">
+    <value>The same menu title or path already exists</value>
+  </data>
+  <data name="PermissionMenuCreateError" xml:space="preserve">
+    <value>Failed to create permission menu</value>
+  </data>
+  <data name="PermissionMenuUpdateError" xml:space="preserve">
+    <value>Failed to update permission menu</value>
+  </data>
+  <data name="PermissionMenuDeleteError" xml:space="preserve">
+    <value>Failed to delete permission menu</value>
+  </data>
+  <data name="PermissionNameOrCodeExist" xml:space="preserve">
+    <value>Permission name or code already exists</value>
+  </data>
+  <data name="PermissionIdNotExist" xml:space="preserve">
+    <value>Permission id is required</value>
+  </data>
+  <data name="LogginDeletedCannoBeWithinThreeMonths" xml:space="preserve">
+    <value>Logs within the last three months cannot be deleted</value>
+  </data>
+  <data name="LogginDeletedError" xml:space="preserve">
+    <value>Failed to delete logs</value>
+  </data>
+  <data name="LoggingNotExist" xml:space="preserve">
+    <value>Log not found</value>
+  </data>
+  <data name="TranslateNotExist" xml:space="preserve">
+    <value>Translation not found</value>
+  </data>
+  <data name="TranslateNameExist" xml:space="preserve">
+    <value>Translation name already exists</value>
+  </data>
+  <data name="TranslateCreateError" xml:space="preserve">
+    <value>Failed to add translation</value>
+  </data>
+  <data name="TranslateUpdateError" xml:space="preserve">
+    <value>Failed to update translation</value>
+  </data>
+  <data name="TranslateDeleteError" xml:space="preserve">
+    <value>Failed to delete translation</value>
+  </data>
+  <data name="CountryNotExist" xml:space="preserve">
+    <value>Country not found</value>
+  </data>
+  <data name="CountryCreateError" xml:space="preserve">
+    <value>Failed to add country</value>
+  </data>
+  <data name="CountryUpdateError" xml:space="preserve">
+    <value>Failed to update country</value>
+  </data>
+  <data name="CountryDeleteError" xml:space="preserve">
+    <value>Failed to delete country</value>
+  </data>
+  <data name="CountryNameExistError" xml:space="preserve">
+    <value>The same country name or code already exists</value>
+  </data>
+  <data name="DepartmentNotExist" xml:space="preserve">
+    <value>Department not found</value>
+  </data>
+  <data name="DepartmentNameExist" xml:space="preserve">
+    <value>Department already exists</value>
+  </data>
+  <data name="DepartmentCreateError" xml:space="preserve">
+    <value>Failed to add department</value>
+  </data>
+  <data name="DepartmentUpdateError" xml:space="preserve">
+    <value>Failed to update department</value>
+  </data>
+  <data name="DepartmentUnavailable" xml:space="preserve">
+    <value>Department is disabled</value>
+  </data>
+  <data name="PostNotExist" xml:space="preserve">
+    <value>Post not found</value>
+  </data>
+  <data name="PostNameExist" xml:space="preserve">
+    <value>Post name already exists</value>
+  </data>
+  <data name="PostCreateError" xml:space="preserve">
+    <value>Failed to add post</value>
+  </data>
+  <data name="PostModifyError" xml:space="preserve">
+    <value>Failed to update post</value>
+  </data>
+  <data name="PostDeleteError" xml:space="preserve">
+    <value>Failed to delete post</value>
+  </data>
+  <data name="PostUnavailable" xml:space="preserve">
+    <value>Post is disabled</value>
+  </data>
+  <data name="DictionaryNotExist" xml:space="preserve">
+    <value>Dictionary not found</value>
+  </data>
+  <data name="DictionaryKeyExist" xml:space="preserve">
+    <value>Dictionary key already exists</value>
+  </data>
+  <data name="DictionaryCreateError" xml:space="preserve">
+    <value>Failed to create dictionary</value>
+  </data>
+  <data name="DictionaryUpdateError" xml:space="preserve">
+    <value>Failed to update dictionary</value>
+  </data>
+  <data name="DictionaryDeleteError" xml:space="preserve">
+    <value>Failed to delete dictionary</value>
+  </data>
+  <data name="locationLocal" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="locationUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="invalidTarget" xml:space="preserve">
+    <value>Invalid target</value>
+  </data>
+  <data name="cannotReportSelf" xml:space="preserve">
+    <value>Cannot report yourself</value>
+  </data>
+  <data name="alreadyReported" xml:space="preserve">
+    <value>Already reported</value>
+  </data>
+  <data name="handleFailed" xml:space="preserve">
+    <value>Handle failed</value>
+  </data>
+  <data name="publishFailed" xml:space="preserve">
+    <value>Publish failed</value>
+  </data>
+  <data name="contentEmpty" xml:space="preserve">
+    <value>Content cannot be empty</value>
+  </data>
+  <data name="commentFailed" xml:space="preserve">
+    <value>Comment failed</value>
+  </data>
+  <data name="idRequired" xml:space="preserve">
+    <value>Id required</value>
+  </data>
+  <data name="deleteFailed" xml:space="preserve">
+    <value>Delete failed</value>
+  </data>
+  <data name="addFailed" xml:space="preserve">
+    <value>Add failed</value>
+  </data>
+  <data name="invalidAmount" xml:space="preserve">
+    <value>Invalid amount</value>
+  </data>
+  <data name="createFailed" xml:space="preserve">
+    <value>Create failed</value>
+  </data>
+  <data name="inviteCodeEmpty" xml:space="preserve">
+    <value>Invite code cannot be empty</value>
+  </data>
+  <data name="alreadyBound" xml:space="preserve">
+    <value>Invite code already bound</value>
+  </data>
+  <data name="inviteCodeInvalid" xml:space="preserve">
+    <value>Invalid invite code</value>
+  </data>
+  <data name="cannotBindSelf" xml:space="preserve">
+    <value>Cannot bind your own invite code</value>
+  </data>
+  <data name="alreadyClaimed" xml:space="preserve">
+    <value>Already claimed</value>
+  </data>
+  <data name="alreadyOwned" xml:space="preserve">
+    <value>Already owned</value>
+  </data>
+  <data name="insufficientDiamond" xml:space="preserve">
+    <value>Insufficient diamonds</value>
+  </data>
+  <data name="insufficientCoin" xml:space="preserve">
+    <value>Insufficient coins</value>
+  </data>
+  <data name="notOwned" xml:space="preserve">
+    <value>Not owned</value>
+  </data>
+  <data name="reportResultTitle" xml:space="preserve">
+    <value>Report result</value>
+  </data>
+  <data name="reportAccepted" xml:space="preserve">
+    <value>Accepted</value>
+  </data>
+  <data name="reportRejected" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="Val_TargetUserIdRequired" xml:space="preserve">
+    <value>Target user id is required</value>
+  </data>
+  <data name="Val_ReasonCodeRequired" xml:space="preserve">
+    <value>Reason code is required</value>
+  </data>
+  <data name="Val_DynamicIdRequired" xml:space="preserve">
+    <value>Dynamic id is required</value>
+  </data>
+  <data name="Val_ContentRequired" xml:space="preserve">
+    <value>Content is required</value>
+  </data>
+  <data name="Val_ActionInvalid" xml:space="preserve">
+    <value>Invalid action</value>
+  </data>
+  <data name="Val_MediaTypeInvalid" xml:space="preserve">
+    <value>Invalid media type</value>
+  </data>
+  <data name="Val_TypeInvalid" xml:space="preserve">
+    <value>Invalid type</value>
+  </data>
+  <data name="Val_AmountRequired" xml:space="preserve">
+    <value>Amount is required</value>
+  </data>
+  <data name="Val_HarvestAccountRequired" xml:space="preserve">
+    <value>Harvest account is required</value>
+  </data>
+  <data name="Val_InviteCodeRequired" xml:space="preserve">
+    <value>Invite code is required</value>
+  </data>
+  <data name="Val_TaskIdRequired" xml:space="preserve">
+    <value>Task id is required</value>
+  </data>
+  <data name="Val_AdornItemIdRequired" xml:space="preserve">
+    <value>Adorn item id is required</value>
+  </data>
+  <data name="Val_AlbumIdRequiredWhenDelete" xml:space="preserve">
+    <value>Album id is required when deleting</value>
+  </data>
+  <data name="Val_AlbumContentRequired" xml:space="preserve">
+    <value>Album content is required</value>
+  </data>
+  <data name="Val_TrendsContentRequired" xml:space="preserve">
+    <value>Trends content is required</value>
+  </data>
+  <data name="vipProductNotFound" xml:space="preserve">
+    <value>VIP product not found</value>
+  </data>
+  <data name="rechargeProductNotFound" xml:space="preserve">
+    <value>Recharge product not found</value>
+  </data>
+  <data name="createOrderFailed" xml:space="preserve">
+    <value>Create order failed</value>
+  </data>
+  <data name="purchaseTokenRequired" xml:space="preserve">
+    <value>purchaseToken/productId required</value>
+  </data>
+  <data name="platformInvalid" xml:space="preserve">
+    <value>platform must be ios or android</value>
+  </data>
+  <data name="verifyFailed" xml:space="preserve">
+    <value>Verify failed</value>
+  </data>
+  <data name="invalidUser" xml:space="preserve">
+    <value>Invalid user</value>
+  </data>
+  <data name="giftIdOrCodeRequired" xml:space="preserve">
+    <value>giftId or code required</value>
+  </data>
+  <data name="giftNotFound" xml:space="preserve">
+    <value>Gift not found</value>
+  </data>
+  <data name="sendGiftFailed" xml:space="preserve">
+    <value>Send gift failed</value>
+  </data>
+  <data name="vipFeatureOnly" xml:space="preserve">
+    <value>This feature is VIP only</value>
+  </data>
+  <data name="dailyMessageLimitReached" xml:space="preserve">
+    <value>Non-members can send up to 5 messages a day</value>
+  </data>
+  <data name="cannotSendRedPacketToSelf" xml:space="preserve">
+    <value>Cannot send a red packet to yourself</value>
+  </data>
+  <data name="redPacketAmountInvalid" xml:space="preserve">
+    <value>Invalid red packet amount</value>
+  </data>
+  <data name="redPacketUnavailable" xml:space="preserve">
+    <value>Red packet is unavailable</value>
+  </data>
+  <data name="musicNotFound" xml:space="preserve">
+    <value>Music not found</value>
   </data>
 </root>

@@ -33,9 +33,9 @@ public class AccessToken
 	public string ImToken { get; set; }
 
 	/// <summary>
-	///   im user id
+	///   ASF 会员 Id（= go-chat users.id）
 	/// </summary>
-	public string UserId { get; set; }
+	public int UserId { get; set; }
 
 	/// <summary>
 	///   email验证token
@@ -46,4 +46,14 @@ public class AccessToken
 	///   是否为绑定邮箱
 	/// </summary>
 	public bool IsBindEmail { get; set; } = false;
+
+	/// <summary>
+	///   未注册社交登录时的账号（google_{sub} / apple_{sub}）
+	/// </summary>
+	public string Account { get; set; }
+
+	/// <summary>
+	///   未注册社交登录时的邮箱；没有真实邮箱则为空
+	/// </summary>
+	public string Email { get; set; }
 }

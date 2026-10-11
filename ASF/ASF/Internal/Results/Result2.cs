@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace ASF.Internal.Results;
 
@@ -37,9 +37,9 @@ public class Result<T> : Result
   }
 
     /// <summary>
-    ///   返回对象
+    ///   返回对象（C# 属性名 Data；
     /// </summary>
-    [JsonProperty(PropertyName = "result")]
+  [JsonPropertyName("data")]
   public T Data { get; set; }
 
     /// <summary>

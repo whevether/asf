@@ -1,6 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net;
+using System.Threading.Tasks;
 using ASF.Domain.Services;
 using ASF.Domain.Values;
+using ASF.Internal.Json;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -53,14 +55,13 @@ public class ASFPermissionAuthorizationMiddleware
       }
       else
       {
-        if (httpContext.User.Identity != null && !httpContext.User.Identity.IsAuthenticated)
-          httpContext.Response.StatusCode = 401;
-        else
-          httpContext.Response.StatusCode = 403;
+        var statusCode = httpContext.User.Identity != null && !httpContext.User.Identity.IsAuthenticated ? 401 : 403;
+        httpContext.Response.StatusCode = statusCode;
+        httpContext.Response.ContentType = "application/json;charset=utf-8";
+        var body = AsfJson.Serialize(new { status = statusCode, result = (object)null, message = result.Message });
+        await httpContext.Response.WriteAsync(body);
         logger.LogWarning(
-          $"{requestPath} Response.StatusCode {httpContext.Response.StatusCode} Permission authorization failed ");
-        await Task.CompletedTask;
-        // return;
+          $"{requestPath} Response.StatusCode {statusCode} Permission authorization failed ");
       }
     }
   }

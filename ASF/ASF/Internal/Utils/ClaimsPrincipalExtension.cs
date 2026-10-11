@@ -12,10 +12,8 @@ namespace ASF.Internal.Utils;
 public static class ClaimsPrincipalExtension
 {
   /// <summary>
-  ///   账户Id
+  ///   账户Id（后台管理员雪花 long）
   /// </summary>
-  /// <param name="principal"></param>
-  /// <returns></returns>
   public static long UserId(this ClaimsPrincipal principal)
   {
     var sub = principal.FindFirst("sub")?.Value;

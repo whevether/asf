@@ -9,10 +9,11 @@ using ASF.Domain.Entities;
 using ASF.Domain.Services;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -24,17 +25,20 @@ namespace ASF.Application;
 public class RoleController : ControllerBase
 {
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly RoleService _roleService;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   角色控制器
   /// </summary>
-  /// <param name="serviceProvider"></param>
+  /// <param name="roleService"></param>
   /// <param name="mapper"></param>
-  public RoleController(IServiceProvider serviceProvider, IMapper mapper)
+  /// <param name="stringLocalizer"></param>
+  public RoleController(RoleService roleService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _roleService = roleService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -48,7 +52,7 @@ public class RoleController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<RoleService>()
+    var (list, total) = await _roleService
       .GetList(dto.PageNo, dto.PageSize, dto.Name, dto.Enable, tenancyId);
     return ResultPagedList<RoleResponseDto>.ReSuccess(_mapper.Map<List<RoleResponseDto>>(list),
       total);
@@ -65,7 +69,7 @@ public class RoleController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<RoleService>().Get(id, tenancyId);
+    var data = await _roleService.Get(id, tenancyId);
     if (!data.Success)
       return Result<RoleResponseDto>.ReFailure(data.Message, data.Status);
     return Result<RoleResponseDto>.ReSuccess(_mapper.Map<RoleResponseDto>(data.Data));
@@ -81,7 +85,7 @@ public class RoleController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<RoleService>()
+    var data = await _roleService
       .GetList(tenancyId, HttpContext.User.IsSuperRole());
     if (!data.Success)
       return ResultList<RoleResponseDto>.ReFailure(data.Message, data.Status);
@@ -97,7 +101,7 @@ public class RoleController : ControllerBase
   public async Task<Result> Create([FromBody] RoleCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     // 只有超级管理员才能选择租户创建
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? long.Parse(dto.TenancyId)
@@ -116,7 +120,7 @@ public class RoleController : ControllerBase
     // 		});
     // 	});
     // }
-    return await _serviceProvider.GetRequiredService<RoleService>().Create(role);
+    return await _roleService.Create(role);
   }
 
   /// <summary>
@@ -128,8 +132,8 @@ public class RoleController : ControllerBase
   public async Task<Result> Modify([FromBody] RoleModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<RoleService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _roleService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -164,8 +168,8 @@ public class RoleController : ControllerBase
   public async Task<Result> ModifyStatus([FromBody] ModifyStatusRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<RoleService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _roleService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -188,8 +192,8 @@ public class RoleController : ControllerBase
   public async Task<Result> AssignPermission([FromBody] AssignIdArrayRequestDto<long> dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<RoleService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _roleService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -223,11 +227,11 @@ public class RoleController : ControllerBase
   public async Task<Result> Delete([FromRoute] long id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var server = _serviceProvider.GetRequiredService<RoleService>();
+    var server = _roleService;
     var result = await server.Get(id, tenancyId);
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);

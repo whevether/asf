@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using ASF.Internal.Json;
 
 namespace ASF.Internal.Utils;
 
@@ -44,7 +44,7 @@ public class HttpHelper : IHttpHelper
     {
       var t = response.Content.ReadAsStringAsync();
       var s = t.Result;
-      result = JsonConvert.DeserializeObject<T>(s);
+      result = AsfJson.Deserialize<T>(s);
     }
 
     return await Task.FromResult(result);
@@ -69,7 +69,7 @@ public class HttpHelper : IHttpHelper
     {
       var t = response.Content.ReadAsStringAsync();
       var s = t.Result;
-      result = JsonConvert.DeserializeObject<T>(s);
+      result = AsfJson.Deserialize<T>(s);
     }
 
     return await Task.FromResult(result);
@@ -96,7 +96,7 @@ public class HttpHelper : IHttpHelper
     {
       var t = response.Content.ReadAsStringAsync();
       var s = t.Result;
-      result = JsonConvert.DeserializeObject<T>(s);
+      result = AsfJson.Deserialize<T>(s);
     }
 
     return await Task.FromResult(result);
@@ -123,7 +123,7 @@ public class HttpHelper : IHttpHelper
     {
       var t = response.Content.ReadAsStringAsync();
       var s = t.Result;
-      result = JsonConvert.DeserializeObject<T>(s);
+      result = AsfJson.Deserialize<T>(s);
     }
 
     return await Task.FromResult(result);

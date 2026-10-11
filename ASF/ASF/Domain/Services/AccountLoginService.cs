@@ -120,13 +120,15 @@ public class AccountLoginService : IAccountLoginService
       return Result<AccessToken>.ReFailure(ResultCodes.AccountNotAllowedLogin);
     //获取是否有登录失败信息
     var loginFailed = GetLoginFailedInfo(account.Username);
-    loginFailed.Accumulative();
     if (loginFailed.FailedCount >= maxLoginFailedCount)
       return Result<AccessToken>.ReFailure(ResultCodes.AccountPasswordNotSameOverrun);
 
     if (!PasswordHelper.ValidatePassword(password, account.PasswordSalt, account.Password))
+    {
+      loginFailed.Accumulative();
       return Result<AccessToken>.ReFailure(
         ResultCodes.AccountPasswordNotSame2.ToFormat((maxLoginFailedCount - loginFailed.FailedCount).ToString()));
+    }
 
     var role = new List<string>();
     if (account.Department != null && account.Department.Role.Count > 0)

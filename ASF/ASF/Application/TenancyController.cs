@@ -8,10 +8,11 @@ using ASF.Domain.Entities;
 using ASF.Domain.Services;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -23,15 +24,17 @@ namespace ASF.Application;
 public class TenancyController : ControllerBase
 {
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
+  private readonly TenancyService _tenancyService;
 
   /// <summary>
   ///   租户控制器
   /// </summary>
-  public TenancyController(IServiceProvider serviceProvider, IMapper mapper)
+  public TenancyController(TenancyService tenancyService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _tenancyService = tenancyService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -45,7 +48,7 @@ public class TenancyController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<TenancyService>()
+    var (list, total) = await _tenancyService
       .GetList(dto.PageNo, dto.PageSize, dto.Name, dto.Status, tenancyId);
     return ResultPagedList<TenancyResponseDto>.ReSuccess(_mapper.Map<List<TenancyResponseDto>>(list),
       total);
@@ -59,7 +62,7 @@ public class TenancyController : ControllerBase
   [AllowAnonymous]
   public async Task<ResultList<TenancyResponseDto>> GetLists()
   {
-    var data = await _serviceProvider.GetRequiredService<TenancyService>().GetList();
+    var data = await _tenancyService.GetList();
     if (!data.Success)
       return ResultList<TenancyResponseDto>.ReFailure(data.Message, data.Status);
     return ResultList<TenancyResponseDto>.ReSuccess(_mapper.Map<List<TenancyResponseDto>>(data.Data));
@@ -75,7 +78,7 @@ public class TenancyController : ControllerBase
   {
     if (!HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) != 1)
       return Result<TenancyResponseDto>.ReFailure(ResultCodes.RoleNotSuperFailed);
-    var data = await _serviceProvider.GetRequiredService<TenancyService>().Get(id);
+    var data = await _tenancyService.Get(id);
     if (!data.Success)
       return Result<TenancyResponseDto>.ReFailure(data.Message, data.Status);
     return Result<TenancyResponseDto>.ReSuccess(_mapper.Map<TenancyResponseDto>(data.Data));
@@ -90,12 +93,12 @@ public class TenancyController : ControllerBase
   public async Task<Result> Create([FromBody] TenancyCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     if (!HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) != 1)
       return Result.ReFailure(ResultCodes.RoleNotSuperFailed);
     var tenancy = _mapper.Map<Tenancy>(dto);
     tenancy.CreateId = User.UserId();
-    return await _serviceProvider.GetRequiredService<TenancyService>().Create(tenancy);
+    return await _tenancyService.Create(tenancy);
   }
 
   /// <summary>
@@ -107,10 +110,10 @@ public class TenancyController : ControllerBase
   public async Task<Result> Modify([FromBody] TenancyModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     if (!HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) != 1)
       return Result.ReFailure(ResultCodes.RoleNotSuperFailed);
-    var server = _serviceProvider.GetRequiredService<TenancyService>();
+    var server = _tenancyService;
     var result = await server.Get(long.Parse(dto.Id));
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);
@@ -127,10 +130,10 @@ public class TenancyController : ControllerBase
   public async Task<Result> Delete([FromBody] ModifyStatusRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     if (!HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) != 1)
       return Result.ReFailure(ResultCodes.RoleNotSuperFailed);
-    var server = _serviceProvider.GetRequiredService<TenancyService>();
+    var server = _tenancyService;
     var result = await server.Get(long.Parse(dto.Id));
     if (!result.Success)
       return Result.ReFailure(result.Message, result.Status);

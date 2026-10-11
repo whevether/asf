@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ASF.Domain.Entities;
-using ASF.Domain.Values;
 using ASF.Infrastructure.Repositories;
 using ASF.Internal;
 using ASF.Internal.Results;
+using ASF.Resources;
+using Microsoft.Extensions.Localization;
 
 namespace ASF.Domain.Services;
 
@@ -17,16 +18,20 @@ public class LoggerService
 {
   private readonly IIdGenerator _idGenerator;
   private readonly ILoggingsRepository _loggingsRepository;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   日志服务
   /// </summary>
   /// <param name="loggingsRepository"></param>
   /// <param name="idGenerator"></param>
-  public LoggerService(ILoggingsRepository loggingsRepository, IIdGenerator idGenerator)
+  /// <param name="stringLocalizer"></param>
+  public LoggerService(ILoggingsRepository loggingsRepository, IIdGenerator idGenerator,
+    IStringLocalizer<SharedResource> stringLocalizer)
   {
     _loggingsRepository = loggingsRepository;
     _idGenerator = idGenerator;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -50,20 +55,20 @@ public class LoggerService
   /// <param name="type"></param>
   /// <param name="accountName"></param>
   /// <returns></returns>
-  public async Task<(IList<LogInfo> list, int total)> GetList(int pageNo, int pageSize, LoggingType? type = null,
+  public async Task<(IList<LogInfo> list, int total)> GetList(int pageNo, int pageSize, uint? type = null,
     string accountName = "")
   {
     if (type != null && !string.IsNullOrEmpty(accountName))
     {
       var (list, total) = await _loggingsRepository.GetEntitiesForPaging(pageNo, pageSize,
-        f => f.Type == (uint)type && f.AccountName.Equals(accountName));
+        f => f.Type == type && f.AccountName.Equals(accountName));
       return (list, total);
     }
 
     if (type != null)
     {
       var (list, total) = await _loggingsRepository.GetEntitiesForPaging(pageNo, pageSize,
-        f => f.Type == (uint)type);
+        f => f.Type == type);
       return (list, total);
     }
 
@@ -100,11 +105,11 @@ public class LoggerService
   public async Task<ResultList<LogInfo>> GetList(List<string> ids)
   {
     if (!ids.Any())
-      return ResultList<LogInfo>.ReFailure("没有日志数据", 3500);
+      return ResultList<LogInfo>.ReFailure(_stringLocalizer["noLogData"], 3500);
 
     var list = await _loggingsRepository.GetEntities(f => ids.Any(x => x.Equals(f.Id.ToString())));
     if (list == null)
-      return ResultList<LogInfo>.ReFailure("没有日志数据", 3500);
+      return ResultList<LogInfo>.ReFailure(_stringLocalizer["noLogData"], 3500);
     return ResultList<LogInfo>.ReSuccess(list.ToList());
   }
 

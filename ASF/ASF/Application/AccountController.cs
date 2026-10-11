@@ -10,10 +10,11 @@ using ASF.Domain.Services;
 using ASF.Domain.Values;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -24,18 +25,24 @@ namespace ASF.Application;
 [Route("[controller]/[action]")]
 public class AccountController : ControllerBase
 {
+  private readonly AccountService _accountService;
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly PermissionService _permissionService;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   账户控制器
   /// </summary>
-  /// <param name="serviceProvider"></param>
+  /// <param name="accountService"></param>
+  /// <param name="permissionService"></param>
   /// <param name="mapper"></param>
-  public AccountController(IServiceProvider serviceProvider, IMapper mapper)
+  /// <param name="stringLocalizer"></param>
+  public AccountController(AccountService accountService, PermissionService permissionService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _accountService = accountService;
+    _permissionService = permissionService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -47,7 +54,7 @@ public class AccountController : ControllerBase
   {
     var uid = HttpContext.User.UserId();
     long? tenancyId = HttpContext.User.IsSuperRole() ? null : Convert.ToInt64(HttpContext.User.TenancyId());
-    var account = await _serviceProvider.GetRequiredService<AccountService>().GetAccountInfo(uid, tenancyId);
+    var account = await _accountService.GetAccountInfo(uid, tenancyId);
     if (!account.Success)
       return Result<AccountInfoResponseDto>.ReFailure(account.Message, account.Status);
     // 权限id 集合
@@ -74,7 +81,7 @@ public class AccountController : ControllerBase
     // 权限去重
     permissionIds = permissionIds.Union(permissionIds).ToList();
     var permissionList =
-      await _serviceProvider.GetRequiredService<PermissionService>().GetPermissionListAsync(permissionIds);
+      await _permissionService.GetPermissionListAsync(permissionIds);
     if (!permissionList.Success)
       return Result<AccountInfoResponseDto>.ReFailure(permissionList.Message, permissionList.Status);
     // 权限菜单分级
@@ -141,7 +148,7 @@ public class AccountController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<AccountService>().GetList(dto.PageNo, dto.PageSize,
+    var (list, total) = await _accountService.GetList(dto.PageNo, dto.PageSize,
       dto.Username, dto.TelPhone, dto.Email, dto.Sex, dto.Status, tenancyId);
     return ResultPagedList<AccountResponseDto>.ReSuccess(_mapper.Map<List<AccountResponseDto>>(list),
       total);
@@ -158,7 +165,7 @@ public class AccountController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var result = await _serviceProvider.GetRequiredService<AccountService>().GetDetails(id, tenancyId);
+    var result = await _accountService.GetDetails(id, tenancyId);
     if (!result.Success)
       return Result<AccountResponseDto>.ReFailure(result.Message, result.Status);
     var roles = new List<object>();
@@ -204,7 +211,7 @@ public class AccountController : ControllerBase
   public async Task<Result> Create([FromBody] AccountCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     // 只有超级管理员才能选择租户创建
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? long.Parse(dto.TenancyId)
@@ -225,7 +232,7 @@ public class AccountController : ControllerBase
         });
     }
 
-    return await _serviceProvider.GetRequiredService<AccountService>().Create(data);
+    return await _accountService.Create(data);
   }
 
   /// <summary>
@@ -237,8 +244,8 @@ public class AccountController : ControllerBase
   public async Task<Result> Modify([FromBody] AccountModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -289,8 +296,8 @@ public class AccountController : ControllerBase
   public async Task<Result> Delete([FromRoute] long id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -314,8 +321,8 @@ public class AccountController : ControllerBase
   public async Task<Result> ModifyStatus([FromBody] ModifyStatusRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -339,8 +346,8 @@ public class AccountController : ControllerBase
   public async Task<Result> ResetPassword([FromBody] AccountModifyPasswordRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -366,8 +373,8 @@ public class AccountController : ControllerBase
   public async Task<Result> ModifyEmail([FromBody] AccountModifyEmailRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -393,8 +400,8 @@ public class AccountController : ControllerBase
   public async Task<Result> ModifyUserName([FromBody] AccountModifyUserNameRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -418,8 +425,8 @@ public class AccountController : ControllerBase
   public async Task<Result> ModifyTelPhone([FromBody] AccountModifyTelPhoneRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -445,8 +452,8 @@ public class AccountController : ControllerBase
   public async Task<Result> ModifyAvatar([FromBody] AccountModifyAvatarRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -470,8 +477,8 @@ public class AccountController : ControllerBase
   public async Task<Result> AssignRole([FromBody] AssignIdArrayRequestDto<string> dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -519,8 +526,8 @@ public class AccountController : ControllerBase
   public async Task<Result> AssignDepartment([FromBody] AccountAssignDepartmentRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -558,8 +565,8 @@ public class AccountController : ControllerBase
   public async Task<Result> AssignPost([FromBody] AssignIdArrayRequestDto<long> dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<AccountService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _accountService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());

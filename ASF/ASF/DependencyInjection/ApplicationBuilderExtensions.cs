@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
+using ASF.Internal.Results;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
@@ -17,25 +18,21 @@ public static class ApplicationBuilderExtensions
     /// <returns></returns>
     public static IApplicationBuilder UseASF(this IApplicationBuilder app)
   {
+    ResultMessage.Configure(app.ApplicationServices);
     var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
     app.UseRequestLocalization(locOptions.Value);
     // Nginx 代理时获取真实 IP
-    app.Use((context, next) =>
+    app.Use(async (context, next) =>
     {
       var headers = context.Request.Headers;
-      try
+      if (headers.ContainsKey("X-Forwarded-For"))
       {
-        if (headers.ContainsKey("X-Forwarded-For"))
-          context.Connection.RemoteIpAddress = IPAddress.Parse(headers["X-Forwarded-For"].ToString().Split(',')[0]);
-        else
-          context.Connection.RemoteIpAddress = IPAddress.Parse("127.0.0.1");
-      }
-      finally
-      {
-        next().Wait();
+        var forwarded = headers["X-Forwarded-For"].ToString().Split(',')[0].Trim();
+        if (IPAddress.TryParse(forwarded, out var ip))
+          context.Connection.RemoteIpAddress = ip;
       }
 
-      return Task.CompletedTask;
+      await next();
     });
     return app.UseASFMiddleware();
   }

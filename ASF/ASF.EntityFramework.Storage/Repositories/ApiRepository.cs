@@ -25,7 +25,7 @@ public class ApiRepository : Repositories<Api>, IApiRepository
   public async Task<Api> GetApiAsync(long id, long? tenancyId = null)
   {
     if (tenancyId != null)
-      await GetDbContext().Api.Include(f => f.Permission)
+      return await GetDbContext().Api.Include(f => f.Permission)
         .FirstOrDefaultAsync(f => f.Id == id && f.TenancyId == tenancyId);
     return await GetDbContext().Api.Include(f => f.Permission).FirstOrDefaultAsync(f => f.Id == id);
   }
@@ -47,38 +47,29 @@ public class ApiRepository : Repositories<Api>, IApiRepository
     string permissionId = "", uint? type = null, uint? status = null,
     string name = "", string httpMethod = "", string path = "", long? tenancyId = null)
   {
-    var query = new List<Api>();
+    var queryable = GetDbContext().Api.Include(f => f.Permission).AsQueryable();
     if (tenancyId != null)
-    {
-      if (!string.IsNullOrEmpty(permissionId) || type != null || status != null || !string.IsNullOrEmpty(name) ||
-          !string.IsNullOrEmpty(httpMethod) || !string.IsNullOrEmpty(path))
-        query = await GetDbContext().Api.Include(f => f.Permission).Where(w =>
-          (w.PermissionId.ToString().Equals(permissionId) || w.Type == type || w.Status == status ||
-           w.Name.Contains(name) || w.HttpMethods.Equals(httpMethod) || w.Path.Contains(path)) &&
-          w.TenancyId == tenancyId).ToListAsync();
-      else
-        query = await GetDbContext().Api.Include(f => f.Permission).Where(w => w.TenancyId == tenancyId).ToListAsync();
-    }
-    else
-    {
-      if (!string.IsNullOrEmpty(permissionId) || type != null || status != null || !string.IsNullOrEmpty(name) ||
-          !string.IsNullOrEmpty(httpMethod) || !string.IsNullOrEmpty(path))
-        query = await GetDbContext().Api.Include(f => f.Permission).Where(w =>
-          w.PermissionId.ToString().Equals(permissionId) || w.Type == type || w.Status == status ||
-          w.Name.Contains(name) || w.HttpMethods.Equals(httpMethod) || w.Path.Contains(path)).ToListAsync();
-      else
-        query = await GetDbContext().Api.Include(f => f.Permission).Where(w => w.Id != 0).ToListAsync();
-    }
+      queryable = queryable.Where(w => w.TenancyId == tenancyId);
+    if (!string.IsNullOrEmpty(permissionId))
+      queryable = queryable.Where(w => w.PermissionId.ToString().Equals(permissionId));
+    if (type != null)
+      queryable = queryable.Where(w => w.Type == type);
+    if (status != null)
+      queryable = queryable.Where(w => w.Status == status);
+    if (!string.IsNullOrEmpty(name))
+      queryable = queryable.Where(w => w.Name.Contains(name));
+    if (!string.IsNullOrEmpty(httpMethod))
+      queryable = queryable.Where(w => w.HttpMethods.Equals(httpMethod));
+    if (!string.IsNullOrEmpty(path))
+      queryable = queryable.Where(w => w.Path.Contains(path));
 
-    var count = query.Count();
+    var count = await queryable.CountAsync();
     var p = pageNo == 0 ? 1 : pageNo;
     var c = pageSize == 0 ? count : pageSize;
-    // int totalPages = (int)Math.Ceiling(((decimal)count / c));
-    // p = Math.Min(p, totalPages);
-    var list = query
+    var list = await queryable
       .Skip((p - 1) * c)
       .Take(c)
-      .ToList();
-    return await Task.FromResult<(IList<Api> list, int total)>((list, count));
+      .ToListAsync();
+    return (list, count);
   }
 }

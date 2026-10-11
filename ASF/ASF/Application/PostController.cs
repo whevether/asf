@@ -7,10 +7,11 @@ using ASF.Domain.Entities;
 using ASF.Domain.Services;
 using ASF.Internal.Results;
 using ASF.Internal.Utils;
+using Microsoft.Extensions.Localization;
+using ASF.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ASF.Application;
 
@@ -22,15 +23,17 @@ namespace ASF.Application;
 public class PostController : ControllerBase
 {
   private readonly IMapper _mapper;
-  private readonly IServiceProvider _serviceProvider;
+  private readonly PostService _postService;
+  private readonly IStringLocalizer<SharedResource> _stringLocalizer;
 
   /// <summary>
   ///   岗位控制器
   /// </summary>
-  public PostController(IServiceProvider serviceProvider, IMapper mapper)
+  public PostController(PostService postService, IMapper mapper, IStringLocalizer<SharedResource> stringLocalizer)
   {
-    _serviceProvider = serviceProvider;
+    _postService = postService;
     _mapper = mapper;
+    _stringLocalizer = stringLocalizer;
   }
 
   /// <summary>
@@ -44,7 +47,7 @@ public class PostController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var (list, total) = await _serviceProvider.GetRequiredService<PostService>()
+    var (list, total) = await _postService
       .GetList(dto.PageNo, dto.PageSize, dto.Name, tenancyId);
     return ResultPagedList<PostResponseDto>.ReSuccess(_mapper.Map<List<PostResponseDto>>(list),
       total);
@@ -60,7 +63,7 @@ public class PostController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<PostService>().GetList(tenancyId);
+    var data = await _postService.GetList(tenancyId);
     if (!data.Success)
       return ResultList<PostResponseDto>.ReFailure(data.Message, data.Status);
     return ResultList<PostResponseDto>.ReSuccess(_mapper.Map<List<PostResponseDto>>(data.Data));
@@ -77,7 +80,7 @@ public class PostController : ControllerBase
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
-    var data = await _serviceProvider.GetRequiredService<PostService>().Get(id, tenancyId);
+    var data = await _postService.Get(id, tenancyId);
     if (!data.Success)
       return Result<PostResponseDto>.ReFailure(data.Message, data.Status);
     return Result<PostResponseDto>.ReSuccess(_mapper.Map<PostResponseDto>(data.Data));
@@ -92,14 +95,14 @@ public class PostController : ControllerBase
   public async Task<Result> Create([FromBody] PostCreateRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
     // 只有超级管理员才能选择租户创建
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? long.Parse(dto.TenancyId)
       : Convert.ToInt64(HttpContext.User.TenancyId());
     var post = _mapper.Map<Post>(dto);
     post.TenancyId = tenancyId;
-    return await _serviceProvider.GetRequiredService<PostService>().Create(post);
+    return await _postService.Create(post);
   }
 
   /// <summary>
@@ -111,8 +114,8 @@ public class PostController : ControllerBase
   public async Task<Result> Modify([FromBody] PostModifyRequestDto dto)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<PostService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _postService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());
@@ -122,7 +125,7 @@ public class PostController : ControllerBase
     // 除总超级管理员之外其他不允许操作其他租户信息
     if (tenancyId != null && result.Data.TenancyId != tenancyId)
       return Result.ReFailure(ResultCodes.TenancyMatchExist);
-    return await _serviceProvider.GetRequiredService<PostService>().Modify(_mapper.Map(dto, result.Data));
+    return await _postService.Modify(_mapper.Map(dto, result.Data));
   }
 
   /// <summary>
@@ -134,8 +137,8 @@ public class PostController : ControllerBase
   public async Task<Result> Delete([FromRoute] long id)
   {
     if (!HttpContext.User.IsSuperRole())
-      return Result.ReFailure("超级管理员才有权限操作", 3100);
-    var server = _serviceProvider.GetRequiredService<PostService>();
+      return Result.ReFailure(_stringLocalizer["onlySuperAdmin"], 3100);
+    var server = _postService;
     long? tenancyId = HttpContext.User.IsSuperRole() && Convert.ToInt64(HttpContext.User.TenancyId()) == 1
       ? null
       : Convert.ToInt64(HttpContext.User.TenancyId());

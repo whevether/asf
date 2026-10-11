@@ -1,8 +1,9 @@
 using System;
 using System.Threading.Tasks;
+using ASF.Internal.Json;
+using ASF.Internal.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 
 namespace ASF.DependencyInjection;
 
@@ -33,41 +34,45 @@ public class ErrorHandlingMiddleware
     try
     {
       await _next(context);
+      if (context.Response.HasStarted)
+        return;
+
+      var statusCode = context.Response.StatusCode;
+      var msg = statusCode switch
+      {
+        404 => ResultMessage.Localize("serviceNotFound"),
+        502 => ResultMessage.Localize("badGateway"),
+        _ => ""
+      };
+      if (!string.IsNullOrWhiteSpace(msg))
+        await WriteJsonAsync(context, statusCode, msg);
     }
     catch (Exception ex)
     {
-      // var statusCode = context.Response.StatusCode;
-      var statusCode = 500;
-      if (ex is ArgumentException) statusCode = 200;
+      _logger.LogError(ex, "统一拦截异常处理");
+      if (context.Response.HasStarted)
+        return;
 
-      _logger.LogError($"统一拦截异常处理: {ex.Message}, StackTrace:{ex.StackTrace}");
-      await ASFRequestLogger.GetInstance(context, _next).Record("异常消息", ex.Message);
-      // await HandleExceptionAsync(context, statusCode, ex.Message);
-      await HandleExceptionAsync(context, statusCode, ex.Message);
-    }
-    finally
-    {
-      var statusCode = context.Response.StatusCode;
-      var msg = "";
-      // if (statusCode == 401)
-      // {
-      //   msg = "未授权";
-      // }
-      if (statusCode == 404)
-        msg = "未找到服务";
-      else if (statusCode == 502) msg = "请求错误";
-      // else if (statusCode != 200)
-      // {
-      //   msg = "未知错误";
-      // }
-      if (!string.IsNullOrWhiteSpace(msg)) await HandleExceptionAsync(context, statusCode, msg);
+      var statusCode = ex is ArgumentException ? 200 : 500;
+      try
+      {
+        await ASFRequestLogger.GetInstance(context, _next).Record("异常消息", ex.Message);
+      }
+      catch
+      {
+        // ignore logging failures
+      }
+
+      await WriteJsonAsync(context, statusCode, ResultMessage.Localize("internalServerError"));
     }
   }
 
-  private static Task HandleExceptionAsync(HttpContext context, int statusCode, string msg)
+  private static Task WriteJsonAsync(HttpContext context, int statusCode, string msg)
   {
-    string data = null;
-    var result = JsonConvert.SerializeObject(new { status = statusCode, result = data, message = msg });
+    if (context.Response.HasStarted)
+      return Task.CompletedTask;
+
+    var result = AsfJson.Serialize(new { status = statusCode, result = (object)null, message = msg });
     context.Response.StatusCode = statusCode;
     context.Response.ContentType = "application/json;charset=utf-8";
     return context.Response.WriteAsync(result);

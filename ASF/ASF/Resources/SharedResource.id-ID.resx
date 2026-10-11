@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+      Microsoft ResX Schema 
+      
+      Version 2.0
+      
+      The primary goals of this format is to allow a simple XML format 
+      that is mostly human readable. The generation and parsing of the 
+      various data types are done through the TypeConverter classes 
+      associated with the data types.
+      
+      Example:
+      
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+                  
+      There are any number of "resheader" rows that contain simple 
+      name/value pairs.
+      
+      Each data row contains a name, and value. The row also contains a 
+      type or mimetype. Type corresponds to a .NET class that support 
+      text/value conversion through the TypeConverter architecture. 
+      Classes that don't support this are serialized and stored with the 
+      mimetype set.
+      
+      The mimetype is used for serialized objects, and tells the 
+      ResXResourceReader how to depersist the object. This is currently not 
+      extensible. For a given mimetype the value must be set accordingly:
+      
+      Note - application/x-microsoft.net.object.binary.base64 is the format 
+      that the ResXResourceWriter will generate, however the reader can 
+      read any of the formats listed below.
+      
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+      
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+  
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array 
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+                xmlns="">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="dataNotFound" xml:space="preserve">
+    <value>Data does not exist</value>
+  </data>
+    <data name="succeeded" xml:space="preserve">
+    <value>Success</value>
+  </data>
+    <data name="unknownError" xml:space="preserve">
+    <value>unknown error</value>
+  </data>
+    <data name="loginTypeError" xml:space="preserve">
+    <value>Login Type Error</value>
+  </data>
+    <data name="memberFrozen" xml:space="preserve">
+    <value>Member frozen</value>
+  </data>
+    <data name="memberLogout" xml:space="preserve">
+    <value>Member has been cancelled</value>
+  </data>
+    <data name="emailNotEmpty" xml:space="preserve">
+    <value>Email address cannot be empty</value>
+  </data>
+    <data name="timeInterval" xml:space="preserve">
+    <value>Please wait {0} seconds before sending again</value>
+  </data>
+    <data name="second" xml:space="preserve">
+    <value>second</value>
+  </data>
+    <data name="registerCaptcha" xml:space="preserve">
+    <value>WChat registration verification code</value>
+  </data>
+    <data name="hello" xml:space="preserve">
+    <value>hello</value>
+  </data>
+    <data name="youCaptchaCode" xml:space="preserve">
+    <value>What is your verification code</value>
+  </data>
+    <data name="captchaExpired" xml:space="preserve">
+    <value>The verification code has expired</value>
+  </data>
+    <data name="captchaCodeError" xml:space="preserve">
+    <value>Incorrect verification code, {0} attempts remaining</value>
+  </data>
+    <data name="emailVerifyFail" xml:space="preserve">
+    <value>Email verification failed</value>
+  </data>
+    <data name="tokenError" xml:space="preserve">
+    <value>Token error</value>
+  </data>
+    <data name="emailInconsistent" xml:space="preserve">
+    <value>Inconsistent email addresses</value>
+  </data>
+    <data name="modifyFail" xml:space="preserve">
+    <value>Modification failed</value>
+  </data>
+    <data name="memberNotEmpty" xml:space="preserve">
+    <value>Member information cannot be empty</value>
+  </data>
+    <data name="registerMemberFail" xml:space="preserve">
+    <value>Member registration failed</value>
+  </data>
+    <data name="imAdminTokenEmpty" xml:space="preserve">
+    <value>The IM administrator token is empty</value>
+  </data>
+    <data name="getTokenError" xml:space="preserve">
+    <value>Failed to obtain user token</value>
+  </data>
+  <data name="imRequestFailed" xml:space="preserve">
+    <value>IM service request failed</value>
+  </data>
+  <data name="googleAuthFailed" xml:space="preserve">
+    <value>Google sign-in verification failed</value>
+  </data>
+  <data name="appleAuthFailed" xml:space="preserve">
+    <value>Apple sign-in verification failed</value>
+  </data>
+    <data name="checkMemberIsRegister" xml:space="preserve">
+    <value>Check if the user has failed to register</value>
+  </data>
+    <data name="countryNotYet" xml:space="preserve">
+    <value>The country to which it belongs has not yet opened for operation</value>
+  </data>
+    <data name="Val_TranslateNameRequired" xml:space="preserve">
+    <value>Translate name is required</value>
+  </data>
+    <data name="Val_TranslateNameMinLength" xml:space="preserve">
+    <value>Translate name at least 2 characters</value>
+  </data>
+    <data name="Val_TranslateNameMaxLength" xml:space="preserve">
+    <value>Translate name at most 50 characters</value>
+  </data>
+    <data name="Val_CountryCodeRequired" xml:space="preserve">
+    <value>Country code is required</value>
+  </data>
+    <data name="Val_TranslateKeyRequired" xml:space="preserve">
+    <value>Translate key is required</value>
+  </data>
+    <data name="Val_TranslateKeyMinLength" xml:space="preserve">
+    <value>Translate key at least 2 characters</value>
+  </data>
+    <data name="Val_TranslateKeyMaxLength" xml:space="preserve">
+    <value>Translate key at most 500 characters</value>
+  </data>
+    <data name="Val_TranslateValueRequired" xml:space="preserve">
+    <value>Translate value is required</value>
+  </data>
+    <data name="Val_TranslateValueMinLength" xml:space="preserve">
+    <value>Translate value at least 2 characters</value>
+  </data>
+    <data name="Val_TranslateValueMaxLength" xml:space="preserve">
+    <value>Translate value at most 5000 characters</value>
+  </data>
+    <data name="Val_RoleIdRequired" xml:space="preserve">
+    <value>Role ID is required</value>
+  </data>
+    <data name="Val_NameRequired" xml:space="preserve">
+    <value>Name is required</value>
+  </data>
+    <data name="Val_ContactRequired" xml:space="preserve">
+    <value>Contact is required</value>
+  </data>
+    <data name="Val_MemberIdRequired" xml:space="preserve">
+    <value>Member ID is required</value>
+  </data>
+    <data name="Val_MemberVipStatusRequired" xml:space="preserve">
+    <value>Member VIP status is required</value>
+  </data>
+    <data name="Val_MemberVipStatusRange" xml:space="preserve">
+    <value>Member VIP status must be 0 or 1</value>
+  </data>
+    <data name="Val_MemberInfoIdRequired" xml:space="preserve">
+    <value>Member info ID is required</value>
+  </data>
+    <data name="Val_AvatarMaxLength" xml:space="preserve">
+    <value>Avatar at most 500 characters</value>
+  </data>
+    <data name="Val_PageNameRequired" xml:space="preserve">
+    <value>Page name is required</value>
+  </data>
+    <data name="Val_PagePathRequired" xml:space="preserve">
+    <value>Page path is required</value>
+  </data>
+    <data name="Val_PageContentRequired" xml:space="preserve">
+    <value>Page content is required</value>
+  </data>
+    <data name="Val_DepartmentNameMinLength" xml:space="preserve">
+    <value>Department name at least 2 characters</value>
+  </data>
+    <data name="Val_DepartmentNameMaxLength" xml:space="preserve">
+    <value>Department name at most 50 characters</value>
+  </data>
+    <data name="Val_DepartmentStatusRange" xml:space="preserve">
+    <value>Department status must be 0 or 1</value>
+  </data>
+    <data name="Val_DepartmentNameRequired" xml:space="preserve">
+    <value>Department name is required</value>
+  </data>
+    <data name="Val_EnabledRange" xml:space="preserve">
+    <value>Enabled must be 0 or 1</value>
+  </data>
+    <data name="Val_TenancyIdRequired" xml:space="preserve">
+    <value>Tenancy ID is required</value>
+  </data>
+    <data name="Val_PageNameMinLength" xml:space="preserve">
+    <value>Page name at least 2 characters</value>
+  </data>
+    <data name="Val_PageNameMaxLength" xml:space="preserve">
+    <value>Page name at most 50 characters</value>
+  </data>
+    <data name="Val_PageTypeRange" xml:space="preserve">
+    <value>Page type must be 0 or 1</value>
+  </data>
+    <data name="Val_RoleNameRequired" xml:space="preserve">
+    <value>Role name is required</value>
+  </data>
+    <data name="Val_RoleNameMinLength" xml:space="preserve">
+    <value>Role name at least 2 characters</value>
+  </data>
+    <data name="Val_RoleNameMaxLength" xml:space="preserve">
+    <value>Role name at most 50 characters</value>
+  </data>
+    <data name="Val_RoleNameMaxLength255" xml:space="preserve">
+    <value>Role name at most 255 characters</value>
+  </data>
+    <data name="Val_StatusRange01" xml:space="preserve">
+    <value>Status must be 0 or 1</value>
+  </data>
+    <data name="Val_TenancyNameMinLength" xml:space="preserve">
+    <value>Tenancy name at least 2 characters</value>
+  </data>
+    <data name="Val_TenancyNameMaxLength" xml:space="preserve">
+    <value>Tenancy name at most 50 characters</value>
+  </data>
+    <data name="Val_MemberEmailRequired" xml:space="preserve">
+    <value>Member email is required</value>
+  </data>
+    <data name="Val_IdRequired" xml:space="preserve">
+    <value>ID is required</value>
+  </data>
+    <data name="Val_ReviewStatusRequired" xml:space="preserve">
+    <value>Review status is required</value>
+  </data>
+    <data name="Val_AccountIdRequired" xml:space="preserve">
+    <value>Account ID is required</value>
+  </data>
+    <data name="Val_InvalidPhone" xml:space="preserve">
+    <value>Invalid phone number</value>
+  </data>
+    <data name="Val_MemberBirthdayRequired" xml:space="preserve">
+    <value>Member birthday is required</value>
+  </data>
+    <data name="Val_AccountNameMaxLength" xml:space="preserve">
+    <value>Account name at most 50 characters</value>
+  </data>
+    <data name="Val_InvalidEmail" xml:space="preserve">
+    <value>Invalid email format</value>
+  </data>
+    <data name="Val_StatusRange" xml:space="preserve">
+    <value>Status must be 0 or 1</value>
+  </data>
+    <data name="Val_GenderRange" xml:space="preserve">
+    <value>Gender must be 0-2</value>
+  </data>
+    <data name="Val_DepartmentIdRequired" xml:space="preserve">
+    <value>Department ID is required</value>
+  </data>
+    <data name="Val_AccountStatusRange" xml:space="preserve">
+    <value>Account status must be 0 or 1</value>
+  </data>
+    <data name="Val_NickNameRequired" xml:space="preserve">
+    <value>Nick name is required</value>
+  </data>
+    <data name="Val_AccountNickNameMinLength" xml:space="preserve">
+    <value>Account nick name at least 2 characters</value>
+  </data>
+    <data name="Val_AccountNickNameMaxLength" xml:space="preserve">
+    <value>Account nick name at most 50 characters</value>
+  </data>
+    <data name="Val_AccountNameRequired" xml:space="preserve">
+    <value>Account name is required</value>
+  </data>
+    <data name="Val_AccountNameMinLength" xml:space="preserve">
+    <value>Account name at least 2 characters</value>
+  </data>
+    <data name="Val_AccountPasswordRequired" xml:space="preserve">
+    <value>Account password is required</value>
+  </data>
+    <data name="Val_AccountPasswordMinLength" xml:space="preserve">
+    <value>Account password at least 2 characters</value>
+  </data>
+    <data name="Val_AccountPasswordMaxLength" xml:space="preserve">
+    <value>Account password at most 255 characters</value>
+  </data>
+    <data name="Val_LoginTypeRequired" xml:space="preserve">
+    <value>Login type is required</value>
+  </data>
+    <data name="Val_UserNameRequired" xml:space="preserve">
+    <value>User name is required</value>
+  </data>
+    <data name="Val_UserNameLength" xml:space="preserve">
+    <value>User name length must be 2-32</value>
+  </data>
+    <data name="Val_LoginPasswordRequired" xml:space="preserve">
+    <value>Login password is required</value>
+  </data>
+    <data name="Val_PasswordLength" xml:space="preserve">
+    <value>Password length must be 5-32</value>
+  </data>
+    <data name="Val_PermissionIdRequired" xml:space="preserve">
+    <value>Permission ID is required</value>
+  </data>
+    <data name="Val_PermissionCodeRequired" xml:space="preserve">
+    <value>Permission code is required</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength" xml:space="preserve">
+    <value>Permission code at most 255 characters</value>
+  </data>
+    <data name="Val_PermissionNameRequired" xml:space="preserve">
+    <value>Permission name is required</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength" xml:space="preserve">
+    <value>Permission name at most 255 characters</value>
+  </data>
+    <data name="Val_PermissionTypeRequired" xml:space="preserve">
+    <value>Permission type is required</value>
+  </data>
+    <data name="Val_PermissionTypeRange" xml:space="preserve">
+    <value>Permission type must be 1-3</value>
+  </data>
+    <data name="Val_IsSystemPermissionRange" xml:space="preserve">
+    <value>Is system permission must be 0 or 1</value>
+  </data>
+    <data name="Val_DescriptionMaxLength500" xml:space="preserve">
+    <value>Description at most 500 characters</value>
+  </data>
+    <data name="Val_SortOrderRange" xml:space="preserve">
+    <value>Sort order must be 0-100</value>
+  </data>
+    <data name="Val_PostNameRequired" xml:space="preserve">
+    <value>Post name is required</value>
+  </data>
+    <data name="Val_PostNameMinLength" xml:space="preserve">
+    <value>Post name at least 2 characters</value>
+  </data>
+    <data name="Val_PostNameMaxLength" xml:space="preserve">
+    <value>Post name at most 50 characters</value>
+  </data>
+    <data name="Val_SortRange100" xml:space="preserve">
+    <value>Sort must be 0-100</value>
+  </data>
+    <data name="Val_StateRange01" xml:space="preserve">
+    <value>State must be 0 or 1</value>
+  </data>
+    <data name="Val_PostDescriptionMaxLength" xml:space="preserve">
+    <value>Post description at most 255 characters</value>
+  </data>
+    <data name="Val_CountryNameRequired" xml:space="preserve">
+    <value>Country name is required</value>
+  </data>
+    <data name="Val_CountryCurrencyCodeRequired" xml:space="preserve">
+    <value>Country currency code is required</value>
+  </data>
+    <data name="Val_CountryExchangeRateRequired" xml:space="preserve">
+    <value>Country exchange rate is required</value>
+  </data>
+    <data name="Val_WithdrawFeeRateRequired" xml:space="preserve">
+    <value>Withdraw fee rate is required</value>
+  </data>
+    <data name="Val_StatusRange01Num" xml:space="preserve">
+    <value>Status must be 0 or 1</value>
+  </data>
+    <data name="Val_CountryIdRequired" xml:space="preserve">
+    <value>Country ID is required</value>
+  </data>
+    <data name="Val_EmailRequired" xml:space="preserve">
+    <value>Email is required</value>
+  </data>
+    <data name="Val_MemberNickNameRequired" xml:space="preserve">
+    <value>Member nick name is required</value>
+  </data>
+    <data name="Val_DictionaryCodeRequired" xml:space="preserve">
+    <value>Dictionary code is required</value>
+  </data>
+    <data name="Val_CodeMaxLength" xml:space="preserve">
+    <value>Code at most 255 characters</value>
+  </data>
+    <data name="Val_DictionaryKeyRequired" xml:space="preserve">
+    <value>Dictionary key is required</value>
+  </data>
+    <data name="Val_KeyMaxLength" xml:space="preserve">
+    <value>Key at most 255 characters</value>
+  </data>
+    <data name="Val_DictionaryValueRequired" xml:space="preserve">
+    <value>Dictionary value is required</value>
+  </data>
+    <data name="Val_ValueMaxLength" xml:space="preserve">
+    <value>Value at most 255 characters</value>
+  </data>
+    <data name="Val_PostStatusRange" xml:space="preserve">
+    <value>Post status must be 0 or 1</value>
+  </data>
+    <data name="Val_MemberCountryIdRequired" xml:space="preserve">
+    <value>Member country ID is required</value>
+  </data>
+    <data name="Val_TenancyNameRequired" xml:space="preserve">
+    <value>Tenancy name is required</value>
+  </data>
+    <data name="Val_LevelRange" xml:space="preserve">
+    <value>Level must be 0-10</value>
+  </data>
+    <data name="Val_MenuTitleRequired" xml:space="preserve">
+    <value>Menu title is required</value>
+  </data>
+    <data name="Val_MenuTitleMinLength" xml:space="preserve">
+    <value>Menu title at least 2 characters</value>
+  </data>
+    <data name="Val_MenuTitleMaxLength" xml:space="preserve">
+    <value>Menu title at most 50 characters</value>
+  </data>
+    <data name="Val_MenuSubTitleMinLength" xml:space="preserve">
+    <value>Menu sub title at least 2 characters</value>
+  </data>
+    <data name="Val_MenuSubTitleMaxLength" xml:space="preserve">
+    <value>Menu sub title at most 50 characters</value>
+  </data>
+    <data name="Val_MenuIconRequired" xml:space="preserve">
+    <value>Menu icon is required</value>
+  </data>
+    <data name="Val_MenuHiddenRange" xml:space="preserve">
+    <value>Menu hidden must be 0 or 1</value>
+  </data>
+    <data name="Val_MenuPathMaxLength" xml:space="preserve">
+    <value>Menu path at most 255 characters</value>
+  </data>
+    <data name="Val_MenuDescriptionMaxLength" xml:space="preserve">
+    <value>Menu description at most 500 characters</value>
+  </data>
+    <data name="Val_MenuExternalUrlMaxLength" xml:space="preserve">
+    <value>Menu external URL at most 255 characters</value>
+  </data>
+    <data name="Val_MenuRedirectMaxLength" xml:space="preserve">
+    <value>Menu redirect at most 255 characters</value>
+  </data>
+    <data name="Val_MenuLocaleMaxLength" xml:space="preserve">
+    <value>Menu locale at most 255 characters</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength50" xml:space="preserve">
+    <value>Permission code at most 50 characters</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength100" xml:space="preserve">
+    <value>Permission name at most 100 characters</value>
+  </data>
+    <data name="Val_PermissionTypeRange13" xml:space="preserve">
+    <value>Permission type must be 1-3</value>
+  </data>
+    <data name="Val_IsSystemPermission01" xml:space="preserve">
+    <value>Is system permission must be 0 or 1</value>
+  </data>
+    <data name="Val_PermissionStatus01" xml:space="preserve">
+    <value>Permission status must be 0 or 1</value>
+  </data>
+    <data name="Val_MemberSexRequired" xml:space="preserve">
+    <value>Member sex is required</value>
+  </data>
+    <data name="Val_MemberSexRange" xml:space="preserve">
+    <value>Member sex must be 0-2</value>
+  </data>
+    <data name="Val_ApiNameRequired" xml:space="preserve">
+    <value>API name is required</value>
+  </data>
+    <data name="Val_ApiNameMinLength" xml:space="preserve">
+    <value>API name at least 2 characters</value>
+  </data>
+    <data name="Val_ApiNameMaxLength" xml:space="preserve">
+    <value>API name at most 50 characters</value>
+  </data>
+    <data name="Val_ApiStatusRange" xml:space="preserve">
+    <value>API status must be 0 or 1</value>
+  </data>
+    <data name="Val_ApiTypeRange" xml:space="preserve">
+    <value>API type must be 1 or 2</value>
+  </data>
+    <data name="Val_ApiPathRequired" xml:space="preserve">
+    <value>API path is required</value>
+  </data>
+    <data name="Val_ApiPathMaxLength" xml:space="preserve">
+    <value>API path at most 500 characters</value>
+  </data>
+    <data name="Val_HttpMethodRequired" xml:space="preserve">
+    <value>HTTP method is required</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength" xml:space="preserve">
+    <value>HTTP method at most 30 characters</value>
+  </data>
+    <data name="Val_ApiLogRange" xml:space="preserve">
+    <value>API log must be 0 or 1</value>
+  </data>
+    <data name="Val_AuthorizeApiIdRequired" xml:space="preserve">
+    <value>Authorize API ID is required</value>
+  </data>
+    <data name="Val_ApiTypeRange12" xml:space="preserve">
+    <value>API type must be 1 or 2</value>
+  </data>
+    <data name="Val_ApiStatus01" xml:space="preserve">
+    <value>API status must be 0 or 1</value>
+  </data>
+    <data name="Val_ApiNameMinLength1" xml:space="preserve">
+    <value>API name at least 1 character</value>
+  </data>
+    <data name="Val_ApiNameMaxLength50" xml:space="preserve">
+    <value>API name at most 50 characters</value>
+  </data>
+    <data name="Val_HttpMethodMinLength1" xml:space="preserve">
+    <value>HTTP method at least 1 character</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength5" xml:space="preserve">
+    <value>HTTP method at most 5 characters</value>
+  </data>
+    <data name="Val_ApiPathMinLength1" xml:space="preserve">
+    <value>API path at least 1 character</value>
+  </data>
+    <data name="Val_ApiPathMaxLength100" xml:space="preserve">
+    <value>API path at most 100 characters</value>
+  </data>
+    <data name="Val_MenuIdRequired" xml:space="preserve">
+    <value>Menu ID is required</value>
+  </data>
+    <data name="Val_MemberStatusRequired" xml:space="preserve">
+    <value>Member status is required</value>
+  </data>
+    <data name="Val_MemberStatusRange" xml:space="preserve">
+    <value>Member status must be 1-3</value>
+  </data>
+    <data name="Val_MemberRealAuthRequired" xml:space="preserve">
+    <value>Member real auth status is required</value>
+  </data>
+    <data name="Val_MemberRealAuthRange" xml:space="preserve">
+    <value>Member real auth status must be 0 or 1</value>
+  </data>
+    <data name="Val_VerifyUrlRequired" xml:space="preserve">
+    <value>Verify URL is required</value>
+  </data>
+    <data name="Val_EmailVerifyTokenRequired" xml:space="preserve">
+    <value>Email verify token is required</value>
+  </data>
+    <data name="Val_MemberInviteCodeRequired" xml:space="preserve">
+    <value>Member invite code is required</value>
+  </data>
+    <data name="Val_MemberAgeRequired" xml:space="preserve">
+    <value>Member age is required</value>
+  </data>
+    <data name="Val_MemberAgeRange" xml:space="preserve">
+    <value>Member age must be 18-100</value>
+  </data>
+    <data name="Val_MenuTitleMinLength1" xml:space="preserve">
+    <value>Menu title at least 1 character</value>
+  </data>
+    <data name="Val_MenuPathMinLength1" xml:space="preserve">
+    <value>Menu path at least 1 character</value>
+  </data>
+    <data name="Val_MenuPathMaxLength255" xml:space="preserve">
+    <value>Menu path at most 255 characters</value>
+  </data>
+    <data name="Val_MemberRecommendRequired" xml:space="preserve">
+    <value>Member recommend value is required</value>
+  </data>
+    <data name="Val_MemberRatingRequired" xml:space="preserve">
+    <value>Member rating is required</value>
+  </data>
+
+  <data name="onlySuperAdmin" xml:space="preserve">
+    <value>Only super admin can operate</value>
+  </data>
+  <data name="uploadImageTooLarge" xml:space="preserve">
+    <value>Upload failed, image size must be &lt;= 5MB</value>
+  </data>
+  <data name="uploadFailed" xml:space="preserve">
+    <value>Upload failed</value>
+  </data>
+  <data name="invalidTagId" xml:space="preserve">
+    <value>Invalid tag id</value>
+  </data>
+  <data name="hostUserIdInvalid" xml:space="preserve">
+    <value>Invalid hostUserId</value>
+  </data>
+  <data name="accountIdNotEmpty" xml:space="preserve">
+    <value>Account id cannot be empty</value>
+  </data>
+  <data name="addMessageInboxFailed" xml:space="preserve">
+    <value>Failed to add inbox message</value>
+  </data>
+  <data name="invalidUserId" xml:space="preserve">
+    <value>Invalid user id</value>
+  </data>
+  <data name="noLogData" xml:space="preserve">
+    <value>No log data</value>
+  </data>
+
+  <data name="liveGroupInitFailed" xml:space="preserve">
+    <value>Failed to initialize live group</value>
+  </data>
+  <data name="createLiveGroupFailed" xml:space="preserve">
+    <value>Failed to create live group</value>
+  </data>
+  <data name="saveLiveRoomFailed" xml:space="preserve">
+    <value>Failed to save live session</value>
+  </data>
+  <data name="liveNotExistOrEnded" xml:space="preserve">
+    <value>Live not found or ended</value>
+  </data>
+  <data name="unfollowFailed" xml:space="preserve">
+    <value>Failed to unfollow</value>
+  </data>
+  <data name="followFailed" xml:space="preserve">
+    <value>Failed to follow</value>
+  </data>
+  <data name="deleteFriendFailed" xml:space="preserve">
+    <value>Failed to delete friend</value>
+  </data>
+  <data name="addFriendFailed" xml:space="preserve">
+    <value>Failed to add friend</value>
+  </data>
+  <data name="handleFriendFailed" xml:space="preserve">
+    <value>Failed to handle request</value>
+  </data>
+  <data name="getTagsListFailed" xml:space="preserve">
+    <value>Failed to get tags list</value>
+  </data>
+  <data name="getTagsFailed" xml:space="preserve">
+    <value>Failed to get tag</value>
+  </data>
+  <data name="add_tagsFailed" xml:space="preserve">
+    <value>Failed to add tag</value>
+  </data>
+  <data name="update_tagsFailed" xml:space="preserve">
+    <value>Failed to update tag</value>
+  </data>
+  <data name="serviceNotFound" xml:space="preserve">
+    <value>Service not found</value>
+  </data>
+  <data name="badGateway" xml:space="preserve">
+    <value>Bad gateway</value>
+  </data>
+  <data name="internalServerError" xml:space="preserve">
+    <value>Internal server error</value>
+  </data>
+  <data name="invalidToken" xml:space="preserve">
+    <value>Invalid token</value>
+  </data>
+  <data name="BadRequest" xml:space="preserve">
+    <value>Bad request</value>
+  </data>
+  <data name="UnAuthorized" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="NotAcceptable" xml:space="preserve">
+    <value>Forbidden</value>
+  </data>
+  <data name="RequestTimeout" xml:space="preserve">
+    <value>Request timeout</value>
+  </data>
+  <data name="liveRoomName" xml:space="preserve">
+    <value>{0}'s live room</value>
+  </data>
+  <data name="liveAssistantName" xml:space="preserve">
+    <value>Live assistant</value>
+  </data>
+  <data name="TenancyNameExist" xml:space="preserve">
+    <value>This tenant name is already in use, please enter another</value>
+  </data>
+  <data name="TenancyNotExist" xml:space="preserve">
+    <value>Tenant not found</value>
+  </data>
+  <data name="TenancyCreateFailure" xml:space="preserve">
+    <value>Failed to create tenant</value>
+  </data>
+  <data name="TenancyModifyFailure" xml:space="preserve">
+    <value>Failed to update tenant</value>
+  </data>
+  <data name="TenancyDisabled" xml:space="preserve">
+    <value>Tenant is disabled</value>
+  </data>
+  <data name="TenancyMatchExist" xml:space="preserve">
+    <value>You cannot operate data of another tenant</value>
+  </data>
+  <data name="TenancyIsDelete" xml:space="preserve">
+    <value>Tenant has been deleted</value>
+  </data>
+  <data name="AccountUpdateError" xml:space="preserve">
+    <value>Failed to update account</value>
+  </data>
+  <data name="AccountOldPasswordAndNewPasswordSame" xml:space="preserve">
+    <value>New password cannot be the same as the old password</value>
+  </data>
+  <data name="AccountNotExist" xml:space="preserve">
+    <value>User not found</value>
+  </data>
+  <data name="AccountRoleAssignationFailed" xml:space="preserve">
+    <value>Failed to assign account roles, please try again</value>
+  </data>
+  <data name="AccountNotAllowedLogin" xml:space="preserve">
+    <value>Account is forbidden to log in, please contact the administrator</value>
+  </data>
+  <data name="AccountUnavailable" xml:space="preserve">
+    <value>Account is currently unavailable</value>
+  </data>
+  <data name="AccountPasswordNotSame2" xml:space="preserve">
+    <value>Incorrect password. The account will be locked after {0} more failed attempts</value>
+  </data>
+  <data name="AccountPasswordNotSame" xml:space="preserve">
+    <value>Incorrect password</value>
+  </data>
+  <data name="AccountPasswordNotSameOverrun" xml:space="preserve">
+    <value>Too many failed logins, please try again in 30 minutes</value>
+  </data>
+  <data name="AccountLoginExpired" xml:space="preserve">
+    <value>Login expired, please sign in again</value>
+  </data>
+  <data name="AccountExist" xml:space="preserve">
+    <value>Username, phone number or email is already in use</value>
+  </data>
+  <data name="AccountCreate" xml:space="preserve">
+    <value>Failed to create account</value>
+  </data>
+  <data name="AccountOldEmailError" xml:space="preserve">
+    <value>Old email does not match</value>
+  </data>
+  <data name="AccountOldTelPhoneError" xml:space="preserve">
+    <value>Same as the old phone number, no change needed</value>
+  </data>
+  <data name="AccountExistTelPhoneError" xml:space="preserve">
+    <value>Phone number already exists</value>
+  </data>
+  <data name="AccountExistEmailError" xml:space="preserve">
+    <value>Email already exists</value>
+  </data>
+  <data name="AccountExistUserNameError" xml:space="preserve">
+    <value>Username already exists</value>
+  </data>
+  <data name="AccountExistTypeError" xml:space="preserve">
+    <value>Invalid account login type</value>
+  </data>
+  <data name="AccountNameExistTypeError" xml:space="preserve">
+    <value>Username already exists</value>
+  </data>
+  <data name="RoleNotExist" xml:space="preserve">
+    <value>Role not found</value>
+  </data>
+  <data name="RoleUnavailable" xml:space="preserve">
+    <value>Role {0} is disabled</value>
+  </data>
+  <data name="RoleCreateFailed" xml:space="preserve">
+    <value>Failed to create role</value>
+  </data>
+  <data name="RolePermissionAssignationFailed" xml:space="preserve">
+    <value>Failed to assign role permissions, please try again</value>
+  </data>
+  <data name="RoleIdNotExist" xml:space="preserve">
+    <value>Role id is required</value>
+  </data>
+  <data name="RoleNameExist" xml:space="preserve">
+    <value>Role name already exists</value>
+  </data>
+  <data name="RoleModifyFailed" xml:space="preserve">
+    <value>Failed to update role</value>
+  </data>
+  <data name="RoleNotSuperFailed" xml:space="preserve">
+    <value>Only super administrators can perform this operation</value>
+  </data>
+  <data name="RoleDeleteError" xml:space="preserve">
+    <value>Failed to delete role</value>
+  </data>
+  <data name="PermissionNotExist" xml:space="preserve">
+    <value>Permission not found</value>
+  </data>
+  <data name="PermissionCreateError" xml:space="preserve">
+    <value>Failed to add permission</value>
+  </data>
+  <data name="PermissionUpdateError" xml:space="preserve">
+    <value>Failed to update permission</value>
+  </data>
+  <data name="PermissionDeleteError" xml:space="preserve">
+    <value>Failed to delete permission</value>
+  </data>
+  <data name="PermissionSysDeleteError" xml:space="preserve">
+    <value>System permissions cannot be deleted</value>
+  </data>
+  <data name="PermissionSystemNotModify" xml:space="preserve">
+    <value>This is a system permission and cannot be modified</value>
+  </data>
+  <data name="PermissionSystemNotCreate" xml:space="preserve">
+    <value>Only super administrators can create system permissions</value>
+  </data>
+  <data name="PermissionApiNotExist" xml:space="preserve">
+    <value>Permission API not found</value>
+  </data>
+  <data name="PermissionApiCreateError" xml:space="preserve">
+    <value>Failed to create permission API</value>
+  </data>
+  <data name="PermissionApiUpdateError" xml:space="preserve">
+    <value>Failed to update permission API</value>
+  </data>
+  <data name="PermissionSysApiUpdateError" xml:space="preserve">
+    <value>System permission APIs cannot be modified</value>
+  </data>
+  <data name="PermissionSysApiDeleteError" xml:space="preserve">
+    <value>System permission APIs cannot be deleted</value>
+  </data>
+  <data name="PermissionApiPathExist" xml:space="preserve">
+    <value>The same API path already exists</value>
+  </data>
+  <data name="PermissionMenuNotExist" xml:space="preserve">
+    <value>Permission menu not found</value>
+  </data>
+  <data name="PermissionMenuTitleOrUrlExist" xml:space="preserve">
+    <value>The same menu title or path already exists</value>
+  </data>
+  <data name="PermissionMenuCreateError" xml:space="preserve">
+    <value>Failed to create permission menu</value>
+  </data>
+  <data name="PermissionMenuUpdateError" xml:space="preserve">
+    <value>Failed to update permission menu</value>
+  </data>
+  <data name="PermissionMenuDeleteError" xml:space="preserve">
+    <value>Failed to delete permission menu</value>
+  </data>
+  <data name="PermissionNameOrCodeExist" xml:space="preserve">
+    <value>Permission name or code already exists</value>
+  </data>
+  <data name="PermissionIdNotExist" xml:space="preserve">
+    <value>Permission id is required</value>
+  </data>
+  <data name="LogginDeletedCannoBeWithinThreeMonths" xml:space="preserve">
+    <value>Logs within the last three months cannot be deleted</value>
+  </data>
+  <data name="LogginDeletedError" xml:space="preserve">
+    <value>Failed to delete logs</value>
+  </data>
+  <data name="LoggingNotExist" xml:space="preserve">
+    <value>Log not found</value>
+  </data>
+  <data name="TranslateNotExist" xml:space="preserve">
+    <value>Translation not found</value>
+  </data>
+  <data name="TranslateNameExist" xml:space="preserve">
+    <value>Translation name already exists</value>
+  </data>
+  <data name="TranslateCreateError" xml:space="preserve">
+    <value>Failed to add translation</value>
+  </data>
+  <data name="TranslateUpdateError" xml:space="preserve">
+    <value>Failed to update translation</value>
+  </data>
+  <data name="TranslateDeleteError" xml:space="preserve">
+    <value>Failed to delete translation</value>
+  </data>
+  <data name="CountryNotExist" xml:space="preserve">
+    <value>Country not found</value>
+  </data>
+  <data name="CountryCreateError" xml:space="preserve">
+    <value>Failed to add country</value>
+  </data>
+  <data name="CountryUpdateError" xml:space="preserve">
+    <value>Failed to update country</value>
+  </data>
+  <data name="CountryDeleteError" xml:space="preserve">
+    <value>Failed to delete country</value>
+  </data>
+  <data name="CountryNameExistError" xml:space="preserve">
+    <value>The same country name or code already exists</value>
+  </data>
+  <data name="DepartmentNotExist" xml:space="preserve">
+    <value>Department not found</value>
+  </data>
+  <data name="DepartmentNameExist" xml:space="preserve">
+    <value>Department already exists</value>
+  </data>
+  <data name="DepartmentCreateError" xml:space="preserve">
+    <value>Failed to add department</value>
+  </data>
+  <data name="DepartmentUpdateError" xml:space="preserve">
+    <value>Failed to update department</value>
+  </data>
+  <data name="DepartmentUnavailable" xml:space="preserve">
+    <value>Department is disabled</value>
+  </data>
+  <data name="PostNotExist" xml:space="preserve">
+    <value>Post not found</value>
+  </data>
+  <data name="PostNameExist" xml:space="preserve">
+    <value>Post name already exists</value>
+  </data>
+  <data name="PostCreateError" xml:space="preserve">
+    <value>Failed to add post</value>
+  </data>
+  <data name="PostModifyError" xml:space="preserve">
+    <value>Failed to update post</value>
+  </data>
+  <data name="PostDeleteError" xml:space="preserve">
+    <value>Failed to delete post</value>
+  </data>
+  <data name="PostUnavailable" xml:space="preserve">
+    <value>Post is disabled</value>
+  </data>
+  <data name="DictionaryNotExist" xml:space="preserve">
+    <value>Dictionary not found</value>
+  </data>
+  <data name="DictionaryKeyExist" xml:space="preserve">
+    <value>Dictionary key already exists</value>
+  </data>
+  <data name="DictionaryCreateError" xml:space="preserve">
+    <value>Failed to create dictionary</value>
+  </data>
+  <data name="DictionaryUpdateError" xml:space="preserve">
+    <value>Failed to update dictionary</value>
+  </data>
+  <data name="DictionaryDeleteError" xml:space="preserve">
+    <value>Failed to delete dictionary</value>
+  </data>
+  <data name="locationLocal" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="locationUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="invalidTarget" xml:space="preserve">
+    <value>Target tidak valid</value>
+  </data>
+  <data name="cannotReportSelf" xml:space="preserve">
+    <value>Tidak dapat melaporkan diri sendiri</value>
+  </data>
+  <data name="alreadyReported" xml:space="preserve">
+    <value>Sudah dilaporkan</value>
+  </data>
+  <data name="handleFailed" xml:space="preserve">
+    <value>Penanganan gagal</value>
+  </data>
+  <data name="publishFailed" xml:space="preserve">
+    <value>Gagal memublikasikan</value>
+  </data>
+  <data name="contentEmpty" xml:space="preserve">
+    <value>Konten tidak boleh kosong</value>
+  </data>
+  <data name="commentFailed" xml:space="preserve">
+    <value>Komentar gagal</value>
+  </data>
+  <data name="idRequired" xml:space="preserve">
+    <value>Id wajib</value>
+  </data>
+  <data name="deleteFailed" xml:space="preserve">
+    <value>Hapus gagal</value>
+  </data>
+  <data name="addFailed" xml:space="preserve">
+    <value>Tambah gagal</value>
+  </data>
+  <data name="invalidAmount" xml:space="preserve">
+    <value>Jumlah tidak valid</value>
+  </data>
+  <data name="createFailed" xml:space="preserve">
+    <value>Buat gagal</value>
+  </data>
+  <data name="inviteCodeEmpty" xml:space="preserve">
+    <value>Kode undangan tidak boleh kosong</value>
+  </data>
+  <data name="alreadyBound" xml:space="preserve">
+    <value>Kode undangan sudah terikat</value>
+  </data>
+  <data name="inviteCodeInvalid" xml:space="preserve">
+    <value>Kode undangan tidak valid</value>
+  </data>
+  <data name="cannotBindSelf" xml:space="preserve">
+    <value>Tidak dapat mengikat kode undangan sendiri</value>
+  </data>
+  <data name="alreadyClaimed" xml:space="preserve">
+    <value>Sudah diklaim</value>
+  </data>
+  <data name="alreadyOwned" xml:space="preserve">
+    <value>Sudah dimiliki</value>
+  </data>
+  <data name="insufficientDiamond" xml:space="preserve">
+    <value>Berlian tidak cukup</value>
+  </data>
+  <data name="insufficientCoin" xml:space="preserve">
+    <value>Koin tidak cukup</value>
+  </data>
+  <data name="notOwned" xml:space="preserve">
+    <value>Belum dimiliki</value>
+  </data>
+  <data name="reportResultTitle" xml:space="preserve">
+    <value>Hasil laporan</value>
+  </data>
+  <data name="reportAccepted" xml:space="preserve">
+    <value>Diterima</value>
+  </data>
+  <data name="reportRejected" xml:space="preserve">
+    <value>Ditolak</value>
+  </data>
+  <data name="Val_TargetUserIdRequired" xml:space="preserve">
+    <value>Id pengguna target wajib</value>
+  </data>
+  <data name="Val_ReasonCodeRequired" xml:space="preserve">
+    <value>Kode alasan wajib</value>
+  </data>
+  <data name="Val_DynamicIdRequired" xml:space="preserve">
+    <value>Id dinamis wajib</value>
+  </data>
+  <data name="Val_ContentRequired" xml:space="preserve">
+    <value>Konten wajib</value>
+  </data>
+  <data name="Val_ActionInvalid" xml:space="preserve">
+    <value>Aksi tidak valid</value>
+  </data>
+  <data name="Val_MediaTypeInvalid" xml:space="preserve">
+    <value>Tipe media tidak valid</value>
+  </data>
+  <data name="Val_TypeInvalid" xml:space="preserve">
+    <value>Tipe tidak valid</value>
+  </data>
+  <data name="Val_AmountRequired" xml:space="preserve">
+    <value>Jumlah wajib</value>
+  </data>
+  <data name="Val_HarvestAccountRequired" xml:space="preserve">
+    <value>Akun pencairan wajib</value>
+  </data>
+  <data name="Val_InviteCodeRequired" xml:space="preserve">
+    <value>Kode undangan wajib</value>
+  </data>
+  <data name="Val_TaskIdRequired" xml:space="preserve">
+    <value>Id tugas wajib</value>
+  </data>
+  <data name="Val_AdornItemIdRequired" xml:space="preserve">
+    <value>Id item hiasan wajib</value>
+  </data>
+  <data name="Val_AlbumIdRequiredWhenDelete" xml:space="preserve">
+    <value>Id album wajib saat menghapus</value>
+  </data>
+  <data name="Val_AlbumContentRequired" xml:space="preserve">
+    <value>Konten album wajib</value>
+  </data>
+  <data name="Val_TrendsContentRequired" xml:space="preserve">
+    <value>Konten dinamis wajib</value>
+  </data>
+  <data name="vipProductNotFound" xml:space="preserve">
+    <value>Produk VIP tidak ditemukan</value>
+  </data>
+  <data name="rechargeProductNotFound" xml:space="preserve">
+    <value>Produk isi ulang tidak ditemukan</value>
+  </data>
+  <data name="createOrderFailed" xml:space="preserve">
+    <value>Buat pesanan gagal</value>
+  </data>
+  <data name="purchaseTokenRequired" xml:space="preserve">
+    <value>purchaseToken/productId wajib</value>
+  </data>
+  <data name="platformInvalid" xml:space="preserve">
+    <value>platform harus ios atau android</value>
+  </data>
+  <data name="verifyFailed" xml:space="preserve">
+    <value>Verifikasi gagal</value>
+  </data>
+  <data name="invalidUser" xml:space="preserve">
+    <value>Pengguna tidak valid</value>
+  </data>
+  <data name="giftIdOrCodeRequired" xml:space="preserve">
+    <value>giftId atau code wajib</value>
+  </data>
+  <data name="giftNotFound" xml:space="preserve">
+    <value>Hadiah tidak ditemukan</value>
+  </data>
+  <data name="sendGiftFailed" xml:space="preserve">
+    <value>Kirim hadiah gagal</value>
+  </data>
+  <data name="vipFeatureOnly" xml:space="preserve">
+    <value>Fitur ini khusus VIP</value>
+  </data>
+  <data name="dailyMessageLimitReached" xml:space="preserve">
+    <value>Non-VIP hanya bisa mengirim 5 pesan per hari</value>
+  </data>
+  <data name="cannotSendRedPacketToSelf" xml:space="preserve">
+    <value>Cannot send a red packet to yourself</value>
+  </data>
+  <data name="redPacketAmountInvalid" xml:space="preserve">
+    <value>Invalid red packet amount</value>
+  </data>
+  <data name="redPacketUnavailable" xml:space="preserve">
+    <value>Red packet is unavailable</value>
+  </data>
+  <data name="musicNotFound" xml:space="preserve">
+    <value>Music not found</value>
+  </data>
+</root>

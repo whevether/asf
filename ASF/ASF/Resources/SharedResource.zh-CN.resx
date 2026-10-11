@@ -144,7 +144,7 @@
     <value>邮箱地址不能为空</value>
   </data>
     <data name="timeInterval" xml:space="preserve">
-    <value>发送时间间隔剩余</value>
+    <value>发送时间间隔剩余{0}秒</value>
   </data>
     <data name="second" xml:space="preserve">
     <value>秒</value>
@@ -162,7 +162,7 @@
     <value>验证码已过期</value>
   </data>
     <data name="captchaCodeError" xml:space="preserve">
-    <value>验证码错误,重试次数剩余</value>
+    <value>验证码错误,重试次数剩余{0}</value>
   </data>
     <data name="emailVerifyFail" xml:space="preserve">
     <value>邮箱验证失败</value>
@@ -187,6 +187,15 @@
   </data>
     <data name="getTokenError" xml:space="preserve">
     <value>获取用户token失败</value>
+  </data>
+  <data name="imRequestFailed" xml:space="preserve">
+    <value>即时通讯服务请求失败</value>
+  </data>
+  <data name="googleAuthFailed" xml:space="preserve">
+    <value>Google 登录校验失败</value>
+  </data>
+  <data name="appleAuthFailed" xml:space="preserve">
+    <value>Apple 登录校验失败</value>
   </data>
     <data name="checkMemberIsRegister" xml:space="preserve">
     <value>检查用户是否注册失败</value>
@@ -640,5 +649,526 @@
   </data>
     <data name="Val_MemberRatingRequired" xml:space="preserve">
     <value>会员受欢迎程度不能为空</value>
+  </data>
+
+  <data name="onlySuperAdmin" xml:space="preserve">
+    <value>只有超级管理员才有权限操作</value>
+  </data>
+  <data name="uploadImageTooLarge" xml:space="preserve">
+    <value>上传失败,图片不能大于5M</value>
+  </data>
+  <data name="uploadFailed" xml:space="preserve">
+    <value>上传失败</value>
+  </data>
+  <data name="invalidTagId" xml:space="preserve">
+    <value>标签ID无效</value>
+  </data>
+  <data name="hostUserIdInvalid" xml:space="preserve">
+    <value>hostUserId 无效</value>
+  </data>
+  <data name="accountIdNotEmpty" xml:space="preserve">
+    <value>账号id不能为空</value>
+  </data>
+  <data name="addMessageInboxFailed" xml:space="preserve">
+    <value>添加站内信失败</value>
+  </data>
+  <data name="invalidUserId" xml:space="preserve">
+    <value>用户ID无效</value>
+  </data>
+  <data name="noLogData" xml:space="preserve">
+    <value>没有日志数据</value>
+  </data>
+
+  <data name="liveGroupInitFailed" xml:space="preserve">
+    <value>直播群初始化失败</value>
+  </data>
+  <data name="createLiveGroupFailed" xml:space="preserve">
+    <value>创建直播群失败</value>
+  </data>
+  <data name="saveLiveRoomFailed" xml:space="preserve">
+    <value>保存直播场次失败</value>
+  </data>
+  <data name="liveNotExistOrEnded" xml:space="preserve">
+    <value>直播不存在或已结束</value>
+  </data>
+  <data name="unfollowFailed" xml:space="preserve">
+    <value>取消关注失败</value>
+  </data>
+  <data name="followFailed" xml:space="preserve">
+    <value>关注失败</value>
+  </data>
+  <data name="deleteFriendFailed" xml:space="preserve">
+    <value>删除好友失败</value>
+  </data>
+  <data name="addFriendFailed" xml:space="preserve">
+    <value>添加好友失败</value>
+  </data>
+  <data name="handleFriendFailed" xml:space="preserve">
+    <value>处理失败</value>
+  </data>
+  <data name="getTagsListFailed" xml:space="preserve">
+    <value>获取标签列表失败</value>
+  </data>
+  <data name="getTagsFailed" xml:space="preserve">
+    <value>获取标签失败</value>
+  </data>
+  <data name="add_tagsFailed" xml:space="preserve">
+    <value>添加标签失败</value>
+  </data>
+  <data name="update_tagsFailed" xml:space="preserve">
+    <value>修改标签失败</value>
+  </data>
+  <data name="serviceNotFound" xml:space="preserve">
+    <value>未找到服务</value>
+  </data>
+  <data name="badGateway" xml:space="preserve">
+    <value>请求错误</value>
+  </data>
+  <data name="internalServerError" xml:space="preserve">
+    <value>服务器内部错误</value>
+  </data>
+  <data name="invalidToken" xml:space="preserve">
+    <value>无效的token</value>
+  </data>
+  <data name="BadRequest" xml:space="preserve">
+    <value>错误请求</value>
+  </data>
+  <data name="UnAuthorized" xml:space="preserve">
+    <value>未授权</value>
+  </data>
+  <data name="NotAcceptable" xml:space="preserve">
+    <value>拒绝请求</value>
+  </data>
+  <data name="RequestTimeout" xml:space="preserve">
+    <value>请求超时</value>
+  </data>
+  <data name="liveRoomName" xml:space="preserve">
+    <value>{0}的直播间</value>
+  </data>
+  <data name="liveAssistantName" xml:space="preserve">
+    <value>直播助手</value>
+  </data>
+  <data name="TenancyNameExist" xml:space="preserve">
+    <value>输入的租户名已经被使用，请重新输入</value>
+  </data>
+  <data name="TenancyNotExist" xml:space="preserve">
+    <value>没有这个租户</value>
+  </data>
+  <data name="TenancyCreateFailure" xml:space="preserve">
+    <value>创建租户失败</value>
+  </data>
+  <data name="TenancyModifyFailure" xml:space="preserve">
+    <value>修改租户失败</value>
+  </data>
+  <data name="TenancyDisabled" xml:space="preserve">
+    <value>租户被禁用</value>
+  </data>
+  <data name="TenancyMatchExist" xml:space="preserve">
+    <value>不允许操作其他租户数据</value>
+  </data>
+  <data name="TenancyIsDelete" xml:space="preserve">
+    <value>租户已经被删除</value>
+  </data>
+  <data name="AccountUpdateError" xml:space="preserve">
+    <value>账户更新失败</value>
+  </data>
+  <data name="AccountOldPasswordAndNewPasswordSame" xml:space="preserve">
+    <value>新密码和旧密码不能一样，为了安全请重新输入</value>
+  </data>
+  <data name="AccountNotExist" xml:space="preserve">
+    <value>用户不存在</value>
+  </data>
+  <data name="AccountRoleAssignationFailed" xml:space="preserve">
+    <value>账户角色分配失败，请重试</value>
+  </data>
+  <data name="AccountNotAllowedLogin" xml:space="preserve">
+    <value>账户被禁止登陆，请联系管理员</value>
+  </data>
+  <data name="AccountUnavailable" xml:space="preserve">
+    <value>账户暂不可以使用</value>
+  </data>
+  <data name="AccountPasswordNotSame2" xml:space="preserve">
+    <value>账户密码不匹配，失败{0}次之后自动锁定账号</value>
+  </data>
+  <data name="AccountPasswordNotSame" xml:space="preserve">
+    <value>账户密码不匹配</value>
+  </data>
+  <data name="AccountPasswordNotSameOverrun" xml:space="preserve">
+    <value>登录失败超限，请30分钟之后再试</value>
+  </data>
+  <data name="AccountLoginExpired" xml:space="preserve">
+    <value>登录状态已过期，请重新登录</value>
+  </data>
+  <data name="AccountExist" xml:space="preserve">
+    <value>输入的账户名或手机号码或邮箱地址已经被人使用了</value>
+  </data>
+  <data name="AccountCreate" xml:space="preserve">
+    <value>账户创建失败</value>
+  </data>
+  <data name="AccountOldEmailError" xml:space="preserve">
+    <value>账户旧邮箱不匹配</value>
+  </data>
+  <data name="AccountOldTelPhoneError" xml:space="preserve">
+    <value>与旧手机号码相同，无需修改</value>
+  </data>
+  <data name="AccountExistTelPhoneError" xml:space="preserve">
+    <value>手机号码已经存在</value>
+  </data>
+  <data name="AccountExistEmailError" xml:space="preserve">
+    <value>邮箱已经存在</value>
+  </data>
+  <data name="AccountExistUserNameError" xml:space="preserve">
+    <value>账户名已经存在</value>
+  </data>
+  <data name="AccountExistTypeError" xml:space="preserve">
+    <value>账户登录类型错误</value>
+  </data>
+  <data name="AccountNameExistTypeError" xml:space="preserve">
+    <value>账户名已经存在</value>
+  </data>
+  <data name="RoleNotExist" xml:space="preserve">
+    <value>角色不存在</value>
+  </data>
+  <data name="RoleUnavailable" xml:space="preserve">
+    <value>{0}角色已禁止使用</value>
+  </data>
+  <data name="RoleCreateFailed" xml:space="preserve">
+    <value>创建角色失败</value>
+  </data>
+  <data name="RolePermissionAssignationFailed" xml:space="preserve">
+    <value>角色权限分配失败，请重试</value>
+  </data>
+  <data name="RoleIdNotExist" xml:space="preserve">
+    <value>角色id不能为空</value>
+  </data>
+  <data name="RoleNameExist" xml:space="preserve">
+    <value>角色名已经存在</value>
+  </data>
+  <data name="RoleModifyFailed" xml:space="preserve">
+    <value>角色修改失败</value>
+  </data>
+  <data name="RoleNotSuperFailed" xml:space="preserve">
+    <value>只有超级管理员才能操作</value>
+  </data>
+  <data name="RoleDeleteError" xml:space="preserve">
+    <value>删除角色失败</value>
+  </data>
+  <data name="PermissionNotExist" xml:space="preserve">
+    <value>权限不存在</value>
+  </data>
+  <data name="PermissionCreateError" xml:space="preserve">
+    <value>权限添加失败</value>
+  </data>
+  <data name="PermissionUpdateError" xml:space="preserve">
+    <value>权限修改失败</value>
+  </data>
+  <data name="PermissionDeleteError" xml:space="preserve">
+    <value>权限删除失败</value>
+  </data>
+  <data name="PermissionSysDeleteError" xml:space="preserve">
+    <value>系统权限不允许删除</value>
+  </data>
+  <data name="PermissionSystemNotModify" xml:space="preserve">
+    <value>该权限为系统权限，无法修改</value>
+  </data>
+  <data name="PermissionSystemNotCreate" xml:space="preserve">
+    <value>只有超级管理员才能创建系统权限</value>
+  </data>
+  <data name="PermissionApiNotExist" xml:space="preserve">
+    <value>权限功能不存在</value>
+  </data>
+  <data name="PermissionApiCreateError" xml:space="preserve">
+    <value>权限功能创建失败</value>
+  </data>
+  <data name="PermissionApiUpdateError" xml:space="preserve">
+    <value>权限功能修改失败</value>
+  </data>
+  <data name="PermissionSysApiUpdateError" xml:space="preserve">
+    <value>系统权限功能不允许修改</value>
+  </data>
+  <data name="PermissionSysApiDeleteError" xml:space="preserve">
+    <value>系统权限功能不允许删除</value>
+  </data>
+  <data name="PermissionApiPathExist" xml:space="preserve">
+    <value>存在相同的api地址</value>
+  </data>
+  <data name="PermissionMenuNotExist" xml:space="preserve">
+    <value>权限菜单不存在</value>
+  </data>
+  <data name="PermissionMenuTitleOrUrlExist" xml:space="preserve">
+    <value>存在相同的菜单标题或地址</value>
+  </data>
+  <data name="PermissionMenuCreateError" xml:space="preserve">
+    <value>权限菜单创建失败</value>
+  </data>
+  <data name="PermissionMenuUpdateError" xml:space="preserve">
+    <value>权限菜单修改失败</value>
+  </data>
+  <data name="PermissionMenuDeleteError" xml:space="preserve">
+    <value>权限菜单删除失败</value>
+  </data>
+  <data name="PermissionNameOrCodeExist" xml:space="preserve">
+    <value>权限名称或code已经存在</value>
+  </data>
+  <data name="PermissionIdNotExist" xml:space="preserve">
+    <value>权限id不能为空</value>
+  </data>
+  <data name="LogginDeletedCannoBeWithinThreeMonths" xml:space="preserve">
+    <value>三个月之内的日志不能删除</value>
+  </data>
+  <data name="LogginDeletedError" xml:space="preserve">
+    <value>删除日志失败</value>
+  </data>
+  <data name="LoggingNotExist" xml:space="preserve">
+    <value>没有这个日志</value>
+  </data>
+  <data name="TranslateNotExist" xml:space="preserve">
+    <value>多语言不存在</value>
+  </data>
+  <data name="TranslateNameExist" xml:space="preserve">
+    <value>多语言名称已经存在</value>
+  </data>
+  <data name="TranslateCreateError" xml:space="preserve">
+    <value>多语言添加失败</value>
+  </data>
+  <data name="TranslateUpdateError" xml:space="preserve">
+    <value>多语言修改失败</value>
+  </data>
+  <data name="TranslateDeleteError" xml:space="preserve">
+    <value>多语言删除失败</value>
+  </data>
+  <data name="CountryNotExist" xml:space="preserve">
+    <value>国家不存在</value>
+  </data>
+  <data name="CountryCreateError" xml:space="preserve">
+    <value>国家添加失败</value>
+  </data>
+  <data name="CountryUpdateError" xml:space="preserve">
+    <value>国家修改失败</value>
+  </data>
+  <data name="CountryDeleteError" xml:space="preserve">
+    <value>国家删除失败</value>
+  </data>
+  <data name="CountryNameExistError" xml:space="preserve">
+    <value>存在相同国家名称或code</value>
+  </data>
+  <data name="DepartmentNotExist" xml:space="preserve">
+    <value>部门不存在</value>
+  </data>
+  <data name="DepartmentNameExist" xml:space="preserve">
+    <value>部门已经存在</value>
+  </data>
+  <data name="DepartmentCreateError" xml:space="preserve">
+    <value>部门添加失败</value>
+  </data>
+  <data name="DepartmentUpdateError" xml:space="preserve">
+    <value>部门修改失败</value>
+  </data>
+  <data name="DepartmentUnavailable" xml:space="preserve">
+    <value>部门已被禁用</value>
+  </data>
+  <data name="PostNotExist" xml:space="preserve">
+    <value>岗位不存在</value>
+  </data>
+  <data name="PostNameExist" xml:space="preserve">
+    <value>岗位名已经存在</value>
+  </data>
+  <data name="PostCreateError" xml:space="preserve">
+    <value>岗位添加失败</value>
+  </data>
+  <data name="PostModifyError" xml:space="preserve">
+    <value>岗位修改失败</value>
+  </data>
+  <data name="PostDeleteError" xml:space="preserve">
+    <value>岗位删除失败</value>
+  </data>
+  <data name="PostUnavailable" xml:space="preserve">
+    <value>岗位已被禁用</value>
+  </data>
+  <data name="DictionaryNotExist" xml:space="preserve">
+    <value>字典不存在</value>
+  </data>
+  <data name="DictionaryKeyExist" xml:space="preserve">
+    <value>字典key已经存在</value>
+  </data>
+  <data name="DictionaryCreateError" xml:space="preserve">
+    <value>字典创建失败</value>
+  </data>
+  <data name="DictionaryUpdateError" xml:space="preserve">
+    <value>字典修改失败</value>
+  </data>
+  <data name="DictionaryDeleteError" xml:space="preserve">
+    <value>字典删除失败</value>
+  </data>
+  <data name="locationLocal" xml:space="preserve">
+    <value>本地</value>
+  </data>
+  <data name="locationUnknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="invalidTarget" xml:space="preserve">
+    <value>无效的目标用户</value>
+  </data>
+  <data name="cannotReportSelf" xml:space="preserve">
+    <value>不能举报自己</value>
+  </data>
+  <data name="alreadyReported" xml:space="preserve">
+    <value>已举报过该用户</value>
+  </data>
+  <data name="handleFailed" xml:space="preserve">
+    <value>处理失败</value>
+  </data>
+  <data name="publishFailed" xml:space="preserve">
+    <value>发布失败</value>
+  </data>
+  <data name="contentEmpty" xml:space="preserve">
+    <value>内容不能为空</value>
+  </data>
+  <data name="commentFailed" xml:space="preserve">
+    <value>评论失败</value>
+  </data>
+  <data name="idRequired" xml:space="preserve">
+    <value>缺少 id</value>
+  </data>
+  <data name="deleteFailed" xml:space="preserve">
+    <value>删除失败</value>
+  </data>
+  <data name="addFailed" xml:space="preserve">
+    <value>添加失败</value>
+  </data>
+  <data name="invalidAmount" xml:space="preserve">
+    <value>金额无效</value>
+  </data>
+  <data name="createFailed" xml:space="preserve">
+    <value>创建失败</value>
+  </data>
+  <data name="inviteCodeEmpty" xml:space="preserve">
+    <value>邀请码不能为空</value>
+  </data>
+  <data name="alreadyBound" xml:space="preserve">
+    <value>已绑定邀请码</value>
+  </data>
+  <data name="inviteCodeInvalid" xml:space="preserve">
+    <value>邀请码无效</value>
+  </data>
+  <data name="cannotBindSelf" xml:space="preserve">
+    <value>不能绑定自己的邀请码</value>
+  </data>
+  <data name="alreadyClaimed" xml:space="preserve">
+    <value>已领取过该任务</value>
+  </data>
+  <data name="alreadyOwned" xml:space="preserve">
+    <value>已拥有该装扮</value>
+  </data>
+  <data name="insufficientDiamond" xml:space="preserve">
+    <value>钻石不足</value>
+  </data>
+  <data name="insufficientCoin" xml:space="preserve">
+    <value>金币不足</value>
+  </data>
+  <data name="notOwned" xml:space="preserve">
+    <value>未拥有该装扮</value>
+  </data>
+  <data name="reportResultTitle" xml:space="preserve">
+    <value>举报结果</value>
+  </data>
+  <data name="reportAccepted" xml:space="preserve">
+    <value>已受理</value>
+  </data>
+  <data name="reportRejected" xml:space="preserve">
+    <value>已驳回</value>
+  </data>
+  <data name="Val_TargetUserIdRequired" xml:space="preserve">
+    <value>目标用户 id 必填</value>
+  </data>
+  <data name="Val_ReasonCodeRequired" xml:space="preserve">
+    <value>举报原因编码必填</value>
+  </data>
+  <data name="Val_DynamicIdRequired" xml:space="preserve">
+    <value>动态 id 必填</value>
+  </data>
+  <data name="Val_ContentRequired" xml:space="preserve">
+    <value>内容必填</value>
+  </data>
+  <data name="Val_ActionInvalid" xml:space="preserve">
+    <value>操作类型无效</value>
+  </data>
+  <data name="Val_MediaTypeInvalid" xml:space="preserve">
+    <value>媒体类型无效</value>
+  </data>
+  <data name="Val_TypeInvalid" xml:space="preserve">
+    <value>类型无效</value>
+  </data>
+  <data name="Val_AmountRequired" xml:space="preserve">
+    <value>金额必填</value>
+  </data>
+  <data name="Val_HarvestAccountRequired" xml:space="preserve">
+    <value>收款账号必填</value>
+  </data>
+  <data name="Val_InviteCodeRequired" xml:space="preserve">
+    <value>邀请码必填</value>
+  </data>
+  <data name="Val_TaskIdRequired" xml:space="preserve">
+    <value>任务 id 必填</value>
+  </data>
+  <data name="Val_AdornItemIdRequired" xml:space="preserve">
+    <value>装扮商品 id 必填</value>
+  </data>
+  <data name="Val_AlbumIdRequiredWhenDelete" xml:space="preserve">
+    <value>删除相册时 id 必填</value>
+  </data>
+  <data name="Val_AlbumContentRequired" xml:space="preserve">
+    <value>相册内容必填</value>
+  </data>
+  <data name="Val_TrendsContentRequired" xml:space="preserve">
+    <value>动态内容必填</value>
+  </data>
+  <data name="vipProductNotFound" xml:space="preserve">
+    <value>VIP 商品不存在</value>
+  </data>
+  <data name="rechargeProductNotFound" xml:space="preserve">
+    <value>充值商品不存在</value>
+  </data>
+  <data name="createOrderFailed" xml:space="preserve">
+    <value>创建订单失败</value>
+  </data>
+  <data name="purchaseTokenRequired" xml:space="preserve">
+    <value>purchaseToken/productId 必填</value>
+  </data>
+  <data name="platformInvalid" xml:space="preserve">
+    <value>platform 须为 ios 或 android</value>
+  </data>
+  <data name="verifyFailed" xml:space="preserve">
+    <value>验证失败</value>
+  </data>
+  <data name="invalidUser" xml:space="preserve">
+    <value>无效用户</value>
+  </data>
+  <data name="giftIdOrCodeRequired" xml:space="preserve">
+    <value>giftId 或 code 必填</value>
+  </data>
+  <data name="giftNotFound" xml:space="preserve">
+    <value>礼物不存在</value>
+  </data>
+  <data name="sendGiftFailed" xml:space="preserve">
+    <value>送礼失败</value>
+  </data>
+  <data name="vipFeatureOnly" xml:space="preserve">
+    <value>该功能为VIP专属</value>
+  </data>
+  <data name="dailyMessageLimitReached" xml:space="preserve">
+    <value>非会员每天最多发送5条消息</value>
+  </data>
+  <data name="cannotSendRedPacketToSelf" xml:space="preserve">
+    <value>不能给自己发红包</value>
+  </data>
+  <data name="redPacketAmountInvalid" xml:space="preserve">
+    <value>红包金额无效</value>
+  </data>
+  <data name="redPacketUnavailable" xml:space="preserve">
+    <value>红包不存在或已领取</value>
+  </data>
+  <data name="musicNotFound" xml:space="preserve">
+    <value>音乐不存在</value>
   </data>
 </root>

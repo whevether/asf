@@ -19,23 +19,46 @@ public static class RSA
 
   static RSA()
   {
-    using (var rsa = new RSACryptoServiceProvider(2048))
+    Initialize(null);
+  }
+
+  /// <summary>
+  ///   从 PEM 文件或配置初始化 JWT 签名密钥；无配置时生成并持久化到 Data/jwt-rsa.pem
+  /// </summary>
+  public static void Initialize(string keyFilePath)
+  {
+    var path = string.IsNullOrWhiteSpace(keyFilePath)
+      ? Path.Combine(AppContext.BaseDirectory, "Data", "jwt-rsa.pem")
+      : keyFilePath;
+
+    using var rsa = System.Security.Cryptography.RSA.Create();
+    if (File.Exists(path))
     {
-      RSAPrivateKey = new RsaSecurityKey(rsa.ExportParameters(true));
-      RSAPublicKey = new RsaSecurityKey(rsa.ExportParameters(false));
-      rsa.PersistKeyInCsp = false;
+      rsa.ImportFromPem(File.ReadAllText(path));
     }
+    else
+    {
+      rsa.KeySize = 2048;
+      var pem = rsa.ExportPkcs8PrivateKeyPem();
+      var dir = Path.GetDirectoryName(path);
+      if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+        Directory.CreateDirectory(dir);
+      File.WriteAllText(path, pem);
+    }
+
+    RSAPrivateKey = new RsaSecurityKey(rsa.ExportParameters(true));
+    RSAPublicKey = new RsaSecurityKey(rsa.ExportParameters(false));
   }
 
   /// <summary>
   ///   用于签名的私钥
   /// </summary>
-  public static RsaSecurityKey RSAPrivateKey { get; }
+  public static RsaSecurityKey RSAPrivateKey { get; private set; }
 
   /// <summary>
   ///   用于验证的公钥
   /// </summary>
-  public static RsaSecurityKey RSAPublicKey { get; }
+  public static RsaSecurityKey RSAPublicKey { get; private set; }
 
   /// <summary>
   ///   签名

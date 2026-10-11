@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace ASF.Internal.Results;
 
@@ -34,7 +34,7 @@ public class Result
     public Result(ValueTuple<int, string> result)
   {
     Status = result.Item1;
-    Message = result.Item2;
+    Message = ResultMessage.Localize(result.Item2);
   }
 
     /// <summary>
@@ -46,13 +46,13 @@ public class Result
     /// <summary>
     ///   业务返回码
     /// </summary>
-    [JsonProperty(PropertyName = "status")]
+    [JsonPropertyName("status")]
   public int Status { get; set; }
 
     /// <summary>
     ///   执行返回消息
     /// </summary>
-    [JsonProperty(PropertyName = "message")]
+    [JsonPropertyName("message")]
   public string Message { get; set; }
 
     /// <summary>
@@ -83,7 +83,7 @@ public class Result
     protected void To(ValueTuple<int, string> result)
   {
     Status = result.Item1;
-    Message = result.Item2;
+    Message = ResultMessage.Localize(result.Item2);
   }
 
     /// <summary>
@@ -104,7 +104,7 @@ public class Result
     /// <returns></returns>
     public static Result ReFailure(ValueTuple<int, string> result)
   {
-    return new Result(result.Item2, result.Item1);
+    return new Result(result);
   }
 
     /// <summary>

@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+      Microsoft ResX Schema 
+      
+      Version 2.0
+      
+      The primary goals of this format is to allow a simple XML format 
+      that is mostly human readable. The generation and parsing of the 
+      various data types are done through the TypeConverter classes 
+      associated with the data types.
+      
+      Example:
+      
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+                  
+      There are any number of "resheader" rows that contain simple 
+      name/value pairs.
+      
+      Each data row contains a name, and value. The row also contains a 
+      type or mimetype. Type corresponds to a .NET class that support 
+      text/value conversion through the TypeConverter architecture. 
+      Classes that don't support this are serialized and stored with the 
+      mimetype set.
+      
+      The mimetype is used for serialized objects, and tells the 
+      ResXResourceReader how to depersist the object. This is currently not 
+      extensible. For a given mimetype the value must be set accordingly:
+      
+      Note - application/x-microsoft.net.object.binary.base64 is the format 
+      that the ResXResourceWriter will generate, however the reader can 
+      read any of the formats listed below.
+      
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+      
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+  
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array 
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+                xmlns="">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="dataNotFound" xml:space="preserve">
+    <value>डेटा मौजूद नहीं है</value>
+  </data>
+    <data name="succeeded" xml:space="preserve">
+    <value>सफल</value>
+  </data>
+    <data name="unknownError" xml:space="preserve">
+    <value>अज्ञात त्रुटि</value>
+  </data>
+    <data name="loginTypeError" xml:space="preserve">
+    <value>लॉगिन प्रकार गलत है</value>
+  </data>
+    <data name="memberFrozen" xml:space="preserve">
+    <value>सदस्य फ्रीज है</value>
+  </data>
+    <data name="memberLogout" xml:space="preserve">
+    <value>सदस्य रद्द हो चुका है</value>
+  </data>
+    <data name="emailNotEmpty" xml:space="preserve">
+    <value>ईमेल खाली नहीं हो सकता</value>
+  </data>
+    <data name="timeInterval" xml:space="preserve">
+    <value>दोबारा भेजने से पहले {0} सेकंड प्रतीक्षा करें</value>
+  </data>
+    <data name="second" xml:space="preserve">
+    <value>सेकंड</value>
+  </data>
+    <data name="registerCaptcha" xml:space="preserve">
+    <value>wchat रजिस्टर सत्यापन कोड</value>
+  </data>
+    <data name="hello" xml:space="preserve">
+    <value>नमस्ते</value>
+  </data>
+    <data name="youCaptchaCode" xml:space="preserve">
+    <value>आपका सत्यापन कोड है</value>
+  </data>
+    <data name="captchaExpired" xml:space="preserve">
+    <value>सत्यापन कोड की समय सीमा समाप्त हो गई</value>
+  </data>
+    <data name="captchaCodeError" xml:space="preserve">
+    <value>सत्यापन कोड गलत है, {0} प्रयास शेष हैं</value>
+  </data>
+    <data name="emailVerifyFail" xml:space="preserve">
+    <value>ईमेल सत्यापन विफल</value>
+  </data>
+    <data name="tokenError" xml:space="preserve">
+    <value>टोकन गलत है</value>
+  </data>
+    <data name="emailInconsistent" xml:space="preserve">
+    <value>ईमेल मेल नहीं खाते</value>
+  </data>
+    <data name="modifyFail" xml:space="preserve">
+    <value>संशोधन विफल</value>
+  </data>
+    <data name="memberNotEmpty" xml:space="preserve">
+    <value>सदस्य जानकारी खाली नहीं हो सकती</value>
+  </data>
+    <data name="registerMemberFail" xml:space="preserve">
+    <value>सदस्य रजिस्टर विफल</value>
+  </data>
+    <data name="imAdminTokenEmpty" xml:space="preserve">
+    <value>IM व्यवस्थापक टोकन खाली है</value>
+  </data>
+    <data name="getTokenError" xml:space="preserve">
+    <value>उपयोगकर्ता टोकन प्राप्त करने में विफल</value>
+  </data>
+  <data name="imRequestFailed" xml:space="preserve">
+    <value>इंस्टेंट मैसेज सेवा अनुरोध विफल</value>
+  </data>
+  <data name="googleAuthFailed" xml:space="preserve">
+    <value>Google लॉगिन सत्यापन विफल</value>
+  </data>
+  <data name="appleAuthFailed" xml:space="preserve">
+    <value>Apple लॉगिन सत्यापन विफल</value>
+  </data>
+    <data name="checkMemberIsRegister" xml:space="preserve">
+    <value>उपयोगकर्ता रजिस्टर स्थिति की जाँच विफल</value>
+  </data>
+    <data name="countryNotYet" xml:space="preserve">
+    <value>यह देश अभी सेवा में नहीं है</value>
+  </data>
+    <data name="Val_TranslateNameRequired" xml:space="preserve">
+    <value>भाषा का नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_TranslateNameMinLength" xml:space="preserve">
+    <value>भाषा का नाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_TranslateNameMaxLength" xml:space="preserve">
+    <value>भाषा का नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_CountryCodeRequired" xml:space="preserve">
+    <value>देश कोड खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_TranslateKeyRequired" xml:space="preserve">
+    <value>भाषा कुंजी खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_TranslateKeyMinLength" xml:space="preserve">
+    <value>भाषा कुंजी कम से कम 2 अक्षर की होनी चाहिए</value>
+  </data>
+    <data name="Val_TranslateKeyMaxLength" xml:space="preserve">
+    <value>भाषा कुंजी अधिकतम 500 अक्षर की हो सकती है</value>
+  </data>
+    <data name="Val_TranslateValueRequired" xml:space="preserve">
+    <value>भाषा मान खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_TranslateValueMinLength" xml:space="preserve">
+    <value>भाषा मान कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_TranslateValueMaxLength" xml:space="preserve">
+    <value>भाषा मान अधिकतम 5000 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_RoleIdRequired" xml:space="preserve">
+    <value>भूमिका ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_NameRequired" xml:space="preserve">
+    <value>नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_ContactRequired" xml:space="preserve">
+    <value>संपर्क खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_MemberIdRequired" xml:space="preserve">
+    <value>सदस्य ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_MemberVipStatusRequired" xml:space="preserve">
+    <value>सदस्य VIP स्थिति खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_MemberVipStatusRange" xml:space="preserve">
+    <value>सदस्य VIP स्थिति केवल 0 या 1 हो सकती है</value>
+  </data>
+    <data name="Val_MemberInfoIdRequired" xml:space="preserve">
+    <value>सदस्य जानकारी ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_AvatarMaxLength" xml:space="preserve">
+    <value>अवतार अधिकतम 500 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_PageNameRequired" xml:space="preserve">
+    <value>पृष्ठ नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_PagePathRequired" xml:space="preserve">
+    <value>पृष्ठ पथ खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_PageContentRequired" xml:space="preserve">
+    <value>पृष्ठ सामग्री खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_DepartmentNameMinLength" xml:space="preserve">
+    <value>विभाग नाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_DepartmentNameMaxLength" xml:space="preserve">
+    <value>विभाग नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_DepartmentStatusRange" xml:space="preserve">
+    <value>विभाग स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_DepartmentNameRequired" xml:space="preserve">
+    <value>विभाग नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_EnabledRange" xml:space="preserve">
+    <value>सक्रिय स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_TenancyIdRequired" xml:space="preserve">
+    <value>टेनेंट ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_PageNameMinLength" xml:space="preserve">
+    <value>पृष्ठ नाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_PageNameMaxLength" xml:space="preserve">
+    <value>पृष्ठ नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_PageTypeRange" xml:space="preserve">
+    <value>पृष्ठ प्रकार केवल 0-1 की संख्या हो सकता है</value>
+  </data>
+    <data name="Val_RoleNameRequired" xml:space="preserve">
+    <value>भूमिका नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_RoleNameMinLength" xml:space="preserve">
+    <value>भूमिका नाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_RoleNameMaxLength" xml:space="preserve">
+    <value>भूमिका नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_RoleNameMaxLength255" xml:space="preserve">
+    <value>भूमिका नाम अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_StatusRange01" xml:space="preserve">
+    <value>स्थिति केवल 0 या 1 हो सकती है</value>
+  </data>
+    <data name="Val_TenancyNameMinLength" xml:space="preserve">
+    <value>टेनेंट नाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_TenancyNameMaxLength" xml:space="preserve">
+    <value>टेनेंट नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MemberEmailRequired" xml:space="preserve">
+    <value>सदस्य ईमेल खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_IdRequired" xml:space="preserve">
+    <value>ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_ReviewStatusRequired" xml:space="preserve">
+    <value>समीक्षा स्थिति खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_AccountIdRequired" xml:space="preserve">
+    <value>खाता ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_InvalidPhone" xml:space="preserve">
+    <value>फ़ोन नंबर गलत है</value>
+  </data>
+    <data name="Val_MemberBirthdayRequired" xml:space="preserve">
+    <value>सदस्य जन्मदिन खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_AccountNameMaxLength" xml:space="preserve">
+    <value>खाता नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_InvalidEmail" xml:space="preserve">
+    <value>ईमेल प्रारूप गलत है</value>
+  </data>
+    <data name="Val_StatusRange" xml:space="preserve">
+    <value>स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_GenderRange" xml:space="preserve">
+    <value>लिंग केवल 0-2 की संख्या हो सकता है</value>
+  </data>
+    <data name="Val_DepartmentIdRequired" xml:space="preserve">
+    <value>विभाग ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_AccountStatusRange" xml:space="preserve">
+    <value>खाता स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_NickNameRequired" xml:space="preserve">
+    <value>उपनाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_AccountNickNameMinLength" xml:space="preserve">
+    <value>खाता उपनाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_AccountNickNameMaxLength" xml:space="preserve">
+    <value>खाता उपनाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_AccountNameRequired" xml:space="preserve">
+    <value>खाता नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_AccountNameMinLength" xml:space="preserve">
+    <value>खाता नाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_AccountPasswordRequired" xml:space="preserve">
+    <value>खाता पासवर्ड खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_AccountPasswordMinLength" xml:space="preserve">
+    <value>खाता पासवर्ड कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_AccountPasswordMaxLength" xml:space="preserve">
+    <value>खाता पासवर्ड अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_LoginTypeRequired" xml:space="preserve">
+    <value>लॉगिन प्रकार खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_UserNameRequired" xml:space="preserve">
+    <value>उपयोगकर्ता नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_UserNameLength" xml:space="preserve">
+    <value>कृपया 2-32 अक्षर का उपयोगकर्ता नाम दर्ज करें</value>
+  </data>
+    <data name="Val_LoginPasswordRequired" xml:space="preserve">
+    <value>लॉगिन पासवर्ड खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_PasswordLength" xml:space="preserve">
+    <value>कृपया 5-32 अक्षर का पासवर्ड दर्ज करें</value>
+  </data>
+    <data name="Val_PermissionIdRequired" xml:space="preserve">
+    <value>अनुमति ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_PermissionCodeRequired" xml:space="preserve">
+    <value>अनुमति कोड खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength" xml:space="preserve">
+    <value>अनुमति कोड अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_PermissionNameRequired" xml:space="preserve">
+    <value>अनुमति नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength" xml:space="preserve">
+    <value>अनुमति नाम अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_PermissionTypeRequired" xml:space="preserve">
+    <value>अनुमति प्रकार खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_PermissionTypeRange" xml:space="preserve">
+    <value>अनुमति प्रकार केवल 1-3 हो सकता है</value>
+  </data>
+    <data name="Val_IsSystemPermissionRange" xml:space="preserve">
+    <value>सिस्टम अनुमति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_DescriptionMaxLength500" xml:space="preserve">
+    <value>विवरण अधिकतम 500 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_SortOrderRange" xml:space="preserve">
+    <value>क्रम केवल 0-100 हो सकता है</value>
+  </data>
+    <data name="Val_PostNameRequired" xml:space="preserve">
+    <value>पद नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_PostNameMinLength" xml:space="preserve">
+    <value>पद नाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_PostNameMaxLength" xml:space="preserve">
+    <value>पद नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_SortRange100" xml:space="preserve">
+    <value>क्रम केवल 0-100 हो सकता है</value>
+  </data>
+    <data name="Val_StateRange01" xml:space="preserve">
+    <value>स्थिति केवल 0 या 1 हो सकती है</value>
+  </data>
+    <data name="Val_PostDescriptionMaxLength" xml:space="preserve">
+    <value>पद विवरण अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_CountryNameRequired" xml:space="preserve">
+    <value>देश का नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_CountryCurrencyCodeRequired" xml:space="preserve">
+    <value>मुद्रा कोड खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_CountryExchangeRateRequired" xml:space="preserve">
+    <value>RMB विनिमय दर खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_WithdrawFeeRateRequired" xml:space="preserve">
+    <value>निकासी शुल्क दर खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_StatusRange01Num" xml:space="preserve">
+    <value>स्थिति केवल 0 से 1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_CountryIdRequired" xml:space="preserve">
+    <value>देश ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_EmailRequired" xml:space="preserve">
+    <value>ईमेल खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_MemberNickNameRequired" xml:space="preserve">
+    <value>सदस्य उपनाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_DictionaryCodeRequired" xml:space="preserve">
+    <value>शब्दकोश कोड खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_CodeMaxLength" xml:space="preserve">
+    <value>कोड अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_DictionaryKeyRequired" xml:space="preserve">
+    <value>शब्दकोश कुंजी खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_KeyMaxLength" xml:space="preserve">
+    <value>कुंजी अधिकतम 255 अक्षर की हो सकती है</value>
+  </data>
+    <data name="Val_DictionaryValueRequired" xml:space="preserve">
+    <value>शब्दकोश मान खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_ValueMaxLength" xml:space="preserve">
+    <value>मान अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_PostStatusRange" xml:space="preserve">
+    <value>पद स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_MemberCountryIdRequired" xml:space="preserve">
+    <value>सदस्य देश ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_TenancyNameRequired" xml:space="preserve">
+    <value>टेनेंट नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_LevelRange" xml:space="preserve">
+    <value>स्तर केवल 0-10 हो सकता है</value>
+  </data>
+    <data name="Val_MenuTitleRequired" xml:space="preserve">
+    <value>अनुमति मेनू शीर्षक खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_MenuTitleMinLength" xml:space="preserve">
+    <value>अनुमति मेनू शीर्षक कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_MenuTitleMaxLength" xml:space="preserve">
+    <value>अनुमति मेनू शीर्षक अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MenuSubTitleMinLength" xml:space="preserve">
+    <value>अनुमति मेनू उपशीर्षक कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_MenuSubTitleMaxLength" xml:space="preserve">
+    <value>अनुमति मेनू उपशीर्षक अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MenuIconRequired" xml:space="preserve">
+    <value>अनुमति मेनू आइकन खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_MenuHiddenRange" xml:space="preserve">
+    <value>मेनू छिपाना केवल 0-1 की संख्या हो सकता है</value>
+  </data>
+    <data name="Val_MenuPathMaxLength" xml:space="preserve">
+    <value>अनुमति मेनू पता अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MenuDescriptionMaxLength" xml:space="preserve">
+    <value>अनुमति मेनू विवरण अधिकतम 500 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MenuExternalUrlMaxLength" xml:space="preserve">
+    <value>अनुमति मेनू बाहरी पता अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MenuRedirectMaxLength" xml:space="preserve">
+    <value>अनुमति मेनू रीडायरेक्ट पता अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MenuLocaleMaxLength" xml:space="preserve">
+    <value>अनुमति मेनू भाषा अधिकतम 255 अक्षर की हो सकती है</value>
+  </data>
+    <data name="Val_PermissionCodeMaxLength50" xml:space="preserve">
+    <value>अनुमति कोड अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_PermissionNameMaxLength100" xml:space="preserve">
+    <value>अनुमति नाम अधिकतम 100 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_PermissionTypeRange13" xml:space="preserve">
+    <value>अनुमति प्रकार केवल 1-3 की संख्या हो सकता है</value>
+  </data>
+    <data name="Val_IsSystemPermission01" xml:space="preserve">
+    <value>सिस्टम अनुमति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_PermissionStatus01" xml:space="preserve">
+    <value>अनुमति स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_MemberSexRequired" xml:space="preserve">
+    <value>सदस्य लिंग खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_MemberSexRange" xml:space="preserve">
+    <value>सदस्य लिंग केवल 0-2 की संख्या हो सकता है</value>
+  </data>
+    <data name="Val_ApiNameRequired" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन नाम खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_ApiNameMinLength" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन नाम कम से कम 2 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_ApiNameMaxLength" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_ApiStatusRange" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_ApiTypeRange" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन प्रकार केवल 1-2 की संख्या हो सकता है</value>
+  </data>
+    <data name="Val_ApiPathRequired" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन पथ खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_ApiPathMaxLength" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन पथ अधिकतम 500 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_HttpMethodRequired" xml:space="preserve">
+    <value>अनुरोध विधि खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength" xml:space="preserve">
+    <value>अनुरोध विधि अधिकतम 30 अक्षर की हो सकती है</value>
+  </data>
+    <data name="Val_ApiLogRange" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन लॉग केवल 0-1 की संख्या हो सकता है</value>
+  </data>
+    <data name="Val_AuthorizeApiIdRequired" xml:space="preserve">
+    <value>अधिकृत API ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_ApiTypeRange12" xml:space="preserve">
+    <value>API प्रकार केवल 1-2 की संख्या हो सकता है</value>
+  </data>
+    <data name="Val_ApiStatus01" xml:space="preserve">
+    <value>API स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_ApiNameMinLength1" xml:space="preserve">
+    <value>API नाम कम से कम 1 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_ApiNameMaxLength50" xml:space="preserve">
+    <value>API नाम अधिकतम 50 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_HttpMethodMinLength1" xml:space="preserve">
+    <value>अनुरोध विधि कम से कम 1 अक्षर की होनी चाहिए</value>
+  </data>
+    <data name="Val_HttpMethodMaxLength5" xml:space="preserve">
+    <value>अनुरोध विधि अधिकतम 5 अक्षर की हो सकती है</value>
+  </data>
+    <data name="Val_ApiPathMinLength1" xml:space="preserve">
+    <value>अनुरोध पथ कम से कम 1 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_ApiPathMaxLength100" xml:space="preserve">
+    <value>अनुरोध पथ अधिकतम 100 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MenuIdRequired" xml:space="preserve">
+    <value>मेनू ID खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_MemberStatusRequired" xml:space="preserve">
+    <value>सदस्य स्थिति खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_MemberStatusRange" xml:space="preserve">
+    <value>सदस्य स्थिति केवल 1-3 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_MemberRealAuthRequired" xml:space="preserve">
+    <value>सदस्य वास्तविक सत्यापन स्थिति खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_MemberRealAuthRange" xml:space="preserve">
+    <value>सदस्य वास्तविक सत्यापन स्थिति केवल 0-1 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_VerifyUrlRequired" xml:space="preserve">
+    <value>सत्यापन कोड पता खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_EmailVerifyTokenRequired" xml:space="preserve">
+    <value>ईमेल सत्यापन टोकन खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_MemberInviteCodeRequired" xml:space="preserve">
+    <value>सदस्य आमंत्रण कोड खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_MemberAgeRequired" xml:space="preserve">
+    <value>सदस्य आयु खाली नहीं हो सकती</value>
+  </data>
+    <data name="Val_MemberAgeRange" xml:space="preserve">
+    <value>सदस्य आयु केवल 18-100 की संख्या हो सकती है</value>
+  </data>
+    <data name="Val_MenuTitleMinLength1" xml:space="preserve">
+    <value>अनुमति मेनू शीर्षक कम से कम 1 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_MenuPathMinLength1" xml:space="preserve">
+    <value>अनुमति मेनू पता कम से कम 1 अक्षर का होना चाहिए</value>
+  </data>
+    <data name="Val_MenuPathMaxLength255" xml:space="preserve">
+    <value>अनुमति मेनू पता अधिकतम 255 अक्षर का हो सकता है</value>
+  </data>
+    <data name="Val_MemberRecommendRequired" xml:space="preserve">
+    <value>सदस्य अनुशंसा मान खाली नहीं हो सकता</value>
+  </data>
+    <data name="Val_MemberRatingRequired" xml:space="preserve">
+    <value>सदस्य लोकप्रियता खाली नहीं हो सकती</value>
+  </data>
+
+  <data name="onlySuperAdmin" xml:space="preserve">
+    <value>केवल सुपर एडमिन ही यह कार्य कर सकता है</value>
+  </data>
+  <data name="uploadImageTooLarge" xml:space="preserve">
+    <value>अपलोड विफल, चित्र 5M से बड़ा नहीं हो सकता</value>
+  </data>
+  <data name="uploadFailed" xml:space="preserve">
+    <value>अपलोड विफल</value>
+  </data>
+  <data name="invalidTagId" xml:space="preserve">
+    <value>टैग ID अमान्य है</value>
+  </data>
+  <data name="hostUserIdInvalid" xml:space="preserve">
+    <value>hostUserId अमान्य है</value>
+  </data>
+  <data name="accountIdNotEmpty" xml:space="preserve">
+    <value>खाता ID खाली नहीं हो सकती</value>
+  </data>
+  <data name="addMessageInboxFailed" xml:space="preserve">
+    <value>इन-ऐप संदेश जोड़ना विफल</value>
+  </data>
+  <data name="invalidUserId" xml:space="preserve">
+    <value>उपयोगकर्ता ID अमान्य है</value>
+  </data>
+  <data name="noLogData" xml:space="preserve">
+    <value>कोई लॉग डेटा नहीं</value>
+  </data>
+
+  <data name="liveGroupInitFailed" xml:space="preserve">
+    <value>लाइव समूह आरंभ विफल</value>
+  </data>
+  <data name="createLiveGroupFailed" xml:space="preserve">
+    <value>लाइव समूह बनाना विफल</value>
+  </data>
+  <data name="saveLiveRoomFailed" xml:space="preserve">
+    <value>लाइव सत्र सहेजना विफल</value>
+  </data>
+  <data name="liveNotExistOrEnded" xml:space="preserve">
+    <value>लाइव मौजूद नहीं है या समाप्त हो चुका है</value>
+  </data>
+  <data name="unfollowFailed" xml:space="preserve">
+    <value>अनफ़ॉलो विफल</value>
+  </data>
+  <data name="followFailed" xml:space="preserve">
+    <value>फ़ॉलो विफल</value>
+  </data>
+  <data name="deleteFriendFailed" xml:space="preserve">
+    <value>मित्र हटाना विफल</value>
+  </data>
+  <data name="addFriendFailed" xml:space="preserve">
+    <value>मित्र जोड़ना विफल</value>
+  </data>
+  <data name="handleFriendFailed" xml:space="preserve">
+    <value>प्रक्रिया विफल</value>
+  </data>
+  <data name="getTagsListFailed" xml:space="preserve">
+    <value>टैग सूची प्राप्त करना विफल</value>
+  </data>
+  <data name="getTagsFailed" xml:space="preserve">
+    <value>टैग प्राप्त करना विफल</value>
+  </data>
+  <data name="add_tagsFailed" xml:space="preserve">
+    <value>टैग जोड़ना विफल</value>
+  </data>
+  <data name="update_tagsFailed" xml:space="preserve">
+    <value>टैग बदलना विफल</value>
+  </data>
+  <data name="serviceNotFound" xml:space="preserve">
+    <value>सेवा नहीं मिली</value>
+  </data>
+  <data name="badGateway" xml:space="preserve">
+    <value>अनुरोध त्रुटि</value>
+  </data>
+  <data name="internalServerError" xml:space="preserve">
+    <value>सर्वर आंतरिक त्रुटि</value>
+  </data>
+  <data name="invalidToken" xml:space="preserve">
+    <value>अमान्य टोकन</value>
+  </data>
+  <data name="BadRequest" xml:space="preserve">
+    <value>गलत अनुरोध</value>
+  </data>
+  <data name="UnAuthorized" xml:space="preserve">
+    <value>अनधिकृत</value>
+  </data>
+  <data name="NotAcceptable" xml:space="preserve">
+    <value>अनुरोध अस्वीकार</value>
+  </data>
+  <data name="RequestTimeout" xml:space="preserve">
+    <value>अनुरोध समय समाप्त</value>
+  </data>
+  <data name="liveRoomName" xml:space="preserve">
+    <value>{0} का लाइव रूम</value>
+  </data>
+  <data name="liveAssistantName" xml:space="preserve">
+    <value>लाइव सहायक</value>
+  </data>
+  <data name="TenancyNameExist" xml:space="preserve">
+    <value>यह टेनेंट नाम पहले से उपयोग में है, कृपया दूसरा दर्ज करें</value>
+  </data>
+  <data name="TenancyNotExist" xml:space="preserve">
+    <value>यह टेनेंट नहीं मिला</value>
+  </data>
+  <data name="TenancyCreateFailure" xml:space="preserve">
+    <value>टेनेंट बनाना विफल</value>
+  </data>
+  <data name="TenancyModifyFailure" xml:space="preserve">
+    <value>टेनेंट बदलना विफल</value>
+  </data>
+  <data name="TenancyDisabled" xml:space="preserve">
+    <value>टेनेंट अक्षम है</value>
+  </data>
+  <data name="TenancyMatchExist" xml:space="preserve">
+    <value>अन्य टेनेंट के डेटा पर कार्य करने की अनुमति नहीं है</value>
+  </data>
+  <data name="TenancyIsDelete" xml:space="preserve">
+    <value>टेनेंट हटाया जा चुका है</value>
+  </data>
+  <data name="AccountUpdateError" xml:space="preserve">
+    <value>खाता अपडेट विफल</value>
+  </data>
+  <data name="AccountOldPasswordAndNewPasswordSame" xml:space="preserve">
+    <value>नया पासवर्ड पुराने पासवर्ड जैसा नहीं हो सकता, सुरक्षा के लिए दोबारा दर्ज करें</value>
+  </data>
+  <data name="AccountNotExist" xml:space="preserve">
+    <value>उपयोगकर्ता मौजूद नहीं है</value>
+  </data>
+  <data name="AccountRoleAssignationFailed" xml:space="preserve">
+    <value>खाता भूमिका असाइन विफल, कृपया पुनः प्रयास करें</value>
+  </data>
+  <data name="AccountNotAllowedLogin" xml:space="preserve">
+    <value>खाते को लॉगिन से रोका गया है, व्यवस्थापक से संपर्क करें</value>
+  </data>
+  <data name="AccountUnavailable" xml:space="preserve">
+    <value>खाता अभी उपलब्ध नहीं है</value>
+  </data>
+  <data name="AccountPasswordNotSame2" xml:space="preserve">
+    <value>खाता पासवर्ड मेल नहीं खाता, {0} विफलताओं के बाद खाता स्वतः लॉक हो जाएगा</value>
+  </data>
+  <data name="AccountPasswordNotSame" xml:space="preserve">
+    <value>खाता पासवर्ड मेल नहीं खाता</value>
+  </data>
+  <data name="AccountPasswordNotSameOverrun" xml:space="preserve">
+    <value>लॉगिन विफलता सीमा पार हो गई, 30 मिनट बाद पुनः प्रयास करें</value>
+  </data>
+  <data name="AccountLoginExpired" xml:space="preserve">
+    <value>लॉगिन स्थिति समाप्त हो गई, कृपया फिर से लॉगिन करें</value>
+  </data>
+  <data name="AccountExist" xml:space="preserve">
+    <value>यह खाता नाम, फ़ोन नंबर या ईमेल पहले से उपयोग में है</value>
+  </data>
+  <data name="AccountCreate" xml:space="preserve">
+    <value>खाता बनाना विफल</value>
+  </data>
+  <data name="AccountOldEmailError" xml:space="preserve">
+    <value>खाते का पुराना ईमेल मेल नहीं खाता</value>
+  </data>
+  <data name="AccountOldTelPhoneError" xml:space="preserve">
+    <value>पुराने फ़ोन नंबर जैसा ही है, बदलने की आवश्यकता नहीं</value>
+  </data>
+  <data name="AccountExistTelPhoneError" xml:space="preserve">
+    <value>फ़ोन नंबर पहले से मौजूद है</value>
+  </data>
+  <data name="AccountExistEmailError" xml:space="preserve">
+    <value>ईमेल पहले से मौजूद है</value>
+  </data>
+  <data name="AccountExistUserNameError" xml:space="preserve">
+    <value>खाता नाम पहले से मौजूद है</value>
+  </data>
+  <data name="AccountExistTypeError" xml:space="preserve">
+    <value>खाता लॉगिन प्रकार गलत है</value>
+  </data>
+  <data name="AccountNameExistTypeError" xml:space="preserve">
+    <value>खाता नाम पहले से मौजूद है</value>
+  </data>
+  <data name="RoleNotExist" xml:space="preserve">
+    <value>भूमिका मौजूद नहीं है</value>
+  </data>
+  <data name="RoleUnavailable" xml:space="preserve">
+    <value>भूमिका {0} का उपयोग निषिद्ध है</value>
+  </data>
+  <data name="RoleCreateFailed" xml:space="preserve">
+    <value>भूमिका बनाना विफल</value>
+  </data>
+  <data name="RolePermissionAssignationFailed" xml:space="preserve">
+    <value>भूमिका अनुमति असाइन विफल, कृपया पुनः प्रयास करें</value>
+  </data>
+  <data name="RoleIdNotExist" xml:space="preserve">
+    <value>भूमिका ID खाली नहीं हो सकती</value>
+  </data>
+  <data name="RoleNameExist" xml:space="preserve">
+    <value>भूमिका नाम पहले से मौजूद है</value>
+  </data>
+  <data name="RoleModifyFailed" xml:space="preserve">
+    <value>भूमिका बदलना विफल</value>
+  </data>
+  <data name="RoleNotSuperFailed" xml:space="preserve">
+    <value>केवल सुपर एडमिन ही यह कार्य कर सकता है</value>
+  </data>
+  <data name="RoleDeleteError" xml:space="preserve">
+    <value>भूमिका हटाना विफल</value>
+  </data>
+  <data name="PermissionNotExist" xml:space="preserve">
+    <value>अनुमति मौजूद नहीं है</value>
+  </data>
+  <data name="PermissionCreateError" xml:space="preserve">
+    <value>अनुमति जोड़ना विफल</value>
+  </data>
+  <data name="PermissionUpdateError" xml:space="preserve">
+    <value>अनुमति बदलना विफल</value>
+  </data>
+  <data name="PermissionDeleteError" xml:space="preserve">
+    <value>अनुमति हटाना विफल</value>
+  </data>
+  <data name="PermissionSysDeleteError" xml:space="preserve">
+    <value>सिस्टम अनुमति हटाई नहीं जा सकती</value>
+  </data>
+  <data name="PermissionSystemNotModify" xml:space="preserve">
+    <value>यह सिस्टम अनुमति है, बदली नहीं जा सकती</value>
+  </data>
+  <data name="PermissionSystemNotCreate" xml:space="preserve">
+    <value>केवल सुपर एडमिन सिस्टम अनुमति बना सकता है</value>
+  </data>
+  <data name="PermissionApiNotExist" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन मौजूद नहीं है</value>
+  </data>
+  <data name="PermissionApiCreateError" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन बनाना विफल</value>
+  </data>
+  <data name="PermissionApiUpdateError" xml:space="preserve">
+    <value>अनुमति फ़ंक्शन बदलना विफल</value>
+  </data>
+  <data name="PermissionSysApiUpdateError" xml:space="preserve">
+    <value>सिस्टम अनुमति फ़ंक्शन बदला नहीं जा सकता</value>
+  </data>
+  <data name="PermissionSysApiDeleteError" xml:space="preserve">
+    <value>सिस्टम अनुमति फ़ंक्शन हटाया नहीं जा सकता</value>
+  </data>
+  <data name="PermissionApiPathExist" xml:space="preserve">
+    <value>यही API पता पहले से मौजूद है</value>
+  </data>
+  <data name="PermissionMenuNotExist" xml:space="preserve">
+    <value>अनुमति मेनू मौजूद नहीं है</value>
+  </data>
+  <data name="PermissionMenuTitleOrUrlExist" xml:space="preserve">
+    <value>यही मेनू शीर्षक या पता पहले से मौजूद है</value>
+  </data>
+  <data name="PermissionMenuCreateError" xml:space="preserve">
+    <value>अनुमति मेनू बनाना विफल</value>
+  </data>
+  <data name="PermissionMenuUpdateError" xml:space="preserve">
+    <value>अनुमति मेनू बदलना विफल</value>
+  </data>
+  <data name="PermissionMenuDeleteError" xml:space="preserve">
+    <value>अनुमति मेनू हटाना विफल</value>
+  </data>
+  <data name="PermissionNameOrCodeExist" xml:space="preserve">
+    <value>अनुमति नाम या कोड पहले से मौजूद है</value>
+  </data>
+  <data name="PermissionIdNotExist" xml:space="preserve">
+    <value>अनुमति ID खाली नहीं हो सकती</value>
+  </data>
+  <data name="LogginDeletedCannoBeWithinThreeMonths" xml:space="preserve">
+    <value>तीन महीने के भीतर के लॉग हटाए नहीं जा सकते</value>
+  </data>
+  <data name="LogginDeletedError" xml:space="preserve">
+    <value>लॉग हटाना विफल</value>
+  </data>
+  <data name="LoggingNotExist" xml:space="preserve">
+    <value>यह लॉग नहीं मिला</value>
+  </data>
+  <data name="TranslateNotExist" xml:space="preserve">
+    <value>भाषा मौजूद नहीं है</value>
+  </data>
+  <data name="TranslateNameExist" xml:space="preserve">
+    <value>भाषा नाम पहले से मौजूद है</value>
+  </data>
+  <data name="TranslateCreateError" xml:space="preserve">
+    <value>भाषा जोड़ना विफल</value>
+  </data>
+  <data name="TranslateUpdateError" xml:space="preserve">
+    <value>भाषा बदलना विफल</value>
+  </data>
+  <data name="TranslateDeleteError" xml:space="preserve">
+    <value>भाषा हटाना विफल</value>
+  </data>
+  <data name="CountryNotExist" xml:space="preserve">
+    <value>देश मौजूद नहीं है</value>
+  </data>
+  <data name="CountryCreateError" xml:space="preserve">
+    <value>देश जोड़ना विफल</value>
+  </data>
+  <data name="CountryUpdateError" xml:space="preserve">
+    <value>देश बदलना विफल</value>
+  </data>
+  <data name="CountryDeleteError" xml:space="preserve">
+    <value>देश हटाना विफल</value>
+  </data>
+  <data name="CountryNameExistError" xml:space="preserve">
+    <value>यही देश नाम या कोड पहले से मौजूद है</value>
+  </data>
+  <data name="DepartmentNotExist" xml:space="preserve">
+    <value>विभाग मौजूद नहीं है</value>
+  </data>
+  <data name="DepartmentNameExist" xml:space="preserve">
+    <value>विभाग पहले से मौजूद है</value>
+  </data>
+  <data name="DepartmentCreateError" xml:space="preserve">
+    <value>विभाग जोड़ना विफल</value>
+  </data>
+  <data name="DepartmentUpdateError" xml:space="preserve">
+    <value>विभाग बदलना विफल</value>
+  </data>
+  <data name="DepartmentUnavailable" xml:space="preserve">
+    <value>विभाग अक्षम है</value>
+  </data>
+  <data name="PostNotExist" xml:space="preserve">
+    <value>पद मौजूद नहीं है</value>
+  </data>
+  <data name="PostNameExist" xml:space="preserve">
+    <value>पद नाम पहले से मौजूद है</value>
+  </data>
+  <data name="PostCreateError" xml:space="preserve">
+    <value>पद जोड़ना विफल</value>
+  </data>
+  <data name="PostModifyError" xml:space="preserve">
+    <value>पद बदलना विफल</value>
+  </data>
+  <data name="PostDeleteError" xml:space="preserve">
+    <value>पद हटाना विफल</value>
+  </data>
+  <data name="PostUnavailable" xml:space="preserve">
+    <value>पद अक्षम है</value>
+  </data>
+  <data name="DictionaryNotExist" xml:space="preserve">
+    <value>शब्दकोश मौजूद नहीं है</value>
+  </data>
+  <data name="DictionaryKeyExist" xml:space="preserve">
+    <value>शब्दकोश कुंजी पहले से मौजूद है</value>
+  </data>
+  <data name="DictionaryCreateError" xml:space="preserve">
+    <value>शब्दकोश बनाना विफल</value>
+  </data>
+  <data name="DictionaryUpdateError" xml:space="preserve">
+    <value>शब्दकोश बदलना विफल</value>
+  </data>
+  <data name="DictionaryDeleteError" xml:space="preserve">
+    <value>शब्दकोश हटाना विफल</value>
+  </data>
+  <data name="locationLocal" xml:space="preserve">
+    <value>स्थानीय</value>
+  </data>
+  <data name="locationUnknown" xml:space="preserve">
+    <value>अज्ञात</value>
+  </data>
+  <data name="invalidTarget" xml:space="preserve">
+    <value>अमान्य लक्ष्य</value>
+  </data>
+  <data name="cannotReportSelf" xml:space="preserve">
+    <value>स्वयं की रिपोर्ट नहीं कर सकते</value>
+  </data>
+  <data name="alreadyReported" xml:space="preserve">
+    <value>पहले ही रिपोर्ट किया गया</value>
+  </data>
+  <data name="handleFailed" xml:space="preserve">
+    <value>प्रक्रिया विफल</value>
+  </data>
+  <data name="publishFailed" xml:space="preserve">
+    <value>प्रकाशित करने में विफल</value>
+  </data>
+  <data name="contentEmpty" xml:space="preserve">
+    <value>सामग्री खाली नहीं हो सकती</value>
+  </data>
+  <data name="commentFailed" xml:space="preserve">
+    <value>टिप्पणी विफल</value>
+  </data>
+  <data name="idRequired" xml:space="preserve">
+    <value>Id आवश्यक है</value>
+  </data>
+  <data name="deleteFailed" xml:space="preserve">
+    <value>हटाना विफल</value>
+  </data>
+  <data name="addFailed" xml:space="preserve">
+    <value>जोड़ना विफल</value>
+  </data>
+  <data name="invalidAmount" xml:space="preserve">
+    <value>अमान्य राशि</value>
+  </data>
+  <data name="createFailed" xml:space="preserve">
+    <value>बनाना विफल</value>
+  </data>
+  <data name="inviteCodeEmpty" xml:space="preserve">
+    <value>आमंत्रण कोड खाली नहीं हो सकता</value>
+  </data>
+  <data name="alreadyBound" xml:space="preserve">
+    <value>आमंत्रण कोड पहले से बाउंड है</value>
+  </data>
+  <data name="inviteCodeInvalid" xml:space="preserve">
+    <value>अमान्य आमंत्रण कोड</value>
+  </data>
+  <data name="cannotBindSelf" xml:space="preserve">
+    <value>अपना आमंत्रण कोड बाउंड नहीं कर सकते</value>
+  </data>
+  <data name="alreadyClaimed" xml:space="preserve">
+    <value>पहले ही दावा किया गया</value>
+  </data>
+  <data name="alreadyOwned" xml:space="preserve">
+    <value>पहले से स्वामित्व में</value>
+  </data>
+  <data name="insufficientDiamond" xml:space="preserve">
+    <value>पर्याप्त डायमंड नहीं</value>
+  </data>
+  <data name="insufficientCoin" xml:space="preserve">
+    <value>पर्याप्त सिक्के नहीं</value>
+  </data>
+  <data name="notOwned" xml:space="preserve">
+    <value>स्वामित्व में नहीं</value>
+  </data>
+  <data name="reportResultTitle" xml:space="preserve">
+    <value>रिपोर्ट परिणाम</value>
+  </data>
+  <data name="reportAccepted" xml:space="preserve">
+    <value>स्वीकृत</value>
+  </data>
+  <data name="reportRejected" xml:space="preserve">
+    <value>अस्वीकृत</value>
+  </data>
+  <data name="Val_TargetUserIdRequired" xml:space="preserve">
+    <value>लक्ष्य उपयोगकर्ता id आवश्यक</value>
+  </data>
+  <data name="Val_ReasonCodeRequired" xml:space="preserve">
+    <value>कारण कोड आवश्यक</value>
+  </data>
+  <data name="Val_DynamicIdRequired" xml:space="preserve">
+    <value>डायनामिक id आवश्यक</value>
+  </data>
+  <data name="Val_ContentRequired" xml:space="preserve">
+    <value>सामग्री आवश्यक</value>
+  </data>
+  <data name="Val_ActionInvalid" xml:space="preserve">
+    <value>अमान्य क्रिया</value>
+  </data>
+  <data name="Val_MediaTypeInvalid" xml:space="preserve">
+    <value>अमान्य मीडिया प्रकार</value>
+  </data>
+  <data name="Val_TypeInvalid" xml:space="preserve">
+    <value>अमान्य प्रकार</value>
+  </data>
+  <data name="Val_AmountRequired" xml:space="preserve">
+    <value>राशि आवश्यक</value>
+  </data>
+  <data name="Val_HarvestAccountRequired" xml:space="preserve">
+    <value>प्राप्ति खाता आवश्यक</value>
+  </data>
+  <data name="Val_InviteCodeRequired" xml:space="preserve">
+    <value>आमंत्रण कोड आवश्यक</value>
+  </data>
+  <data name="Val_TaskIdRequired" xml:space="preserve">
+    <value>कार्य id आवश्यक</value>
+  </data>
+  <data name="Val_AdornItemIdRequired" xml:space="preserve">
+    <value>सजाने की वस्तु id आवश्यक</value>
+  </data>
+  <data name="Val_AlbumIdRequiredWhenDelete" xml:space="preserve">
+    <value>हटाते समय एल्बम id आवश्यक</value>
+  </data>
+  <data name="Val_AlbumContentRequired" xml:space="preserve">
+    <value>एल्बम सामग्री आवश्यक</value>
+  </data>
+  <data name="Val_TrendsContentRequired" xml:space="preserve">
+    <value>ट्रेंड्स सामग्री आवश्यक</value>
+  </data>
+  <data name="vipProductNotFound" xml:space="preserve">
+    <value>VIP उत्पाद नहीं मिला</value>
+  </data>
+  <data name="rechargeProductNotFound" xml:space="preserve">
+    <value>रिचार्ज उत्पाद नहीं मिला</value>
+  </data>
+  <data name="createOrderFailed" xml:space="preserve">
+    <value>ऑर्डर बनाने में विफल</value>
+  </data>
+  <data name="purchaseTokenRequired" xml:space="preserve">
+    <value>purchaseToken/productId आवश्यक</value>
+  </data>
+  <data name="platformInvalid" xml:space="preserve">
+    <value>platform ios या android होना चाहिए</value>
+  </data>
+  <data name="verifyFailed" xml:space="preserve">
+    <value>सत्यापन विफल</value>
+  </data>
+  <data name="invalidUser" xml:space="preserve">
+    <value>अमान्य उपयोगकर्ता</value>
+  </data>
+  <data name="giftIdOrCodeRequired" xml:space="preserve">
+    <value>giftId या code आवश्यक</value>
+  </data>
+  <data name="giftNotFound" xml:space="preserve">
+    <value>उपहार नहीं मिला</value>
+  </data>
+  <data name="sendGiftFailed" xml:space="preserve">
+    <value>उपहार भेजने में विफल</value>
+  </data>
+  <data name="vipFeatureOnly" xml:space="preserve">
+    <value>यह सुविधा केवल VIP के लिए है</value>
+  </data>
+  <data name="dailyMessageLimitReached" xml:space="preserve">
+    <value>गैर-VIP दिन में अधिकतम 5 संदेश भेज सकते हैं</value>
+  </data>
+  <data name="cannotSendRedPacketToSelf" xml:space="preserve">
+    <value>Cannot send a red packet to yourself</value>
+  </data>
+  <data name="redPacketAmountInvalid" xml:space="preserve">
+    <value>Invalid red packet amount</value>
+  </data>
+  <data name="redPacketUnavailable" xml:space="preserve">
+    <value>Red packet is unavailable</value>
+  </data>
+  <data name="musicNotFound" xml:space="preserve">
+    <value>Music not found</value>
+  </data>
+</root>
